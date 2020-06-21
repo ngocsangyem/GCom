@@ -1,0 +1,25 @@
+include ./includes/variables
+
+
+//- include ./includes/watermark
+block var
+doctype html
+html(dir='ltr', lang=Seo.seo_lang, itemscope, itemtype="http://schema.org/WebSite", prefix="og: http://ogp.me/ns#", class="no-js")
+	head
+		meta(charset='utf-8')
+		meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+		meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+		meta(name='format-detection', content='telephone=no')
+		meta(name='msapplication-tap-highlight', content='no')
+		meta(name='theme-color', content=Seo.mobile_color)
+		meta(name='msapplication-navbutton-color', content=Seo.mobile_color)
+		meta(name='apple-mobile-web-app-status-bar-style', content=Seo.mobile_color)
+		if process.argv.slice(3).indexOf('--production') > -1
+			include ./includes/seo
+		if process.argv.slice(3).indexOf('--production') > -1
+			include ./include/favicon
+		include ./includes/css
+		title #{title} | #{Seo.cfg_name}
+	body(class=process.argv.slice(3).indexOf('--production') < 0 ? workName + 'develop '+prefix+bodyClass+'-page' : prefix+bodyClass+'-page' || 'default')
+		main
+			block main

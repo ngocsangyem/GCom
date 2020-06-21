@@ -1,0 +1,61 @@
+meta(name="description", content=Seo.cfg_description)
+link(rel="profile", href="http://gmpg.org/xfn/11")
+link(rel="pingback")
+// Meta verification
+//- Google
+meta(name="google-site-verification", content=Seo.verf_google)
+//- Bing
+meta(name="msvalidate.01", content=Seo.verf_bing)
+//- Yandex
+meta(name="yandex-verification", content=Seo.verf_yandex)
+//- Feeds
+link(rel="alternate", type="application/rss+xml", title=Seo.cfg_name, href='//'+Seo.cfg_url+"/feed.xml")
+// Meta Tag
+meta(name="generator", content=Seo.cfg_name)
+meta(name='robots', content='noodp')
+meta(name='keywords', content=Seo.cfg_keywords)
+link(rel='dns-prefetch', href='http://maps.googleapis.com/')
+link(rel='dns-prefetch', href='http://s.w.org/')
+meta(name='apple-itunes-app', content='app-id'+Seo.app_appleID)
+// SEO MAP
+meta(name='DC.title', content=title)
+meta(name='geo.region', content=Seo.seo_geo)
+meta(name='geo.placename', content=Seo.cfg_name)
+meta(name='geo.position', content=Seo.seo_geo_latitude+';'+Seo.seo_geo_longitude)
+meta(name='ICBM', content=Seo.seo_geo_latitude+','+Seo.seo_geo_longitude)
+// SEO
+meta(name='author', content=Seo.cfg_name)
+link(rel='canonical', href='//'+Seo.cfg_url+href)
+// Social: Twitter
+meta(name='twitter:card', content=title+' - '+ Seo.cfg_name)
+meta(name='twitter:site', content=Seo.cfg_url)
+meta(name='twitter:creator', content='@'+Seo.cfg_author+'')
+meta(name='twitter:title', content=title+' - '+ Seo.cfg_name)
+meta(name='twitter:description', content=Seo.cfg_description)
+meta(name='twitter:image:src', content='//'+ Seo.cfg_url + '/images/logo.png')
+// Social: Facebook / Open Graph
+meta(property='fb:admins', content=Seo.app_facebook_adminsID)
+meta(property='fb:app_id', content=Seo.app_facebook_ID)
+meta(property="og:type", content="website")
+meta(property='og:url', content='//'+Seo.cfg_url+href)
+meta(property='og:title', content=title+'- '+ SEeocfg_name)
+meta(property='og:image', content='//'+ Seo.cfg_url + '/images/logo.png')
+meta(property='og:description', content=Seo.cfg_description)
+meta(property='og:site_name', content=Seo.cfg_name)
+meta(property='article:author', content='//www.facebook.com/' + Seo.cfg_sitenameurl)
+meta(property='article:publisher', content='//www.facebook.com/' + Seo.cfg_sitenameurl)
+// Social: Google / Schema.org
+link(rel='author', href='//plus.google.com/'+ Seo.cfg_sitenameurlgoogle+'/')
+link(rel='publisher', href='//plus.google.com/'+ Seo.cfg_sitenameurlgoogle+'/')
+meta(itemprop='name', content=title+'- '+ Seo.cfg_name)
+meta(itemprop='description', content=Seo.cfg_description)
+meta(itemprop='image', content='//'+ Seo.cfg_url + '/images/logo.png')
+// Meta Tag Search
+//- link(rel='search', type='application/opensearchdescription+xml', title=Seo.cfg_name, href='/'+Seo.cfg_url+'/SearchEngineInfo.xml')
+meta(name='apple-mobile-web-app-capable', content='yes')
+meta(name='apple-mobile-web-app-title', content=title+'- '+ Seo.cfg_name)
+// HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
+// WARNING: Respond.js doesn't work if you view the page via file://
+//if lt IE 9
+	script(src='//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js')
+	script(src='//oss.maxcdn.com/respond/1.4.2/respond.min.js')
