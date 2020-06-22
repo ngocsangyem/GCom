@@ -1,0 +1,14 @@
+// Check isset
+@function isset($v) {
+  @return $v != none and $v != false;
+}
+
+@function complex-isset($list, $l: length($list)) {
+  $i: 1;
+
+  @while $i <= $l and isset(nth($list, $i)) {
+    $i: $i + 1;
+  }
+
+  @return $i > $l;
+}

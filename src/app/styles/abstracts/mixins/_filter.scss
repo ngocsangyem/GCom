@@ -1,0 +1,23 @@
+// grayscale      ex: filter: grayscale(100%);
+// sepia          ex: filter: sepia(100%);
+// saturate       ex: filter: saturate(0%);
+// hue-rotate     ex: filter: hue-rotate(45deg);
+// invert         ex: filter: invert(100%);
+// brightness     ex: filter: brightness(15%);
+// contrast       ex: filter: contrast(200%);
+// blur           ex: filter: blur(2px);
+
+@mixin filter($filter-type, $filter-amount) {
+  -webkit-filter: $filter-type + unquote("(#{$filter-amount})");
+  -moz-filter: $filter-type + unquote("(#{$filter-amount})");
+  -ms-filter: $filter-type + unquote("(#{$filter-amount})");
+  -o-filter: $filter-type + unquote("(#{$filter-amount})");
+  filter: $filter-type + unquote("(#{$filter-amount})");
+}
+
+@mixin blur($radius) {
+  -webkit-filter: blur($radius + px);
+  -ms-filter: blur($radius + px);
+  filter: url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg"><filter id="blur"><feGaussianBlur stdDeviation="#{$radius}" /></filter></svg>#blur');
+  filter: progid:DXImageTransform.Microsoft.Blur(Strength=#{$radius});
+}

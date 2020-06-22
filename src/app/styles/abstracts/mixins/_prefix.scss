@@ -1,0 +1,17 @@
+// PREFIX PROPERTIES
+@mixin bn-prefix($property: null, $value: null) {
+  -webkit-#{$property}: #{$value};
+  -khtml-#{$property}: #{$value};
+  -moz-#{$property}: #{$value};
+  -ms-#{$property}: #{$value};
+  -o-#{$property}: #{$value};
+  #{$property}: #{$value};
+}
+
+@mixin bn-value-prefixer($property, $value, $prefixes: ()) {
+  @each $prefix in $prefixes {
+    #{$property}: #{"-" + $prefix + "-" + $value};
+  }
+
+  #{$property}: $value;
+}

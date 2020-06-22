@@ -1,0 +1,31 @@
+///
+/// Margin settings.
+///
+
+@mixin mar($values...) {
+	@include bn-property(margin, false, $values...);
+}
+
+@mixin m($values...) {
+	@include bn-property(margin, false, $values...);
+}
+
+@mixin margin($values...) {
+	@include bn-property(margin, false, $values...);
+}
+
+///
+/// Padding settings.
+///
+
+@mixin p($values...) {
+	@include bn-property(padding, false, $values...);
+}
+
+@mixin pad($values...) {
+	@include bn-property(padding, false, $values...);
+}
+
+@mixin padding($values...) {
+	@include bn-property(padding, false, $values...);
+}

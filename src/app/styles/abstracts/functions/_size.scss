@@ -1,0 +1,4 @@
+// Check Size
+@function check_size($value) {
+  @return check-length($value) or _contains("fill" "fit-content" "min-content" "max-content", $value);
+}

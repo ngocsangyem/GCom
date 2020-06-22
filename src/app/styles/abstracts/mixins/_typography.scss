@@ -1,0 +1,193 @@
+// TYPOGRAPHY
+@mixin text-wrap($width: 100%, $display: inline-block) {
+	display: $display;
+	max-width: $width;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	word-wrap: normal;
+}
+
+// Clearfix
+@mixin clearfix {
+	*zoom: 1;
+
+	&:before,
+	&:after {
+		content: ' ';
+		display: table;
+	}
+
+	&:after {
+		clear: both;
+	}
+}
+
+// Visually hidden
+@mixin visually-hidden {
+	margin: -1px;
+	padding: 0;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	clip: rect(0, 0, 0, 0);
+	position: absolute;
+}
+
+// Get Rem
+@mixin setrem($size) {
+	font-size: $size;
+	font-size: calculateRem($size);
+}
+
+// Fonts
+@mixin font-face($fontFamily: 'myFont', $path: '../fonts/', $name: 'myFont') {
+	@font-face {
+		font-family: '#{$fontFamily}';
+		src: url(#{$path+$name}.eot);
+		src: (url(#{$path+$name}.eot?#iefix) format('embedded-opentype'));
+
+		src: url(#{$path+$name}.woff) format('woff');
+		src: url(#{$path+$name}.woff2) format('woff2');
+		src: url(#{$path+$name}.ttf) format('truetype');
+		src: url(#{$path+$name}.svg##{$fontFamily}) format('svg') {
+
+		}
+
+		font-weight: normal;
+		font-style: normal;
+	}
+}
+
+// Set Center
+@mixin set-center {
+	@include transform(translateX(-50%) translateY(-50%));
+	@include pos(abs, 50% null null 50%);
+}
+
+// Set Full Width
+@mixin vh {
+	min-width: 100vw;
+	min-height: 100vh;
+}
+
+@mixin full-width {
+	min-width: 100%;
+	min-height: 100%;
+	width: 100%;
+	height: 100%;
+}
+
+// Set Padding
+@mixin fz($fontsize: 1rem) {
+	font-size: $fontsize;
+}
+
+// Set Padding
+@mixin fw($fontweight: 400) {
+	font-weight: $fontweight;
+}
+
+// Set Padding
+@mixin lh($lineheight: 0) {
+	line-height: $lineheight;
+}
+
+/// Opacity
+@mixin opacity($opacity: 0.5) {
+	$opacityMultiplied: $opacity * 100;
+
+	filter: alpha(opacity = $opacityMultiplied);
+	-ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=' +
+		$opacityMultiplied + ')';
+
+	@include bn-prefix('opacity', $opacity);
+}
+
+// Columns
+@mixin columns($count: 3, $gap: 10) {
+	@include bn-prefix('column-count', $count);
+	@include bn-prefix('column-gap', $gap);
+}
+
+// Text shadow
+@mixin text-shadow($x: 2px 2px 5px rgba(0, 0, 0, 0.4)) {
+	text-shadow: $x;
+}
+
+// Box shadow
+@mixin box-shadow($x: 2px 2px 5px rgba(0, 0, 0, 0.4), $inset: null) {
+	@if $inset != '' {
+		@include bn-prefix('box-shadow', $inset $x);
+	} @else {
+		@include bn-prefix('box-shadow', $x);
+	}
+}
+
+@mixin text-sha($x: 2px 2px 5px rgba(0, 0, 0, 0.4)) {
+	text-shadow: $x;
+}
+
+// Box shadow
+@mixin box-sha($x: 2px 2px 5px rgba(0, 0, 0, 0.4), $inset: null) {
+	@if $inset != '' {
+		@include bn-prefix('box-shadow', $inset $x);
+	} @else {
+		@include bn-prefix('box-shadow', $x);
+	}
+}
+
+/// Triple Borders
+@mixin triple-borders(
+	$colorOne: #3c3c3c,
+	$colorTwo: #999999,
+	$colorThree: #000000,
+	$radius: 0
+) {
+	border: 1px solid $colorOne;
+
+	@include border-radius($radius);
+	@include bn-prefix(
+		'box-shadow',
+		'0 0 0 1px #{$colorTwo}, 0 0 0 2px #{$colorThree}'
+	);
+}
+
+// Placeholder
+@mixin placeholder {
+	&::-webkit-input-placeholder {
+		@content;
+	}
+
+	&:-moz-placeholder {
+		@content;
+	}
+
+	&::-moz-placeholder {
+		@content;
+	}
+
+	&:-ms-input-placeholder {
+		@content;
+	}
+}
+
+// Selection
+@mixin selection {
+	&::selection {
+		@content;
+	}
+
+	&:-moz-selection {
+		@content;
+	}
+
+	&::-moz-selection {
+		@content;
+	}
+
+	&:-ms-selection {
+		@content;
+	}
+}

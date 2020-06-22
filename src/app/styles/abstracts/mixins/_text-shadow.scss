@@ -1,0 +1,48 @@
+@function make-elegant-shadow(
+	$base-color: #767676,
+	$scale-factor: 2,
+	$repeat: 30
+) {
+	$scale: 100% / $repeat / 2.2;
+	//color divider
+	$base-shadow: 1px;
+	$shadow: (#{$base-shadow} - #{$base-shadow}) 0 #{$base-color};
+
+	@for $i from 1 through $repeat {
+		$shadow: #{$shadow},
+			(-#{$i * $base-shadow})
+				#{$i *
+				$base-shadow *
+				$scale-factor}
+				#{$base-shadow}
+				#{lighten($base-color, $scale * $i)};
+	}
+	@return $shadow;
+}
+@mixin elegant-shadow-generator($base-color, $scale-factor, $repeat) {
+	text-shadow: make-elegant-shadow($base-color, $scale-factor, $repeat);
+}
+
+@mixin gettext-shadow($co) {
+	$shadow-color: $co;
+	$offset-y: 1.1px;
+	$offset-x: -1px;
+	$opacity-steps: 0.005;
+	$color-steps: 2.2%;
+
+	// max 100/30
+	$str: null;
+
+	@for $i from 1 through 30 {
+		$str: if($i == 1, $str, $str unquote(','));
+		$str: $str
+			($i * $offset-x)
+			($i * $offset-y)
+			rgba(
+				lighten($shadow-color, $i * $color-steps),
+				(30 - $i) * $opacity-steps
+			);
+	}
+
+	text-shadow: $str;
+}

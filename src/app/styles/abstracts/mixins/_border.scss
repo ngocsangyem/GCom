@@ -1,0 +1,44 @@
+// BORDER VARIABLES
+@mixin bn-setborder($pre, $suf, $type, $values...) {
+  $top: $pre + "-top" + if($suf, "-#{$suf}", "");
+  $bottom: $pre + "-bottom" + if($suf, "-#{$suf}", "");
+  $left: $pre + "-left" + if($suf, "-#{$suf}", "");
+  $right: $pre + "-right" + if($suf, "-#{$suf}", "");
+  $all: $pre + if($suf, "-#{$suf}", "");
+  $values: get_array($values);
+  $getborder: solid transparent;
+
+  @if $type != null {
+    $getborder: str-replace(#{$type}, "solid", "sol");
+    $getborder: str-replace(#{$getborder}, "sol", "solid");
+    $getborder: str-replace(#{$getborder}, "dashed", "das");
+    $getborder: str-replace(#{$getborder}, "das", "dashed");
+    $getborder: str-replace(#{$getborder}, "dotted", "dot");
+    $getborder: str-replace(#{$getborder}, "dot", "dotted");
+    $getborder: str-replace(#{$getborder}, "double", "dou");
+    $getborder: str-replace(#{$getborder}, "dou", "double");
+    $getborder: str-replace(#{$getborder}, "none", "non");
+    $getborder: str-replace(#{$getborder}, "non", "none");
+  }
+
+  @if length($values) == 1 {
+    #{$all}: #{$getborder} im-rep(#{$values});
+  }
+  @else if length($values) == 2 {
+    #{$pre}-top: #{$getborder} im-rep(#{nth($values, 1)});
+    #{$pre}-right: #{$getborder} im-rep(#{nth($values, 2)});
+    #{$pre}-bottom: #{$getborder} im-rep(#{nth($values, 1)});
+    #{$pre}-left: #{$getborder} im-rep(#{nth($values, 2)});
+  }
+  @else if length($values) == 3 {
+    #{$pre}-top: #{$getborder} im-rep(#{nth($values, 1)});
+    #{$pre}-right: #{$getborder} im-rep(#{nth($values, 2)});
+    #{$pre}-bottom: #{$getborder} im-rep(#{nth($values, 3)});
+  }
+  @else if length($values) == 4 {
+    #{$pre}-top: #{$getborder} im-rep(#{nth($values, 1)});
+    #{$pre}-right: #{$getborder} im-rep(#{nth($values, 2)});
+    #{$pre}-bottom: #{$getborder} im-rep(#{nth($values, 3)});
+    #{$pre}-left: #{$getborder} im-rep(#{nth($values, 4)});
+  }
+}

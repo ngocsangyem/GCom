@@ -1,0 +1,96 @@
+// Animation
+@mixin rotate($deg: 0, $m11: 0, $m12: 0, $m21: 0, $m22: 0) {
+  @include bn-prefix("transform", rotate($deg));
+
+  filter: progid:DXImageTransform.Microsoft.Matrix( M11=#{$m11}, M12=#{$m12}, M21=#{$m21}, M22=#{$m22}, sizingMethod='auto expand');
+  zoom: 1;
+}
+
+/// Background Gradient
+@mixin background-gradient($startColor: #3C3C3C, $endColor: #999999) {
+  background: -moz-linear-gradient(0deg, $startColor 0%, $endColor 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, $startColor), color-stop(100%, $endColor));
+  background: -webkit-linear-gradient(0deg, $startColor 0%, $endColor 100%);
+  background: -o-linear-gradient(0deg, $startColor 0%, $endColor 100%);
+  background: -ms-linear-gradient(0deg, $startColor 0%, $endColor 100%);
+  background: linear-gradient(90deg, $startColor 0%, $endColor 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$startColor}', endColorstr='#{$endColor}', GradientType=0 );
+}
+
+/// Background Horizontal
+@mixin background-horizontal($startColor: #3C3C3C, $endColor: #999999) {
+  background: -moz-linear-gradient(270deg, $startColor 0%, $endColor 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, $startColor), color-stop(100%, $endColor));
+  background: -webkit-linear-gradient(270deg, $startColor 0%, $endColor 100%);
+  background: -o-linear-gradient(270deg, $startColor 0%, $endColor 100%);
+  background: -ms-linear-gradient(270deg, $startColor 0%, $endColor 100%);
+  background: linear-gradient(180deg, $startColor 0%, $endColor 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$startColor}', endColorstr='#{$endColor}', GradientType=0 );
+}
+
+/// Background Radial
+@mixin background-radial($startColor: #FFFFFF, $startPos: 0%, $endColor: #000000, $endPos: 100%) {
+  background: -moz-radial-gradient(center, ellipse farthest-corner, $startColor $startPos, $endColor $endPos);
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop($startPos, $startColor), color-stop($endPos, $endColor));
+  background: -webkit-radial-gradient(center, ellipse farthest-corner, $startColor $startPos, $endColor $endPos);
+  background: -o-radial-gradient(center, ellipse farthest-corner, $startColor $startPos, $endColor $endPos);
+  background: -ms-radial-gradient(center, ellipse farthest-corner, $startColor $startPos, $endColor $endPos);
+  background: radial-gradient(ellipse at center, $startColor $startPos, $endColor $endPos);
+}
+
+// Animation
+@mixin animation($str...) {
+  @include bn-prefix("animation", $str...);
+}
+
+/// Keyframes
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes #{$animation-name} {
+    @content;
+  }
+
+  @-moz-keyframes #{$animation-name} {
+    @content;
+  }
+
+  @-ms-keyframes #{$animation-name} {
+    @content;
+  }
+
+  @-o-keyframes #{$animation-name} {
+    @content;
+  }
+
+  @keyframes #{$animation-name} {
+    @content;
+  }
+}
+
+/// Transform
+@mixin transform($params...) {
+  @include bn-prefix("transform", $params...);
+}
+
+/// Transform-Origin
+@mixin transform-origin($params...) {
+  @include bn-prefix("transform-origin", $params...);
+}
+
+// Transform-Style
+@mixin transform-style($style: preserve-3d) {
+  @include bn-prefix("transform-style", $style);
+}
+
+/// Transition
+@mixin transition($properties...) {
+  @if length($properties) >= 1 {
+    @include bn-prefix("transition", $properties);
+  }
+  @else {
+    @include bn-prefix("transition", "all 0.2s ease-in-out 0s");
+  }
+}
+
+@mixin delay($time: 1s) {
+  @include bn-prefix("animation-delay", $time);
+}

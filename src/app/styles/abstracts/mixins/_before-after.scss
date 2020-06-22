@@ -1,0 +1,47 @@
+// BEFORE AFTER PROPERTIES
+
+@mixin before($con: "", $values: "100% 100%", $type: null) {
+  &:before {
+    @if $con {
+      content: $con;
+    }
+    @else {
+      content: "";
+    }
+
+    @if $type {
+      display: $type;
+    }
+    @else {
+      display: block;
+    }
+
+    @if length($values) == 2 {
+      width: im-rep(#{nth($values, 1)});
+      height: im-rep(#{nth($values, 2)});
+    }
+  }
+}
+
+@mixin after($con: "", $values: "100% 100%", $type: null) {
+  &:after {
+    @if $con {
+      content: $con;
+    }
+    @else {
+      content: "";
+    }
+
+    @if $type {
+      display: $type;
+    }
+    @else {
+      display: block;
+    }
+
+    @if length($values) == 2 {
+      width: im-rep(#{nth($values, 1)});
+      height: im-rep(#{nth($values, 2)});
+    }
+  }
+}

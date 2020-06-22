@@ -12,7 +12,8 @@ import { replaceName } from './helpers/replace-name';
 export const createComponent = {
 	sep: Array(16).join('-'),
 	message: '',
-	extensionPrefix: '.component',
+	componentPrefix: config.component.prefix || '',
+	pagesPrefix: config.pages.prefix || '',
 
 	setType(argv) {
 		this.type = argv[2] === 'page' ? argv[2] : 'component';
@@ -131,14 +132,11 @@ export const createComponent = {
 		return this.addFile(file, content);
 	},
 
-	addComponent(node, extensions, type) {
+	addComponent(node, extensions, type, prefix) {
 		const component = !config.component.BEM
 			? node
 			: `${BEM.getComponent(node)}/${node}`;
 		const directory = this.setDirection(component, type);
-		console.log('addComponent -> node', node);
-		console.log('addComponent -> directory', directory);
-		const testDirectory = this.setDirection(component + '/test', type);
 
 		if (!fs.existsSync(directory)) {
 			this.addDirectory(directory);
@@ -183,41 +181,52 @@ export const createComponent = {
 			let name = path.basename(extension, extname) || node;
 			let content;
 			let file;
-			content = this.replacePrefix(
-				config.addContent[extname.slice(1)],
-				name
-			);
 
-			if (extension[0] == 'pug' && type === 'page') {
-				content = this.replacePrefix(config.addContent.page, name);
-				file = path.join(
-					directory,
-					name + this.extensionPrefix + extname
-				);
-
-				return this.addFile(file, content);
-			}
-
-			if (extension !== '.test.js') {
-				file = path.join(
-					directory,
-					name + this.extensionPrefix + extname
-				);
-				return this.addFile(file, content);
-			} else if (extension == '.test.js') {
+			if (type === 'page') {
 				content = this.replacePrefix(
-					config.addContent[extname.replace(extname, 'test')],
+					config.addContent.page[extname.slice(1)],
 					name
 				);
+				file = path.join(directory, name + prefix + extname);
 
-				file = path.join(
-					testDirectory,
-					name + this.extensionPrefix + extname
+				return this.addFile(file, content);
+			} else if (type === 'component') {
+				content = this.replacePrefix(
+					config.addContent.component[extname.slice(1)],
+					name
 				);
-				this.addDirectory(testDirectory);
+				file = path.join(directory, name + prefix + extname);
 				return this.addFile(file, content);
 			}
 		});
+
+		if (config.component.test) {
+			const testDirectory = this.setDirection(
+				component + '/__test',
+				type
+			);
+			let testContent = this.replacePrefix(
+				config.addContent['test'],
+				node
+			);
+
+			let testFile = path.join(testDirectory, node + prefix + '.test.js');
+
+			this.addDirectory(testDirectory);
+			return this.addFile(testFile, testContent);
+		}
+		if (config.component.data) {
+			let dataContent = this.replacePrefix(
+				config.addContent['data'],
+				node
+			);
+			const dataDirectory = this.setDirection(component + '/data', type);
+
+			let dataFile = path.join(dataDirectory, node + prefix + '.json');
+
+			this.addDirectory(dataDirectory);
+			return this.addFile(dataFile, dataContent);
+		}
 	},
 
 	setDirection(direction, type) {
@@ -266,13 +275,23 @@ export const createComponent = {
 
 					if (this.type === 'page') {
 						if (config.pages.type === 'component') {
-							return this.addComponent(name, extra, 'page');
+							return this.addComponent(
+								name,
+								extra,
+								this.type,
+								this.pagesPrefix
+							);
 						} else if (config.pages.type === 'single') {
 							return this.addPage(name);
 						}
 					}
 
-					return this.addComponent(name, extra, 'component');
+					return this.addComponent(
+						name,
+						extra,
+						this.type,
+						this.componentPrefix
+					);
 				});
 			}
 		}

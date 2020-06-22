@@ -1,0 +1,8 @@
+// String exist
+@function exist($str) {
+	@if (feature-exists($str)) {
+		@return true;
+	} @else {
+		@return false;
+	}
+}

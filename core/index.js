@@ -13,6 +13,8 @@ import {
 	pageTemplate,
 	testTemplate,
 	componentTemplate,
+	pageSassTemplate,
+	pageScssTemplate,
 } from './templates/files';
 import pjson from '../package.json';
 
@@ -106,7 +108,9 @@ try {
 		},
 		styles: '.scss',
 		test: false,
+		data: true,
 		BEM: false,
+		prefix: '.component',
 	};
 
 	config.component = Object.assign(component, config.component);
@@ -128,6 +132,7 @@ try {
 		build_all: true,
 		page_list: [],
 		test: false,
+		prefix: '.component',
 	};
 
 	config.pages = Object.assign(pages, config.pages);
@@ -166,16 +171,26 @@ try {
 	// Merge create component
 
 	const addContent = {
-		json: jsonTemplate,
-		sass: sassTemplate,
-		scss: scssTemplate,
-		pug: componentTemplate,
+		data: jsonTemplate,
 		test: testTemplate,
-		js:
-			config.component.scripts.syntax === 'function'
-				? jsTemplateFunction
-				: jsTemplateClass,
-		page: pageTemplate,
+		component: {
+			pug: componentTemplate,
+			sass: sassTemplate,
+			scss: scssTemplate,
+			js:
+				config.component.scripts.syntax === 'function'
+					? jsTemplateFunction
+					: jsTemplateClass,
+		},
+		page: {
+			pug: pageTemplate,
+			sass: pageSassTemplate,
+			scss: pageScssTemplate,
+			js:
+				config.component.scripts.syntax === 'function'
+					? jsTemplateFunction
+					: jsTemplateClass,
+		},
 	};
 
 	config.addContent = Object.assign(addContent, config.addContent);

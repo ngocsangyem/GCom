@@ -1,0 +1,65 @@
+// Check complex
+@function list-rtrim($list, $count: 1) {
+	$r: ();
+	$l: length($list) - $count;
+	$i: 1;
+
+	@while $i <= $l {
+		$r: append($r, nth($list, $i));
+		$i: $i + 1;
+	}
+
+	@return $r;
+}
+
+@function complex-list($params) {
+	$l: length($params);
+
+	@if $l > 1 and nth($params, $l) == !important {
+		$params: list-rtrim($params);
+		$l: $l - 1;
+	}
+
+	@if $l < 4 {
+		@if $l < 3 {
+			$params: join($params, nth($params, 1));
+		}
+
+		@if $l > 1 {
+			$params: join($params, nth($params, 2));
+		} @else {
+			$params: join($params, $params);
+		}
+	}
+
+	@return $params;
+}
+
+@mixin complex-property($property, $params, $complex-params: false) {
+	@if isset($params) {
+		$l: length($params);
+
+		@if $l == 1 or complex-isset($params) {
+			#{$property}: $params;
+		} @else {
+			@if $l < 4 {
+				$params: if(
+					length($complex-params) >= 4,
+					$complex-params,
+					complex-list($params)
+				);
+			}
+
+			$i: 0;
+
+			@each $side in top, right, bottom, left {
+				$i: $i + 1;
+				$p: nth($params, $i);
+
+				@if isset($p) {
+					#{$property}-#{$side}: $p;
+				}
+			}
+		}
+	}
+}

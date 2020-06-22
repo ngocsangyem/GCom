@@ -1,0 +1,10 @@
+// Check is Array
+@function check_list($list) {
+  @each $item in $list {
+    @if not $item {
+      @return true;
+    }
+  }
+
+  @return false;
+}

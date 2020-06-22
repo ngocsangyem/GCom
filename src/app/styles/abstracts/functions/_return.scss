@@ -1,0 +1,44 @@
+// Return Array
+@function get_array($values) {
+  $output: null;
+  $a: nth($values, 1);
+  $b: if(length($values) < 2, $a, nth($values, 2));
+  $c: if(length($values) < 3, $a, nth($values, 3));
+  $d: if(length($values) < 2, $a, nth($values, if(length($values) < 4, 2, 4)));
+
+  @if $a == 0 {
+    $a: im-rep(#{$a});
+  }
+
+  @if $b == 0 {
+    $b: im-rep(#{$b});
+  }
+
+  @if $c == 0 {
+    $c: im-rep(#{$c});
+  }
+
+  @if $d == 0 {
+    $d: im-rep(#{$d});
+  }
+
+  @if $a == $b and $a == $c and $a == $d {
+    $output: $a;
+  }
+  @else if $a == $c and $b == $d {
+    $output: $a $b;
+  }
+  @else if $b == $d {
+    @if length($values) == 3 {
+      $output: $a $b $c;
+    }
+    @else {
+      $output: $a $b $c $d;
+    }
+  }
+  @else {
+    $output: $a $b $c $d;
+  }
+
+  @return $output;
+}

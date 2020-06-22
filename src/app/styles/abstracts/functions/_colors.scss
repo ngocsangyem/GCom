@@ -1,0 +1,36 @@
+// Colors
+@function color-get($bn-colors, $co) {
+	$mapcolor: map-get($bn-colors, '#{$co}');
+	@if ($mapcolor) {
+		@return $mapcolor;
+	} @else {
+		@return white;
+	}
+}
+
+@function color($co) {
+	$mapcolor: map-get($bn-colors, '#{$co}');
+	@if ($mapcolor) {
+		@return $mapcolor;
+	} @else {
+		@return white;
+	}
+}
+
+@function color-rgba($co: #fff, $o: 1) {
+	@if ($co) {
+		@return rgba(red($co), green($co), blue($co), $o);
+	} @else {
+		@return white;
+	}
+}
+
+// Set color lighten or darken
+@function color-up($co, $amount: 0) {
+	$tmp: lighten($co, $amount);
+	@return $tmp;
+}
+@function color-down($co, $amount: 0) {
+	$tmp: darken($co, $amount);
+	@return $tmp;
+}

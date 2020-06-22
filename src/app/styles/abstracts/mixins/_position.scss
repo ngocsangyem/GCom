@@ -1,0 +1,44 @@
+// POSITON VARIABLES
+@mixin bn-setposition($pre, $suf, $values...) {
+  $top: "top";
+  $bottom: "bottom";
+  $left: "left";
+  $right: "right";
+  $all: $pre;
+  $values: get_array($values);
+  $getborder: initial;
+
+  @if $suf != null {
+    $getborder: str-replace(#{$suf}, "relative", "rel");
+    $getborder: str-replace(#{$getborder}, "rel", "relative");
+    $getborder: str-replace(#{$getborder}, "absolute", "abs");
+    $getborder: str-replace(#{$getborder}, "abs", "absolute");
+    $getborder: str-replace(#{$getborder}, "fixed", "fix");
+    $getborder: str-replace(#{$getborder}, "fix", "fixed");
+    $getborder: str-replace(#{$getborder}, "static", "sta");
+    $getborder: str-replace(#{$getborder}, "sta", "static");
+    $getborder: str-replace(#{$getborder}, "inherit", "inh");
+    $getborder: str-replace(#{$getborder}, "non", "inherit");
+  }
+
+  #{$all}: #{$getborder};
+
+  @if length($values) == 1 {
+    #{$top}: im-rep(#{$values});
+  }
+  @else if length($values) == 2 {
+    #{$top}: im-rep(#{nth($values, 1)});
+    #{$right}: im-rep(#{nth($values, 2)});
+  }
+  @else if length($values) == 3 {
+    #{$top}: im-rep(#{nth($values, 1)});
+    #{$right}: im-rep(#{nth($values, 2)});
+    #{$bottom}: im-rep(#{nth($values, 3)});
+  }
+  @else if length($values) == 4 {
+    #{$top}: im-rep(#{nth($values, 1)});
+    #{$right}: im-rep(#{nth($values, 2)});
+    #{$bottom}: im-rep(#{nth($values, 3)});
+    #{$left}: im-rep(#{nth($values, 4)});
+  }
+}
