@@ -132,8 +132,12 @@ export const createComponent = {
 	},
 
 	addComponent(node, extensions, type) {
-		const component = !config.component.BEM ? node : BEM.getComponent(node);
+		const component = !config.component.BEM
+			? node
+			: `${BEM.getComponent(node)}/${node}`;
 		const directory = this.setDirection(component, type);
+		console.log('addComponent -> node', node);
+		console.log('addComponent -> directory', directory);
 		const testDirectory = this.setDirection(component + '/test', type);
 
 		if (!fs.existsSync(directory)) {

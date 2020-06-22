@@ -4,8 +4,7 @@
 	"description": "A generator for creating static sites. Helps you harness the power of your favorite tools: Gulp, Pug, Sass",
 	"main": "gulpfile.babel.js",
 	"scripts": {
-		"add:component": "npx babel-node ./core/.add",
-		"add:page": "npx babel-node ./core/.add"
+		"add": "npx babel-node ./core/.add"
 	},
 	"repository": {
 		"type": "git",

@@ -106,7 +106,7 @@ try {
 		},
 		styles: '.scss',
 		test: false,
-		BEM: true,
+		BEM: false,
 	};
 
 	config.component = Object.assign(component, config.component);
