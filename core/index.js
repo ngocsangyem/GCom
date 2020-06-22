@@ -3,6 +3,7 @@ import path from 'path';
 import notify from 'gulp-notify';
 import { isFile, isDirectory } from './is';
 import c from 'ansi-colors';
+import minimist from 'minimist';
 import {
 	jsonTemplate,
 	jsTemplateFunction,
@@ -56,7 +57,7 @@ const paths = {
 	_tasks: path.join(root, 'gulp/tasks'),
 	_dist: path.join(root, target),
 	_app: path.join(root, 'src', 'app'),
-	_components: path.join(root, 'app', 'components'),
+	_components: path.join(root, 'src', 'app', 'components'),
 	_pages: path.join(root, 'src', 'app', 'views/pages'),
 };
 
@@ -105,7 +106,7 @@ try {
 		},
 		styles: '.scss',
 		test: false,
-		BEM: false,
+		BEM: true,
 	};
 
 	config.component = Object.assign(component, config.component);
@@ -113,8 +114,9 @@ try {
 	if (config.component.templates[0] !== '.') {
 		config.component.templates = '.' + config.component.templates;
 	}
-	if (config.component.scripts.ext[0] !== '.') {
-		config.component.scripts.ext = '.' + config.component.scripts.ext;
+	if (config.component.scripts.extension[0] !== '.') {
+		config.component.scripts.extension =
+			'.' + config.component.scripts.extension;
 	}
 	if (config.component.styles[0] !== '.') {
 		config.component.styles = '.' + config.component.styles;
@@ -165,11 +167,12 @@ try {
 
 	const addContent = {
 		json: jsonTemplate,
-		sass: component.styles === '.sass' ? sassTemplate : scssTemplate,
+		sass: sassTemplate,
+		scss: scssTemplate,
 		pug: componentTemplate,
 		test: testTemplate,
 		js:
-			component.scripts.syntax === 'function'
+			config.component.scripts.syntax === 'function'
 				? jsTemplateFunction
 				: jsTemplateClass,
 		page: pageTemplate,
@@ -254,4 +257,4 @@ try {
 	};
 }
 
-export { paths, config };
+export { paths, config, notify };

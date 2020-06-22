@@ -32,4 +32,4 @@ const isComponent = (cls) => {
 	return !isElement(cls) && !isModifier(cls); // {Boolean}
 };
 
-export { isModifier, isElement, getComponent, isComponent };
+export { isModifier, isElement, getComponent, isComponent, delModifier };

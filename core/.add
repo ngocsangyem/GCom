@@ -1,0 +1,1 @@
+require( './createComponent' ).createComponent.parseArguments(process.argv)
