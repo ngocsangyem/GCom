@@ -42,6 +42,10 @@ const paths = {
 		return path.join(this._core, ...arguments);
 	},
 
+	src() {
+		return path.join(this._src, ...arguments);
+	},
+
 	app() {
 		return path.join(this._app, ...arguments);
 	},
@@ -58,6 +62,7 @@ const paths = {
 	_core: __dirname,
 	_tasks: path.join(root, 'gulp/tasks'),
 	_dist: path.join(root, target),
+	_src: path.join(root, 'src'),
 	_app: path.join(root, 'src', 'app'),
 	_components: path.join(root, 'src', 'app', 'components'),
 	_pages: path.join(root, 'src', 'app', 'views/pages'),
@@ -133,6 +138,7 @@ try {
 		page_list: [],
 		test: false,
 		prefix: '.component',
+		SEO: true,
 	};
 
 	config.pages = Object.assign(pages, config.pages);

@@ -29,7 +29,7 @@ export const createComponent = {
 		let option;
 
 		this.items.some((el) => {
-			if (el[0] === '--') {
+			if (el[0] === ':') {
 				return (option = el);
 			}
 
@@ -42,8 +42,8 @@ export const createComponent = {
 		}
 
 		this.options = {
-			custom: option === '--custom' || false,
-			noTemplate: option === '--noTemplate' || false,
+			custom: option === 'custom' || false,
+			noTemplate: option === 'noTemplate' || false,
 		};
 	},
 
@@ -78,18 +78,16 @@ export const createComponent = {
 	},
 
 	addDirectory(dir) {
-		const where =
-			this.type === 'page'
-				? path.relative(paths._pages, dir).replace('..', '')
-				: path.relative(paths._components, dir).replace('..', '');
+		const where = path.relative(paths._src, dir);
 
 		if (fs.existsSync(dir)) {
 			return this.addMessage(
 				`\x1b[41mFAIL\x1b[0m: Directory "\x1b[36m${where}\x1b[0m" already exist!`
 			);
 		}
-
-		fs.mkdirSync(dir);
+		if (!fs.existsSync(dir)) {
+			fs.mkdirSync(dir, { recursive: true });
+		}
 
 		this.addMessage(
 			`\x1b[42mGOOD\x1b[0m: Directory "\x1b[36m${where}\x1b[0m" successfully created!`
@@ -97,10 +95,7 @@ export const createComponent = {
 	},
 
 	addFile(file, content) {
-		const where =
-			this.type === 'page'
-				? path.relative(paths._pages, file).replace('..', '')
-				: path.relative(paths._components, file).replace('..', '');
+		const where = path.relative(paths._src, file);
 		const what = this.type === 'page' ? 'Page' : 'File';
 
 		if (fs.existsSync(file)) {
@@ -137,10 +132,8 @@ export const createComponent = {
 			? node
 			: `${BEM.getComponent(node)}/${node}`;
 		const directory = this.setDirection(component, type);
-
-		if (!fs.existsSync(directory)) {
-			this.addDirectory(directory);
-		}
+		let customName = this.parseCustomName(component);
+		this.addDirectory(directory);
 
 		extensions = Array.isArray(extensions) ? extensions : [extensions];
 
@@ -185,17 +178,21 @@ export const createComponent = {
 			if (type === 'page') {
 				content = this.replacePrefix(
 					config.addContent.page[extname.slice(1)],
-					name
+					this.parseNameFromPath(name)
 				);
-				file = path.join(directory, name + prefix + extname);
+				file = !this.options.custom
+					? path.join(directory, name + prefix + extname)
+					: path.join(directory, customName + prefix + extname);
 
 				return this.addFile(file, content);
 			} else if (type === 'component') {
 				content = this.replacePrefix(
 					config.addContent.component[extname.slice(1)],
-					name
+					this.parseNameFromPath(name)
 				);
-				file = path.join(directory, name + prefix + extname);
+				file = !this.options.custom
+					? path.join(directory, name + prefix + extname)
+					: path.join(directory, customName + prefix + extname);
 				return this.addFile(file, content);
 			}
 		});
@@ -207,10 +204,12 @@ export const createComponent = {
 			);
 			let testContent = this.replacePrefix(
 				config.addContent['test'],
-				node
+				this.parseNameFromPath(node)
 			);
 
-			let testFile = path.join(testDirectory, node + prefix + '.test.js');
+			let testFile = !this.options.custom
+				? path.join(testDirectory, node + prefix + '.test.js')
+				: path.join(testDirectory, customName + prefix + '.test.js');
 
 			this.addDirectory(testDirectory);
 			return this.addFile(testFile, testContent);
@@ -218,11 +217,13 @@ export const createComponent = {
 		if (config.component.data) {
 			let dataContent = this.replacePrefix(
 				config.addContent['data'],
-				node
+				this.parseNameFromPath(node)
 			);
 			const dataDirectory = this.setDirection(component + '/data', type);
 
-			let dataFile = path.join(dataDirectory, node + prefix + '.json');
+			let dataFile = !this.options.custom
+				? path.join(dataDirectory, node + prefix + '.json')
+				: path.join(dataDirectory, customName + prefix + '.json');
 
 			this.addDirectory(dataDirectory);
 			return this.addFile(dataFile, dataContent);
@@ -230,9 +231,9 @@ export const createComponent = {
 	},
 
 	setDirection(direction, type) {
-		if (type === 'component') {
+		if (type === 'component' && !this.options.custom) {
 			return paths.components(direction);
-		} else if (type === 'page') {
+		} else if (type === 'page' && !this.options.custom) {
 			return paths.pages(direction);
 		} else if (this.options.custom) {
 			return paths.app(direction);
@@ -243,11 +244,26 @@ export const createComponent = {
 		return replaceName((config.addContent && condition) || '', name);
 	},
 
+	parseCustomName(path) {
+		if (path.match(/\//g)) {
+			const paths = path.split(/\//g);
+			// return paths.slice(paths.length - 2, paths.length).join('');
+			return paths[paths.length - 1];
+		}
+		return path;
+	},
+	parseNameFromPath(name) {
+		if (name.match(/\//g)) {
+			const names = name.split(/\//g);
+			return names.slice(names.length - 2, names.length).join('');
+		}
+		return name;
+	},
+
 	parseArguments(argv, showMessage = true) {
 		this.setType(argv);
 		this.setItems(argv);
-		// this.setOptions(argv);
-		this.options = this.setOptions(argv);
+		this.setOptions(argv);
 		this.checkDirs();
 
 		if (this.items.length === 0) {
