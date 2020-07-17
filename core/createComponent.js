@@ -133,6 +133,9 @@ export const createComponent = {
 			: `${BEM.getComponent(node)}/${node}`;
 		const directory = this.setDirection(component, type);
 		let customName = this.parseCustomName(component);
+		let dataFile;
+		let dataDir;
+		let dataContent;
 		this.addDirectory(directory);
 
 		extensions = Array.isArray(extensions) ? extensions : [extensions];
@@ -180,54 +183,43 @@ export const createComponent = {
 					config.addContent.page[extname.slice(1)],
 					this.parseNameFromPath(name)
 				);
-				file = !this.options.custom
-					? path.join(directory, name + prefix + extname)
-					: path.join(directory, customName + prefix + extname);
-
-				return this.addFile(file, content);
 			} else if (type === 'component') {
 				content = this.replacePrefix(
 					config.addContent.component[extname.slice(1)],
 					this.parseNameFromPath(name)
 				);
-				file = !this.options.custom
-					? path.join(directory, name + prefix + extname)
-					: path.join(directory, customName + prefix + extname);
-				return this.addFile(file, content);
 			}
+
+			file = !this.options.custom
+				? path.join(directory, name + prefix + extname)
+				: path.join(directory, customName + prefix + extname);
+			return this.addFile(file, content);
 		});
 
 		if (config.component.test) {
-			const testDirectory = this.setDirection(
-				component + '/__test',
-				type
-			);
-			let testContent = this.replacePrefix(
+			dataDir = this.setDirection(component + '/__test', type);
+			dataContent = this.replacePrefix(
 				config.addContent['test'],
 				this.parseNameFromPath(node)
 			);
 
-			let testFile = !this.options.custom
-				? path.join(testDirectory, node + prefix + '.test.js')
-				: path.join(testDirectory, customName + prefix + '.test.js');
-
-			this.addDirectory(testDirectory);
-			return this.addFile(testFile, testContent);
+			dataFile = !this.options.custom
+				? path.join(dataDir, node + prefix + '.test.js')
+				: path.join(dataDir, customName + prefix + '.test.js');
 		}
+
 		if (config.component.data) {
-			let dataContent = this.replacePrefix(
+			dataDir = this.setDirection(component + '/data', type);
+			dataContent = this.replacePrefix(
 				config.addContent['data'],
 				this.parseNameFromPath(node)
 			);
-			const dataDirectory = this.setDirection(component + '/data', type);
-
-			let dataFile = !this.options.custom
+			dataFile = !this.options.custom
 				? path.join(dataDirectory, node + prefix + '.json')
 				: path.join(dataDirectory, customName + prefix + '.json');
-
-			this.addDirectory(dataDirectory);
-			return this.addFile(dataFile, dataContent);
 		}
+		this.addDirectory(dataDir);
+		return this.addFile(dataFile, testContent);
 	},
 
 	setDirection(direction, type) {
@@ -252,6 +244,7 @@ export const createComponent = {
 		}
 		return path;
 	},
+
 	parseNameFromPath(name) {
 		if (name.match(/\//g)) {
 			const names = name.split(/\//g);
