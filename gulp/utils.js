@@ -4,19 +4,24 @@ import gulpLoadPlugins from 'gulp-load-plugins';
 import notify from 'gulp-notify';
 import c from 'ansi-colors';
 import beeper from 'beeper';
+import { config } from '../core/index';
 
 // Load all gulp plugins based on their names
 // EX: gulp-copy -> copy
 const plugins = gulpLoadPlugins();
-
-// Get config.js custom configuration
-// const cfg = Object.assign({}, config);
 
 // Gather arguments passed to gulp commands
 const args = minimist(process.argv.slice(2));
 
 // Alias config directories
 const dirs = config.directories;
+
+const isDev = args.development;
+
+// Determine gulp task target destinations
+const taskTarget = !isDev
+	? dirs.production.destination
+	: dirs.development.temporary;
 
 // Create a new browserSync instance
 const browserSync = browserSyncLib.create();
@@ -68,4 +73,4 @@ const reportError = function (error) {
 	this.emit('end');
 };
 
-export { args, plugins, dirs, browserSync, reportError };
+export { args, config, taskTarget, plugins, browserSync, reportError, isDev };

@@ -113,7 +113,7 @@ try {
 		},
 		styles: '.scss',
 		test: false,
-		data: true,
+		data: false,
 		BEM: false,
 		prefix: '.component',
 	};

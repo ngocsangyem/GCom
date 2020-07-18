@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import c from 'ansi-colors';
 import * as BEM from './bem';
-import { paths, config, notify } from './index';
+import { paths, config } from './index';
 import { replaceName } from './helpers/replace-name';
 
 /**
@@ -42,7 +42,7 @@ export const createComponent = {
 		}
 
 		this.options = {
-			custom: option === 'custom' || false,
+			customPath: option === 'customPath' || false,
 			noTemplate: option === 'noTemplate' || false,
 		};
 	},
@@ -106,7 +106,12 @@ export const createComponent = {
 
 		fs.writeFileSync(
 			file,
-			`${!!this.options && this.options.noTemplate ? '' : content}`,
+			`${
+				!!this.options &&
+				this.options.noTemplate | this.options.customPath
+					? ''
+					: content
+			}`,
 			'utf8'
 		);
 
@@ -190,22 +195,24 @@ export const createComponent = {
 				);
 			}
 
-			file = !this.options.custom
+			file = !this.options.customPath
 				? path.join(directory, name + prefix + extname)
 				: path.join(directory, customName + prefix + extname);
 			return this.addFile(file, content);
 		});
 
 		if (config.component.test) {
-			dataDir = this.setDirection(component + '/__test', type);
+			dataDir = this.setDirection(component + '/__test__', type);
 			dataContent = this.replacePrefix(
 				config.addContent['test'],
 				this.parseNameFromPath(node)
 			);
 
-			dataFile = !this.options.custom
+			dataFile = !this.options.customPath
 				? path.join(dataDir, node + prefix + '.test.js')
 				: path.join(dataDir, customName + prefix + '.test.js');
+			this.addDirectory(dataDir);
+			this.addFile(dataFile, dataContent);
 		}
 
 		if (config.component.data) {
@@ -214,20 +221,20 @@ export const createComponent = {
 				config.addContent['data'],
 				this.parseNameFromPath(node)
 			);
-			dataFile = !this.options.custom
-				? path.join(dataDirectory, node + prefix + '.json')
-				: path.join(dataDirectory, customName + prefix + '.json');
+			dataFile = !this.options.customPath
+				? path.join(dataDir, node + prefix + '.json')
+				: path.join(dataDir, customName + prefix + '.json');
+			this.addDirectory(dataDir);
+			this.addFile(dataFile, dataContent);
 		}
-		this.addDirectory(dataDir);
-		return this.addFile(dataFile, testContent);
 	},
 
 	setDirection(direction, type) {
-		if (type === 'component' && !this.options.custom) {
+		if (type === 'component' && !this.options.customPath) {
 			return paths.components(direction);
-		} else if (type === 'page' && !this.options.custom) {
+		} else if (type === 'page' && !this.options.customPath) {
 			return paths.pages(direction);
-		} else if (this.options.custom) {
+		} else if (this.options.customPath) {
 			return paths.app(direction);
 		}
 	},
