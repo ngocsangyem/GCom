@@ -20,76 +20,13 @@ import pjson from '../package.json';
 
 const root = path.resolve(__dirname, '..');
 const args = minimist(process.argv.slice(2));
-const target = args.production ? 'build' : 'tmp';
-
-const paths = {
-	slashNormalize(str) {
-		const isExtendedLengthPath = /^\\\\\?\\/.test(str);
-		const hasNonAscii = /[^\u0000-\u0080]+/.test(str); // eslint-disable-line no-control-regex
-
-		if (isExtendedLengthPath || hasNonAscii) {
-			return str;
-		}
-
-		return str.replace(/\\/g, '/');
-	},
-
-	root() {
-		return path.join(this._root, ...arguments);
-	},
-
-	core() {
-		return path.join(this._core, ...arguments);
-	},
-
-	src() {
-		return path.join(this._src, ...arguments);
-	},
-
-	app() {
-		return path.join(this._app, ...arguments);
-	},
-
-	components() {
-		return path.join(this._components, ...arguments);
-	},
-
-	pages() {
-		return path.join(this._pages, ...arguments);
-	},
-
-	_root: root,
-	_core: __dirname,
-	_tasks: path.join(root, 'gulp/tasks'),
-	_dist: path.join(root, target),
-	_src: path.join(root, 'src'),
-	_app: path.join(root, 'src', 'app'),
-	_components: path.join(root, 'src', 'app', 'components'),
-	_pages: path.join(root, 'src', 'app', 'views/pages'),
-};
-
-// Add main dirs
-
-try {
-	if (!isDirectory(paths._app)) {
-		fs.mkdirSync(paths._app);
-	}
-	if (!isDirectory(paths._components)) {
-		fs.mkdirSync(paths._components);
-	}
-	if (!isDirectory(paths._pages)) {
-		fs.mkdirSync(paths._pages);
-	}
-} catch (error) {
-	console.log(c.red(error));
-}
 
 // Read config
 
 let config = {};
 
 try {
-	const appConfig = paths.root('config.js');
+	const appConfig = path.join(root, 'config.js');
 	if (isFile(appConfig)) {
 		config = require(appConfig);
 	}
@@ -276,6 +213,72 @@ try {
 		svg: [].concat(config.optimization.svg || optimization.svg),
 		ignore: [].concat(config.optimization.ignore).filter((el) => !!el),
 	};
+}
+const dirs = config.directories;
+const target = args.production
+	? dirs.production.destination
+	: dirs.development.temporary;
+
+const paths = {
+	slashNormalize(str) {
+		const isExtendedLengthPath = /^\\\\\?\\/.test(str);
+		const hasNonAscii = /[^\u0000-\u0080]+/.test(str); // eslint-disable-line no-control-regex
+
+		if (isExtendedLengthPath || hasNonAscii) {
+			return str;
+		}
+
+		return str.replace(/\\/g, '/');
+	},
+
+	root() {
+		return path.join(this._root, ...arguments);
+	},
+
+	core() {
+		return path.join(this._core, ...arguments);
+	},
+
+	src() {
+		return path.join(this._src, ...arguments);
+	},
+
+	app() {
+		return path.join(this._app, ...arguments);
+	},
+
+	components() {
+		return path.join(this._components, ...arguments);
+	},
+
+	pages() {
+		return path.join(this._pages, ...arguments);
+	},
+
+	_root: root,
+	_core: __dirname,
+	_tasks: path.join(root, 'gulp/tasks'),
+	_dist: path.join(root, target),
+	_src: path.join(root, 'src'),
+	_app: path.join(root, 'src', 'app'),
+	_components: path.join(root, 'src', 'app', 'components'),
+	_pages: path.join(root, 'src', 'app', 'views/pages'),
+};
+
+// Add main dirs
+
+try {
+	if (!isDirectory(paths._app)) {
+		fs.mkdirSync(paths._app);
+	}
+	if (!isDirectory(paths._components)) {
+		fs.mkdirSync(paths._components);
+	}
+	if (!isDirectory(paths._pages)) {
+		fs.mkdirSync(paths._pages);
+	}
+} catch (error) {
+	console.log(c.red(error));
 }
 
 export { paths, config, notify };

@@ -14,7 +14,9 @@ import PluginError from 'plugin-error';
 export const pipe = (handler, options, handlerName) => {
 	const name = handlerName || (handler && handler.displayName) || 'core:pipe';
 
-	if (typeof handler !== 'function') return through.obj();
+	if (typeof handler !== 'function') {
+		return through.obj();
+	}
 
 	return through.obj(function (file, enc, cb) {
 		if (file.isStream())
