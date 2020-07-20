@@ -5,7 +5,7 @@ import path from 'path';
 import c from 'ansi-colors';
 import foldero from 'foldero';
 import log from 'fancy-log';
-import { isDev, args } from './gulp/utils';
+import { isDev, args, plugins } from './gulp/utils';
 import { config, paths } from './core/index';
 import { isDirectory } from './core/is';
 import { pipe } from './core/pipe';
@@ -36,8 +36,10 @@ glob.sync('./gulp/tasks/**/*.js')
 		}
 
 		// Add data to tasks
+		task.mainBundle = config.build.mainBundle;
 		task.store = store;
 		task.config = config;
+		task.path = path;
 		task.paths = paths;
 		task.isDev = isDev;
 		task.isDirectory = isDirectory;
@@ -46,6 +48,7 @@ glob.sync('./gulp/tasks/**/*.js')
 		task.log = log;
 		task.glob = glob;
 		task.pipe = pipe;
+		task.plugins = plugins;
 
 		// Add gulp api to tasks
 		task.gulp = { series, parallel, src, dest, lastRun };

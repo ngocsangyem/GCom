@@ -1,5 +1,3 @@
-import { parsePug } from '../../core/parsePUG';
-
 export default {
 	build: 1,
 	name: 'task:templates',
@@ -9,16 +7,73 @@ export default {
 	},
 	init() {
 		const files = this.paths.pages(
-			this.globs + this.config.component.templates
+			'**/*' + this.config.component.templates
 		);
 		const options = {
-			// since: this.since.bind(this),
+			since: this.since.bind(this),
 		};
-		return this.gulp.src(files, options).pipe(this.parse());
+		return this.gulp
+			.src(files, options)
+			.pipe(this.parse())
+			.pipe(this.compile())
+			.pipe(this.replacePath())
+			.pipe(this.dest());
 	},
+
+	watch() {
+		const extname = this.config.component.templates;
+
+		return [
+			{
+				files: this.paths.pages('**/*' + extname),
+				tasks: this.name,
+				options: {
+					delay: 500,
+				},
+			},
+			{
+				files: this.paths.components('**', `deps.js`),
+				tasks: ['task:templates', 'task:styles', 'task:scripts'],
+				options: {
+					delay: 250,
+				},
+				on: {
+					event: 'change',
+					handler: this.checkDeps.bind(this),
+				},
+			},
+
+			{
+				files: this.paths.components(
+					'**',
+					`*.(json|ya?ml|${extname.slice(1)})`
+				),
+				on: {
+					event: 'change',
+					handler: this.checkIsOnPage.bind(this),
+				},
+			},
+		];
+	},
+
 	dest() {
 		return this.gulp.dest(this.paths._dist);
 	},
+
+	compile() {
+		const extname = this.config.component.templates.slice(1);
+
+		if (typeof this[extname] === 'function') {
+			return this[extname]();
+		}
+
+		console.log(
+			`\nSorry, support only twig/pug/html files, you must tune "${this.name}" task for compile another engine!\n`
+		);
+
+		return this.pipe();
+	},
+
 	pug() {
 		return require('gulp-pug')({
 			// https://pugjs.org/api/reference.html
@@ -29,6 +84,7 @@ export default {
 			},
 		});
 	},
+
 	getGlobalData() {
 		let siteData = {};
 		const rootFolder = this.paths._app;
@@ -36,10 +92,12 @@ export default {
 			// Convert directory to JS Object
 			siteData = this.foldero(rootFolder, {
 				recurse: true,
-				whitelist: function () {
-					this.glob.sync(rootFolder).filter(function (file) {
-						return /\.(json|ya?ml)$/i.test(file);
-					});
+				whitelist: () => {
+					this.glob
+						.sync(rootFolder + '**/*.(json|ya?ml)')
+						.filter(function (file) {
+							return /\.(json|ya?ml)$/i.test(file);
+						});
 				},
 				loader: function loadAsString(file) {
 					let json = {};
@@ -79,5 +137,73 @@ export default {
 		}
 
 		return this.pipe(parseTemplate, this, 'parseTemplate');
+	},
+
+	replacePath() {
+		return this.plugins.rename(function (path) {
+			path.basename = path.basename.replace(/\.[^.]*$/, '');
+			path.dirname = '';
+		});
+	},
+
+	checkIsOnPage(file) {
+		const path = this.path;
+		const pages = this.store.pages || {};
+		const editTime = require(this.paths.core('editTime'));
+
+		let name = path.basename(file);
+
+		if ([`${name}.json`, 'deps.js'].includes(name)) {
+			name = path.dirname(file).split(path.sep).pop();
+		} else {
+			name = path
+				.basename(file, path.extname(file))
+				.replace(/(\.[^/.]+)+$/, '');
+		}
+
+		Object.keys(pages).forEach((page) => {
+			if (page === this.mainBundle) {
+				return;
+			}
+
+			if (name === 'layout' || name in pages[page].components) {
+				return editTime(
+					this.paths.pages(page + this.config.component.templates)
+				);
+			}
+		});
+	},
+
+	since(file) {
+		const path = this.path;
+		const page = path.basename(file.path).replace(/(\.[^/.]+)+$/, '');
+		const pageInDeps =
+			this.store.depsChanged && this.store.depsChanged.includes(page);
+		return pageInDeps ? null : this.gulp.lastRun(this.name);
+	},
+
+	checkDeps(file) {
+		const path = this.path;
+		const pages = this.store.pages || {};
+		const component = path.dirname(file).split(path.sep).pop();
+		const changed = [];
+
+		Object.keys(pages).forEach((page) => {
+			if (page === this.mainBundle) {
+				return;
+			}
+
+			if (!(component in pages[page].components)) {
+				return;
+			}
+
+			page = page + this.config.component.templates;
+
+			if (!changed.includes(page)) {
+				changed.push(page);
+			}
+		});
+
+		this.store.depsChanged = changed;
 	},
 };

@@ -19,13 +19,15 @@ export const pipe = (handler, options, handlerName) => {
 	}
 
 	return through.obj(function (file, enc, cb) {
-		if (file.isStream())
+		if (file.isStream()) {
 			return cb(new PluginError(name, 'Streaming not supported'));
+		}
 
 		if (file.isBuffer()) {
 			try {
 				handler(file, options);
 			} catch (e) {
+				console.log('pipe -> e', e);
 				return cb(new PluginError(name, e));
 			}
 		}

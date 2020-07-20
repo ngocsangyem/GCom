@@ -49,7 +49,7 @@ try {
 			syntax: 'function',
 		},
 		styles: '.scss',
-		test: false,
+		test: true,
 		data: false,
 		BEM: false,
 		prefix: '.component',
@@ -83,6 +83,7 @@ try {
 	// Merge build
 	const build = {
 		autoprefixer: ['last 3 versions'],
+		addVersions: false,
 		babel: true,
 		bundles: [],
 		sourcemaps: [],
@@ -255,6 +256,10 @@ const paths = {
 		return path.join(this._pages, ...arguments);
 	},
 
+	styles() {
+		return path.join(this._pages, ...arguments);
+	},
+
 	_root: root,
 	_core: __dirname,
 	_tasks: path.join(root, 'gulp/tasks'),
@@ -263,6 +268,8 @@ const paths = {
 	_app: path.join(root, 'src', 'app'),
 	_components: path.join(root, 'src', 'app', 'components'),
 	_pages: path.join(root, 'src', 'app', 'views/pages'),
+	_styles: path.join(root, target, config.directories.production.styles),
+	_scripts: path.join(root, target, config.directories.production.scripts),
 };
 
 // Add main dirs

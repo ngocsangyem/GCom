@@ -1,0 +1,10 @@
+extends ../../layouts/layout.pug
+
+block var
+	- title = 'About'
+	- bodyClass = 'about'
+
+block main
+	include ../../../components/header/header.component.pug
+	include ../../../components/about/about.component.pug
+	include ../../../components/footer/footer.component.pug

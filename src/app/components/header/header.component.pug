@@ -1,1 +1,10 @@
-header This is header
+mixin header(data)
+	- data = data || {}
+	- data.class = data.class || ''
+	- data.content = data.content || 'Some content here'
+
+	.header(class=data.class)&attributes(attributes)
+		if block
+			block
+		else
+			!= data.content

@@ -51,10 +51,12 @@
 		"gulp-pug": "^4.0.1",
 		"gulp-rename": "^2.0.0",
 		"gulp-sass": "^4.1.0",
+		"htmlparser2": "^4.1.0",
 		"minimist": "^1.2.5",
 		"plugin-error": "^1.0.1",
 		"pug-lexer": "^5.0.0",
 		"pug-parser": "^6.0.0",
+		"pug-walk": "^2.0.0",
 		"through2": "^4.0.2",
 		"webpack": "^4.43.0",
 		"webpack-stream": "^5.2.1"
