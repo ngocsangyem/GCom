@@ -35,8 +35,10 @@ export default function (file, task) {
 		name: name,
 		template: file.path,
 		components: {},
+		BEM_tree: {},
 		styles: [],
 		scripts: [],
+		assets: [],
 	});
 
 	const filename = file.path;

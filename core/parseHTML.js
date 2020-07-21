@@ -23,15 +23,7 @@ export default (file, task) => {
 		path.basename(file.path, path.extname(file.path))
 	);
 	const code = String(file.contents);
-
-	const page = (store.pages[name] = {
-		name: name,
-		template: file.path,
-		components: {},
-		styles: [],
-		scripts: [],
-		assets: [],
-	});
+	const page = store.pages[name];
 
 	const parse = new htmlparser2.Parser(
 		{

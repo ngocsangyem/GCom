@@ -5,19 +5,22 @@ export default {
 	extname: function () {
 		return this.config.component.templates.slice(1).toUpperCase();
 	},
-	init() {
+	init(done) {
 		const files = this.paths.pages(
 			'**/*' + this.config.component.templates
 		);
 		const options = {
 			since: this.since.bind(this),
 		};
+		const ready = this.HTMLReady.bind(this, done);
 		return this.gulp
 			.src(files, options)
+			.pipe(this.parseTemplate())
 			.pipe(this.compile())
 			.pipe(this.parse())
 			.pipe(this.replacePath())
-			.pipe(this.dest());
+			.pipe(this.dest())
+			.on('end', ready);
 	},
 
 	watch() {
@@ -32,7 +35,7 @@ export default {
 				},
 			},
 			{
-				files: this.paths.components('**', `deps.js`),
+				files: this.paths.app('**', `deps.js`),
 				tasks: ['task:templates', 'task:styles', 'task:scripts'],
 				options: {
 					delay: 250,
@@ -44,7 +47,7 @@ export default {
 			},
 
 			{
-				files: this.paths.components(
+				files: this.paths.app(
 					'**',
 					`*.(json|ya?ml|${extname.slice(1)})`
 				),
@@ -131,17 +134,21 @@ export default {
 	},
 
 	parse() {
-		// const parseTemplate = require(this.paths.core(
-		// 	`parse${this.extname()}`
-		// ));
-
 		const parseHTML = require(this.paths.core('parseHTML'));
+
+		return this.pipe(parseHTML, this, 'parseHTML');
+	},
+
+	parseTemplate() {
+		const parseTemplate = require(this.paths.core(
+			`parse${this.extname()}`
+		));
 
 		if (!this.store.pages) {
 			this.store.pages = {};
 		}
 
-		return this.pipe(parseHTML, this, 'parseTemplate');
+		return this.pipe(parseTemplate, this, 'parseTemplate');
 	},
 
 	replacePath() {
@@ -149,6 +156,18 @@ export default {
 			path.basename = path.basename.replace(/\.[^.]*$/, '');
 			path.dirname = '';
 		});
+	},
+
+	HTMLReady(done) {
+		const generateTree = require(this.paths.core('generateTree'));
+		const parseComponents = require(this.paths.core('parseComponents'));
+
+		generateTree(this);
+		parseComponents(this);
+
+		this.store.depsChanged = false;
+
+		return done();
 	},
 
 	checkIsOnPage(file) {

@@ -19,20 +19,20 @@ export default (cls, page, mix, attrs, tag) => {
 	const isModifier = BEM.isModifier(cls);
 	const node = isModifier ? BEM.delModifier(cls) : cls;
 
-	if (!page.components[node]) {
-		page.components[node] = { name: node, mod: [], mix: [], attrs, tag };
+	if (!page.BEM_tree[node]) {
+		page.BEM_tree[node] = { name: node, mod: [], mix: [], attrs, tag };
 	}
 
 	if (isBEM) {
 		if (isModifier) {
-			if (page.components[node].mod.indexOf(cls) === -1) {
-				page.components[node].mod.push(cls);
+			if (page.BEM_tree[node].mod.indexOf(cls) === -1) {
+				page.BEM_tree[node].mod.push(cls);
 			}
 		} else {
 			if (mix && mix.length > 0) {
 				mix.forEach((item) => {
-					if (page.components[node].mix.indexOf(item) === -1) {
-						page.components[node].mix.push(item);
+					if (page.BEM_tree[node].mix.indexOf(item) === -1) {
+						page.BEM_tree[node].mix.push(item);
 					}
 				});
 			}
