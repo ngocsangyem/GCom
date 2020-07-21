@@ -1,10 +1,6 @@
-mixin header(data)
-	- data = data || {}
-	- data.class = data.class || ''
-	- data.content = data.content || 'Some content here'
-
-	.header(class=data.class)&attributes(attributes)
-		if block
-			block
-		else
-			!= data.content
+header.header
+	.header__container
+		nav.header__nav.header__nav--red
+			ul
+				li Home
+				li ABout

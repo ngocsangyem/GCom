@@ -14,8 +14,8 @@ export default {
 		};
 		return this.gulp
 			.src(files, options)
-			.pipe(this.parse())
 			.pipe(this.compile())
+			.pipe(this.parse())
 			.pipe(this.replacePath())
 			.pipe(this.dest());
 	},
@@ -62,6 +62,9 @@ export default {
 
 	compile() {
 		const extname = this.config.component.templates.slice(1);
+		const readComponents = require(this.paths.core('readComponents'));
+
+		readComponents(this);
 
 		if (typeof this[extname] === 'function') {
 			return this[extname]();
@@ -128,15 +131,17 @@ export default {
 	},
 
 	parse() {
-		const parseTemplate = require(this.paths.core(
-			`parse${this.extname()}`
-		));
+		// const parseTemplate = require(this.paths.core(
+		// 	`parse${this.extname()}`
+		// ));
+
+		const parseHTML = require(this.paths.core('parseHTML'));
 
 		if (!this.store.pages) {
 			this.store.pages = {};
 		}
 
-		return this.pipe(parseTemplate, this, 'parseTemplate');
+		return this.pipe(parseHTML, this, 'parseTemplate');
 	},
 
 	replacePath() {

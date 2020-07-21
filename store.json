@@ -1,89 +1,151 @@
 {
+	"deps": {
+		"header": {
+			"nodes": [],
+			"modules": [
+				{
+					"import": "normalize.css",
+					"from": "/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/header/assets"
+				}
+			]
+		}
+	},
 	"pages": {
 		"about": {
 			"name": "about",
-			"template": "/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/about/about.component.pug",
+			"template": "/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/about/about.component.html",
 			"components": {
+				"no-js": {
+					"name": "no-js",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "no-js",
+						"dir": "ltr",
+						"lang": "",
+						"itemscope": "",
+						"itemtype": "http://schema.org/WebSite",
+						"prefix": "og: http://ogp.me/ns#"
+					},
+					"tag": "html"
+				},
+				"yemdevelop": {
+					"name": "yemdevelop",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "yemdevelop yem-about-page"
+					},
+					"tag": "body"
+				},
+				"yem-about-page": {
+					"name": "yem-about-page",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "yemdevelop yem-about-page"
+					},
+					"tag": "body"
+				},
 				"header": {
 					"name": "header",
-					"relativePath": "../../../components/header/header.component.pug",
-					"template": "/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/header/header.component.pug",
-					"styles": [
-						"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/header/header.component.scss"
-					],
-					"scripts": [
-						"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/header/header.component.js"
-					]
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "header"
+					},
+					"tag": "header"
 				},
-				"about": {
-					"name": "about",
-					"relativePath": "../../../components/about/about.component.pug",
-					"template": "/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/about/about.component.pug",
-					"styles": [
-						"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/about/about.component.scss"
-					],
-					"scripts": [
-						"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/about/about.component.js"
-					]
+				"header__container": {
+					"name": "header__container",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "header__container"
+					},
+					"tag": "div"
 				},
-				"footer": {
-					"name": "footer",
-					"relativePath": "../../../components/footer/footer.component.pug",
-					"template": "/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/footer/footer.component.pug",
-					"styles": [
-						"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/footer/footer.component.scss"
-					],
-					"scripts": [
-						"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/footer/footer.component.js"
-					]
+				"header__nav": {
+					"name": "header__nav",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "header__nav header__nav--red"
+					},
+					"tag": "nav"
 				}
 			},
-			"styles": [
-				"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/header/header.component.scss",
-				"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/about/about.component.scss",
-				"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/footer/footer.component.scss"
-			],
-			"scripts": [
-				"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/header/header.component.js",
-				"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/about/about.component.js",
-				"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/footer/footer.component.js"
-			]
+			"styles": [],
+			"scripts": [],
+			"assets": []
 		},
 		"index": {
 			"name": "index",
-			"template": "/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/index/index.component.pug",
+			"template": "/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/index/index.component.html",
 			"components": {
+				"no-js": {
+					"name": "no-js",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "no-js",
+						"dir": "ltr",
+						"lang": "",
+						"itemscope": "",
+						"itemtype": "http://schema.org/WebSite",
+						"prefix": "og: http://ogp.me/ns#"
+					},
+					"tag": "html"
+				},
+				"yemdevelop": {
+					"name": "yemdevelop",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "yemdevelop yem-index-page"
+					},
+					"tag": "body"
+				},
+				"yem-index-page": {
+					"name": "yem-index-page",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "yemdevelop yem-index-page"
+					},
+					"tag": "body"
+				},
 				"header": {
 					"name": "header",
-					"relativePath": "../../../components/header/header.component.pug",
-					"template": "/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/header/header.component.pug",
-					"styles": [
-						"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/header/header.component.scss"
-					],
-					"scripts": [
-						"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/header/header.component.js"
-					]
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "header"
+					},
+					"tag": "header"
 				},
-				"footer": {
-					"name": "footer",
-					"relativePath": "../../../components/footer/footer.component.pug",
-					"template": "/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/footer/footer.component.pug",
-					"styles": [
-						"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/footer/footer.component.scss"
-					],
-					"scripts": [
-						"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/footer/footer.component.js"
-					]
+				"header__container": {
+					"name": "header__container",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "header__container"
+					},
+					"tag": "div"
+				},
+				"header__nav": {
+					"name": "header__nav",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "header__nav header__nav--red"
+					},
+					"tag": "nav"
 				}
 			},
-			"styles": [
-				"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/header/header.component.scss",
-				"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/footer/footer.component.scss"
-			],
-			"scripts": [
-				"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/header/header.component.js",
-				"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/footer/footer.component.js"
-			]
+			"styles": [],
+			"scripts": [],
+			"assets": []
 		}
 	}
 }

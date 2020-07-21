@@ -1,7 +1,7 @@
 export default {
 	modules: [
 		{
-			import: '',
+			import: 'normalize.css',
 		},
 	],
 };

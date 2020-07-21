@@ -6,6 +6,12 @@
  * @return {Boolean} or {String}
  */
 
+const isBEM = (cls) => {
+	return /^\.[a-z]([a-z0-9-]+)?(__([a-z0-9]+-?)+)?(--([a-z0-9]+-?)+){0,2}$/i.test(
+		cls
+	);
+};
+
 const isModifier = (cls) => {
 	return /([a-z\d])(_|--)([a-z\d])/i.test(cls); // {Boolean}
 };
@@ -32,4 +38,4 @@ const isComponent = (cls) => {
 	return !isElement(cls) && !isModifier(cls); // {Boolean}
 };
 
-export { isModifier, isElement, getComponent, isComponent, delModifier };
+export { isModifier, isElement, getComponent, isComponent, delModifier, isBEM };
