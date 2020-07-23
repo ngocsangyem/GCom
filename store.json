@@ -12,7 +12,6 @@
 						"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/header/header.component.scss"
 					],
 					"scripts": [
-						"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/header/deps.js",
 						"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/header/header.component.js"
 					]
 				},
@@ -104,19 +103,84 @@
 					},
 					"tag": "nav",
 					"already": true
+				},
+				"about": {
+					"name": "about",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "about"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"about__container": {
+					"name": "about__container",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "about__container"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"about__description": {
+					"name": "about__description",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "about__description"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"footer": {
+					"name": "footer",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "footer"
+					},
+					"tag": "footer",
+					"already": true
+				},
+				"footer__container": {
+					"name": "footer__container",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "footer__container"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"footer__description": {
+					"name": "footer__description",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "footer__description"
+					},
+					"tag": "div",
+					"already": true
 				}
 			},
-			"styles": [
-				"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/header/header.component.scss",
-				"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/about/about.component.scss",
-				"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/footer/footer.component.scss"
-			],
-			"scripts": [
-				"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/header/deps.js",
-				"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/header/header.component.js",
-				"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/about/about.component.js",
-				"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/footer/footer.component.js"
-			],
+			"styles": {
+				"main": "",
+				"components": [
+					"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/header/header.component.scss",
+					"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/about/about.component.scss",
+					"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/footer/footer.component.scss"
+				]
+			},
+			"scripts": {
+				"main": "",
+				"components": [
+					"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/header/header.component.js",
+					"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/about/about.component.js",
+					"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/footer/footer.component.js"
+				]
+			},
 			"assets": []
 		},
 		"index": {
@@ -131,7 +195,6 @@
 						"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/header/header.component.scss"
 					],
 					"scripts": [
-						"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/header/deps.js",
 						"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/header/header.component.js"
 					]
 				},
@@ -144,6 +207,17 @@
 					],
 					"scripts": [
 						"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/footer/footer.component.js"
+					]
+				},
+				"button": {
+					"name": "button",
+					"relativePath": "../../../share/button/button.component.pug",
+					"template": "/Users/sangnguyen/Documents/Tools/gulp-component/src/app/share/button/button.component.pug",
+					"styles": [
+						"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/share/button/button.component.scss"
+					],
+					"scripts": [
+						"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/share/button/button.component.js"
 					]
 				}
 			},
@@ -212,18 +286,200 @@
 					},
 					"tag": "nav",
 					"already": true
+				},
+				"footer": {
+					"name": "footer",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "footer"
+					},
+					"tag": "footer",
+					"already": true
+				},
+				"footer__container": {
+					"name": "footer__container",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "footer__container"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"footer__description": {
+					"name": "footer__description",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "footer__description"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"button": {
+					"name": "button",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "button"
+					},
+					"tag": "button",
+					"already": true
+				},
+				"button__label": {
+					"name": "button__label",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "button__label"
+					},
+					"tag": "span",
+					"already": true
 				}
 			},
-			"styles": [
-				"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/header/header.component.scss",
-				"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/footer/footer.component.scss"
-			],
-			"scripts": [
-				"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/header/deps.js",
-				"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/header/header.component.js",
-				"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/footer/footer.component.js"
-			],
+			"styles": {
+				"main": "",
+				"components": [
+					"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/header/header.component.scss",
+					"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/footer/footer.component.scss",
+					"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/share/button/button.component.scss"
+				]
+			},
+			"scripts": {
+				"main": "",
+				"components": [
+					"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/header/header.component.js",
+					"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/footer/footer.component.js",
+					"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/share/button/button.component.js"
+				]
+			},
 			"assets": []
+		},
+		"main": {
+			"components": {
+				"header": {
+					"name": "header",
+					"relativePath": "../../../components/header/header.component.pug",
+					"template": "/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/header/header.component.pug",
+					"styles": [
+						"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/header/header.component.scss"
+					],
+					"scripts": [
+						"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/header/header.component.js"
+					]
+				},
+				"about": {
+					"name": "about",
+					"relativePath": "../../../components/about/about.component.pug",
+					"template": "/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/about/about.component.pug",
+					"styles": [
+						"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/about/about.component.scss"
+					],
+					"scripts": [
+						"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/about/about.component.js"
+					]
+				},
+				"footer": {
+					"name": "footer",
+					"relativePath": "../../../components/footer/footer.component.pug",
+					"template": "/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/footer/footer.component.pug",
+					"styles": [
+						"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/footer/footer.component.scss"
+					],
+					"scripts": [
+						"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/footer/footer.component.js"
+					]
+				},
+				"button": {
+					"name": "button",
+					"relativePath": "../../../share/button/button.component.pug",
+					"template": "/Users/sangnguyen/Documents/Tools/gulp-component/src/app/share/button/button.component.pug",
+					"styles": [
+						"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/share/button/button.component.scss"
+					],
+					"scripts": [
+						"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/share/button/button.component.js"
+					]
+				}
+			},
+			"BEM_tree": {
+				"no-js": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"yemdevelop": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"yem-about-page": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"header": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"header__container": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"header__nav": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"about": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"about__container": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"about__description": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"footer": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"footer__container": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"footer__description": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"yem-index-page": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"button": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"button__label": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				}
+			}
 		}
 	},
 	"deps": {
@@ -245,7 +501,13 @@
 			"yem-about-page": [],
 			"header": [],
 			"header__container": [],
-			"header__nav": []
+			"header__nav": [],
+			"about": [],
+			"about__container": [],
+			"about__description": [],
+			"footer": [],
+			"footer__container": [],
+			"footer__description": []
 		},
 		"index": {
 			"no-js": [],
@@ -253,15 +515,50 @@
 			"yem-index-page": [],
 			"header": [],
 			"header__container": [],
-			"header__nav": []
+			"header__nav": [],
+			"footer": [],
+			"footer__container": [],
+			"footer__description": [],
+			"button": [],
+			"button__label": []
+		},
+		"main": {
+			"no-js": [],
+			"yemdevelop": [],
+			"yem-about-page": [],
+			"header": [],
+			"header__container": [],
+			"header__nav": [],
+			"about": [],
+			"about__container": [],
+			"about__description": [],
+			"footer": [],
+			"footer__container": [],
+			"footer__description": [],
+			"yem-index-page": [],
+			"button": [],
+			"button__label": []
 		}
 	},
 	"site_components": {
-		"length": 3,
+		"length": 4,
 		"components": {
-			"header": 1,
-			"about": 1,
-			"footer": 1
+			"header": {
+				"count": 1,
+				"destination": "components/header"
+			},
+			"about": {
+				"count": 1,
+				"destination": "components/about"
+			},
+			"footer": {
+				"count": 1,
+				"destination": "components/footer"
+			},
+			"button": {
+				"count": 1,
+				"destination": "share/button"
+			}
 		}
 	},
 	"depsChanged": false

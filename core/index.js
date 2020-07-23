@@ -85,7 +85,7 @@ try {
 		autoprefixer: ['last 3 versions'],
 		addVersions: false,
 		babel: true,
-		bundles: [],
+		bundles: ['js', 'css'],
 		sourcemaps: [],
 		imagemin: [],
 		mainBundle: 'main',

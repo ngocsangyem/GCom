@@ -11,8 +11,10 @@ export default (task) => {
 	const assets = (store.assets = []);
 	const pages = store.pages;
 	const tree = (store.tree = {});
+	const componentsTree = {};
 
 	const app = {};
+	let appComponents = {};
 
 	if (pages[mainBundle]) delete pages[mainBundle];
 
@@ -45,6 +47,25 @@ export default (task) => {
 			}
 		});
 	});
+
+	for (const page in pages) {
+		const components = pages[page].components;
+		for (const component in components) {
+			if (components.hasOwnProperty(component)) {
+				const c = components[component];
+				if (!(c in appComponents)) {
+					appComponents[component] = c;
+				}
+			}
+		}
+	}
+
+	if (!isDev && config.build.bundles.length > 0 && pages[mainBundle]) {
+		throw new Error(
+			`\n\n\x1b[41mFAIL\x1b[0m: A page "\x1b[36m${mainBundle}\x1b[0m" have the same name as main bundle, please rename the page or change bundle name in config!`
+		);
+	}
+	pages[mainBundle] = { components: appComponents, BEM_tree: app };
 
 	// Parse mix
 

@@ -17,7 +17,7 @@ const isModifier = (cls) => {
 };
 
 const isElement = (cls) => {
-	return /([a-z\d])__([a-z\d])/i.test(cls) && !this.isModifier(cls); // {Boolean}
+	return /([a-z\d])__([a-z\d])/i.test(cls) && !isModifier(cls); // {Boolean}
 };
 
 const delModifier = (cls) => {

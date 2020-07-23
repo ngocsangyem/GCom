@@ -64,7 +64,7 @@ export default (component, type, page, deps, task, extnames, imports) => {
 					}
 				}
 
-				if (!checkFile(file, block, item, isDev)) return;
+				if (!checkFile(file, component, item, isDev)) return;
 
 				if (imports.indexOf(file) === -1) {
 					imports.push(file);

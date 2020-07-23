@@ -7,9 +7,7 @@ import { removeExtension } from './helpers/remove-extension';
 import glob from 'glob';
 
 const resolve = (filename, source) => {
-	//   console.log('resolve -> source', path.dirname(source.trim()))
 	filename = filename.trim();
-	//   console.log('resolve -> filename', filename)
 	if (filename[0] !== '/' && !source) {
 		throw new Error(
 			'the "filename" option is required to use includes and extends with "relative" paths'
@@ -36,8 +34,14 @@ export default function (file, task) {
 		template: file.path,
 		components: {},
 		BEM_tree: {},
-		styles: [],
-		scripts: [],
+		styles: {
+			main: '',
+			components: [],
+		},
+		scripts: {
+			main: '',
+			components: [],
+		},
 		assets: [],
 	});
 
@@ -70,7 +74,10 @@ export default function (file, task) {
 					.sync(
 						`${parentPath}/**/*${config.component.scripts.extension}`,
 						{
-							ignore: [`${parentPath}/**/*.test.js`],
+							ignore: [
+								`${parentPath}/**/*.test.js`,
+								`${parentPath}/**/deps.js`,
+							],
 						}
 					)
 					.filter(function (file) {
@@ -84,8 +91,8 @@ export default function (file, task) {
 					scripts,
 				};
 
-				page.styles.push(...page.components[name].styles);
-				page.scripts.push(...page.components[name].scripts);
+				page.styles.components.push(...page.components[name].styles);
+				page.scripts.components.push(...page.components[name].scripts);
 			});
 		}
 	});

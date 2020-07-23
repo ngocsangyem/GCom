@@ -20,21 +20,24 @@ export default (type, task) => {
 		type === 'scripts' ? 'js' : 'css'
 	);
 	const pages = !isDev && needBundles ? Object.keys(tree) : [mainBundle];
+	const storePages = store.pages;
+	// console.log('pages', pages);
 	const importExtnames = {
 		styles: ['.css', config.component.styles],
 		scripts: ['.js', config.component.scripts],
 	};
-
+	const siteComponents = store.site_components.components;
 	if (!tree) {
 		return;
 	}
 
 	pages.forEach((page) => {
+		// console.log('page', page);
 		if (!page) {
 			return;
 		}
 
-		const nodes = tree[page];
+		const nodes = tree['main'];
 		const array = (imports[page] = []);
 
 		if (!nodes) {
@@ -55,6 +58,26 @@ export default (type, task) => {
 					array
 				);
 			}
+
+			const files = [node].concat(nodes[node]);
+			const components = storePages[page].components;
+
+			files.forEach((item) => {
+				if (
+					typeof components === 'object' &&
+					components !== null &&
+					components.hasOwnProperty(item)
+				) {
+					const file = paths.app(
+						siteComponents[component].parent,
+						item + config.component.prefix + extname
+					);
+					// console.log('file', file);
+					if (isFile(file) && array.indexOf(file) === -1) {
+						array.push(file);
+					}
+				}
+			});
 		});
 	});
 };
