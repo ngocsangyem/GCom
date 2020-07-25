@@ -104,20 +104,31 @@ export const createComponent = {
 			);
 		}
 
-		fs.writeFileSync(
-			file,
-			`${
-				!!this.options &&
-				this.options.noTemplate | this.options.customPath
-					? ''
-					: content
-			}`,
-			'utf8'
-		);
+		if (this.ignoreTemplate(file).pageSass) {
+			fs.writeFileSync(file, '', 'utf8');
+		} else {
+			fs.writeFileSync(
+				file,
+				`${this.ignoreTemplate(file).template ? '' : content}`,
+				'utf8'
+			);
+		}
 
 		this.addMessage(
 			`\x1b[42mGOOD\x1b[0m: ${what} "\x1b[36m${where}\x1b[0m" successfully created!`
 		);
+	},
+
+	ignoreTemplate(file) {
+		const extname = path.extname(file).slice(1);
+		return {
+			template:
+				!!this.options &&
+				this.options.noTemplate | this.options.customPath,
+			pageSass:
+				this.type === 'page' &&
+				(extname === 'scss') | (extname === 'sass'),
+		};
 	},
 
 	addPage(name) {
