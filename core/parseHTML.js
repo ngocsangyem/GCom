@@ -1,12 +1,3 @@
-import path from 'path';
-import parseAsset from './parseAsset';
-import parseClass from './parseClass';
-import { parseDeps } from './parseDeps';
-import injectToHTML from './injectToHTML';
-import { removeExtension } from './helpers/remove-extension';
-
-const htmlparser2 = require('htmlparser2');
-
 /**
  * Parse HTML code from the given `file`.
  *
@@ -17,7 +8,18 @@ const htmlparser2 = require('htmlparser2');
  */
 
 export default (file, task) => {
-	const { paths, store, isDev, config } = task;
+	const {
+		path,
+		paths,
+		store,
+		isDev,
+		removeExtension,
+		htmlparser2,
+		parseDeps,
+		parseAsset,
+		parseClass,
+		injectToHTML,
+	} = task;
 
 	const name = removeExtension(
 		path.basename(file.path, path.extname(file.path))

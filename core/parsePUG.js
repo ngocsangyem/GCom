@@ -1,34 +1,17 @@
-import parse from 'pug-parser';
-import lexer from 'pug-lexer';
-import walk from 'pug-walk';
-import fs from 'fs';
-import path from 'path';
-import { removeExtension } from './helpers/remove-extension';
-import glob from 'glob';
-
-const resolve = (filename, source) => {
-	filename = filename.trim();
-	if (filename[0] !== '/' && !source) {
-		throw new Error(
-			'the "filename" option is required to use includes and extends with "relative" paths'
-		);
-	}
-
-	filename = path.join(
-		filename[0] === '/' ? options.basedir : path.dirname(source.trim()),
-		filename
-	);
-
-	return filename;
-};
-
 export default function (file, task) {
-	const { paths, store, isDev, config } = task;
+	const {
+		store,
+		config,
+		parsePug,
+		lexer,
+		glob,
+		removeExtension,
+		path,
+		fs,
+	} = task;
 	const name = removeExtension(
 		path.basename(file.path, path.extname(file.path))
 	);
-	const code = String(file.contents);
-
 	const page = (store.pages[name] = {
 		name: name,
 		template: file.path,
@@ -48,7 +31,23 @@ export default function (file, task) {
 	const filename = file.path;
 	const src = fs.readFileSync(filename).toString();
 	const tokens = lexer(src, { filename });
-	let ast = parse(tokens, { filename, src });
+	let ast = parsePug(tokens, { filename, src });
+
+	const resolve = (filename, source) => {
+		filename = filename.trim();
+		if (filename[0] !== '/' && !source) {
+			throw new Error(
+				'the "filename" option is required to use includes and extends with "relative" paths'
+			);
+		}
+
+		filename = path.join(
+			filename[0] === '/' ? options.basedir : path.dirname(source.trim()),
+			filename
+		);
+
+		return filename;
+	};
 
 	ast.nodes.forEach((node) => {
 		if (node.type === 'NamedBlock') {

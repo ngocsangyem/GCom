@@ -13,7 +13,7 @@ import { isExternal, isFile } from './is';
  */
 
 export default (code, page, task) => {
-	const { paths, config, store, isDev, mainBundle } = task;
+	const { paths, config, store, isDev, mainBundle, isFile } = task;
 
 	const withGap = /(\s+)?(<!--(\s+)?Inject:([\w]+)(\s+)?-->)/gi;
 	const comment = /(\s+)?(<!--(\s+)?GULPC:([\w]+)(\s+)?-->)/gi;

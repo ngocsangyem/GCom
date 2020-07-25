@@ -1,6 +1,5 @@
 import * as BEM from './bem';
 import checkModules from './checkModules';
-import { isFile } from './is';
 
 /**
  * Check a files from bem tree.
@@ -12,7 +11,7 @@ import { isFile } from './is';
  */
 
 export default (type, task) => {
-	const { store, paths, config, isDev, mainBundle } = task;
+	const { store, paths, config, isDev, mainBundle, isFile } = task;
 	const { tree, deps } = store;
 	const imports = store[type];
 	const extname = config.component[type];
