@@ -31,25 +31,23 @@ export default (code, page, task) => {
 	const srcDev = config.directories.development.scripts;
 	const srcProd = config.directories.development.scripts;
 
-	if (isDev) {
-		page.styles.unshift(`${mainBundle}.css`);
-		page.scripts.push(`${mainBundle}.js`);
-	} else {
-		const bundles = config.build.bundles;
-		const style =
-			(bundles.includes('css') ? page.name : mainBundle) + '.min.css';
-		const script =
-			(bundles.includes('js') ? page.name : mainBundle) + '.min.js';
+	const bundles = config.build.bundles;
+	const minyfySufix = !isDev ? '.min' : '';
+	const style =
+		(bundles.includes('css') ? page.name : mainBundle) +
+		minyfySufix +
+		'.css';
+	const script =
+		(bundles.includes('js') ? page.name : mainBundle) + minyfySufix + '.js';
 
-		if (isFile(path.join(paths._styles, style))) {
-			page.styles.unshift(style);
-		}
-		if (isFile(path.join(paths._scripts, script))) {
-			page.scripts.push(script);
-		}
+	if (isFile(path.join(paths._styles, style))) {
+		page.temp.styles.unshift(style);
+	}
+	if (isFile(path.join(paths._scripts, script))) {
+		page.temp.scripts.push(script);
 	}
 
-	page.scripts.forEach((src) => {
+	page.temp.scripts.forEach((src) => {
 		let script = '<script src="[src]"[attr]></script>';
 		let attrs = '';
 
@@ -72,7 +70,7 @@ export default (code, page, task) => {
 		}
 	});
 
-	page.styles.forEach((href) => {
+	page.temp.styles.forEach((href) => {
 		let style = '<link rel="stylesheet" href="[href]">';
 
 		if (!isExternal(href)) {

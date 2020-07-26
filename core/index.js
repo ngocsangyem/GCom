@@ -82,10 +82,9 @@ try {
 
 	// Merge build
 	const build = {
-		autoprefixer: ['last 3 versions'],
 		addVersions: false,
 		babel: true,
-		bundles: ['js', 'css'],
+		bundles: ['css'],
 		sourcemaps: [],
 		imagemin: [],
 		mainBundle: 'main',
@@ -219,6 +218,12 @@ const dirs = config.directories;
 const target = args.production
 	? dirs.production.destination
 	: dirs.development.temporary;
+const styles = args.production
+	? config.directories.production.styles
+	: config.directories.development.styles;
+const scripts = args.production
+	? config.directories.production.scripts
+	: config.directories.development.scripts;
 
 const paths = {
 	slashNormalize(str) {
@@ -268,8 +273,8 @@ const paths = {
 	_app: path.join(root, 'src', 'app'),
 	_components: path.join(root, 'src', 'app', 'components'),
 	_pages: path.join(root, 'src', 'app', 'views/pages'),
-	_styles: path.join(root, target, config.directories.production.styles),
-	_scripts: path.join(root, target, config.directories.production.scripts),
+	_styles: path.join(root, target, styles),
+	_scripts: path.join(root, target, scripts),
 };
 
 // Add main dirs

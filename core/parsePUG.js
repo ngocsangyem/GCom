@@ -12,20 +12,19 @@ export default function (file, task) {
 	const name = removeExtension(
 		path.basename(file.path, path.extname(file.path))
 	);
+	const filePage = file.path.replace(/\.[^/.]+$/, '');
 	const page = (store.pages[name] = {
 		name: name,
-		template: file.path,
+		template: filePage + config.component.templates,
 		components: {},
 		BEM_tree: {},
-		styles: {
-			main: '',
-			components: [],
-		},
-		scripts: {
-			main: '',
-			components: [],
-		},
+		styles: filePage + config.component.styles,
+		scripts: filePage + config.component.scripts.extension,
 		assets: [],
+		temp: {
+			styles: [],
+			scripts: [],
+		},
 	});
 
 	const filename = file.path;
@@ -89,9 +88,6 @@ export default function (file, task) {
 					styles,
 					scripts,
 				};
-
-				page.styles.components.push(...page.components[name].styles);
-				page.scripts.components.push(...page.components[name].scripts);
 			});
 		}
 	});

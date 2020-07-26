@@ -8,8 +8,10 @@ import lexer from 'pug-lexer';
 import c from 'ansi-colors';
 import foldero from 'foldero';
 import log from 'fancy-log';
+import plumber from 'gulp-plumber';
+import sourcemaps from 'gulp-sourcemaps';
 
-import { isDev, args, plugins } from './gulp/utils';
+import { isDev, args, plugins, reportError } from './gulp/utils';
 import { config, paths } from './core/index';
 import { isDirectory, isFile } from './core/is';
 import { pipe } from './core/pipe';
@@ -49,8 +51,17 @@ const setTaskData = (task) => {
 		(task.injectToHTML = injectToHTML),
 		(task.parseDeps = parseDeps),
 		(task.parseAsset = parseAsset),
-		(task.parseClass = parseClass)
+		(task.parseClass = parseClass),
+		(task.c = c),
+		(task.plumber = errorHandler),
+		(task.sourcemaps = sourcemaps)
 	);
+};
+
+const errorHandler = () => {
+	return plumber({
+		errorHandler: reportError,
+	});
 };
 
 glob.sync('./gulp/tasks/**/*.js')

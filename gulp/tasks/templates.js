@@ -74,7 +74,7 @@ export default {
 		}
 
 		console.log(
-			`\nSorry, support only twig/pug/html files, you must tune "${this.name}" task for compile another engine!\n`
+			`\nSorry, for now support only pug files, you must tune "${this.name}" task for compile another engine!\n`
 		);
 
 		return this.pipe();
@@ -144,6 +144,13 @@ export default {
 			`parse${this.extname()}`
 		));
 
+		if (typeof parseTemplate !== 'function') {
+			console.log(
+				`\nSorry, support only pug files, you must tune "${this.name}" task for compile another engine!\n`
+			);
+			return this.pipe();
+		}
+
 		if (!this.store.pages) {
 			this.store.pages = {};
 		}
@@ -152,7 +159,7 @@ export default {
 	},
 
 	replacePath() {
-		return this.plugins.rename(function (path) {
+		return require('gulp-rename')(function (path) {
 			path.basename = path.basename.replace(/\.[^.]*$/, '');
 			path.dirname = '';
 		});
