@@ -49,7 +49,7 @@ try {
 			syntax: 'function',
 		},
 		styles: '.scss',
-		test: true,
+		test: false,
 		data: false,
 		BEM: false,
 		prefix: '.component',
@@ -88,6 +88,7 @@ try {
 		sourcemaps: [],
 		imagemin: [],
 		mainBundle: 'main',
+		globalStyles: false,
 		zip: true,
 		HTMLRoot: './',
 	};
@@ -275,6 +276,8 @@ const paths = {
 	_pages: path.join(root, 'src', 'app', 'views/pages'),
 	_styles: path.join(root, target, styles),
 	_scripts: path.join(root, target, scripts),
+	_tmp: path.join(root, 'tmp'),
+	_build: path.join(root, 'build'),
 };
 
 // Add main dirs

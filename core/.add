@@ -1,1 +1,2 @@
+require = require('esm')(module);
 require( './createComponent' ).createComponent.parseArguments(process.argv)

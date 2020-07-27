@@ -31,20 +31,22 @@ export default (code, page, task) => {
 	const srcDev = config.directories.development.scripts;
 	const srcProd = config.directories.development.scripts;
 
-	const bundles = config.build.bundles;
-	const minyfySufix = !isDev ? '.min' : '';
-	const style =
-		(bundles.includes('css') ? page.name : mainBundle) +
-		minyfySufix +
-		'.css';
-	const script =
-		(bundles.includes('js') ? page.name : mainBundle) + minyfySufix + '.js';
+	if (isDev) {
+		page.temp.styles.unshift(`${mainBundle}.css`);
+		page.temp.scripts.push(`${mainBundle}.js`);
+	} else {
+		const bundles = config.build.bundles;
+		const style =
+			(bundles.includes('css') ? page.name : mainBundle) + '.min.css';
+		const script =
+			(bundles.includes('js') ? page.name : mainBundle) + '.min.js';
 
-	if (isFile(path.join(paths._styles, style))) {
-		page.temp.styles.unshift(style);
-	}
-	if (isFile(path.join(paths._scripts, script))) {
-		page.temp.scripts.push(script);
+		if (isFile(path.join(paths._styles, style))) {
+			page.temp.styles.unshift(style);
+		}
+		if (isFile(path.join(paths._scripts, script))) {
+			page.temp.scripts.push(script);
+		}
 	}
 
 	page.temp.scripts.forEach((src) => {

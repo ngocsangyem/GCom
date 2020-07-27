@@ -2,10 +2,8 @@ const dependencyTemplate = `// Dependency of [capitalize-name]Component\n\nmodul
 
 const jsonTemplate = '{\n\t"data":{}\n}';
 
-const sassTemplate =
-	"@import ../../styles/variables.scss\n@import '../../styles/abstracts/mixins.scss'\n\n.[name]";
-const scssTemplate =
-	"@import '../../styles/variables.scss';\n@import '../../styles/abstracts/mixins.scss';\n\n.[name] {}";
+const sassTemplate = '\n.[name]';
+const scssTemplate = '\n.[name] {}';
 
 const componentTemplate = `mixin [name](data)\n\t- data = data || {}\n\t- data.class = data.class || ''\n\t- data.content = data.content || 'Some content here'\n\n\t.[name](class=data.class)&attributes(attributes)\n\t\tif block\n\t\t\tblock\n\t\telse\n\t\t\t!= data.content`;
 
@@ -16,10 +14,8 @@ const jsTemplateClass = `export class [capitalize-name]Component {\n\tconstructo
 const jsTemplateFunction = `const [capitalize-name]Component = () => {\n\tconsole.log('This is [capitalize-name]');\n};\n\nexport { [capitalize-name]Component }`;
 
 const pageTemplate = `extends ../../layouts/layout.pug\n\nblock var\n\t- title = '[upper-first-name]'\n\t- bodyClass = '[name]'\n\nblock main`;
-const pageScssTemplate =
-	"@import '../../../styles/variables.scss';\n@import '../../styles/abstracts/mixins.scss';\n\n.[name] {}";
-const pageSassTemplate =
-	"@import ../../../styles/variables.scss\n@import '../../styles/abstracts/mixins.scss'\n\n.[name]";
+const pageScssTemplate = '\n.[name] {}';
+const pageSassTemplate = '\n.[name]';
 
 export {
 	dependencyTemplate,

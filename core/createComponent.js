@@ -109,7 +109,11 @@ export const createComponent = {
 		} else {
 			fs.writeFileSync(
 				file,
-				`${this.ignoreTemplate(file).template ? '' : content}`,
+				`${
+					this.ignoreTemplate(file).template
+						? ''
+						: this.addGlobalStyles(file) + content
+				}`,
 				'utf8'
 			);
 		}
@@ -117,6 +121,52 @@ export const createComponent = {
 		this.addMessage(
 			`\x1b[42mGOOD\x1b[0m: ${what} "\x1b[36m${where}\x1b[0m" successfully created!`
 		);
+	},
+
+	addGlobalStyles(file) {
+		const extname = path.extname(file);
+		if (extname !== config.component.styles) {
+			return;
+		}
+
+		if (extname === '.css') {
+			console.log(
+				`\n\x1b[41mFAIL\x1b[0m: Global style option only use for CSS preprocessors"\n`
+			);
+			return;
+		}
+
+		const dirname = path.dirname(file);
+		const imports = config.build.globalStyles;
+		const array = Array.isArray(imports) ? imports : [imports];
+		let injected = '';
+
+		array.forEach((item) => {
+			console.log('addGlobalStyles -> item', item);
+			if (typeof item !== 'string') {
+				return;
+			}
+
+			item = item.trim();
+
+			if (!item) {
+				return;
+			}
+
+			const file = paths.src(item);
+
+			if (extname === '.sass') {
+				injected += `@import "${paths.slashNormalize(
+					path.relative(dirname, file)
+				)}";\n`;
+			} else {
+				injected += `@import "${paths.slashNormalize(
+					path.relative(dirname, file)
+				)}";\n`;
+			}
+		});
+
+		return injected;
 	},
 
 	ignoreTemplate(file) {
@@ -281,10 +331,6 @@ export const createComponent = {
 			this.status = false;
 			this.message = `\x1b[41mFAIL\x1b[0m: You must write a \x1b[36m${this.type}\x1b[0m name!`;
 		} else {
-			// try {
-			// } catch (error) {
-			// 	console.log(c.red(error));
-			// }
 			if (this.items) {
 				this.items.forEach((item) => {
 					let name = item.split('[')[0];

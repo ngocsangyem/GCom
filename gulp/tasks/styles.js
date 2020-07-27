@@ -7,7 +7,7 @@ export default {
 	init(done) {
 		// this.fs.writeFileSync('./store.json', JSON.stringify(this.store));
 
-		if (!this.config.build.bundles.includes('css')) {
+		if (this.isDev || !this.config.build.bundles.includes('css')) {
 			const mainBundleStyles = require(this.paths.core(
 				'mainBundleStyles'
 			));
@@ -48,6 +48,7 @@ export default {
 		return this.gulp
 			.src(files, options)
 			.pipe(this.plumber())
+			.pipe(this.addGlobal())
 			.pipe(this.sourcemapInit())
 			.pipe(this.compile())
 			.pipe(this.rename())
@@ -80,6 +81,18 @@ export default {
 		});
 
 		return Promise.all(promises);
+	},
+
+	addGlobal() {
+		if (!this.isDev || this.config.build.bundles.includes('css')) {
+			return this.pipe();
+		}
+
+		return this.pipe(
+			require(this.paths.core('injectCSSHelper')),
+			this,
+			'injectCSSHelper'
+		);
 	},
 
 	compile() {
@@ -171,16 +184,16 @@ export default {
 	},
 
 	rename() {
-		if (this.isDev) {
-			return require('gulp-rename')(function (path) {
+		return require('gulp-rename')(
+			function (path) {
 				path.basename = path.basename.replace(/\.[^/.]+$/, '');
-				path.extname = '.css';
-			});
-		}
-		return require('gulp-rename')(function (path) {
-			path.basename = path.basename.replace(/\.[^/.]+$/, '');
-			path.extname = '.min.css';
-		});
+				if (this.isDev) {
+					path.extname = '.css';
+				} else {
+					path.extname = '.min.css';
+				}
+			}.bind(this)
+		);
 	},
 
 	forMinify(file) {
