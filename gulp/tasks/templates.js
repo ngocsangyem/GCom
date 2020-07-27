@@ -35,7 +35,7 @@ export default {
 				},
 			},
 			{
-				files: this.paths.app('**', `deps.js`),
+				files: this.paths.components('**', `deps.js`),
 				tasks: ['task:templates', 'task:styles', 'task:scripts'],
 				options: {
 					delay: 250,
@@ -47,7 +47,7 @@ export default {
 			},
 
 			{
-				files: this.paths.app(
+				files: this.paths.components(
 					'**',
 					`*.(json|ya?ml|${extname.slice(1)})`
 				),
@@ -181,10 +181,11 @@ export default {
 		const path = this.path;
 		const pages = this.store.pages || {};
 		const editTime = require(this.paths.core('editTime'));
+		const prefix = this.config.component.prefix;
 
 		let name = path.basename(file);
 
-		if ([`${name}.json`, 'deps.js'].includes(name)) {
+		if ([`${name}${prefix}.json`, 'deps.js'].includes(name)) {
 			name = path.dirname(file).split(path.sep).pop();
 		} else {
 			name = path
@@ -199,7 +200,10 @@ export default {
 
 			if (name === 'layout' || name in pages[page].components) {
 				return editTime(
-					this.paths.pages(page + this.config.component.templates)
+					this.paths.pages(
+						page,
+						page + prefix + this.config.component.templates
+					)
 				);
 			}
 		});

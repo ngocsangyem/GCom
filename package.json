@@ -5,9 +5,10 @@
 	"main": "gulpfile.babel.js",
 	"scripts": {
 		"add": "node ./core/.add",
-		"dev": "gulp --development",
+		"dev": "cross-env WATCH=true gulp --development",
 		"build": "gulp --production",
-		"test": "node ./core/.test"
+		"zip": "gulp zip",
+		"zip:dev": "cross-env SNAPSHOT=true gulp zip"
 	},
 	"repository": {
 		"type": "git",
@@ -46,6 +47,7 @@
 		"babel-plugin-add-module-exports": "^1.0.2",
 		"beeper": "^2.0.0",
 		"browser-sync": "^2.26.10",
+		"cross-env": "^7.0.2",
 		"css-declaration-sorter": "^5.1.2",
 		"del": "^5.1.0",
 		"esm": "^3.2.25",
@@ -66,6 +68,7 @@
 		"gulp-rename": "^2.0.0",
 		"gulp-sass": "^4.1.0",
 		"gulp-sourcemaps": "^2.6.5",
+		"gulp-zip": "^5.0.2",
 		"htmlparser2": "^4.1.0",
 		"minimist": "^1.2.5",
 		"plugin-error": "^1.0.1",

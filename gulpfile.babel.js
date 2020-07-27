@@ -11,7 +11,7 @@ import log from 'fancy-log';
 import plumber from 'gulp-plumber';
 import sourcemaps from 'gulp-sourcemaps';
 
-import { isDev, args, plugins, reportError } from './gulp/utils';
+import { isDev, args, plugins, reportError, browserSync } from './gulp/utils';
 import { config, paths } from './core/index';
 import { isDirectory, isFile } from './core/is';
 import { pipe } from './core/pipe';
@@ -54,7 +54,8 @@ const setTaskData = (task) => {
 		(task.parseClass = parseClass),
 		(task.c = c),
 		(task.plumber = errorHandler),
-		(task.sourcemaps = sourcemaps)
+		(task.sourcemaps = sourcemaps),
+		(task.browserSync = browserSync)
 	);
 };
 

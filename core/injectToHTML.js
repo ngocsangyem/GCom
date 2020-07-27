@@ -26,8 +26,8 @@ export default (code, page, task) => {
 		styles: [],
 	};
 
-	const hrefDev = config.directories.development.scripts;
-	const hrefProd = config.directories.development.scripts;
+	const hrefDev = config.directories.development.styles;
+	const hrefProd = config.directories.development.styles;
 	const srcDev = config.directories.development.scripts;
 	const srcProd = config.directories.development.scripts;
 
@@ -57,7 +57,7 @@ export default (code, page, task) => {
 		if (/@defer/gi.test(src)) attrs += ' defer';
 
 		if (!isExternal(src)) {
-			src = `${config.build.HTMLRoot}${isDev ? srcDev : srcProd}/${src}`;
+			src = `${config.build.HTMLRoot}${isDev ? srcDev : srcProd}${src}`;
 		}
 
 		script = script
@@ -78,7 +78,7 @@ export default (code, page, task) => {
 		if (!isExternal(href)) {
 			href = `${config.build.HTMLRoot}${
 				isDev ? hrefDev : hrefProd
-			}/${href}`;
+			}${href}`;
 		}
 
 		style = style.replace(

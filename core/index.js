@@ -242,6 +242,10 @@ const paths = {
 		return path.join(this._root, ...arguments);
 	},
 
+	dist() {
+		return path.join(this._dist, ...arguments);
+	},
+
 	core() {
 		return path.join(this._core, ...arguments);
 	},
@@ -266,6 +270,10 @@ const paths = {
 		return path.join(this._pages, ...arguments);
 	},
 
+	assets() {
+		return path.join(this._assets, ...arguments);
+	},
+
 	_root: root,
 	_core: __dirname,
 	_tasks: path.join(root, 'gulp/tasks'),
@@ -278,6 +286,7 @@ const paths = {
 	_scripts: path.join(root, target, scripts),
 	_tmp: path.join(root, 'tmp'),
 	_build: path.join(root, 'build'),
+	_assets: path.join(root, 'src', 'assets'),
 };
 
 // Add main dirs
