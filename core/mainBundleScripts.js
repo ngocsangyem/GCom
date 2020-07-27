@@ -2,8 +2,8 @@ export default (task) => {
 	const { config, mainBundle, paths, fs, log, c } = task;
 	// const noBundleScripts = !config.build.bundles.includes('js');
 
-	const extname = config.component.scripts.extension.slice(1);
-	const filename = paths.app(`${mainBundle}.${extname}`);
+	const extname = config.component.scripts.extension;
+	const filename = paths.app(`${mainBundle}${extname}`);
 	if (!fs.existsSync(filename)) {
 		fs.writeFile(filename, '', (err) => {
 			if (err) {
@@ -12,7 +12,7 @@ export default (task) => {
 			}
 			log.info(
 				c.greenBright(
-					`${mainBundle}.${extname} is created in app folder`
+					`${mainBundle}${extname} is created in app folder`
 				)
 			);
 		});

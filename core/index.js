@@ -84,7 +84,7 @@ try {
 	const build = {
 		addVersions: false,
 		babel: true,
-		bundles: ['css'],
+		bundles: ['css', 'js'],
 		sourcemaps: [],
 		imagemin: [],
 		mainBundle: 'main',
