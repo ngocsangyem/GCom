@@ -15,6 +15,7 @@ export default {
 		const ready = this.HTMLReady.bind(this, done);
 		return this.gulp
 			.src(files, options)
+			.pipe(this.plumber())
 			.pipe(this.parseTemplate())
 			.pipe(this.compile())
 			.pipe(this.parse())

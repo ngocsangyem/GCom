@@ -65,7 +65,7 @@ const reportError = function (error) {
 		sound: 'Frog', // See: https://github.com/mikaelbr/node-notifier#all-notification-options-with-their-defaults
 	}).write(error);
 
-	beeper.beep(); // System beep (backup)
+	beeper('****-*-*'); // System beep (backup)
 
 	// ----------------------------------------------
 	// Prevent the 'watch' task from stopping

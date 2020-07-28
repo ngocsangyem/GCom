@@ -1,18 +1,14 @@
 export default {
 	name: 'task:styles',
-	build: 2,
+	build: 3,
 	extname: function () {
 		return this.config.component.styles.slice(1);
 	},
 	init(done) {
-		// this.fs.writeFileSync('./store.json', JSON.stringify(this.store));
+		this.fs.writeFileSync('./store.json', JSON.stringify(this.store));
 
 		if (this.isDev || !this.config.build.bundles.includes('css')) {
-			const mainBundleStyles = require(this.paths.core(
-				'mainBundleStyles'
-			));
 			let files;
-			mainBundleStyles(this);
 			if (this.extname() === 'css') {
 				files = this.store.pages[this.mainBundle] || [];
 			} else {
@@ -26,10 +22,12 @@ export default {
 	},
 
 	watch() {
-		return {
-			files: this.paths.app('**', `*{.css,.${this.extname()}}`),
-			tasks: this.name,
-		};
+		return [
+			{
+				files: this.paths.app('**', `*{.css,.${this.extname()}}`),
+				tasks: this.name,
+			},
+		];
 	},
 
 	dest() {
@@ -48,7 +46,6 @@ export default {
 		return this.gulp
 			.src(files, options)
 			.pipe(this.plumber())
-			.pipe(this.addGlobal())
 			.pipe(this.sourcemapInit())
 			.pipe(this.compile())
 			.pipe(this.rename())
@@ -81,18 +78,6 @@ export default {
 		});
 
 		return Promise.all(promises);
-	},
-
-	addGlobal() {
-		if (!this.isDev || this.config.build.bundles.includes('css')) {
-			return this.pipe();
-		}
-
-		return this.pipe(
-			require(this.paths.core('injectCSSHelper')),
-			this,
-			'injectCSSHelper'
-		);
 	},
 
 	compile() {
@@ -198,5 +183,15 @@ export default {
 
 	forMinify(file) {
 		return !this.isDev && this.path.extname(file.path) === '.css';
+	},
+
+	inject() {
+		// if (!this.isDev || this.config.build.bundles.includes('css')) {
+		// 	return this.pipe();
+		// }
+
+		const inject = require(this.paths.core('injectCSSHelper'));
+
+		return this.pipe(inject, this, 'styles:inject:helper');
 	},
 };

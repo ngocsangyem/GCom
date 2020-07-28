@@ -10,6 +10,7 @@ import foldero from 'foldero';
 import log from 'fancy-log';
 import plumber from 'gulp-plumber';
 import sourcemaps from 'gulp-sourcemaps';
+import map from 'map-stream';
 
 import { isDev, args, plugins, reportError, browserSync } from './gulp/utils';
 import { config, paths } from './core/index';

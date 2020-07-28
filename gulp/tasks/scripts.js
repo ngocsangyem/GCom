@@ -3,7 +3,7 @@ import { WebpackConfig } from '../../webpack/webpack.config';
 
 export default {
 	name: 'task:scripts',
-	build: 2,
+	build: 3,
 	extname: function () {
 		return this.config.component.scripts.extension.slice(1);
 	},

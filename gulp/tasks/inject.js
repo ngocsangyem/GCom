@@ -1,5 +1,5 @@
 export default {
-	build: 3,
+	build: 4,
 	name: 'task:inject',
 
 	init(done) {

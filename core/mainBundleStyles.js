@@ -4,8 +4,9 @@ export default (task) => {
 
 	const stylesExtname = config.component.styles.slice(1);
 	const filename = paths.app(`${mainBundle}.${stylesExtname}`);
+	const content = `// Inject:start\n\n// Inject:end`;
 	if (!fs.existsSync(filename)) {
-		fs.writeFile(filename, '', (err) => {
+		fs.writeFile(filename, content, (err) => {
 			if (err) {
 				log.error(c.redBright(err));
 				return;

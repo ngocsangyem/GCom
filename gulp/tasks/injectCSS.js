@@ -1,0 +1,63 @@
+export default {
+	build: 2,
+	name: 'inject:CSS',
+	extname: function () {
+		return this.config.component.styles.slice(1);
+	},
+	init(done) {
+		if (this.needInject()) {
+			const mainBundleStyles = require(this.paths.core(
+				'mainBundleStyles'
+			));
+			let files = this.paths.app(`${this.mainBundle}.${this.extname()}`);
+			let filesInject = this.paths.pages(`**/*.${this.extname()}`);
+			mainBundleStyles(this);
+			return this.compile(files, filesInject, done);
+		}
+	},
+
+	watch() {
+		return [
+			{
+				files: this.paths.app('**', `*{.css,.${this.extname()}}`),
+				tasks: this.name,
+			},
+		];
+	},
+
+	dest() {
+		return this.gulp.dest(this.paths._app);
+	},
+
+	needInject() {
+		return (
+			(this.extname() !== 'css' && this.isDev) ||
+			!this.config.build.bundles.includes('css')
+		);
+	},
+
+	compile(files, filesInject, done) {
+		if (files.length === 0) {
+			return done();
+		}
+
+		return this.gulp
+			.src(files)
+			.pipe(this.inject(this.gulp.src(filesInject, { read: false })))
+			.pipe(this.dest());
+	},
+
+	inject(source) {
+		return require('gulp-inject')(source, {
+			starttag: '// Inject:start',
+			endtag: '// Inject:end',
+			relative: true,
+			transform: (filepath, file, i, length) => {
+				if (this.extname === 'sass') {
+					return `@import ${filepath}`;
+				}
+				return `@import '${filepath}';`;
+			},
+		});
+	},
+};
