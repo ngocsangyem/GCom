@@ -74,6 +74,8 @@
 		"map-stream": "0.0.7",
 		"minimist": "^1.2.5",
 		"plugin-error": "^1.0.1",
+		"postcss-sprites": "^4.2.1",
+		"postcss-url": "^8.0.0",
 		"pug-lexer": "^5.0.0",
 		"pug-parser": "^6.0.0",
 		"pug-walk": "^2.0.0",

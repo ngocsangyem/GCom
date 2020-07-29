@@ -48,11 +48,12 @@ export default {
 			.pipe(this.plumber())
 			.pipe(this.sourcemapInit())
 			.pipe(this.compile())
+			.pipe(this.parseURLs())
 			.pipe(this.rename())
 			.pipe(this.sourcemapWrite())
 			.pipe(this.concat(bundle))
 			.pipe(this.sortMediaQuery())
-			.pipe(this.postcss())
+			.pipe(this.postcss(bundle))
 			.pipe(this.cssnano())
 			.pipe(this.dest())
 			.on('end', done);
@@ -112,7 +113,7 @@ export default {
 		return this.pipe();
 	},
 
-	postcss() {
+	postcss(bundle) {
 		const postcss = require('gulp-postcss');
 		const autoprefixer = require('autoprefixer');
 		const cssDeclarationSorter = require('css-declaration-sorter');
@@ -123,6 +124,7 @@ export default {
 			cssDeclarationSorter({
 				order: 'concentric-css',
 			}),
+			this.generateSprites(bundle),
 		];
 
 		return require('gulp-if')(!this.isDev, postcss(plugins));
@@ -185,13 +187,64 @@ export default {
 		return !this.isDev && this.path.extname(file.path) === '.css';
 	},
 
-	inject() {
-		// if (!this.isDev || this.config.build.bundles.includes('css')) {
-		// 	return this.pipe();
-		// }
+	generateSprites(bundle) {
+		return require('postcss-sprites')({
+			spriteName: bundle,
+			spritePath: this.paths._img,
+			stylesheetPath: this.paths._styles,
+			spritesmith: {
+				padding: 1,
+				algorithm: 'binary-tree',
+			},
+			svgsprite: {
+				shape: {
+					spacing: {
+						padding: 1,
+					},
+				},
+			},
+			retina: true,
+			verbose: false,
+			filterBy: this.checkIsSprite.bind(this),
+			hooks: {
+				onSaveSpritesheet: this.onSaveSpritesheet.bind(this),
+			},
+		});
+	},
 
-		const inject = require(this.paths.core('injectCSSHelper'));
+	checkIsSprite(image) {
+		if (image.url.indexOf(this.path.join('img', 'sprite')) !== -1) {
+			return Promise.resolve();
+		}
 
-		return this.pipe(inject, this, 'styles:inject:helper');
+		return Promise.reject();
+	},
+
+	onSaveSpritesheet(config, spritesheet) {
+		if (spritesheet.groups.length === 0) spritesheet.groups.push('');
+
+		const basename = `sprite_${config.spriteName}`;
+		const extname = spritesheet.groups
+			.concat(spritesheet.extension)
+			.join('.');
+
+		return this.path.join(config.spritePath, basename + extname);
+	},
+
+	parseURLs() {
+		const parseCssUrl = require(this.paths.core('parseCssUrl'));
+
+		if (!this.store.imgs) {
+			this.store.images = [];
+		}
+		if (!this.store.fonts) {
+			this.store.fonts = [];
+		}
+
+		return require('gulp-postcss')([
+			require('postcss-url')({
+				url: parseCssUrl.bind(this),
+			}),
+		]);
 	},
 };

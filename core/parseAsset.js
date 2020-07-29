@@ -16,20 +16,24 @@ export default (value, page, paths) => {
 	assets.forEach((asset) => {
 		asset = asset.trim();
 
-		if (!asset || isExternal(asset)) return;
+		if (!asset || isExternal(asset)) {
+			return;
+		}
 
 		asset = asset.replace(/ \d{1,2}x$/g, '').trim();
 
 		let file = false;
 
 		asset.replace(/^@([\w-]+)(.*)/i, (str, block, end) => {
+			console.log('end', end);
+			console.log('block', block);
 			if (
 				['styles', 'symbol', 'scripts', 'static', 'favicons'].includes(
 					block
 				)
 			)
 				return;
-			return (file = paths.blocks('*', block, 'assets', end));
+			return (file = paths.components('*', block, 'assets', end));
 		});
 
 		if (file && page.assets.indexOf(file) === -1) {

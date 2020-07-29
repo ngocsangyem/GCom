@@ -287,6 +287,8 @@ const paths = {
 	_pages: path.join(root, 'src', 'app', 'views/pages'),
 	_styles: path.join(root, target, styles),
 	_scripts: path.join(root, target, scripts),
+	_static: path.join(root, target, 'static'),
+	_favicons: path.join(root, target, 'favicons'),
 	_tmp: path.join(root, 'tmp'),
 	_build: path.join(root, 'build'),
 	_assets: path.join(root, 'src', 'assets'),
