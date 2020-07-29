@@ -21,6 +21,7 @@ import injectToHTML from './core/injectToHTML';
 import { parseDeps } from './core/parseDeps';
 import parseAsset from './core/parseAsset';
 import parseClass from './core/parseClass';
+import { upperFirstLetter } from './core/helpers/upper-first-letter';
 
 const htmlparser2 = require('htmlparser2');
 const gulp = {};
@@ -56,7 +57,8 @@ const setTaskData = (task) => {
 		(task.c = c),
 		(task.plumber = errorHandler),
 		(task.sourcemaps = sourcemaps),
-		(task.browserSync = browserSync)
+		(task.browserSync = browserSync),
+		(task.upperFirstLetter = upperFirstLetter)
 	);
 };
 

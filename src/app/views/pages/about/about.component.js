@@ -7,3 +7,6 @@ export class AboutComponent {
 		return about;
 	}
 }
+(function () {
+	AboutComponent.init();
+})();

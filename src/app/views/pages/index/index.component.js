@@ -7,3 +7,6 @@ export class IndexComponent {
 		return index;
 	}
 }
+(function () {
+	IndexComponent.init();
+})();

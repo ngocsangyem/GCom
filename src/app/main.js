@@ -1,21 +1,5 @@
 // Inject:import
-
-import { ProjectComponent } from './views/pages/project/project.component';
-
+import {AboutComponent} from './views/pages/about/about.component';
+import {IndexComponent} from './views/pages/index/index.component';
+import {ProjectComponent} from './views/pages/project/project.component';
 // Inject:end
-class Main {
-	constructor() {
-		// Inject:init:class
-		ProjectComponent.init();
-		// Inject:end
-	}
-
-	static init() {
-		const main = new Main();
-		return main;
-	}
-}
-
-(function () {
-	Main.init();
-})();
