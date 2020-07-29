@@ -10,7 +10,7 @@ export default {
 		};
 
 		if (this.isDev) {
-			const all = this.paths.components(...this.globs);
+			const all = this.paths.app(...this.globs);
 
 			if (!files.includes(all)) {
 				files.push(all);
@@ -21,7 +21,7 @@ export default {
 				.replace('*.{', '*@always.{')
 				.split('::');
 
-			files.push(this.paths.components(...always));
+			files.push(this.paths.app(...always));
 		}
 
 		if (files.length === 0) {
@@ -36,7 +36,7 @@ export default {
 
 	watch() {
 		return {
-			files: this.paths.components(...this.globs),
+			files: this.paths.app(...this.globs),
 			tasks: this.name,
 			on: {
 				event: 'add',
@@ -57,7 +57,7 @@ export default {
 	},
 
 	since(file) {
-		const isModule = file.path.indexOf(this.paths._blocks) === -1;
+		const isModule = file.path.indexOf(this.paths._app) === -1;
 		return isModule ? null : this.gulp.lastRun(this.name);
 	},
 };

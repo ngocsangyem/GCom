@@ -22,6 +22,7 @@ import pjson from '../package.json';
 
 const root = path.resolve(__dirname, '..');
 const args = minimist(process.argv.slice(2));
+const isDev = args.development;
 
 // Read config
 
@@ -152,25 +153,29 @@ try {
 			data: 'data.json',
 		},
 		development: {
-			source: 'src/',
-			app: 'app/',
-			temporary: 'tmp/',
-			components: 'components/',
-			styles: 'styles/',
-			assets: 'assets/',
-			scripts: 'scripts/',
-			images: 'img/',
-			fonts: 'fonts/',
-			data: 'data/',
-			pages: 'pages/',
+			source: 'src',
+			app: 'app',
+			temporary: 'tmp',
+			components: 'components',
+			styles: 'styles',
+			assets: 'assets',
+			scripts: 'scripts',
+			images: 'images',
+			fonts: 'fonts',
+			data: 'data',
+			pages: 'pages',
+			static: 'static',
+			favicons: 'favicons',
 		},
 		production: {
-			destination: 'build/',
-			styles: 'styles/',
-			scripts: 'scripts/',
-			fonts: 'fonts/',
-			images: 'images/',
-			assets: 'assets/',
+			destination: 'build',
+			styles: 'styles',
+			scripts: 'scripts',
+			fonts: 'fonts',
+			images: 'images',
+			assets: 'assets',
+			static: 'static',
+			favicons: 'favicons',
 		},
 	};
 
@@ -219,15 +224,34 @@ try {
 	};
 }
 const dirs = config.directories;
-const target = args.production
+const target = !isDev
 	? dirs.production.destination
 	: dirs.development.temporary;
-const styles = args.production
-	? config.directories.production.styles
-	: config.directories.development.styles;
-const scripts = args.production
-	? config.directories.production.scripts
-	: config.directories.development.scripts;
+
+const dirsDev = {
+	styles: dirs.development.styles,
+	scripts: dirs.development.scripts,
+	static: dirs.development.static,
+	favicons: dirs.development.favicons,
+	images: dirs.development.images,
+	fonts: dirs.development.fonts,
+};
+
+const dirsProd = {
+	styles: dirs.production.styles,
+	scripts: dirs.production.scripts,
+	static: dirs.production.static,
+	favicons: dirs.production.favicons,
+	images: dirs.production.images,
+	fonts: dirs.production.fonts,
+};
+
+const styles = !isDev ? dirsProd.styles : dirsDev.styles;
+const scripts = !isDev ? dirsProd.scripts : dirsDev.scripts;
+const staticP = !isDev ? dirsProd.static : dirsDev.static;
+const favicons = !isDev ? dirsProd.favicons : dirsDev.favicons;
+const images = !isDev ? dirsProd.images : dirsDev.images;
+const fonts = !isDev ? dirsProd.fonts : dirsDev.fonts;
 
 const paths = {
 	slashNormalize(str) {
@@ -287,8 +311,12 @@ const paths = {
 	_pages: path.join(root, 'src', 'app', 'views/pages'),
 	_styles: path.join(root, target, styles),
 	_scripts: path.join(root, target, scripts),
-	_static: path.join(root, target, 'static'),
-	_favicons: path.join(root, target, 'favicons'),
+	_static: path.join(root, target, staticP),
+	_favicons: path.join(root, target, favicons),
+	_fonts: path.join(root, target, fonts),
+	_images: path.join(root, target, images),
+	_img: path.join(root, target, styles, 'img'),
+	_font: path.join(root, target, styles, 'font'),
 	_tmp: path.join(root, 'tmp'),
 	_build: path.join(root, 'build'),
 	_assets: path.join(root, 'src', 'assets'),

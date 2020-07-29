@@ -26,10 +26,21 @@ export default (code, page, task) => {
 		styles: [],
 	};
 
-	const hrefDev = config.directories.development.styles;
-	const hrefProd = config.directories.development.styles;
-	const srcDev = config.directories.development.scripts;
-	const srcProd = config.directories.development.scripts;
+	const dirs = config.directories;
+
+	const dirsDev = {
+		styles: dirs.development.styles,
+		scripts: dirs.development.scripts,
+		static: dirs.development.static,
+		favicons: dirs.development.favicons,
+	};
+
+	const dirsProd = {
+		styles: dirs.production.styles,
+		scripts: dirs.production.scripts,
+		static: dirs.production.static,
+		favicons: dirs.production.favicons,
+	};
 
 	if (isDev) {
 		page.temp.styles.unshift(`${mainBundle}.css`);
@@ -53,11 +64,17 @@ export default (code, page, task) => {
 		let script = '<script src="[src]"[attr]></script>';
 		let attrs = '';
 
-		if (/@async/gi.test(src)) attrs += ' async';
-		if (/@defer/gi.test(src)) attrs += ' defer';
+		if (/@async/gi.test(src)) {
+			attrs += ' async';
+		}
+		if (/@defer/gi.test(src)) {
+			attrs += ' defer';
+		}
 
 		if (!isExternal(src)) {
-			src = `${config.build.HTMLRoot}${isDev ? srcDev : srcProd}${src}`;
+			src = `${config.build.HTMLRoot}${
+				isDev ? dirsDev.scripts : dirsProd.scripts
+			}/${src}`;
 		}
 
 		script = script
@@ -77,8 +94,8 @@ export default (code, page, task) => {
 
 		if (!isExternal(href)) {
 			href = `${config.build.HTMLRoot}${
-				isDev ? hrefDev : hrefProd
-			}${href}`;
+				isDev ? dirsDev.styles : dirsProd.styles
+			}/${href}`;
 		}
 
 		style = style.replace(
@@ -124,13 +141,15 @@ export default (code, page, task) => {
 
 	injected = injected.replace(
 		/(,|'|"|`| )@([\w-]+)/gi,
-		(str, quote, asset) => {
+		(str, quote, component) => {
 			const paths = {
-				styles: isDev ? hrefDev : hrefProd,
-				scripts: isDev ? srcDev : srcProd,
+				styles: isDev ? dirsDev.styles : dirsProd.styles,
+				scripts: isDev ? dirsDev.scripts : dirsProd.scripts,
+				static: isDev ? dirsDev.static : dirsProd.static,
+				favicons: isDev ? dirsDev.favicons : dirsProd.favicons,
 			};
 
-			const dist = paths[asset] || `${asset}`;
+			const dist = paths[component] || `${paths.static}/${component}`;
 
 			return `${quote}${config.build.HTMLRoot}${dist}`;
 		}

@@ -39,6 +39,12 @@ export default (file, task) => {
 				// 	});
 				// }
 
+				Object.keys(attrs).forEach((attr) => {
+					if (attr === 'src') {
+						attrs[attr];
+					}
+				});
+
 				// Parse classes
 
 				if (typeof attrs.class === 'string') {
@@ -53,7 +59,9 @@ export default (file, task) => {
 			},
 
 			onend() {
-				if (!isDev) return;
+				if (!isDev) {
+					return;
+				}
 
 				const injected = injectToHTML(code, page, task);
 
