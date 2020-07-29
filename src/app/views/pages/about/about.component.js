@@ -1,7 +1,9 @@
-const aboutComponent = () => {
-	console.log('This is about');
-};
-
-console.log(aboutComponent);
-
-export { aboutComponent };
+export class AboutComponent {
+	constructor() {
+		console.log('about component');
+	}
+	static init() {
+		const about = new AboutComponent();
+		return about;
+	}
+}

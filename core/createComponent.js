@@ -126,7 +126,7 @@ export const createComponent = {
 	addGlobalStyles(file) {
 		const extname = path.extname(file);
 		if (extname !== config.component.styles) {
-			return;
+			return '';
 		}
 
 		if (extname === '.css') {

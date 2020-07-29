@@ -15,6 +15,8 @@ import {
 	componentTemplate,
 	pageSassTemplate,
 	pageScssTemplate,
+	jsPageTemplateClass,
+	jsPageTemplateFunction,
 } from './templates/files';
 import pjson from '../package.json';
 
@@ -46,7 +48,7 @@ try {
 		templates: '.pug',
 		scripts: {
 			extension: '.js',
-			syntax: 'function',
+			syntax: 'class',
 		},
 		styles: '.scss',
 		test: false,
@@ -84,7 +86,7 @@ try {
 	const build = {
 		addVersions: false,
 		babel: true,
-		bundles: ['js'],
+		bundles: [],
 		sourcemaps: [],
 		imagemin: [],
 		mainBundle: 'main',
@@ -130,10 +132,11 @@ try {
 			pug: pageTemplate,
 			sass: pageSassTemplate,
 			scss: pageScssTemplate,
-			js:
-				config.component.scripts.syntax === 'function'
-					? jsTemplateFunction
-					: jsTemplateClass,
+			// js:
+			// 	config.component.scripts.syntax === 'function'
+			// 		? jsPageTemplateFunction
+			// 		: jsPageTemplateClass,
+			js: jsPageTemplateClass,
 		},
 	};
 

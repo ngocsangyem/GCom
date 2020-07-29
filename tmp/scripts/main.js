@@ -90,10 +90,83 @@
 /*!*************************!*\
   !*** ./src/app/main.js ***!
   \*************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _views_pages_project_project_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./views/pages/project/project.component */ "./src/app/views/pages/project/project.component.js");
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+// Inject:import
+ // Inject:end
+
+var Main = /*#__PURE__*/function () {
+  function Main() {
+    _classCallCheck(this, Main);
+
+    // Inject:init:class
+    _views_pages_project_project_component__WEBPACK_IMPORTED_MODULE_0__["ProjectComponent"].init(); // Inject:end
+  }
+
+  _createClass(Main, null, [{
+    key: "init",
+    value: function init() {
+      var main = new Main();
+      return main;
+    }
+  }]);
+
+  return Main;
+}();
+
+(function () {
+  Main.init();
+})();
+
+/***/ }),
+
+/***/ "./src/app/views/pages/project/project.component.js":
+/*!**********************************************************!*\
+  !*** ./src/app/views/pages/project/project.component.js ***!
+  \**********************************************************/
+/*! exports provided: ProjectComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProjectComponent", function() { return ProjectComponent; });
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var ProjectComponent = /*#__PURE__*/function () {
+  function ProjectComponent() {
+    _classCallCheck(this, ProjectComponent);
+
+    console.log('project component');
+  }
+
+  _createClass(ProjectComponent, null, [{
+    key: "init",
+    value: function init() {
+      var project = new ProjectComponent();
+      return project;
+    }
+  }]);
+
+  return ProjectComponent;
+}();
+
+(function () {
+  ProjectComponent.init();
+})();
 
 /***/ })
 
