@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import glob from 'glob';
 import { isDirectory, isFile, isExternal } from './is';
+import { removeExtension } from './helpers/remove-extension';
 
 /**
  * Check all components and read deps then  write map.
@@ -14,6 +15,7 @@ import { isDirectory, isFile, isExternal } from './is';
 export default (task) => {
 	const { paths, store } = task;
 	const deps = (store.deps = {});
+	const jsons = (store.jsons = {});
 	const root = paths._root;
 
 	glob.sync(`${paths._app}/**/deps.js`).forEach((file) => {
@@ -66,6 +68,33 @@ export default (task) => {
 							? deps[component].modules.concat(data.modules)
 							: deps[component].modules,
 					};
+			}
+		}
+	});
+
+	glob.sync(`${paths._app}/**/*.json`).forEach((file) => {
+		const component = path.basename(path.dirname(path.dirname(file)));
+		const filename = removeExtension(path.basename(file));
+
+		if (!isDirectory(path.dirname(file))) {
+			return;
+		}
+
+		if (isFile(file)) {
+			try {
+				const data = JSON.parse(fs.readFileSync(file));
+
+				if (!jsons[filename]) {
+					jsons[filename] = data;
+				} else {
+					jsons[filename] = Object.assign(jsons[filename], data);
+				}
+			} catch (e) {
+				throw new Error(
+					`\n\n\x1b[41mFAIL\x1b[0m: A JSON "\x1b[36m${path.basename(
+						file
+					)}\x1b[0m" have SyntaxError:\n${e.message}\n\n`
+				);
 			}
 		}
 	});

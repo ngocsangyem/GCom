@@ -1,0 +1,10 @@
+mixin dummy-text(data)
+	- data = data || {}
+	- data.class = data.class || ''
+	- data.content = data.content || 'Some content here'
+
+	.dummy-text(class=data.class)&attributes(attributes)
+		if block
+			block
+		else
+			!= data.content

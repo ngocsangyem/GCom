@@ -1,22 +1,26 @@
 export default {
 	build: 3,
 	name: 'task:assets',
-	globs: ['*', '*', 'assets', '**', '*.*'],
+	assetsPath: function () {
+		return this.isDev ? this.dirsDev.assets : this.dirsProd.assets;
+	},
+	globs: function () {
+		return ['*', '*', this.assetsPath(), '**', '*.*'];
+	},
 	init(done) {
 		const files = this.store.assets || [];
-		const async = /@(async|defer)/gi;
 		const options = {
 			since: this.since.bind(this),
 		};
 
 		if (this.isDev) {
-			const all = this.paths.app(...this.globs);
+			const all = this.paths.app(...this.globs());
 
 			if (!files.includes(all)) {
 				files.push(all);
 			}
 		} else {
-			const always = this.globs
+			const always = this.globs()
 				.join('::')
 				.replace('*.{', '*@always.{')
 				.split('::');
@@ -48,7 +52,7 @@ export default {
 
 	watch() {
 		return {
-			files: this.paths.app(...this.globs),
+			files: this.paths.app(...this.globs()),
 			tasks: this.name,
 			on: {
 				event: 'add',
@@ -61,16 +65,12 @@ export default {
 		return this.gulp.dest((file) => {
 			const path = this.path;
 			const basename = path.basename(file.path).replace('@always', '');
-			// console.log('task:assets -> dest -> basename', basename);
 			const extname = path.extname(basename);
-			// console.log('task:assets -> dest -> extname', extname);
 
 			if (extname === '.js') {
-				// console.log('task:assets -> dest -> is js', file.path);
 				file.path = path.join(file.base, basename);
 				return this.paths._scripts;
 			} else if (extname === '.css') {
-				// console.log('task:assets -> dest -> is css', file.path);
 				file.path = path.join(file.base, basename);
 				return this.paths._styles;
 			} else {

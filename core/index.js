@@ -53,7 +53,7 @@ try {
 		},
 		styles: '.scss',
 		test: false,
-		data: false,
+		data: true,
 		BEM: false,
 		prefix: '.component',
 	};
@@ -235,6 +235,7 @@ const dirsDev = {
 	favicons: dirs.development.favicons,
 	images: dirs.development.images,
 	fonts: dirs.development.fonts,
+	assets: dirs.development.assets,
 };
 
 const dirsProd = {
@@ -244,6 +245,7 @@ const dirsProd = {
 	favicons: dirs.production.favicons,
 	images: dirs.production.images,
 	fonts: dirs.production.fonts,
+	assets: dirs.production.assets,
 };
 
 const styles = !isDev ? dirsProd.styles : dirsDev.styles;

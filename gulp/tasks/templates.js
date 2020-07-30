@@ -93,52 +93,18 @@ export default {
 			// https://pugjs.org/api/reference.html
 			doctype: 'html',
 			basedir: this.paths._app,
-			site: {
-				data: this.getGlobalData(),
+			data: {
+				site: this.getGlobalData(),
 			},
 		});
 	},
 
 	getGlobalData() {
-		let siteData = {};
-		const rootFolder = this.paths._app;
-		if (this.isDirectory(rootFolder)) {
-			// Convert directory to JS Object
-			siteData = this.foldero(rootFolder, {
-				recurse: true,
-				whitelist: () => {
-					this.glob
-						.sync(rootFolder + '**/*.(json|ya?ml)')
-						.filter(function (file) {
-							return /\.(json|ya?ml)$/i.test(file);
-						});
-				},
-				loader: function loadAsString(file) {
-					let json = {};
-					try {
-						if (path.extname(file).match(/^.ya?ml$/)) {
-							json = yaml.safeLoad(fs.readFileSync(file, 'utf8'));
-						} else {
-							json = JSON.parse(fs.readFileSync(file, 'utf8'));
-						}
-					} catch (e) {
-						log.error(`Error Parsing DATA file: ${file}`);
-						log.error('==== Details Below ====');
-						log.error(e);
-					}
-					return json;
-				},
-			});
-
-			// Add --debug option to your gulp task to view
-			// what data is being loaded into your templates
-			if (this.args.debug) {
-				this.log.info(
-					'==== DEBUG: site.data being injected to templates ===='
-				);
-				this.log.info(siteData);
-			}
-		}
+		return {
+			isDev: this.isDev,
+			jsons: this.store.jsons,
+			app: this.config.app || {},
+		};
 	},
 
 	parse() {
@@ -193,8 +159,8 @@ export default {
 
 		let name = path.basename(file);
 
-		if ([`${name}${prefix}.json`, 'deps.js'].includes(name)) {
-			name = path.dirname(file).split(path.sep).pop();
+		if ([`${name}`, 'deps.js'].includes(name)) {
+			name = path.basename(path.dirname(path.dirname(file)));
 		} else {
 			name = path
 				.basename(file, path.extname(file))
@@ -220,7 +186,6 @@ export default {
 	since(file) {
 		const path = this.path;
 		const page = path.basename(file.path);
-		console.log('since -> page', page);
 		const pageInDeps =
 			this.store.depsChanged && this.store.depsChanged.includes(page);
 		return pageInDeps ? null : this.gulp.lastRun(this.name);
@@ -253,9 +218,5 @@ export default {
 		});
 
 		this.store.depsChanged = changed;
-		console.log(
-			'checkDeps -> this.store.depsChanged',
-			this.store.depsChanged
-		);
 	},
 };
