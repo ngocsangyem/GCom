@@ -53,7 +53,7 @@ export default (code, page, task) => {
 			(bundles.includes('js') ? page.name : mainBundle) + '.min.js';
 
 		if (isFile(path.join(paths._styles, style))) {
-			page.temp.styles.unshift(style);
+			page.temp.styles.push(style);
 		}
 		if (isFile(path.join(paths._scripts, script))) {
 			page.temp.scripts.push(script);
@@ -90,6 +90,7 @@ export default (code, page, task) => {
 	});
 
 	page.temp.styles.forEach((href) => {
+		// console.log('page -> styles -> href', href);
 		let style = '<link rel="stylesheet" href="[href]">';
 
 		if (!isExternal(href)) {

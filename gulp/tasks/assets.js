@@ -3,7 +3,8 @@ export default {
 	name: 'task:assets',
 	globs: ['*', '*', 'assets', '**', '*.*'],
 	init(done) {
-		const files = this.store.images || [];
+		const files = this.store.assets || [];
+		const async = /@(async|defer)/gi;
 		const options = {
 			since: this.since.bind(this),
 		};
@@ -60,12 +61,16 @@ export default {
 		return this.gulp.dest((file) => {
 			const path = this.path;
 			const basename = path.basename(file.path).replace('@always', '');
+			// console.log('task:assets -> dest -> basename', basename);
 			const extname = path.extname(basename);
+			// console.log('task:assets -> dest -> extname', extname);
 
 			if (extname === '.js') {
+				// console.log('task:assets -> dest -> is js', file.path);
 				file.path = path.join(file.base, basename);
 				return this.paths._scripts;
 			} else if (extname === '.css') {
+				// console.log('task:assets -> dest -> is css', file.path);
 				file.path = path.join(file.base, basename);
 				return this.paths._styles;
 			} else {

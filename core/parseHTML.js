@@ -32,12 +32,11 @@ export default (file, task) => {
 			onopentag(tag, attrs) {
 				// Parse assets from attrs
 
-				// if (!isDev) {
-				// 	Object.keys(attrs).forEach((attr) => {
-				// 		console.log(attrs[attr]);
-				// 		parseAsset(attrs[attr], page, paths);
-				// 	});
-				// }
+				if (!isDev) {
+					Object.keys(attrs).forEach((attr) => {
+						parseAsset(attrs[attr], page, paths);
+					});
+				}
 
 				Object.keys(attrs).forEach((attr) => {
 					if (attr === 'src') {

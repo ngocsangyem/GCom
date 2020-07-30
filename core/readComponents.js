@@ -12,7 +12,7 @@ import { isDirectory, isFile, isExternal } from './is';
  */
 
 export default (task) => {
-	const { paths, store, config } = task;
+	const { paths, store } = task;
 	const deps = (store.deps = {});
 	const root = paths._root;
 
@@ -51,7 +51,7 @@ export default (task) => {
 			if (!deps[component]) {
 				if (data)
 					deps[component] = {
-						nodes: Array.isArray(data.nodes) ? data.nodes : [],
+						components: Array.isArray(data.nodes) ? data.nodes : [],
 						modules: Array.isArray(data.modules)
 							? data.modules
 							: [],
@@ -59,7 +59,7 @@ export default (task) => {
 			} else {
 				if (data)
 					deps[component] = {
-						nodes: Array.isArray(data.nodes)
+						components: Array.isArray(data.nodes)
 							? deps[component].nodes.concat(data.nodes)
 							: deps[component].nodes,
 						modules: Array.isArray(data.modules)

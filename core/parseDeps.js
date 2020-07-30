@@ -16,14 +16,18 @@ export const parseDeps = (block, page, deps, task) => {
 	if (!deps[block]) {
 		return;
 	}
-	// Check nodes
+	// Check components
 
-	const nodes = deps[block].components || [];
+	const components = deps[block].components || [];
 
-	nodes.forEach((node) => {
-		if (typeof node !== 'string') return;
+	components.forEach((node) => {
+		if (typeof node !== 'string') {
+			return;
+		}
 		node = node.trim();
-		if (page.nodes[node]) return;
+		if (page.components[node]) {
+			return;
+		}
 		parseClass(node, page);
 		parseDeps(node, page, deps, task);
 	});
