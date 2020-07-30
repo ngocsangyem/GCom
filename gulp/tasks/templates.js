@@ -36,7 +36,7 @@ export default {
 				},
 			},
 			{
-				files: this.paths.components('**', `deps.js`),
+				files: this.paths.app('**', `deps.js`),
 				tasks: [
 					'task:templates',
 					'task:styles',
@@ -219,7 +219,8 @@ export default {
 
 	since(file) {
 		const path = this.path;
-		const page = path.basename(file.path).replace(/(\.[^/.]+)+$/, '');
+		const page = path.basename(file.path);
+		console.log('since -> page', page);
 		const pageInDeps =
 			this.store.depsChanged && this.store.depsChanged.includes(page);
 		return pageInDeps ? null : this.gulp.lastRun(this.name);
@@ -229,6 +230,7 @@ export default {
 		const path = this.path;
 		const pages = this.store.pages || {};
 		const component = path.dirname(file).split(path.sep).pop();
+		console.log('checkDeps -> component', component);
 		const changed = [];
 
 		Object.keys(pages).forEach((page) => {
@@ -240,7 +242,10 @@ export default {
 				return;
 			}
 
-			page = page + this.config.component.templates;
+			page =
+				page +
+				this.config.component.prefix +
+				this.config.component.templates;
 
 			if (!changed.includes(page)) {
 				changed.push(page);
@@ -248,5 +253,9 @@ export default {
 		});
 
 		this.store.depsChanged = changed;
+		console.log(
+			'checkDeps -> this.store.depsChanged',
+			this.store.depsChanged
+		);
 	},
 };

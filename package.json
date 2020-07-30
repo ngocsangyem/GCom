@@ -85,7 +85,6 @@
 		"webpack-stream": "^5.2.1"
 	},
 	"dependencies": {
-		"slick-carousel": "^1.8.1",
 		"swiper": "^6.0.4"
 	}
 }
