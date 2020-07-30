@@ -1,7 +1,17 @@
 export default {
 	build: 4,
-	name: 'task:copy:images',
-	globs: ['*', '*', 'img', '**', '*.{webp,png,jpg,jpeg,svg,gif,ico}'],
+	name: 'task:copy:images:component',
+	imagePath: function () {
+		return this.isDev ? this.dirsDev.images : this.dirsProd.images;
+	},
+	globs: function () {
+		return [
+			'**',
+			this.imagePath(),
+			'**',
+			'*.{webp,png,jpg,jpeg,svg,gif,ico}',
+		];
+	},
 
 	init(done) {
 		const files = this.store.images || [];
@@ -11,13 +21,13 @@ export default {
 		// In dev all files
 
 		if (this.isDev) {
-			const all = this.paths.components(...this.globs);
+			const all = this.paths.components(...this.globs());
 
 			if (!files.includes(all)) {
 				files.push(all);
 			}
 		} else {
-			const always = this.globs
+			const always = this.globs()
 				.join('::')
 				.replace('*.{', '*@always.{')
 				.split('::');
@@ -37,7 +47,7 @@ export default {
 
 	watch() {
 		return {
-			files: this.paths.components(...this.globs),
+			files: this.paths.components(...this.globs()),
 			tasks: this.name,
 			on: {
 				event: 'add',
@@ -53,8 +63,8 @@ export default {
 			const isSprite =
 				file.path.indexOf(path.join('img', 'sprite')) !== -1;
 			const relative =
-				file.path.indexOf(this.paths._components) !== -1
-					? this.paths._components
+				file.path.indexOf(this.paths._app) !== -1
+					? this.paths._app
 					: this.paths._root;
 			const component = path
 				.relative(relative, file.path)

@@ -13,7 +13,7 @@ import sourcemaps from 'gulp-sourcemaps';
 import map from 'map-stream';
 
 import { isDev, args, plugins, reportError, browserSync } from './gulp/utils';
-import { config, paths } from './core/index';
+import { config, paths, dirsDev, dirsProd } from './core/index';
 import { isDirectory, isFile } from './core/is';
 import { pipe } from './core/pipe';
 import { removeExtension } from './core/helpers/remove-extension';
@@ -58,7 +58,9 @@ const setTaskData = (task) => {
 		(task.plumber = errorHandler),
 		(task.sourcemaps = sourcemaps),
 		(task.browserSync = browserSync),
-		(task.upperFirstLetter = upperFirstLetter)
+		(task.upperFirstLetter = upperFirstLetter),
+		(task.dirsDev = dirsDev),
+		(task.dirsProd = dirsProd)
 	);
 };
 

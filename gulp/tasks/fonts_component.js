@@ -1,7 +1,12 @@
 export default {
 	build: 4,
-	name: 'task:copy:fonts',
-	globs: ['*', '*', 'fonts', '*.{eot,svg,ttf,woff,woff2}'],
+	name: 'task:copy:fonts:component',
+	fontsPath: function () {
+		return this.isDev ? this.dirsDev.fonts : this.dirsProd.fonts;
+	},
+	globs: function () {
+		return ['**', this.fontsPath(), '*.{eot,svg,ttf,woff,woff2}'];
+	},
 
 	init(done) {
 		const files = this.store.fonts || [];
@@ -10,13 +15,13 @@ export default {
 		};
 
 		if (this.isDev) {
-			const all = this.paths.app(...this.globs);
+			const all = this.paths.app(...this.globs());
 
 			if (!files.includes(all)) {
 				files.push(all);
 			}
 		} else {
-			const always = this.globs
+			const always = this.globs()
 				.join('::')
 				.replace('*.{', '*@always.{')
 				.split('::');
@@ -36,7 +41,7 @@ export default {
 
 	watch() {
 		return {
-			files: this.paths.app(...this.globs),
+			files: this.paths.app(...this.globs()),
 			tasks: this.name,
 			on: {
 				event: 'add',
@@ -52,7 +57,7 @@ export default {
 
 			file.path = path.join(file.base, basename);
 
-			return this.paths._fonts;
+			return this.paths._font;
 		});
 	},
 

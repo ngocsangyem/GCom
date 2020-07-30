@@ -37,7 +37,14 @@ export default {
 			},
 			{
 				files: this.paths.components('**', `deps.js`),
-				tasks: ['task:templates', 'task:styles', 'task:scripts'],
+				tasks: [
+					'task:templates',
+					'task:styles',
+					'task:scripts',
+					'task:assets',
+					'task:copy:fonts:component',
+					'task:copy:images:component',
+				],
 				options: {
 					delay: 250,
 				},

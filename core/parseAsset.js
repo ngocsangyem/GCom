@@ -25,8 +25,6 @@ export default (value, page, paths) => {
 		let file = false;
 
 		asset.replace(/^@([\w-]+)(.*)/i, (str, block, end) => {
-			console.log('end', end);
-			console.log('block', block);
 			if (
 				['styles', 'symbol', 'scripts', 'static', 'favicons'].includes(
 					block

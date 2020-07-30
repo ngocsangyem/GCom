@@ -313,10 +313,10 @@ const paths = {
 	_scripts: path.join(root, target, scripts),
 	_static: path.join(root, target, staticP),
 	_favicons: path.join(root, target, favicons),
-	_fonts: path.join(root, target, fonts),
-	_images: path.join(root, target, images),
-	_img: path.join(root, target, styles, 'img'),
-	_font: path.join(root, target, styles, 'font'),
+	_images: path.join(root, target, staticP, images),
+	_img: path.join(root, target, styles, images),
+	_fonts: path.join(root, target, staticP, fonts),
+	_font: path.join(root, target, styles, fonts),
 	_tmp: path.join(root, 'tmp'),
 	_build: path.join(root, 'build'),
 	_assets: path.join(root, 'src', 'assets'),
@@ -338,4 +338,4 @@ try {
 	console.log(c.red(error));
 }
 
-export { paths, config, notify };
+export { paths, config, notify, dirsDev, dirsProd };
