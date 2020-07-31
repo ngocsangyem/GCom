@@ -1,4 +1,4 @@
-export default {
+module.exports = {
 	app: {
 		name: 'yem',
 		version: '1.0.0',

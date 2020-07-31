@@ -31,7 +31,7 @@ let config = {};
 try {
 	const appConfig = path.join(root, 'config.js');
 	if (isFile(appConfig)) {
-		config = require(appConfig).default;
+		config = require(appConfig);
 	}
 } catch (error) {
 	console.log(c.red(error));

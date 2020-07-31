@@ -3,7 +3,6 @@ import path from 'path';
 import c from 'ansi-colors';
 import * as BEM from './bem';
 import { replaceName } from './helpers/replace-name';
-
 import { paths, config } from './index';
 
 /**
@@ -143,7 +142,6 @@ export const createComponent = {
 		let injected = '';
 
 		array.forEach((item) => {
-			console.log('addGlobalStyles -> item', item);
 			if (typeof item !== 'string') {
 				return;
 			}

@@ -73,4 +73,4 @@ const reportError = function (error) {
 	this.emit('end');
 };
 
-export { args, config, taskTarget, plugins, browserSync, reportError, isDev };
+export { args, taskTarget, plugins, browserSync, reportError, isDev };
