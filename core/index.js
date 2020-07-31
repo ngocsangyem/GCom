@@ -40,6 +40,7 @@ try {
 	const app = {
 		name: pjson.name,
 		version: pjson.version,
+		url: 'demosite.com',
 	};
 
 	config.app = Object.assign(app, config.app);
