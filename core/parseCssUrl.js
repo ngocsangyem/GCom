@@ -15,6 +15,7 @@ import { isExternal } from './is';
  */
 
 export default (asset, dir, options, decl) => {
+	console.log('asset', asset);
 	if (!asset.url || isExternal(asset.url)) {
 		return;
 	}
@@ -25,7 +26,7 @@ export default (asset, dir, options, decl) => {
 		['.eot', '.svg', '.ttf', '.woff', '.woff2'].includes(extname);
 	const isSprite =
 		asset.absolutePath.indexOf(path.join('img', 'sprite')) !== -1;
-	const isModule = asset.absolutePath.indexOf(this.paths._components) === -1;
+	const isModule = asset.absolutePath.indexOf(this.paths._app) === -1;
 	const basename = path.basename(asset.url);
 
 	if (isSprite && !this.isDev) {
@@ -49,7 +50,7 @@ export default (asset, dir, options, decl) => {
 	} else {
 		const component = path
 			.relative(
-				isModule ? this.paths._root : this.paths._components,
+				isModule ? this.paths._root : this.paths._app,
 				asset.absolutePath
 			)
 			.split(path.sep)[1];

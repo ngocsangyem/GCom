@@ -1,7 +1,7 @@
 include ./includes/variables
-
-
 include ./includes/watermark
+
+
 block var
 doctype html
 html(dir='ltr', lang=SEO.seo_lang, itemscope, itemtype="http://schema.org/WebSite", prefix="og: http://ogp.me/ns#", class="no-js")
@@ -23,5 +23,6 @@ html(dir='ltr', lang=SEO.seo_lang, itemscope, itemtype="http://schema.org/WebSit
 		<!-- GULPC:styles -->
 	body(class=isDev ? workName + 'develop '+prefix+bodyClass+'-page' : prefix+bodyClass+'-page' || 'default')
 		main
+			<!-- GULPC:symbol -->
 			block main
 		<!-- GULPC:scripts -->

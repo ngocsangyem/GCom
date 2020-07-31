@@ -11,7 +11,7 @@ export default {
 	init(done) {
 		const files = this.store.fonts || [];
 		const options = {
-			since: this.since.bind(this),
+			// since: this.since.bind(this),
 		};
 
 		if (this.isDev) {

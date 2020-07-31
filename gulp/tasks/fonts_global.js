@@ -5,7 +5,7 @@ export default {
 		return this.isDev ? this.dirsDev.fonts : this.dirsProd.fonts;
 	},
 	globs: function () {
-		return ['**', this.fontsPath(), '*.{eot,svg,ttf,woff,woff2}'];
+		return [this.fontsPath(), '**', '*.{eot,svg,ttf,woff,woff2}'];
 	},
 
 	init(done) {
@@ -32,7 +32,7 @@ export default {
 	},
 
 	dest() {
-		return this.gulp.dest(this.paths._static);
+		return this.gulp.dest(this.paths._fonts);
 	},
 
 	since(file) {

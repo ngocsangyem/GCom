@@ -158,3 +158,5 @@ dist
 
 build/*
 tmp/*
+*.zip
+*.rar

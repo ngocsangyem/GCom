@@ -2,8 +2,9 @@ import fs from 'fs';
 import path from 'path';
 import c from 'ansi-colors';
 import * as BEM from './bem';
-import { paths, config } from './index';
 import { replaceName } from './helpers/replace-name';
+
+import { paths, config } from './index';
 
 /**
  * Fast generate component with files and folders
@@ -226,7 +227,7 @@ export const createComponent = {
 			if (!isFile) {
 				let prev = directory;
 
-				return item.split(path.sep).forEach((dir) => {
+				return extension.split(path.sep).forEach((dir) => {
 					if (!dir || !dir.trim() || typeof dir !== 'string') {
 						return;
 					}
@@ -338,7 +339,6 @@ export const createComponent = {
 					let extra = more.split(',');
 
 					name = name.trim().toLowerCase();
-
 					if (
 						config.createComponent &&
 						config.createComponent[more]

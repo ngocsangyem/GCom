@@ -20,6 +20,7 @@ import injectToHTML from './core/injectToHTML';
 import { parseDeps } from './core/parseDeps';
 import parseAsset from './core/parseAsset';
 import parseClass from './core/parseClass';
+import parseXlink from './core/parseXlink';
 import { upperFirstLetter } from './core/helpers/upper-first-letter';
 
 const htmlparser2 = require('htmlparser2');
@@ -60,7 +61,8 @@ const setTaskData = (task) => {
 		(task.upperFirstLetter = upperFirstLetter),
 		(task.dirsDev = dirsDev),
 		(task.dirsProd = dirsProd),
-		(task.notify = notify)
+		(task.notify = notify),
+		(task.parseXlink = parseXlink)
 	);
 };
 

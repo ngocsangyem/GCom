@@ -5,12 +5,7 @@ export default {
 		return this.isDev ? this.dirsDev.images : this.dirsProd.images;
 	},
 	globs: function () {
-		return [
-			'**',
-			this.imagePath(),
-			'**',
-			'*.{webp,png,jpg,jpeg,svg,gif,ico}',
-		];
+		return [this.imagePath(), '**', '*.{webp,png,jpg,jpeg,svg,gif,ico}'];
 	},
 
 	init(done) {
@@ -37,7 +32,7 @@ export default {
 	},
 
 	dest() {
-		return this.gulp.dest(this.paths._static);
+		return this.gulp.dest(this.paths._images);
 	},
 
 	since(file) {

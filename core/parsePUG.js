@@ -21,6 +21,7 @@ export default function (file, task) {
 		styles: filePage + config.component.styles,
 		scripts: filePage + config.component.scripts.extension,
 		assets: [],
+		symbol: [],
 		temp: {
 			styles: [],
 			scripts: [],

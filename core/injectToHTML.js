@@ -13,8 +13,21 @@ import { isExternal, isFile } from './is';
  */
 
 export default (code, page, task) => {
-	const { paths, config, store, isDev, mainBundle, isFile } = task;
+	const {
+		paths,
+		config,
+		store,
+		isDev,
+		mainBundle,
+		isFile,
+		dirsDev,
+		dirsProd,
+		path,
+	} = task;
 
+	const styles = isDev ? dirsDev.styles : dirsProd.styles;
+	const symbolFolder = isDev ? dirsDev.images : dirsProd.images;
+	const symbolsFile = path.join(styles, symbolFolder, 'symbol.svg');
 	const withGap = /(\s+)?(<!--(\s+)?Inject:([\w]+)(\s+)?-->)/gi;
 	const comment = /(\s+)?(<!--(\s+)?GULPC:([\w]+)(\s+)?-->)/gi;
 	const pattern = /@(async|defer)/gi;
@@ -24,22 +37,6 @@ export default (code, page, task) => {
 	const arrays = {
 		scripts: [],
 		styles: [],
-	};
-
-	const dirs = config.directories;
-
-	const dirsDev = {
-		styles: dirs.development.styles,
-		scripts: dirs.development.scripts,
-		static: dirs.development.static,
-		favicons: dirs.development.favicons,
-	};
-
-	const dirsProd = {
-		styles: dirs.production.styles,
-		scripts: dirs.production.scripts,
-		static: dirs.production.static,
-		favicons: dirs.production.favicons,
 	};
 
 	if (isDev) {
@@ -125,6 +122,10 @@ export default (code, page, task) => {
 			instead = indent + arrays[name].join(indent);
 		}
 
+		if (name === 'symbol') {
+			instead = indent + (store.svg || com);
+		}
+
 		return instead;
 	});
 
@@ -143,14 +144,15 @@ export default (code, page, task) => {
 	injected = injected.replace(
 		/(,|'|"|`| )@([\w-]+)/gi,
 		(str, quote, component) => {
-			const paths = {
-				styles: isDev ? dirsDev.styles : dirsProd.styles,
+			const pathsDist = {
+				styles,
+				symbol: symbolsFile,
 				scripts: isDev ? dirsDev.scripts : dirsProd.scripts,
 				static: isDev ? dirsDev.static : dirsProd.static,
-				favicons: isDev ? dirsDev.favicons : dirsProd.favicons,
 			};
 
-			const dist = paths[component] || `${paths.static}/${component}`;
+			const dist =
+				pathsDist[component] || `${pathsDist.static}/${component}`;
 
 			return `${quote}${config.build.HTMLRoot}${dist}`;
 		}

@@ -10,7 +10,7 @@ export default {
 			'**/*' + this.config.component.templates
 		);
 		const options = {
-			since: this.since.bind(this),
+			// since: this.since.bind(this),
 		};
 		const ready = this.HTMLReady.bind(this, done);
 		return this.gulp
@@ -53,9 +53,15 @@ export default {
 					handler: this.checkDeps.bind(this),
 				},
 			},
-
 			{
-				files: this.paths.components(
+				files: this.paths.app('**', `*${extname}`),
+				tasks: ['task:templates'],
+				options: {
+					delay: 150,
+				},
+			},
+			{
+				files: this.paths.app(
 					'**',
 					`*.(json|ya?ml|${extname.slice(1)})`
 				),
@@ -195,7 +201,6 @@ export default {
 		const path = this.path;
 		const pages = this.store.pages || {};
 		const component = path.dirname(file).split(path.sep).pop();
-		console.log('checkDeps -> component', component);
 		const changed = [];
 
 		Object.keys(pages).forEach((page) => {

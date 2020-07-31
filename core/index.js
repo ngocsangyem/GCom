@@ -31,7 +31,7 @@ let config = {};
 try {
 	const appConfig = path.join(root, 'config.js');
 	if (isFile(appConfig)) {
-		config = require(appConfig);
+		config = require(appConfig).default;
 	}
 } catch (error) {
 	console.log(c.red(error));
@@ -79,7 +79,6 @@ try {
 		page_list: [],
 		test: false,
 		prefix: '.component',
-		SEO: true,
 	};
 
 	config.pages = Object.assign(pages, config.pages);
@@ -148,11 +147,6 @@ try {
 
 	const directories = {
 		base: './',
-		entries: {
-			script: 'main.js',
-			css: 'main.+(sass|scss)',
-			data: 'data.json',
-		},
 		development: {
 			source: 'src',
 			app: 'app',
@@ -167,6 +161,7 @@ try {
 			pages: 'pages',
 			static: 'static',
 			favicons: 'favicons',
+			symbols: 'symbols',
 		},
 		production: {
 			destination: 'build',
@@ -177,6 +172,7 @@ try {
 			assets: 'assets',
 			static: 'static',
 			favicons: 'favicons',
+			symbols: 'symbols',
 		},
 	};
 
@@ -237,6 +233,7 @@ const dirsDev = {
 	images: dirs.development.images,
 	fonts: dirs.development.fonts,
 	assets: dirs.development.assets,
+	symbols: dirs.development.symbols,
 };
 
 const dirsProd = {
@@ -247,6 +244,7 @@ const dirsProd = {
 	images: dirs.production.images,
 	fonts: dirs.production.fonts,
 	assets: dirs.production.assets,
+	symbols: dirs.production.symbols,
 };
 
 const styles = !isDev ? dirsProd.styles : dirsDev.styles;
@@ -323,6 +321,7 @@ const paths = {
 	_tmp: path.join(root, 'tmp'),
 	_build: path.join(root, 'build'),
 	_assets: path.join(root, 'src', 'assets'),
+	_symbol: path.join(root, target, styles, images),
 };
 
 // Add main dirs

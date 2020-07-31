@@ -19,6 +19,7 @@ export default (file, task) => {
 		parseAsset,
 		parseClass,
 		injectToHTML,
+		parseXlink,
 	} = task;
 
 	const name = removeExtension(
@@ -31,6 +32,10 @@ export default (file, task) => {
 		{
 			onopentag(tag, attrs) {
 				// Parse assets from attrs
+
+				if (tag === 'use') {
+					return parseXlink(attrs['xlink:href'], page, paths);
+				}
 
 				if (!isDev) {
 					Object.keys(attrs).forEach((attr) => {

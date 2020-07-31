@@ -8,16 +8,17 @@ export default {
 		}
 
 		const files = this.paths.dist('**/*');
+		const size = this.size();
 
 		return this.gulp
 			.src(files)
-			.pipe(this.size())
+			.pipe(size)
 			.pipe(this.dest())
 			.pipe(this.sizeReport())
 			.pipe(
 				this.notify({
 					onLast: true,
-					message: () => `Total size ${this.size().prettySize}`,
+					message: () => `Total size ${size.prettySize}`,
 				})
 			);
 	},
