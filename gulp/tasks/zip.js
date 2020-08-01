@@ -1,7 +1,10 @@
 export default {
 	name: 'zip',
 
-	init() {
+	init(done) {
+		if (!this.config.build.zip) {
+			return done();
+		}
 		let files = this.paths.dist('**', '*.*');
 		if (process.env.SNAPSHOT)
 			files = [

@@ -9,25 +9,19 @@ module.exports = {
 		templates: '.pug',
 		scripts: {
 			extension: '.js',
-			syntax: 'class',
+			syntax: 'function',
 		},
 		styles: '.scss',
-		test: true,
 		data: true,
-		BEM: false,
+		BEM: true,
 		prefix: '.component',
 	},
 
 	build: {
-		addVersions: false,
-		babel: true,
+		addVersions: true,
 		bundles: ['js', 'css'],
-		sourcemaps: [],
-		imagemin: [],
 		mainBundle: 'main',
 		globalStyles: false,
-		zip: true,
-		HTMLRoot: './',
 	},
 
 	createComponent: {

@@ -1,0 +1,10 @@
+mixin header__nav(data)
+	- data = data || {}
+	- data.class = data.class || ''
+	- data.content = data.content || 'Some content here'
+
+	.header__nav(class=data.class)&attributes(attributes)
+		if block
+			block
+		else
+			!= data.content

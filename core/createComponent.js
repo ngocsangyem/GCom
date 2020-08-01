@@ -323,7 +323,7 @@ export const createComponent = {
 	parseArguments(argv, showMessage = true) {
 		this.setType(argv);
 		this.setItems(argv);
-		this.setOptions(argv);
+		this.setOptions();
 		this.checkDirs();
 
 		if (this.items.length === 0) {

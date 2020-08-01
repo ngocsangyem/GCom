@@ -52,7 +52,6 @@ export default {
 			.pipe(this.rename())
 			.pipe(this.sourcemapWrite())
 			.pipe(this.concat(bundle))
-			.pipe(this.sortMediaQuery())
 			.pipe(this.postcss(bundle))
 			.pipe(this.cssnano())
 			.pipe(this.dest())
@@ -117,6 +116,7 @@ export default {
 		const postcss = require('gulp-postcss');
 		const autoprefixer = require('autoprefixer');
 		const cssDeclarationSorter = require('css-declaration-sorter');
+		const sortMedia = require('postcss-sort-media-queries');
 		const plugins = [
 			autoprefixer({
 				grid: true,
@@ -124,6 +124,7 @@ export default {
 			cssDeclarationSorter({
 				order: 'concentric-css',
 			}),
+			sortMedia(),
 			this.generateSprites(bundle),
 		];
 

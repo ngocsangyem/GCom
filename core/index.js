@@ -86,9 +86,7 @@ try {
 	// Merge build
 	const build = {
 		addVersions: false,
-		babel: true,
 		bundles: ['js', 'css'],
-		sourcemaps: [],
 		imagemin: [],
 		mainBundle: 'main',
 		globalStyles: false,
