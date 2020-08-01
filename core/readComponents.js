@@ -13,10 +13,15 @@ import { removeExtension } from './helpers/remove-extension';
  */
 
 export default (task) => {
-	const { paths, store } = task;
+	const { paths, store, config } = task;
 	const deps = (store.deps = {});
 	const jsons = (store.jsons = {});
+	const levels = (store.levels = []);
+	const componentsFolder = fs
+		.readdirSync(paths._app)
+		.filter((folder) => !config.build.mainFolders.includes(folder));
 	const root = paths._root;
+	const sortLevels = config.levels;
 
 	glob.sync(`${paths._app}/**/deps.js`).forEach((file) => {
 		const component = path.basename(path.dirname(file));
@@ -96,6 +101,28 @@ export default (task) => {
 					)}\x1b[0m" have SyntaxError:\n${e.message}\n\n`
 				);
 			}
+		}
+	});
+
+	componentsFolder.forEach((folder) => {
+		if (!isDirectory(paths.app(folder))) {
+			return;
+		}
+
+		levels.push(folder);
+	});
+
+	// Sort levels
+
+	levels.sort((one, two) => {
+		const a = (sortLevels && sortLevels[one]) || 2;
+		const b = (sortLevels && sortLevels[two]) || 2;
+
+		if (a > b) {
+			return 1;
+		}
+		if (a < b) {
+			return -1;
 		}
 	});
 };

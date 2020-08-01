@@ -5,8 +5,6 @@ export default {
 		return this.config.component.styles.slice(1);
 	},
 	init(done) {
-		this.fs.writeFileSync('./store.json', JSON.stringify(this.store));
-
 		if (this.isDev || !this.config.build.bundles.includes('css')) {
 			let files;
 			if (this.extname() === 'css') {

@@ -16,7 +16,6 @@ import {
 	pageSassTemplate,
 	pageScssTemplate,
 	jsPageTemplateClass,
-	jsPageTemplateFunction,
 } from './templates/files';
 import pjson from '../package.json';
 
@@ -89,9 +88,11 @@ try {
 		bundles: ['js', 'css'],
 		imagemin: [],
 		mainBundle: 'main',
+		mainLevel: 'components',
 		globalStyles: false,
 		zip: true,
 		HTMLRoot: './',
+		mainFolders: ['helpers', 'main.js', 'main.scss', 'styles', 'views'],
 	};
 
 	config.build = Object.assign(build, config.build);
@@ -112,6 +113,31 @@ try {
 	if (config.build.imagemin.includes('jpg')) {
 		config.build.imagemin.push('jpeg');
 	}
+
+	// Merge autoCreate
+
+	if (!config.autoCreate) {
+		config.autoCreate = {};
+	}
+
+	config.autoCreate = {
+		onlyOnWatch: true,
+		folders: [].concat(config.autoCreate.folders).filter((el) => !!el),
+		files: [].concat(config.autoCreate.files).filter((el) => !!el),
+		levels: [].concat(config.autoCreate.levels).filter((el) => !!el),
+		ignoreComponents: []
+			.concat(config.autoCreate.ignoreComponents)
+			.filter((el) => !!el),
+		ignoreStyle: []
+			.concat(config.autoCreate.ignoreStyle)
+			.filter((el) => !!el),
+		ignoreScript: []
+			.concat(config.autoCreate.ignoreScript)
+			.filter((el) => !!el),
+		ignoreTemplate: []
+			.concat(config.autoCreate.ignoreTemplate)
+			.filter((el) => !!el),
+	};
 
 	// Merge create component
 

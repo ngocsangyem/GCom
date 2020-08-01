@@ -210,6 +210,7 @@ component/
 -   [SVG symbols](#svg-symbols)
 -   [Component dependencies](#component-dependencies)
 -   [Image optimization](#image-optimization)
+-   [Automatic creation of files and components](#automatic-creation-of-files-and-components)
 -   [Fast make components and files from terminal](#fast-make-components-and-files-from-terminal)
 -   [Default content in new files](#default-content-in-new-files)
 -   [Bundles](#bundles)
@@ -628,9 +629,64 @@ More information about each type of compression settings can be found in the doc
 -   png - [optipng](https://github.com/imagemin/imagemin-optipng#api)
 -   svg - [svgo](https://github.com/svg/svgo#what-it-can-do)
 
+# Automatic creation of files and components
+
+You just write the BEM code, and the components and files are created automatically.  
+By default, this feature is turned off, to activate it, you need to add settings to [config.js](#apps-config)
+
+```js
+// config.js
+
+autoCreate: {
+  onlyOnWatch: true, // create files always or only during watch
+  folders: [], // the list of directories of the new component, for example: 'img', 'assets'
+  files: [], // list of files of the new node, for example: '.css', '.js', 'data.json'
+  levels: [], // levels where components will be created, for example: 'develop'
+  ignoreNodes: [], // list of nodes that will be completely ignored **
+},
+
+```
+
+> \*\* You can use regular expressions here!
+
+Suppose I need to create components at the components folder, each new component must have a style file, a script and a folder for pictures, but at the same time, you need to ignore the elements and not create files for them:
+
+```js
+// config.js
+
+autoCreate: {
+  onlyOnWatch: true, // create files only during watch
+  folders: [ 'assets' ], // assets folder created for new components
+  files: [ '.scss', '.js' ], // new node will have style and script
+  levels: [ 'components' ], // new components are created only at components folder
+  ignoreNodes: [ /__[\w]/i ], // all elements will be ignored
+},
+
+```
+
+Good, but with such settings, each JS and CSS file will also be created for each component modifier, if you do not need it, you can add more settings:
+
+```js
+// config.js
+
+autoCreate: {
+  onlyOnWatch: true,
+  folders: [ 'img', 'assets' ],
+  files: [ '.css', '.js' ],
+  levels: [ 'develop' ],
+  ignoreNodes: [ /__[\w]/i ],
+  ignoreStyle: [ /[a-z\d](_|--)[a-z\d]/i ], // ignore modifiers when creating styles
+  ignoreScript: [ /[a-z\d](_|--)[a-z\d]/i  ], // ignore modifiers when creating scripts
+  ignoreTemplate: [], // by analogy, you can specify for templates
+},
+
+```
+
+In fact, we could just ban modifiers as well as elements, but to demonstrate all the possibilities let it be so :)
+
 # Fast make components and files from terminal
 
-You can quickly create components and files from the terminal with a simple command `npm run add`.
+If for some reason the [automatic creation of files and components](#automatic-creation-of-files-and-components) does not fit, then you can quickly create components and files from the terminal with a simple command `npm run add`.
 
 > If any files and folders already exist, they will simply be ignored.
 > When using the zsh command shell, you need to escape the square brackets or take the command in quotes!
@@ -714,7 +770,7 @@ npm run add header[b]
 
 # Default content in new files
 
-When creating files [automatically](#automatic-creation-of-files-and-blocks) or [by hand](#fast-make-blocks-and-files-from-terminal), its may contain default content, for this you need to add settings in [config.js](#apps-config)
+When creating files [automatically](#automatic-creation-of-files-and-components) or [by hand](#fast-make-components-and-files-from-terminal), its may contain default content, for this you need to add settings in [config.js](#apps-config)
 
 ```js
 // config.js

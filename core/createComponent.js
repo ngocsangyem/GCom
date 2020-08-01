@@ -25,6 +25,27 @@ export const createComponent = {
 		this.items = items.filter((el, i) => items.indexOf(el) === i);
 	},
 
+	setLevel() {
+		let level;
+
+		this.items.some((el) => {
+			if (el[0] === '+') {
+				return (level = el);
+			}
+
+			return false;
+		});
+
+		if (level) {
+			this.items = this.items.slice(0, this.items.indexOf(level));
+			level = level.slice(1);
+		} else {
+			level = config.build.mainLevel;
+		}
+
+		this.level = level;
+	},
+
 	setOptions() {
 		let option;
 
@@ -52,6 +73,7 @@ export const createComponent = {
 			const app = paths._app;
 			const pages = paths._pages;
 			const components = paths._components;
+			const level = path.join(app, this.level);
 
 			if (!fs.existsSync(app)) {
 				fs.mkdirSync(app);
@@ -61,6 +83,9 @@ export const createComponent = {
 			}
 			if (!fs.existsSync(components)) {
 				fs.mkdirSync(components);
+			}
+			if (!fs.existsSync(level)) {
+				fs.mkdirSync(level);
 			}
 		} catch (error) {
 			console.log(c.redBright(`Create main folder fail: ${error}`));
@@ -193,9 +218,9 @@ export const createComponent = {
 	},
 
 	addComponent(node, extensions, type, prefix) {
-		const component = !config.component.BEM
+		const component = this.options.customPath
 			? node
-			: `${BEM.getComponent(node)}/${node}`;
+			: BEM.getComponent(node);
 		const directory = this.setDirection(component, type);
 		let customName = this.parseCustomName(component);
 		let dataFile;
@@ -291,7 +316,7 @@ export const createComponent = {
 
 	setDirection(direction, type) {
 		if (type === 'component' && !this.options.customPath) {
-			return paths.components(direction);
+			return paths.app(this.level, direction);
 		} else if (type === 'page' && !this.options.customPath) {
 			return paths.pages(direction);
 		} else if (this.options.customPath) {
@@ -324,6 +349,7 @@ export const createComponent = {
 		this.setType(argv);
 		this.setItems(argv);
 		this.setOptions();
+		this.setLevel();
 		this.checkDirs();
 
 		if (this.items.length === 0) {

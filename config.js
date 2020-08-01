@@ -13,7 +13,7 @@ module.exports = {
 		},
 		styles: '.scss',
 		data: true,
-		BEM: true,
+		BEM: false,
 		prefix: '.component',
 	},
 

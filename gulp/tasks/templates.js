@@ -148,9 +148,15 @@ export default {
 	HTMLReady(done) {
 		const generateTree = require(this.paths.core('generateTree'));
 		const parseComponents = require(this.paths.core('parseComponents'));
+		const autoCreate = require(this.paths.core('autoCreate'));
+		const onlyOnWatch = this.config.autoCreate.onlyOnWatch;
 
 		generateTree(this);
 		parseComponents(this);
+
+		if (!onlyOnWatch || (onlyOnWatch && this.store.watch)) {
+			autoCreate(this);
+		}
 
 		this.store.depsChanged = false;
 
