@@ -730,6 +730,16 @@ npm run add common/card[.js,.scss] :customPath
 > A "common/card/card.component.js" file will be created  
 > A "common/card/card.component.scss" file will be created
 
+```bash
+npm run add card[.js,.scss] :shared
+```
+
+> **Result:**  
+> A "shared" folder will be created
+> A "shared/card" folder will be created  
+> A "shared/card/card.component.js" file will be created  
+> A "shared/card/card.component.scss" file will be created
+
 You can also quickly create pages, for this you need to specify the keyword **page** after add:
 
 ```bash
@@ -791,6 +801,14 @@ Now when creating a SCSS file `npm run add header[.scss]` its contents will be:
 .header {
 }
 ```
+
+You can specify the empty content directly through the colon: with `notemplate`
+
+```bash
+npm run add card[.js,.scss] :noTemplate
+```
+
+> By default, when you generate component with the :customPath, it's will not have content
 
 By analogy, you can add content for any new files.
 
