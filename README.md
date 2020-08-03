@@ -23,8 +23,6 @@ gulp-component is an opinionated generator for web development. Tools for buildi
 | [Less](http://lesscss.org/)                       |    ❌     |
 | [Stylus](https://stylus-lang.com/)                |    ❌     |
 | [GulpV4](https://gulpjs.com/)                     |    ✅     |
-| [Browserify](http://browserify.org/)              |    ✅     |
-| [Webpack](https://webpack.js.org/)                |    ✅     |
 | [Webpack](https://webpack.js.org/)                |    ✅     |
 | [Typescript](https://www.typescriptlang.org/)     |    ✅     |
 | JavaScript ES6+ Support                           |    ✅     |
