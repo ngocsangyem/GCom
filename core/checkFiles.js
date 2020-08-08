@@ -12,45 +12,46 @@ import checkModules from './checkModules';
 
 export default (type, task) => {
 	const { store, paths, config, isDev, mainBundle, isFile } = task;
-	const { tree, deps } = store;
-	const imports = store[type];
-	const extname = config.component[type];
+	const { tree, deps, levels } = store;
 	const needBundles = config.build.bundles.includes(
 		type === 'scripts' ? 'js' : 'css'
 	);
-	const pages = !isDev && needBundles ? Object.keys(tree) : [mainBundle];
-	const storePages = store.pages;
-	// console.log('pages', pages);
+	const extname =
+		type === 'scripts'
+			? config.component[type].extension
+			: config.component[type];
+	const pages =
+		!isDev && needBundles ? Object.keys(store.pages) : [mainBundle];
 	const importExtnames = {
 		styles: ['.css', config.component.styles],
-		scripts: ['.js', config.component.scripts],
+		scripts: ['.js', config.component.scripts.extension],
 	};
-	const siteComponents = store.site_components.components;
-	if (!tree) {
+
+	if (!store.pages) {
 		return;
 	}
 
-	pages.forEach((page) => {
-		// console.log('page', page);
-		if (!page) {
+	pages.forEach((p) => {
+		if (!(p in store.pages)) {
+			return;
+		}
+		const page = store.pages[p];
+		// console.log(page['styles']);
+		const components = page.components;
+		const array = !page[type] ? [] : page[type];
+
+		if (!components) {
 			return;
 		}
 
-		const nodes = tree['main'];
-		const array = (imports[page] = []);
+		Object.keys(components).forEach((component) => {
+			// If component is component check modules
 
-		if (!nodes) {
-			return;
-		}
-
-		Object.keys(nodes).forEach((node) => {
-			const component = BEM.getComponent(node);
-
-			if (BEM.isComponent(node) && deps[node]) {
+			if (BEM.isComponent(component) && deps[component]) {
 				checkModules(
-					node,
+					component,
 					'import',
-					store.pages && store.pages[page],
+					store.pages && page,
 					deps,
 					task,
 					importExtnames[type],
@@ -58,25 +59,17 @@ export default (type, task) => {
 				);
 			}
 
-			const files = [node].concat(nodes[node]);
-			const components = storePages[page].components;
+			// levels.forEach((level) => {
+			// 	const files = [component].concat(components[component]);
 
-			files.forEach((item) => {
-				if (
-					typeof components === 'object' &&
-					components !== null &&
-					components.hasOwnProperty(item)
-				) {
-					const file = paths.app(
-						siteComponents[component].parent,
-						item + config.component.prefix + extname
-					);
-					// console.log('file', file);
-					if (isFile(file) && array.indexOf(file) === -1) {
-						array.push(file);
-					}
-				}
-			});
+			// 	files.forEach((item) => {
+			// 		const file = paths.app(level, component, item + extname);
+
+			// 		if (isFile(file) && array.indexOf(file) === -1) {
+			// 			array.push(file);
+			// 		}
+			// 	});
+			// });
 		});
 	});
 };

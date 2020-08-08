@@ -39,7 +39,10 @@ export default (component, type, page, deps, task, extnames, imports) => {
 			: [module[type]];
 		const filter =
 			typeof module.filter === 'function' ? module.filter : false;
+
 		if (type === 'import') {
+			// console.log('checkModules -> is imports');
+			// console.log('checkModules -> items', items);
 			items.forEach((item) => {
 				if (typeof item !== 'string') {
 					return;
@@ -69,6 +72,7 @@ export default (component, type, page, deps, task, extnames, imports) => {
 				if (imports.indexOf(file) === -1) {
 					imports.push(file);
 				}
+				// console.log('checkModules -> imports', imports);
 			});
 		}
 

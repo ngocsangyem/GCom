@@ -5,6 +5,8 @@ export default {
 		return this.config.component.styles.slice(1);
 	},
 	init(done) {
+		const checkFiles = require(this.paths.core('checkFiles'));
+		checkFiles('styles', this);
 		if (this.isDev || !this.config.build.bundles.includes('css')) {
 			let files;
 			if (this.extname() === 'css') {
@@ -47,11 +49,12 @@ export default {
 			.pipe(this.sourcemapInit())
 			.pipe(this.compile())
 			.pipe(this.parseURLs())
-			.pipe(this.rename())
+			.pipe(this.concat(bundle))
 			.pipe(this.sourcemapWrite())
 			.pipe(this.concat(bundle))
 			.pipe(this.postcss(bundle))
 			.pipe(this.cssnano())
+			.pipe(this.rename())
 			.pipe(this.dest())
 			.on('end', done);
 	},
@@ -163,10 +166,13 @@ export default {
 	},
 
 	concat(bundle) {
-		return require('gulp-if')(
-			this.extname() === 'css',
-			require('gulp-concat')(`${bundle}.css`)
-		);
+		// return require('gulp-if')(
+		// 	this.extname() === 'css',
+		// 	require('gulp-concat')(`${bundle}.css`)
+		// );
+		return require('gulp-concat')({
+			path: this.path.join(this.paths._root, `${bundle}.css`),
+		});
 	},
 
 	rename() {

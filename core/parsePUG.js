@@ -18,8 +18,8 @@ export default function (file, task) {
 		template: filePage + config.component.templates,
 		components: {},
 		BEM_tree: {},
-		styles: filePage + config.component.styles,
-		scripts: filePage + config.component.scripts.extension,
+		styles: [],
+		scripts: [],
 		assets: [],
 		symbol: [],
 		temp: {
@@ -27,6 +27,9 @@ export default function (file, task) {
 			scripts: [],
 		},
 	});
+
+	page.styles.push(filePage + config.component.styles);
+	page.scripts.push(filePage + config.component.scripts.extension);
 
 	const filename = file.path;
 	const src = fs.readFileSync(filename).toString();
