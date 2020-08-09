@@ -15,7 +15,6 @@ import { isExternal } from './is';
  */
 
 export default (asset, dir, options, decl) => {
-	console.log('asset', asset);
 	if (!asset.url || isExternal(asset.url)) {
 		return;
 	}

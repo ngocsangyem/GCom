@@ -70,9 +70,8 @@ export default (component, type, page, deps, task, extnames, imports) => {
 				if (!checkFile(file, component, item, isDev)) return;
 
 				if (imports.indexOf(file) === -1) {
-					imports.push(file);
+					imports.unshift(file);
 				}
-				// console.log('checkModules -> imports', imports);
 			});
 		}
 
