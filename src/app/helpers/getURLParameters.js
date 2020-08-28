@@ -1,3 +1,11 @@
+/*
+ * @param {String} url
+ * @return Object
+ * @example
+ * getURLParameters('http://url.com/page?name=Adam&surname=Smith'); => {name: 'Adam', surname: 'Smith'}
+ * getURLParameters('google.com'); => {}
+ */
+
 const getURLParameters = (url) =>
 	(url.match(/([^?=&]+)(=([^&]*))/g) || []).reduce(
 		(a, v) => (
@@ -5,8 +13,5 @@ const getURLParameters = (url) =>
 		),
 		{}
 	);
-
-// getURLParameters('http://url.com/page?name=Adam&surname=Smith'); // {name: 'Adam', surname: 'Smith'}
-// getURLParameters('google.com'); // {}
 
 export { getURLParameters };

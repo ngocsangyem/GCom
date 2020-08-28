@@ -1,4 +1,7 @@
-// `arr` is an array
+/*
+ * @param {Array} arr
+ * @return boolean
+ */
 const isEmptyArray = (arr) =>
 	!(
 		Array.isArray(arr) &&

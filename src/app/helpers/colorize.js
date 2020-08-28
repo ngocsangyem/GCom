@@ -1,3 +1,14 @@
+/*
+ * @param {Array} args
+ * @return null
+ * @desc
+ * Make console more color
+ * @example
+ * console.log(colorize('foo').red); => 'foo' (red letters)
+ * console.log(colorize('foo', 'bar').bgBlue); => 'foo bar' (blue background)
+ * console.log(colorize(colorize('foo').yellow, colorize('foo').green).bgWhite); => 'foo bar' (first word in yellow letters, second word in green letters, white background for both)
+ */
+
 const colorize = (...args) => ({
 	black: `\x1b[30m${args.join(' ')}`,
 	red: `\x1b[31m${args.join(' ')}`,
@@ -17,10 +28,5 @@ const colorize = (...args) => ({
 	bgWhite: `\x1b[47m${args.join(' ')}\x1b[0m`,
 });
 
-/**
- * console.log(colorize('foo').red); // 'foo' (red letters)
- * console.log(colorize('foo', 'bar').bgBlue); // 'foo bar' (blue background)
- *console.log(colorize(colorize('foo').yellow, colorize('foo').green).bgWhite); // 'foo bar' (first word in yellow letters, second word in green letters, white background for both)
- */
 
 export { colorize };

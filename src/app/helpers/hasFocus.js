@@ -1,3 +1,8 @@
-const hasFocus = (ele) => ele === document.activeElement;
+/*
+ * @param {HTML Element} el
+ * @return Object
+ */
+
+const hasFocus = (el) => el === document.activeElement;
 
 export { hasFocus };

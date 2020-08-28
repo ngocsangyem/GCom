@@ -1,3 +1,13 @@
+/*
+ * @param {HTML Element} elSelector
+ * @param {String} eventName
+ * @param {String} selector
+ * @param {Function} fn
+ * @return null
+ * @desc
+ * https://javascript.info/event-delegation
+ */
+
 const delegate = (elSelector, eventName, selector, fn) => {
 	elSelector.addEventListener(eventName, function (event) {
 		var possibleTargets = element.querySelectorAll(selector);

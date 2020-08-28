@@ -1,3 +1,8 @@
+/*
+ * @param {Function} fn
+ * @return null
+ */
+
 const ready = (fn) => {
 	if (document.readyState != 'loading') {
 		fn();

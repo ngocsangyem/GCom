@@ -1,3 +1,8 @@
+/*
+ *
+ *
+ */
+
 const EasingFunctions = {
 	// no easing, no acceleration
 	linear: (t) => t,
