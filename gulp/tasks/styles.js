@@ -5,19 +5,14 @@ export default {
 		return this.config.component.styles.slice(1);
 	},
 	init(done) {
+		const styles = (this.store.styles = {});
 		const checkFiles = require(this.paths.core('checkFiles'));
 		checkFiles('styles', this);
 		if (this.isDev || !this.config.build.bundles.includes('css')) {
-			let files;
-			if (this.extname() === 'css') {
-				files = this.store.pages[this.mainBundle] || [];
-			} else {
-				files = this.paths.app(`${this.mainBundle}.${this.extname()}`);
-			}
+			let files = styles[this.mainBundle] || [];
 			return this.compileBundle(files, this.mainBundle, done);
 		} else {
-			const styles = this.store.pages;
-			return this.compileBundles(styles);
+			return this.compileBundles(this.store.pages);
 		}
 	},
 
@@ -50,8 +45,8 @@ export default {
 			.pipe(this.compile())
 			.pipe(this.parseURLs())
 			.pipe(this.concat(bundle))
+			.pipe(this.removeDuplicate())
 			.pipe(this.sourcemapWrite())
-			.pipe(this.concat(bundle))
 			.pipe(this.postcss(bundle))
 			.pipe(this.cssnano())
 			.pipe(this.rename())
@@ -59,19 +54,19 @@ export default {
 			.on('end', done);
 	},
 
-	compileBundles(bundles) {
+	compileBundles(pages) {
 		const promises = [];
 
-		Object.keys(bundles).forEach((bundle) => {
-			if (bundle !== this.mainBundle) {
-				const files = bundles[bundle].styles;
+		Object.keys(pages).forEach((page) => {
+			if (page !== this.mainBundle) {
+				console.log('compileBundles -> files', files);
 
 				if (!files) {
 					return;
 				}
 
 				const promise = new Promise((resolve, reject) => {
-					this.compileBundle(files, bundle, resolve);
+					this.compileBundle(files, page, resolve);
 				});
 
 				return promises.push(promise);
@@ -132,6 +127,16 @@ export default {
 		return require('gulp-if')(!this.isDev, postcss(plugins));
 	},
 
+	removeDuplicate() {
+		const discardDuplicates = require('postcss-discard-duplicates');
+		const compileDuplicates = require('postcss-combine-duplicated-selectors');
+
+		return require('gulp-postcss')([
+			compileDuplicates(),
+			discardDuplicates(),
+		]);
+	},
+
 	cssnano() {
 		const config = {
 			reduceTransforms: false,
@@ -151,11 +156,17 @@ export default {
 	},
 
 	sourcemapInit() {
-		return require('gulp-if')(this.isDev, this.sourcemaps.init());
+		return require('gulp-if')(
+			this.isDev,
+			require('gulp-sourcemaps').init({ largeFile: true })
+		);
 	},
 
 	sourcemapWrite() {
-		return require('gulp-if')(this.isDev, this.sourcemaps.write('.'));
+		return require('gulp-if')(
+			this.isDev,
+			require('gulp-sourcemaps').write()
+		);
 	},
 
 	sortMediaQuery() {
@@ -166,10 +177,6 @@ export default {
 	},
 
 	concat(bundle) {
-		// return require('gulp-if')(
-		// 	this.extname() === 'css',
-		// 	require('gulp-concat')(`${bundle}.css`)
-		// );
 		return require('gulp-concat')({
 			path: this.path.join(this.paths._root, `${bundle}.css`),
 		});

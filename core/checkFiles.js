@@ -11,7 +11,7 @@ import checkModules from './checkModules';
  */
 
 export default (type, task) => {
-	const { store, paths, config, isDev, mainBundle, isFile } = task;
+	const { store, paths, config, isDev, mainBundle, fs, isDirectory } = task;
 	const { tree, deps, levels } = store;
 	const needBundles = config.build.bundles.includes(
 		type === 'scripts' ? 'js' : 'css'
@@ -20,38 +20,37 @@ export default (type, task) => {
 		type === 'scripts'
 			? config.component[type].extension
 			: config.component[type];
-	const pages =
-		!isDev && needBundles ? Object.keys(store.pages) : [mainBundle];
+	const imports = store[type];
+	const pages = !isDev && needBundles ? Object.keys(tree) : [mainBundle];
+	const pagesStore = Object.keys(store.pages);
 	const importExtnames = {
 		styles: ['.css', config.component.styles],
 		scripts: ['.js', config.component.scripts.extension],
 	};
 
-	if (!store.pages) {
+	if (!tree) {
 		return;
 	}
 
-	pages.forEach((p) => {
-		if (!(p in store.pages)) {
+	pages.forEach((page) => {
+		if (!page) {
 			return;
 		}
-		const page = store.pages[p];
-		// console.log(page['styles']);
-		const components = page.components;
-		const array = !page[type] ? [] : page[type];
+
+		const components = tree[page];
+		const array = (imports[page] = []);
 
 		if (!components) {
 			return;
 		}
 
-		Object.keys(components).forEach((component) => {
-			// If component is component check modules
-
+		Object.keys(components).forEach((c) => {
+			const component = BEM.getComponent(c);
 			if (BEM.isComponent(component) && deps[component]) {
 				checkModules(
 					component,
 					'import',
-					store.pages && page,
+					store.pages && store.pages[page],
 					deps,
 					task,
 					importExtnames[type],
@@ -59,17 +58,33 @@ export default (type, task) => {
 				);
 			}
 
-			// levels.forEach((level) => {
-			// 	const files = [component].concat(components[component]);
+			levels.forEach((level) => {
+				const files = [component].concat(components[component]);
 
-			// 	files.forEach((item) => {
-			// 		const file = paths.app(level, component, item + extname);
+				files.forEach((item) => {
+					const file = paths.app(
+						level,
+						component,
+						item + config.component.prefix + extname
+					);
 
-			// 		if (isFile(file) && array.indexOf(file) === -1) {
-			// 			array.push(file);
-			// 		}
-			// 	});
-			// });
+					if (fs.existsSync(file) && array.indexOf(file) === -1) {
+						array.push(file);
+					}
+				});
+			});
 		});
+
+		if (page === mainBundle) {
+			pagesStore.forEach((page) => {
+				const file = paths.pages(
+					page,
+					page + config.component.prefix + extname
+				);
+				if (fs.existsSync(file) && array.indexOf(file) === -1) {
+					array.push(file);
+				}
+			});
+		}
 	});
 };

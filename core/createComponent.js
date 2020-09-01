@@ -13,7 +13,6 @@ export const createComponent = {
 	sep: Array(16).join('-'),
 	message: '',
 	componentPrefix: config.component.prefix || '',
-	pagesPrefix: config.pages.prefix || '',
 
 	setType(argv) {
 		this.type = argv[2] === 'page' ? argv[2] : 'component';
@@ -368,19 +367,6 @@ export const createComponent = {
 						config.createComponent[more]
 					) {
 						extra = config.createComponent[more];
-					}
-
-					if (this.type === 'page') {
-						if (config.pages.type === 'component') {
-							return this.addComponent(
-								name,
-								extra,
-								this.type,
-								this.pagesPrefix
-							);
-						} else if (config.pages.type === 'single') {
-							return this.addPage(name);
-						}
 					}
 
 					return this.addComponent(

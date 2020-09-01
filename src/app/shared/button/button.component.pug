@@ -1,0 +1,10 @@
+mixin button(data)
+	- data = data || {}
+	- data.class = data.class || ''
+	- data.content = data.content || 'Some content here'
+
+	.button(class=data.class)&attributes(attributes)
+		if block
+			block
+		else
+			!= data.content

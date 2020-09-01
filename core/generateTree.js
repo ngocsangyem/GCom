@@ -11,12 +11,12 @@ export default (task) => {
 	const assets = (store.assets = []);
 	const pages = store.pages;
 	const tree = (store.tree = {});
-	const componentsTree = {};
 
 	const app = {};
-	let appComponents = {};
 
-	if (pages[mainBundle]) delete pages[mainBundle];
+	if (pages[mainBundle]) {
+		delete pages[mainBundle];
+	}
 
 	Object.keys(pages).forEach((page) => {
 		if (!page) {
@@ -47,18 +47,6 @@ export default (task) => {
 			}
 		});
 	});
-
-	// for (const page in pages) {
-	// 	const components = pages[page].components;
-	// 	for (const component in components) {
-	// 		if (components.hasOwnProperty(component)) {
-	// 			const c = components[component];
-	// 			if (!(c in appComponents)) {
-	// 				appComponents[component] = c;
-	// 			}
-	// 		}
-	// 	}
-	// }
 
 	if (!isDev && config.build.bundles.length > 0 && pages[mainBundle]) {
 		throw new Error(

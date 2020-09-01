@@ -71,17 +71,6 @@ try {
 		config.component.styles = '.' + config.component.styles;
 	}
 
-	// Merge pages
-	const pages = {
-		type: 'component', // component or single
-		build_all: true,
-		page_list: [],
-		test: false,
-		prefix: '.component',
-	};
-
-	config.pages = Object.assign(pages, config.pages);
-
 	// Merge build
 	const build = {
 		addVersions: false,
@@ -328,12 +317,12 @@ const paths = {
 
 	_root: root,
 	_core: __dirname,
-	_tasks: path.join(root, 'gulp/tasks'),
+	_tasks: path.join(root, 'gulp', 'tasks'),
 	_dist: path.join(root, target),
 	_src: path.join(root, 'src'),
 	_app: path.join(root, 'src', 'app'),
 	_components: path.join(root, 'src', 'app', 'components'),
-	_pages: path.join(root, 'src', 'app', 'views/pages'),
+	_pages: path.join(root, 'src', 'app', 'views', 'pages'),
 	_styles: path.join(root, target, styles),
 	_scripts: path.join(root, target, scripts),
 	_static: path.join(root, target, staticP),

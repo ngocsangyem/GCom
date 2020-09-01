@@ -14,6 +14,7 @@ module.exports = {
 		styles: '.scss',
 		data: true,
 		BEM: false,
+		test: true,
 		prefix: '.component',
 	},
 

@@ -27,7 +27,6 @@ export default (file, task) => {
 	);
 	const code = String(file.contents);
 	const page = store.pages[name];
-
 	const parse = new htmlparser2.Parser(
 		{
 			onopentag(tag, attrs) {

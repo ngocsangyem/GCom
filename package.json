@@ -54,6 +54,7 @@
 		"fancy-log": "^1.3.3",
 		"fibers": "^5.0.0",
 		"foldero": "^0.1.1",
+		"globby": "^11.0.1",
 		"gulp": "^4.0.2",
 		"gulp-babel": "^8.0.0",
 		"gulp-concat": "^2.6.1",
@@ -80,6 +81,7 @@
 		"map-stream": "0.0.7",
 		"minimist": "^1.2.5",
 		"plugin-error": "^1.0.1",
+		"postcss-combine-duplicated-selectors": "^9.0.0",
 		"postcss-sort-media-queries": "^1.7.25",
 		"postcss-sprites": "^4.2.1",
 		"postcss-url": "^8.0.0",
@@ -93,6 +95,7 @@
 	},
 	"dependencies": {
 		"axios": "^0.19.2",
+		"postcss-discard-duplicates": "^4.0.2",
 		"swiper": "^6.0.4"
 	}
 }

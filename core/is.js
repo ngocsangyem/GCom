@@ -26,7 +26,7 @@ const isDirectory = (directoryPath) => {
 	try {
 		stats = fs.lstatSync(directoryPath);
 	} catch (error) {
-		console.log(c.red(error));
+		// console.log(c.red(error));
 	}
 
 	return stats && stats.isDirectory();

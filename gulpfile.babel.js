@@ -3,6 +3,7 @@ import path from 'path';
 
 import { series, parallel, watch, src, dest, lastRun, task } from 'gulp';
 import glob from 'glob';
+import globby from 'globby';
 import parsePug from 'pug-parser';
 import lexer from 'pug-lexer';
 import c from 'ansi-colors';
@@ -44,6 +45,7 @@ const setTaskData = (task) => {
 		(task.args = args),
 		(task.log = log),
 		(task.glob = glob),
+		(task.globby = globby),
 		(task.pipe = pipe),
 		(task.plugins = plugins),
 		(task.parsePug = parsePug),
@@ -56,7 +58,6 @@ const setTaskData = (task) => {
 		(task.parseClass = parseClass),
 		(task.c = c),
 		(task.plumber = errorHandler),
-		(task.sourcemaps = sourcemaps),
 		(task.browserSync = browserSync),
 		(task.upperFirstLetter = upperFirstLetter),
 		(task.dirsDev = dirsDev),

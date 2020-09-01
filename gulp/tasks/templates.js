@@ -16,7 +16,7 @@ export default {
 		return this.gulp
 			.src(files, options)
 			.pipe(this.plumber())
-			.pipe(this.parseTemplate())
+			.pipe(this.parsePages())
 			.pipe(this.compile())
 			.pipe(this.parse())
 			.pipe(this.replacePath())
@@ -113,6 +113,16 @@ export default {
 		};
 	},
 
+	parsePages() {
+		const parsePages = require(this.paths.core('parsePages'));
+
+		if (!this.store.pages) {
+			this.store.pages = {};
+		}
+
+		return this.pipe(parsePages, this, 'parsePages');
+	},
+
 	parse() {
 		const parseHTML = require(this.paths.core('parseHTML'));
 
@@ -152,7 +162,7 @@ export default {
 		const onlyOnWatch = this.config.autoCreate.onlyOnWatch;
 
 		generateTree(this);
-		parseComponents(this);
+		// parseComponents(this);
 
 		if (!onlyOnWatch || (onlyOnWatch && this.store.watch)) {
 			autoCreate(this);
