@@ -167,7 +167,7 @@ src/
 |   └── images/          # Global images
 ```
 
-`Component` has [flat](https://en.bem.info/methodology/filestructure/#flat) structure and all files and folders is optional:
+`component` has [flat](https://en.bem.info/methodology/filestructure/#flat) structure and all files and folders is optional:
 
 ```
 component/
@@ -567,6 +567,8 @@ module.exports = {
 ```
 
 A simple check in one line solves the problem, now the module will pull up only at the right moment.
+
+_Noted_: For now, we are not support `import` javascript file. Instead that, you can use ES6 import.
 
 # Image optimization
 
