@@ -94,6 +94,11 @@ export default {
 		return this.css();
 	},
 
+	css() {
+		this.preprocessor = false;
+		return this.pipe();
+	},
+
 	sass() {
 		const Fiber = require('fibers');
 		return require('gulp-sass')({
@@ -103,9 +108,10 @@ export default {
 		});
 	},
 
-	css() {
-		this.preprocessor = false;
-		return this.pipe();
+	less() {
+		return require('gulp-less')({
+			rewriteUrls: 'all',
+		});
 	},
 
 	postcss(bundle) {

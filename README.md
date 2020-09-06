@@ -20,8 +20,7 @@ gulp-component is an opinionated generator for web development. Tools for buildi
 | [Pug](https://pugjs.org/api/getting-started.html) |    ✅     |
 | [Twig](https://twig.symfony.com/)                 |    ✅     |
 | [Sass](https://sass-lang.com/)                    |    ✅     |
-| [Less](http://lesscss.org/)                       |    ❌     |
-| [Stylus](https://stylus-lang.com/)                |    ❌     |
+| [Less](http://lesscss.org/)                       |    ✅     |
 | [GulpV4](https://gulpjs.com/)                     |    ✅     |
 | [Webpack](https://webpack.js.org/)                |    ✅     |
 | [Typescript](https://www.typescriptlang.org/)     |    ✅     |
