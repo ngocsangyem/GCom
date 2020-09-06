@@ -105,6 +105,14 @@ export default {
 		});
 	},
 
+	twig() {
+		return require('gulp-twig')({
+			data: {
+				site: this.getGlobalData(),
+			},
+		});
+	},
+
 	getGlobalData() {
 		return {
 			isDev: this.isDev,

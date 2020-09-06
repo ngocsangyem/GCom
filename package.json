@@ -76,6 +76,7 @@
 		"gulp-sizereport": "^1.2.1",
 		"gulp-sourcemaps": "^2.6.5",
 		"gulp-svg-sprite": "^1.5.0",
+		"gulp-twig": "^1.2.0",
 		"gulp-zip": "^5.0.2",
 		"htmlparser2": "^4.1.0",
 		"map-stream": "0.0.7",

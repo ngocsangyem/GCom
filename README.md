@@ -18,7 +18,7 @@ gulp-component is an opinionated generator for web development. Tools for buildi
 | ------------------------------------------------- | :-------: |
 | [Browsersync](http://www.browsersync.io/)         |    ✅     |
 | [Pug](https://pugjs.org/api/getting-started.html) |    ✅     |
-| [Twig](https://twig.symfony.com/)                 |    ❌     |
+| [Twig](https://twig.symfony.com/)                 |    ✅     |
 | [Sass](https://sass-lang.com/)                    |    ✅     |
 | [Less](http://lesscss.org/)                       |    ❌     |
 | [Stylus](https://stylus-lang.com/)                |    ❌     |
