@@ -238,34 +238,16 @@ const target = !isDev
 	? dirs.production.destination
 	: dirs.development.temporary;
 
-const dirsDev = {
-	styles: dirs.development.styles,
-	scripts: dirs.development.scripts,
-	static: dirs.development.static,
-	favicons: dirs.development.favicons,
-	images: dirs.development.images,
-	fonts: dirs.development.fonts,
-	assets: dirs.development.assets,
-	symbols: dirs.development.symbols,
+const buildPath = {
+	styles: isDev ? dirs.development.styles : dirs.production.styles,
+	scripts: isDev ? dirs.development.scripts : dirs.production.scripts,
+	static: isDev ? dirs.development.static : dirs.production.static,
+	favicons: isDev ? dirs.development.favicons : dirs.production.favicons,
+	images: isDev ? dirs.development.images : dirs.production.images,
+	fonts: isDev ? dirs.development.fonts : dirs.production.fonts,
+	assets: isDev ? dirs.development.assets : dirs.production.assets,
+	symbols: isDev ? dirs.development.symbols : dirs.production.symbols,
 };
-
-const dirsProd = {
-	styles: dirs.production.styles,
-	scripts: dirs.production.scripts,
-	static: dirs.production.static,
-	favicons: dirs.production.favicons,
-	images: dirs.production.images,
-	fonts: dirs.production.fonts,
-	assets: dirs.production.assets,
-	symbols: dirs.production.symbols,
-};
-
-const styles = !isDev ? dirsProd.styles : dirsDev.styles;
-const scripts = !isDev ? dirsProd.scripts : dirsDev.scripts;
-const staticP = !isDev ? dirsProd.static : dirsDev.static;
-const favicons = !isDev ? dirsProd.favicons : dirsDev.favicons;
-const images = !isDev ? dirsProd.images : dirsDev.images;
-const fonts = !isDev ? dirsProd.fonts : dirsDev.fonts;
 
 const paths = {
 	slashNormalize(str) {
@@ -323,18 +305,18 @@ const paths = {
 	_app: path.join(root, 'src', 'app'),
 	_components: path.join(root, 'src', 'app', 'components'),
 	_pages: path.join(root, 'src', 'app', 'views', 'pages'),
-	_styles: path.join(root, target, styles),
-	_scripts: path.join(root, target, scripts),
-	_static: path.join(root, target, staticP),
-	_favicons: path.join(root, target, favicons),
-	_images: path.join(root, target, staticP, images),
-	_img: path.join(root, target, styles, images),
-	_fonts: path.join(root, target, staticP, fonts),
-	_font: path.join(root, target, styles, fonts),
+	_styles: path.join(root, target, buildPath.styles),
+	_scripts: path.join(root, target, buildPath.scripts),
+	_static: path.join(root, target, buildPath.static),
+	_favicons: path.join(root, target, buildPath.favicons),
+	_images: path.join(root, target, buildPath.static, buildPath.images),
+	_img: path.join(root, target, buildPath.styles, buildPath.images),
+	_fonts: path.join(root, target, buildPath.static, buildPath.fonts),
+	_font: path.join(root, target, buildPath.styles, buildPath.fonts),
 	_tmp: path.join(root, 'tmp'),
 	_build: path.join(root, 'build'),
 	_assets: path.join(root, 'src', 'assets'),
-	_symbol: path.join(root, target, styles, images),
+	_symbol: path.join(root, target, buildPath.styles, buildPath.images),
 };
 
 // Add main dirs
@@ -353,4 +335,4 @@ try {
 	console.log(c.red(error));
 }
 
-export { paths, config, notify, dirsDev, dirsProd };
+export { paths, config, notify, buildPath };

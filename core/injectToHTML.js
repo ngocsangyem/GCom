@@ -20,14 +20,15 @@ export default (code, page, task) => {
 		isDev,
 		mainBundle,
 		isFile,
-		dirsDev,
-		dirsProd,
+		buildPath,
 		path,
 	} = task;
 
-	const styles = isDev ? dirsDev.styles : dirsProd.styles;
-	const symbolFolder = isDev ? dirsDev.images : dirsProd.images;
-	const symbolsFile = path.join(styles, symbolFolder, 'symbol.svg');
+	const symbolsFile = path.join(
+		buildPath.styles,
+		buildPath.images,
+		'symbol.svg'
+	);
 	const withGap = /(\s+)?(<!--(\s+)?Inject:([\w]+)(\s+)?-->)/gi;
 	const comment = /(\s+)?(<!--(\s+)?GULPC:([\w]+)(\s+)?-->)/gi;
 	const pattern = /@(async|defer)/gi;
@@ -69,9 +70,7 @@ export default (code, page, task) => {
 		}
 
 		if (!isExternal(src)) {
-			src = `${config.build.HTMLRoot}${
-				isDev ? dirsDev.scripts : dirsProd.scripts
-			}/${src}`;
+			src = `${config.build.HTMLRoot}${buildPath.scripts}/${src}`;
 		}
 
 		script = script
@@ -91,9 +90,7 @@ export default (code, page, task) => {
 		let style = '<link rel="stylesheet" href="[href]">';
 
 		if (!isExternal(href)) {
-			href = `${config.build.HTMLRoot}${
-				isDev ? dirsDev.styles : dirsProd.styles
-			}/${href}`;
+			href = `${config.build.HTMLRoot}${buildPath.styles}/${href}`;
 		}
 
 		style = style.replace(
@@ -145,10 +142,10 @@ export default (code, page, task) => {
 		/(,|'|"|`| )@([\w-]+)/gi,
 		(str, quote, component) => {
 			const pathsDist = {
-				styles,
+				styles: buildPath.styles,
 				symbol: symbolsFile,
-				scripts: isDev ? dirsDev.scripts : dirsProd.scripts,
-				static: isDev ? dirsDev.static : dirsProd.static,
+				scripts: buildPath.scripts,
+				static: buildPath.static,
 			};
 
 			const dist =

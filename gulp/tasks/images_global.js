@@ -1,11 +1,12 @@
 export default {
 	build: 4,
 	name: 'task:copy:images:global',
-	imagePath: function () {
-		return this.isDev ? this.dirsDev.images : this.dirsProd.images;
-	},
 	globs: function () {
-		return [this.imagePath(), '**', '*.{webp,png,jpg,jpeg,svg,gif,ico}'];
+		return [
+			this.buildPath.images,
+			'**',
+			'*.{webp,png,jpg,jpeg,svg,gif,ico}',
+		];
 	},
 
 	init(done) {

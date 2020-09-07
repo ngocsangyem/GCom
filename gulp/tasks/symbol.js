@@ -1,11 +1,8 @@
 export default {
 	build: 2,
 	name: 'task:symbol',
-	symbolsPath: function () {
-		return this.isDev ? this.dirsDev.symbols : this.dirsProd.symbols;
-	},
 	globs: function () {
-		return ['**', '*', this.symbolsPath(), '*.svg'];
+		return ['**', '*', this.buildPath.symbols, '*.svg'];
 	},
 
 	init(done) {

@@ -1,11 +1,8 @@
 export default {
 	build: 4,
 	name: 'task:copy:fonts:component',
-	fontsPath: function () {
-		return this.isDev ? this.dirsDev.fonts : this.dirsProd.fonts;
-	},
 	globs: function () {
-		return ['**', this.fontsPath(), '*.{eot,svg,ttf,woff,woff2}'];
+		return ['**', this.buildPath.fonts, '*.{eot,svg,ttf,woff,woff2}'];
 	},
 
 	init(done) {

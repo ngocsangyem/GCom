@@ -59,7 +59,7 @@ export default {
 
 		Object.keys(pages).forEach((page) => {
 			if (page !== this.mainBundle) {
-				console.log('compileBundles -> files', files);
+				const files = pages[page].styles;
 
 				if (!files) {
 					return;

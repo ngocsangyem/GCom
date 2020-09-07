@@ -1,11 +1,8 @@
 export default {
 	build: 3,
 	name: 'task:assets',
-	assetsPath: function () {
-		return this.isDev ? this.dirsDev.assets : this.dirsProd.assets;
-	},
 	globs: function () {
-		return ['*', '*', this.assetsPath(), '**', '*.*'];
+		return ['*', '*', this.buildPath.assets, '**', '*.*'];
 	},
 	init(done) {
 		const files = this.store.assets || [];
