@@ -19,12 +19,10 @@ export default {
 	},
 
 	watch() {
-		return [
-			{
-				files: this.paths.app('**', `*{.css,.${this.extname()}}`),
-				tasks: this.name,
-			},
-		];
+		return [{
+			files: this.paths.app('**', `!(${this.mainBundle})` + this.extname()),
+			tasks: this.name,
+		}];
 	},
 
 	dest() {
@@ -38,7 +36,9 @@ export default {
 
 		return this.gulp
 			.src(files)
-			.pipe(this.inject(this.gulp.src(filesInject, { read: false })))
+			.pipe(this.inject(this.gulp.src(filesInject, {
+				read: false
+			})))
 			.pipe(this.dest());
 	},
 
