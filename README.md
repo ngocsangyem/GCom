@@ -16,22 +16,22 @@ gulp-component is an opinionated generator for web development. Tools for buildi
 
 |                                                   | Available |
 | ------------------------------------------------- | :-------: |
-| [Browsersync](http://www.browsersync.io/)         |     ✅     |
-| [Pug](https://pugjs.org/api/getting-started.html) |     ✅     |
-| [Twig](https://twig.symfony.com/)                 |     ✅     |
-| [Sass](https://sass-lang.com/)                    |     ✅     |
-| [Less](http://lesscss.org/)                       |     ✅     |
-| [GulpV4](https://gulpjs.com/)                     |     ✅     |
-| [Webpack](https://webpack.js.org/)                |     ✅     |
-| [Typescript](https://www.typescriptlang.org/)     |     ✅     |
-| JavaScript ES6+ Support                           |     ✅     |
-| PostCSS support                                   |     ✅     |
-| Live Browser Reloading                            |     ✅     |
-| Code spliting                                     |     ✅     |
-| Optimize Images                                   |     ✅     |
-| Minify Css and Javascript                         |     ✅     |
-| Unit test                                         |     ✅     |
-| SEO                                               |     ✅     |
+| [Browsersync](http://www.browsersync.io/)         |    ✅     |
+| [Pug](https://pugjs.org/api/getting-started.html) |    ✅     |
+| [Twig](https://twig.symfony.com/)                 |    ✅     |
+| [Sass](https://sass-lang.com/)                    |    ✅     |
+| [Less](http://lesscss.org/)                       |    ✅     |
+| [GulpV4](https://gulpjs.com/)                     |    ✅     |
+| [Webpack](https://webpack.js.org/)                |    ✅     |
+| [Typescript](https://www.typescriptlang.org/)     |    ✅     |
+| JavaScript ES6+ Support                           |    ✅     |
+| PostCSS support                                   |    ✅     |
+| Live Browser Reloading                            |    ✅     |
+| Code spliting                                     |    ✅     |
+| Optimize Images                                   |    ✅     |
+| Minify Css and Javascript                         |    ✅     |
+| Unit test                                         |    ✅     |
+| SEO                                               |    ✅     |
 
 ## Browser
 
@@ -51,12 +51,12 @@ This is not to say that gulp-simple cannot be used in browsers older than those 
 
 > NOTE: For Windows users You may have some issues compiling BrowserSync during installation of packages. Please go to http://www.browsersync.io/docs/#windows-users for more information on how to get all the needed dependencies.
 
-**Install fibers shows error in Window**
+**Can not install node-gym**
 
-Open powershell ass Administrator
+Open powershell as Administrator
 
 ```sh
-npm install --global --production windows-build-tools    
+npm install --global --production windows-build-tools
 npm install --global node-gyp
 ```
 
@@ -210,25 +210,16 @@ component/
 
 ## Usage
 
-- [App's config](#apps-config)
-		- [Default settings:](#default-settings)
-- [Templates](#templates)
-		- [JSON data in markup](#json-data-in-markup)
-		- [Pathways](#pathways)
-		- [Automatic insert of scripts and styles](#automatic-insert-of-scripts-and-styles)
-- [Styles](#styles)
-		- [PostCSS](#postcss)
-- [SVG symbols](#svg-symbols)
-		- [Use SVG](#use-svg)
-		- [SVG Transformation](#svg-transformation)
-		- [Get icons for SVG](#get-icons-for-svg)
-- [Component dependencies](#component-dependencies)
-		- [Modules](#modules)
-- [Image optimization](#image-optimization)
-- [Automatic creation of files and components](#automatic-creation-of-files-and-components)
-- [Fast make components and files from terminal](#fast-make-components-and-files-from-terminal)
-- [Default content in new files](#default-content-in-new-files)
-- [Bundles](#bundles)
+-   [App's config](#apps-config) - [Default settings:](#default-settings)
+-   [Templates](#templates) - [JSON data in markup](#json-data-in-markup) - [Pathways](#pathways) - [Automatic insert of scripts and styles](#automatic-insert-of-scripts-and-styles)
+-   [Styles](#styles) - [PostCSS](#postcss)
+-   [SVG symbols](#svg-symbols) - [Use SVG](#use-svg) - [SVG Transformation](#svg-transformation) - [Get icons for SVG](#get-icons-for-svg)
+-   [Component dependencies](#component-dependencies) - [Modules](#modules)
+-   [Image optimization](#image-optimization)
+-   [Automatic creation of files and components](#automatic-creation-of-files-and-components)
+-   [Fast make components and files from terminal](#fast-make-components-and-files-from-terminal)
+-   [Default content in new files](#default-content-in-new-files)
+-   [Bundles](#bundles)
 
 # App's config
 
