@@ -1,0 +1,10 @@
+mixin count-todo(data)
+	- data = data || {}
+	- data.class = data.class || ''
+	- data.content = data.content || 'Some content here'
+
+	.count-todo(class=data.class)&attributes(attributes)
+		if block
+			block
+		else
+			!= data.content

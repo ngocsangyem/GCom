@@ -1,0 +1,10 @@
+mixin todo-list(data)
+	- data = data || {}
+	- data.class = data.class || ''
+	- data.content = data.content || 'Some content here'
+
+	.todo-list(class=data.class)&attributes(attributes)
+		if block
+			block
+		else
+			!= data.content
