@@ -1,3 +1,4 @@
 {
-	"data":{}
+	"role": "status",
+	"description": "You have done <span class=\"js-status\">1 thing</span> today!"
 }

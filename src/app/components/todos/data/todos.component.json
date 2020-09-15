@@ -1,0 +1,7 @@
+{
+	"title": "What you've done",
+	"aria_live": "polite",
+	"aria_label": "A list of items you have done",
+	"form_label": "Add a new item",
+	"button_label": "Save"
+}

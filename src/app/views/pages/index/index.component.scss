@@ -1,9 +1,41 @@
+:root {
+	--background-body: #95a5a6;
+	--border: #888888;
+	--decor: #777777;
+	--text: #333333;
+	--text-secondary: #555555;
+	--danger: #d62c1a;
+	--danger--dark: #a82315;
+}
 
-
-.index-page {
-	background-color: green;
+html,
+body {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	color: var(--text);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 .yem-index-page {
-	background-color: #95a5a6;
+	background-color: var(--background-body);
+}
+
+main {
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+}
+
+.container {
+	margin-right: auto;
+	margin-left: auto;
+	width: 100%;
+	padding-left: 1rem;
+	padding-right: 1rem;
+
+	@media screen and (min-width: 40em) {
+		width: 80vw;
+		max-width: 40em;
+	}
 }

@@ -1,11 +1,5 @@
+- var header = data.header
 header.header
-	.header__container
-		nav.header__nav.header__nav--red
-			ul
-				li Home
-				li ABout
-		img(src='@header/images/1.jpeg', alt="")
-		.header-icon
-			svg
-				use(xlink:href="@symbol#header__rating")
-	
+	h1.header__heading=header.title
+	p.header__description=header.description
+	p.header__note!=header.note

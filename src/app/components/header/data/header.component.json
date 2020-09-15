@@ -1,3 +1,5 @@
 {
-	"data":{}
+	"title": "Done list",
+	"description": "A list of things that you have achieved today.",
+	"note": "<b>Note:</b> The data isn't stored, so it will disappear if you reload!"
 }

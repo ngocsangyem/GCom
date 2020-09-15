@@ -1,10 +1,3 @@
-mixin count-todo(data)
-	- data = data || {}
-	- data.class = data.class || ''
-	- data.content = data.content || 'Some content here'
-
-	.count-todo(class=data.class)&attributes(attributes)
-		if block
-			block
-		else
-			!= data.content
+- var count = data.count_todo
+.count-todo.js-count(aria-hidden="true")
+	.count-todo__title!=count.description

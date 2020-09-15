@@ -3,6 +3,7 @@ import path from 'path';
 import glob from 'glob';
 import { isDirectory, isFile, isExternal } from './is';
 import { removeExtension } from './helpers/remove-extension';
+import { toSnakeCase } from './helpers/toSnakeCase';
 
 /**
  * Check all components and read deps then  write map.
@@ -78,8 +79,7 @@ export default (task) => {
 	});
 
 	glob.sync(`${paths._app}/**/*.json`).forEach((file) => {
-		const component = path.basename(path.dirname(path.dirname(file)));
-		const filename = removeExtension(path.basename(file));
+		const filename = toSnakeCase(removeExtension(path.basename(file)));
 
 		if (!isDirectory(path.dirname(file))) {
 			return;

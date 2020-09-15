@@ -1,0 +1,9 @@
+- var todos = data.todos
+section.todos
+	h2.todos__heading=todos.title
+	.todos__list.js-todos(aria-live=todos.aria_live aria-label=todos.aria_label)
+	form.todos__form.js-form
+		.todos__form-inner
+			label.todos__form-label(for="add-new")=todos.form_label
+			input.todos__form-input#add-new(type="text" )
+			button.todos__form-button=todos.button_label

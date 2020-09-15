@@ -1,10 +1,5 @@
-mixin status-todo(data)
-	- data = data || {}
-	- data.class = data.class || ''
-	- data.content = data.content || 'Some content here'
-
-	.status-todo(class=data.class)&attributes(attributes)
-		if block
-			block
-		else
-			!= data.content
+- var status = data.status_todo
+section.status-todo
+	p.status-todo__description(role=status.role)!=status.description
+	include ../count-todo/count-todo.component.pug
+	
