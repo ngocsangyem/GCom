@@ -1,5 +1,5 @@
 - var status = data.status_todo
 section.status-todo
-	p.status-todo__description(role=status.role)!=status.description
+	p.status-todo__description.visually-hidden(role=status.role)!=status.description
 	include ../count-todo/count-todo.component.pug
 	

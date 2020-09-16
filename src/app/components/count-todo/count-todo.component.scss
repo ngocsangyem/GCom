@@ -1,2 +1,19 @@
+.count-todo {
+	&__title {
+		display: block;
+		width: 100%;
+		text-align: center;
+		font-size: 3rem;
 
-.count-todo {}
+		small {
+			display: block;
+			font-size: 1.3rem;
+			font-weight: 400;
+			color: var(--text-secondary);
+		}
+
+		>*+* {
+			margin-top: 0.4rem;
+		}
+	}
+}
