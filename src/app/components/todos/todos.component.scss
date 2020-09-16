@@ -1,4 +1,9 @@
 .todos {
+
+	.no-items {
+		margin-top: 1rem;
+	}
+
 	&__items {
 		list-style: none;
 		padding: 0;
@@ -10,12 +15,17 @@
 		position: relative;
 		padding: 0 0 0 2rem;
 		font-size: 1.3rem;
+		margin-bottom: 1.3rem;
 
 		&::before {
 			content: "🎉";
 			position: absolute;
 			top: 1px;
 			left: 0;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
 		}
 	}
 
@@ -24,11 +34,11 @@
 			background: transparent;
 			border: none;
 			position: relative;
-			top: -1px;
 			color: var(--danger);
 			font-weight: 500;
 			font-size: 1rem;
 			margin: 0 0 0 5px;
+			padding: 0 5px;
 			cursor: pointer;
 		}
 	}

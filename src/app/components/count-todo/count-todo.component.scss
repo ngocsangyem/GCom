@@ -1,4 +1,7 @@
 .count-todo {
+	position: sticky;
+	top: 50px;
+
 	&__title {
 		display: block;
 		width: 100%;
