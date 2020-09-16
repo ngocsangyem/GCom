@@ -25,6 +25,7 @@ gulp-component is an opinionated generator for web development. Tools for buildi
 | [Webpack](https://webpack.js.org/)                |    ✅     |
 | [Typescript](https://www.typescriptlang.org/)     |    ✅     |
 | JavaScript ES6+ Support                           |    ✅     |
+| Store Management                                  |    ✅     |
 | PostCSS support                                   |    ✅     |
 | Live Browser Reloading                            |    ✅     |
 | Code spliting                                     |    ✅     |
