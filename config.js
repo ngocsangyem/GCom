@@ -22,7 +22,7 @@ module.exports = {
 		addVersions: true,
 		bundles: ['js', 'css'],
 		mainBundle: 'main',
-		globalStyles: false,
+		globalStyles: 'app/styles/styles.scss',
 	},
 
 	createComponent: {

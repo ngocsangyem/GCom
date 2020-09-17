@@ -1,7 +1,3 @@
-@import './abstracts/mixins';
-@import './base/variables';
-@import './base/typography';
-
 :root {
 	--ease-in-quad: cubic-bezier(0.55, 0.085, 0.68, 0.53);
 	--ease-in-cubic: cubic-bezier(0.55, 0.055, 0.675, 0.19);
