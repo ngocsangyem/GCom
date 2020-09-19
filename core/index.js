@@ -137,10 +137,7 @@ try {
 			pug: componentTemplate,
 			sass: sassTemplate,
 			scss: scssTemplate,
-			js:
-				config.component.scripts.syntax === 'function'
-					? jsTemplateFunction
-					: jsTemplateClass,
+			js: jsTemplateClass,
 		},
 		page: {
 			pug: pageTemplate,

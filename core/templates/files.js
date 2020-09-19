@@ -9,7 +9,7 @@ const componentTemplate = `mixin [name](data)\n\t- data = data || {}\n\t- data.c
 
 const testTemplate = `import { [capitalize-name]Component } from '../[name].component';\n\ndescribe('[capitalize-name]Component View', function() {\n\n\tbeforeEach(() => {\n\t\tthis.[capitalize-name] = new [capitalize-name]Component();\n\t});\n\n\tit('Should run a few assertions', () => {\n\t\texpect(this.[capitalize-name]).to.exist;\n\t});\n\n});`;
 
-const jsTemplateClass = `export class [capitalize-name]Component {\n\tconstructor() {\n\t\tconsole.log('[name] component');\n\t}\n}`;
+const jsTemplateClass = `export class [capitalize-name]Component {\n\tconstructor() {\n\t\tconsole.log('[name] component');\n\t}\n\tstatic init() {\n\n\t}\n}`;
 
 const jsTemplateFunction = `const [capitalize-name]Component = () => {\n\tconsole.log('This is [capitalize-name]');\n};\n\nexport { [capitalize-name]Component }`;
 const jsPageTemplateClass = `export class [capitalize-name]Component {\n\tconstructor() {\n\t\tconsole.log('[name] component');\n\t}\n\tstatic init() {\n\t\tconst [name] = new [capitalize-name]Component();\n\t\treturn [name];\n\t}\n}\n(function() {\n\t[capitalize-name]Component.init()\n})();`;
