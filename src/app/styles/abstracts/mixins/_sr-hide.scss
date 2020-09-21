@@ -1,0 +1,6 @@
+// hide - content made available only to screen readers
+@mixin srHide {
+	position: absolute;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+}

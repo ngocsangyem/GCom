@@ -8,11 +8,14 @@
 @import "functions/number";
 @import "functions/replace";
 @import "functions/size";
+@import "functions/str-replace";
 @import "functions/return";
 @import "functions/exist";
 @import "functions/colors";
 @import "functions/input";
-@import "functions/rem";
+@import "functions/alpha";
+@import "functions/lightness";
+
 
 // Mixins
 @import "mixins/prefix";
@@ -28,7 +31,15 @@
 @import "mixins/image";
 @import "mixins/before-after";
 @import "mixins/text-shadow";
-@import "mixins/margin_padding";
 @import "mixins/border";
 @import "mixins/border-radius";
 @import "mixins/position";
+@import "mixins/font-smooth";
+@import "mixins/grid";
+@import "mixins/margin-padding";
+@import "mixins/space-unit";
+@import "mixins/sr-hide";
+@import "mixins/sr-show";
+@import "mixins/text-unit";
+@import "mixins/define-color-hsl";
+@import "mixins/lhCrop";

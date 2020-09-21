@@ -1,0 +1,12 @@
+// edit text unit and type scale on a component level
+@mixin textUnit($text-unit, $text-scale-ratio: 1.2) {
+	--text-xs: calc((#{$text-unit} / #{$text-scale-ratio}) / #{$text-scale-ratio});
+	--text-sm: calc(var(--text-xs) * #{$text-scale-ratio});
+	--text-md: calc(var(--text-sm) * #{$text-scale-ratio} * #{$text-scale-ratio});
+	--text-lg: calc(var(--text-md) * #{$text-scale-ratio});
+	--text-xl: calc(var(--text-lg) * #{$text-scale-ratio});
+	--text-xxl: calc(var(--text-xl) * #{$text-scale-ratio});
+	--text-xxxl: calc(var(--text-xxl) * #{$text-scale-ratio});
+	--text-xxxxl: calc(var(--text-xxxl) * #{$text-scale-ratio});
+	font-size: $text-unit;
+}
