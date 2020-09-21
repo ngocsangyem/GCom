@@ -156,11 +156,11 @@
 	max-width: initial;
 }
 
-@for $i from 1 through $grid-columns - 1 {
-	.offset-#{$i} {
-		--offset: calc(#{round-width($i)} + var(--gap, 0.75em));
-	}
-}
+// @for $i from 1 through $grid-columns - 1 {
+// 	.offset-#{$i} {
+// 		--offset: calc(#{round-width($i)} + var(--gap, 0.75em));
+// 	}
+// }
 
 @each $breakpoint,
 $value in $breakpoints {

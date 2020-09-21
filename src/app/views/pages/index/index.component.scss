@@ -1,3 +1,10 @@
+@import '../../../styles//abstracts/mixins';
+@import '../../../styles/global';
+
+@import '../../../components/count-todo/count-todo.component';
+@import '../../../components/header/header.component';
+@import '../../../components/status-todo/status-todo.component';
+@import '../../../components/todos/todos.component';
 
 :root {
 	--background-body: #95a5a6;
