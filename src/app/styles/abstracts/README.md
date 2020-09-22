@@ -1,18 +1,19 @@
 Thank you [Codyhouse](https://codyhouse.co/ds/docs/framework/mixins) and [K-sass-core](https://github.com/baonguyenyam/k-sass-core) for awesome mixins.
 
--   [Color](##color)
--   [Typography](##typography)
--   [Spacing](##spacing)
--   [Color](##color)
--   [Accessibility](##accessibility)
+-   [Color](#color)
+-   [Typography](#typography)
+-   [Spacing](#spacing)
+-   [Color](#color)
+-   [Accessibility](#accessibility)
+-   [Miscellaneous](#miscellaneous)
 
-## Color
+# Color
 
-| Name                                                       |  Type   | Description                                                         |
-| ---------------------------------------------------------- | :-----: | ------------------------------------------------------------------- |
-| `defineColorHSL(--color-name, hue, saturation, lightness)` |  Mixin  | Used to define HSL color variables.                                 |
-| `alpha(var(--color-name), alpha)`                          | Funtion | SASS Function. Used to return a color with different opacity value. |
-| `lightness(var(--color-name), alpha)`                      | Funtion | Used to return color with different lightness value.                |
+| Name                                                       |  Type   | Description                                          |
+| ---------------------------------------------------------- | :-----: | ---------------------------------------------------- |
+| `defineColorHSL(--color-name, hue, saturation, lightness)` |  Mixin  | Used to define HSL color variables.                  |
+| `alpha(var(--color-name), alpha)`                          | Funtion | Used to return a color with different opacity value. |
+| `lightness(var(--color-name), alpha)`                      | Funtion | Used to return color with different lightness value. |
 
 #### defineColorHSL
 
@@ -58,7 +59,7 @@ Output:
 
 ⚠️ **Important**: the --color-name variable needs to be defined using the defineColorHSL mixin for the lightness function to properly work.
 
-## Typography
+# Typography
 
 | Name         | Type  | Description                                         |
 | ------------ | :---: | --------------------------------------------------- |
@@ -154,7 +155,7 @@ For example, you can use this mixin to switch from a spacing system based on em 
 
 This could be useful if you don't want your spacing variables to change when the font-size of the body (or component element) is updated.
 
-#### Accessibility
+# Accessibility
 
 | Name     | Type  | Description                                                                          |
 | -------- | :---: | ------------------------------------------------------------------------------------ |
@@ -171,4 +172,4 @@ This could be useful if you don't want your spacing variables to change when the
 }
 ```
 
-#### Miscellaneous
+# Miscellaneous
