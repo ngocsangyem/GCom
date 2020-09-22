@@ -5,7 +5,7 @@ Thank you [Codyhouse](https://codyhouse.co/ds/docs/framework/mixins) for base sc
 -   [Buttons](#buttons)
 -   [Colors](#colors)
 -   [Forms](#forms)
--   [Grid & Layout](#grid-&-layout)
+-   [Grid & Layout](##grid--layout)
 -   [Icons](#icons)
 -   [Reset](#reset)
 -   [Share styles](#sharestyles)
