@@ -36,6 +36,27 @@
 					"tag": "body",
 					"already": true
 				},
+				"app": {
+					"name": "app",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "app",
+						"id": "app"
+					},
+					"tag": "section",
+					"already": true
+				},
+				"container": {
+					"name": "container",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "container"
+					},
+					"tag": "div",
+					"already": true
+				},
 				"header": {
 					"name": "header",
 					"mod": [],
@@ -74,6 +95,16 @@
 						"class": "header__note"
 					},
 					"tag": "p",
+					"already": true
+				},
+				"app__inner": {
+					"name": "app__inner",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "app__inner"
+					},
+					"tag": "section",
 					"already": true
 				},
 				"todos": {
@@ -161,6 +192,16 @@
 					"tag": "label",
 					"already": true
 				},
+				"todos__form-actions": {
+					"name": "todos__form-actions",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "todos__form-actions"
+					},
+					"tag": "div",
+					"already": true
+				},
 				"todos__form-input": {
 					"name": "todos__form-input",
 					"mod": [],
@@ -198,16 +239,69 @@
 					"mod": [],
 					"mix": [],
 					"attrs": {
-						"class": "status-todo__description"
+						"class": "status-todo__description visually-hidden js-status",
+						"role": "status"
 					},
 					"tag": "p",
+					"already": true
+				},
+				"visually-hidden": {
+					"name": "visually-hidden",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "status-todo__description visually-hidden js-status",
+						"role": "status"
+					},
+					"tag": "p",
+					"already": true
+				},
+				"js-status": {
+					"name": "js-status",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "status-todo__description visually-hidden js-status",
+						"role": "status"
+					},
+					"tag": "p",
+					"already": true
+				},
+				"count-todo": {
+					"name": "count-todo",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "count-todo js-count",
+						"aria-hidden": "true"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"js-count": {
+					"name": "js-count",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "count-todo js-count",
+						"aria-hidden": "true"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"count-todo__title": {
+					"name": "count-todo__title",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "count-todo__title"
+					},
+					"tag": "div",
 					"already": true
 				}
 			},
 			"temp": {
-				"styles": [
-					"index.min.css"
-				],
+				"styles": [],
 				"scripts": [
 					"https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js",
 					"swiper-bundle.min.js@async",
@@ -223,6 +317,16 @@
 					"already": true
 				},
 				"yem-index-page": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"app": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"container": {
 					"mod": [],
 					"mix": [],
 					"already": true
@@ -243,6 +347,11 @@
 					"already": true
 				},
 				"header__note": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"app__inner": {
 					"mod": [],
 					"mix": [],
 					"already": true
@@ -287,6 +396,11 @@
 					"mix": [],
 					"already": true
 				},
+				"todos__form-actions": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
 				"todos__form-input": {
 					"mod": [],
 					"mix": [],
@@ -303,6 +417,31 @@
 					"already": true
 				},
 				"status-todo__description": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"visually-hidden": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"js-status": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"count-todo": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"js-count": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"count-todo__title": {
 					"mod": [],
 					"mix": [],
 					"already": true
@@ -340,7 +479,7 @@
 	},
 	"jsons": {
 		"count_todo": {
-			"data": {}
+			"description": "<small>You've done</small><span> 0 </span><small>things today 😢</small>"
 		},
 		"header": {
 			"title": "Done list",
@@ -348,7 +487,8 @@
 			"note": "<b>Note:</b> The data isn't stored, so it will disappear if you reload!"
 		},
 		"status_todo": {
-			"role": "status"
+			"role": "status",
+			"description": "You have done <span class=\"js-status\">1 thing</span> today!"
 		},
 		"todos": {
 			"title": "What you've done",
@@ -397,10 +537,13 @@
 		"index": {
 			"no-js": [],
 			"yem-index-page": [],
+			"app": [],
+			"container": [],
 			"header": [],
 			"header__heading": [],
 			"header__description": [],
 			"header__note": [],
+			"app__inner": [],
 			"todos": [],
 			"todos__heading": [],
 			"todos__list": [],
@@ -409,18 +552,27 @@
 			"js-form": [],
 			"todos__form-inner": [],
 			"todos__form-label": [],
+			"todos__form-actions": [],
 			"todos__form-input": [],
 			"todos__form-button": [],
 			"status-todo": [],
-			"status-todo__description": []
+			"status-todo__description": [],
+			"visually-hidden": [],
+			"js-status": [],
+			"count-todo": [],
+			"js-count": [],
+			"count-todo__title": []
 		},
 		"main": {
 			"no-js": [],
 			"yem-index-page": [],
+			"app": [],
+			"container": [],
 			"header": [],
 			"header__heading": [],
 			"header__description": [],
 			"header__note": [],
+			"app__inner": [],
 			"todos": [],
 			"todos__heading": [],
 			"todos__list": [],
@@ -429,10 +581,16 @@
 			"js-form": [],
 			"todos__form-inner": [],
 			"todos__form-label": [],
+			"todos__form-actions": [],
 			"todos__form-input": [],
 			"todos__form-button": [],
 			"status-todo": [],
-			"status-todo__description": []
+			"status-todo__description": [],
+			"visually-hidden": [],
+			"js-status": [],
+			"count-todo": [],
+			"js-count": [],
+			"count-todo__title": []
 		}
 	},
 	"depsChanged": false,
@@ -440,12 +598,14 @@
 		"index": [
 			"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/header/header.component.js",
 			"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/todos/todos.component.js",
-			"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/status-todo/status-todo.component.js"
+			"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/status-todo/status-todo.component.js",
+			"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/count-todo/count-todo.component.js"
 		],
 		"main": [
 			"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/header/header.component.js",
 			"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/todos/todos.component.js",
 			"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/status-todo/status-todo.component.js",
+			"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/count-todo/count-todo.component.js",
 			"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/index/index.component.js"
 		]
 	},
@@ -455,7 +615,8 @@
 			"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/header/assets/normalize.css",
 			"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/header/header.component.scss",
 			"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/todos/todos.component.scss",
-			"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/status-todo/status-todo.component.scss"
+			"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/status-todo/status-todo.component.scss",
+			"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/count-todo/count-todo.component.scss"
 		],
 		"main": [
 			"/Users/sangnguyen/Documents/Tools/gulp-component/node_modules/swiper/swiper-bundle.css",
@@ -463,6 +624,7 @@
 			"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/header/header.component.scss",
 			"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/todos/todos.component.scss",
 			"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/status-todo/status-todo.component.scss",
+			"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/count-todo/count-todo.component.scss",
 			"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/index/index.component.scss"
 		]
 	},

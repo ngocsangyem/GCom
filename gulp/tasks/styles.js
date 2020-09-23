@@ -40,7 +40,6 @@ export default {
 
 		return this.gulp
 			.src(files, options)
-			.pipe(this.cached())
 			.pipe(this.plumber())
 			.pipe(this.sourcemapInit())
 			.pipe(this.compile())
@@ -93,10 +92,6 @@ export default {
 		);
 
 		return this.css();
-	},
-
-	cached() {
-		return require('gulp-cached')('linting');
 	},
 
 	css() {

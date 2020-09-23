@@ -15,7 +15,6 @@ export default {
 		const ready = this.HTMLReady.bind(this, done);
 		return this.gulp
 			.src(files, options)
-			.pipe(this.cached())
 			.pipe(this.plumber())
 			.pipe(this.parsePages())
 			.pipe(this.compile())
@@ -93,10 +92,6 @@ export default {
 		);
 
 		return this.pipe();
-	},
-
-	cached() {
-		return require('gulp-cached')('linting');
 	},
 
 	pug() {
