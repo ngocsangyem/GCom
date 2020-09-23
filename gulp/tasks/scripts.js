@@ -9,9 +9,9 @@ export default {
 	},
 
 	init(done) {
-		const scripts = (this.store.scripts = {});
-		const checkFiles = require(this.paths.core('checkFiles'));
-		checkFiles('scripts', this);
+		// const scripts = (this.store.scripts = {});
+		// const checkFiles = require(this.paths.core('checkFiles'));
+		// checkFiles('scripts', this);
 		if (this.isDev || !this.config.build.bundles.includes('js')) {
 			const mainBundleScripts = require(this.paths.core(
 				'mainBundleScripts'

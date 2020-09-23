@@ -5,11 +5,12 @@ export default {
 		return this.config.component.styles.slice(1);
 	},
 	init(done) {
-		const styles = (this.store.styles = {});
-		const checkFiles = require(this.paths.core('checkFiles'));
-		checkFiles('styles', this);
+		// const styles = (this.store.styles = {});
+		// const checkFiles = require(this.paths.core('checkFiles'));
+		// checkFiles('styles', this);
 		if (this.isDev || !this.config.build.bundles.includes('css')) {
-			let files = styles[this.mainBundle] || [];
+			const files = this.paths.app(`${this.mainBundle}.${this.extname()}`) || []
+			// let files = styles[this.mainBundle] || [];
 			return this.compileBundle(files, this.mainBundle, done);
 		} else {
 			return this.compileBundles(this.store.pages);

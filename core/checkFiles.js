@@ -58,21 +58,21 @@ export default (type, task) => {
 				);
 			}
 
-			levels.forEach((level) => {
-				const files = [component].concat(components[component]);
+			// levels.forEach((level) => {
+			// 	const files = [component].concat(components[component]);
 
-				files.forEach((item) => {
-					const file = paths.app(
-						level,
-						component,
-						item + config.component.prefix + extname
-					);
+			// 	files.forEach((item) => {
+			// 		const file = paths.app(
+			// 			level,
+			// 			component,
+			// 			item + config.component.prefix + extname
+			// 		);
 
-					if (fs.existsSync(file) && array.indexOf(file) === -1) {
-						array.push(file);
-					}
-				});
-			});
+			// 		if (fs.existsSync(file) && array.indexOf(file) === -1) {
+			// 			array.push(file);
+			// 		}
+			// 	});
+			// });
 		});
 
 		if (page === mainBundle) {

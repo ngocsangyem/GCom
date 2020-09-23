@@ -595,36 +595,19 @@
 	},
 	"depsChanged": false,
 	"scripts": {
-		"index": [
-			"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/header/header.component.js",
-			"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/todos/todos.component.js",
-			"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/status-todo/status-todo.component.js",
-			"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/count-todo/count-todo.component.js"
-		],
+		"index": [],
 		"main": [
-			"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/header/header.component.js",
-			"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/todos/todos.component.js",
-			"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/status-todo/status-todo.component.js",
-			"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/count-todo/count-todo.component.js",
 			"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/index/index.component.js"
 		]
 	},
 	"styles": {
 		"index": [
 			"/Users/sangnguyen/Documents/Tools/gulp-component/node_modules/swiper/swiper-bundle.css",
-			"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/header/assets/normalize.css",
-			"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/header/header.component.scss",
-			"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/todos/todos.component.scss",
-			"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/status-todo/status-todo.component.scss",
-			"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/count-todo/count-todo.component.scss"
+			"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/header/assets/normalize.css"
 		],
 		"main": [
 			"/Users/sangnguyen/Documents/Tools/gulp-component/node_modules/swiper/swiper-bundle.css",
 			"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/header/assets/normalize.css",
-			"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/header/header.component.scss",
-			"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/todos/todos.component.scss",
-			"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/status-todo/status-todo.component.scss",
-			"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/count-todo/count-todo.component.scss",
 			"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/index/index.component.scss"
 		]
 	},
