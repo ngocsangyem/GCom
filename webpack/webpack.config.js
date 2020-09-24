@@ -8,7 +8,7 @@ import { paths, config } from '../core/index';
 const extname = config.component.scripts.extension;
 
 const getEntry = () => {
-	if (isDev || !config.build.bundles.includes('js')) {
+	if (!config.build.bundles.includes('js')) {
 		let mainBundle = config.build.mainBundle;
 		return { [mainBundle]: paths.app(`${mainBundle}${extname}`) };
 	} else {
@@ -30,13 +30,13 @@ const WebpackConfig = {
 	entry: getEntry(),
 	output: {
 		filename: isDev ? '[name].js' : '[name].min.js',
-		path: paths._scripts,
+		// path: paths._scripts,
 	},
 	optimization: {
-		splitChunks: {
-			// include all types of chunks
-			chunks: 'all',
-		},
+		// splitChunks: {
+		// 	// include all types of chunks
+		// 	chunks: 'all',
+		// },
 		minimize: !args.production ? false : true,
 	},
 	plugins: [],

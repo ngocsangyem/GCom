@@ -10,7 +10,7 @@ export default {
 			'**/*' + this.config.component.templates
 		);
 		const options = {
-			// since: this.since.bind(this),
+			since: this.since.bind(this),
 		};
 		const ready = this.HTMLReady.bind(this, done);
 		return this.gulp
@@ -165,12 +165,10 @@ export default {
 
 	HTMLReady(done) {
 		const generateTree = require(this.paths.core('generateTree'));
-		const parseComponents = require(this.paths.core('parseComponents'));
 		const autoCreate = require(this.paths.core('autoCreate'));
 		const onlyOnWatch = this.config.autoCreate.onlyOnWatch;
 
 		generateTree(this);
-		// parseComponents(this);
 
 		if (!onlyOnWatch || (onlyOnWatch && this.store.watch)) {
 			autoCreate(this);

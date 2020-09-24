@@ -8,8 +8,9 @@ export default {
 		// const styles = (this.store.styles = {});
 		// const checkFiles = require(this.paths.core('checkFiles'));
 		// checkFiles('styles', this);
-		if (this.isDev || !this.config.build.bundles.includes('css')) {
-			const files = this.paths.app(`${this.mainBundle}.${this.extname()}`) || []
+		if (!this.config.build.bundles.includes('css')) {
+			const files =
+				this.paths.app(`${this.mainBundle}.${this.extname()}`) || [];
 			// let files = styles[this.mainBundle] || [];
 			return this.compileBundle(files, this.mainBundle, done);
 		} else {

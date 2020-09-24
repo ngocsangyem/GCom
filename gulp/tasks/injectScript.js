@@ -6,7 +6,7 @@ export default {
 	},
 
 	init(done) {
-		if (this.isDev || !this.config.build.bundles.includes('js')) {
+		if (!this.config.build.bundles.includes('js')) {
 			const mainBundleScripts = require(this.paths.core(
 				'mainBundleScripts'
 			));
@@ -19,10 +19,15 @@ export default {
 	},
 
 	watch() {
-		return [{
-			files: this.paths.app('**', `!(${this.mainBundle})` + this.extname()),
-			tasks: this.name,
-		}];
+		return [
+			{
+				files: this.paths.app(
+					'**',
+					`!(${this.mainBundle})` + this.extname()
+				),
+				tasks: this.name,
+			},
+		];
 	},
 
 	dest() {
@@ -36,9 +41,13 @@ export default {
 
 		return this.gulp
 			.src(files)
-			.pipe(this.inject(this.gulp.src(filesInject, {
-				read: false
-			})))
+			.pipe(
+				this.inject(
+					this.gulp.src(filesInject, {
+						read: false,
+					})
+				)
+			)
 			.pipe(this.dest());
 	},
 

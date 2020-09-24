@@ -40,23 +40,40 @@ export default (code, page, task) => {
 		styles: [],
 	};
 
-	if (isDev) {
-		page.temp.styles.unshift(`${mainBundle}.css`);
-		page.temp.scripts.push(`${mainBundle}.js`);
-	} else {
-		const bundles = config.build.bundles;
-		const style =
-			(bundles.includes('css') ? page.name : mainBundle) + '.min.css';
-		const script =
-			(bundles.includes('js') ? page.name : mainBundle) + '.min.js';
+	// if (isDev) {
+	// 	page.temp.styles.unshift(`${mainBundle}.css`);
+	// 	page.temp.scripts.push(`${mainBundle}.js`);
+	// } else {
+	// 	const bundles = config.build.bundles;
+	// 	const style =
+	// 		(bundles.includes('css') ? page.name : mainBundle) + '.min.css';
+	// 	const script =
+	// 		(bundles.includes('js') ? page.name : mainBundle) + '.min.js';
 
-		if (isFile(path.join(paths._styles, style))) {
-			page.temp.styles.push(style);
-		}
-		if (isFile(path.join(paths._scripts, script))) {
-			page.temp.scripts.push(script);
-		}
-	}
+	// 	if (isFile(path.join(paths._styles, style))) {
+	// 		page.temp.styles.push(style);
+	// 	}
+	// 	if (isFile(path.join(paths._scripts, script))) {
+	// 		page.temp.scripts.push(script);
+	// 	}
+	// }
+
+	const bundles = config.build.bundles;
+	const minExt = !isDev ? '.min' : '';
+	const style =
+		(bundles.includes('css') ? page.name : mainBundle) + minExt + '.css';
+	const script =
+		(bundles.includes('js') ? page.name : mainBundle) + minExt + '.js';
+
+	// if (isFile(path.join(paths._styles, style))) {
+
+	// }
+	// if (isFile(path.join(paths._scripts, script))) {
+
+	// }
+
+	page.temp.scripts.push(script);
+	page.temp.styles.push(style);
 
 	page.temp.scripts.forEach((src) => {
 		let script = '<script src="[src]"[attr]></script>';

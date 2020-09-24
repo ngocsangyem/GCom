@@ -1,4 +1,4 @@
-import webpack from 'webpack';
+import webpack from 'webpack-stream';
 import { WebpackConfig } from '../../webpack/webpack.config';
 
 export default {
@@ -12,29 +12,33 @@ export default {
 		// const scripts = (this.store.scripts = {});
 		// const checkFiles = require(this.paths.core('checkFiles'));
 		// checkFiles('scripts', this);
-		if (this.isDev || !this.config.build.bundles.includes('js')) {
+		if (!this.config.build.bundles.includes('js')) {
 			const mainBundleScripts = require(this.paths.core(
 				'mainBundleScripts'
 			));
 			mainBundleScripts(this);
 		}
 
-		return new Promise((resolve, reject) => {
-			webpack(WebpackConfig, (err, stats) => {
-				if (err) {
-					console.log('Webpack', err);
-					reject(err);
-				}
-				console.log(
-					stats.toString({
-						colors: {
-							green: '\u001b[32m',
-						},
-					})
-				);
-				resolve();
-			});
-		});
+		const files = this.paths.pages('**/*', `${this.extname()}`);
+
+		return this.compile(files, done);
+
+		// return new Promise((resolve, reject) => {
+		// 	webpack(WebpackConfig, (err, stats) => {
+		// 		if (err) {
+		// 			console.log('Webpack', err);
+		// 			reject(err);
+		// 		}
+		// 		console.log(
+		// 			stats.toString({
+		// 				colors: {
+		// 					green: '\u001b[32m',
+		// 				},
+		// 			})
+		// 		);
+		// 		resolve();
+		// 	});
+		// });
 	},
 
 	watch() {
@@ -45,5 +49,17 @@ export default {
 			),
 			tasks: this.name,
 		};
+	},
+
+	dest() {
+		return this.gulp.dest(this.paths._scripts);
+	},
+
+	compile(files, done) {
+		return this.gulp
+			.src(files)
+			.pipe(webpack(WebpackConfig))
+			.pipe(this.dest())
+			.on('end', done);
 	},
 };
