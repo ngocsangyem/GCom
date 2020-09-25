@@ -32,7 +32,7 @@ export default {
 
 	needInject() {
 		return (
-			this.extname() !== 'css' ||
+			this.extname() !== 'css' &&
 			!this.config.build.bundles.includes('css')
 		);
 	},

@@ -25,18 +25,13 @@ const getEntry = () => {
 };
 
 const WebpackConfig = {
-	devtool: isDev ? 'source-map' : false,
+	devtool: isDev ? 'eval-source-map' : false,
 	mode: isDev ? 'development' : 'production',
-	entry: getEntry(),
+	// entry: getEntry(),
 	output: {
 		filename: isDev ? '[name].js' : '[name].min.js',
-		// path: paths._scripts,
 	},
 	optimization: {
-		// splitChunks: {
-		// 	// include all types of chunks
-		// 	chunks: 'all',
-		// },
 		minimize: !args.production ? false : true,
 	},
 	plugins: [],

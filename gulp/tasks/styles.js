@@ -118,19 +118,17 @@ export default {
 
 	postcss(bundle) {
 		const postcss = require('gulp-postcss');
-		const autoprefixer = require('autoprefixer');
-		const cssDeclarationSorter = require('css-declaration-sorter');
-		const sortMedia = require('postcss-sort-media-queries');
 		const plugins = [
-			autoprefixer({
-				grid: true,
+			require('autoprefixer')({
+				remove: false,
 			}),
-			cssDeclarationSorter({
+			require('css-declaration-sorter')({
 				order: 'concentric-css',
 			}),
-			sortMedia(),
+			require('postcss-sort-media-queries')(),
 			this.generateSprites(bundle),
 		];
+		console.log('postcss -> plugins', plugins);
 
 		return require('gulp-if')(!this.isDev, postcss(plugins));
 	},
@@ -191,16 +189,11 @@ export default {
 	},
 
 	rename() {
-		return require('gulp-rename')(
-			function (path) {
-				path.basename = path.basename.replace(/\.[^/.]+$/, '');
-				if (this.isDev) {
-					path.extname = '.css';
-				} else {
-					path.extname = '.min.css';
-				}
-			}.bind(this)
-		);
+		const ext = this.isDev ? '.css' : '.min.css';
+		return require('gulp-rename')(function (path) {
+			path.basename = path.basename.replace(/\.[^/.]+$/, '');
+			path.extname = ext;
+		});
 	},
 
 	forMinify(file) {

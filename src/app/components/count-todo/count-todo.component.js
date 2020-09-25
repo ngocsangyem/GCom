@@ -17,7 +17,7 @@ export default class CountTodo extends Component {
 	render() {
 		let suffix = store.state.items.length !== 1 ? 's' : '';
 		let emoji = store.state.items.length > 0 ? '🙌' : '😢';
-
+		console.log(this);
 		this.element.innerHTML = `
 			<div class="count-todo__title">
 				<small>You've done</small>
