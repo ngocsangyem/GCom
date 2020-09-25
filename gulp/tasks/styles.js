@@ -128,7 +128,6 @@ export default {
 			require('postcss-sort-media-queries')(),
 			this.generateSprites(bundle),
 		];
-		console.log('postcss -> plugins', plugins);
 
 		return require('gulp-if')(!this.isDev, postcss(plugins));
 	},

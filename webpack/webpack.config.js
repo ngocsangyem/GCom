@@ -29,7 +29,7 @@ const WebpackConfig = {
 	mode: isDev ? 'development' : 'production',
 	// entry: getEntry(),
 	output: {
-		filename: isDev ? '[name].js' : '[name].min.js',
+		// filename: isDev ? '[name].js' : '[name].min.js',
 	},
 	optimization: {
 		minimize: !args.production ? false : true,
