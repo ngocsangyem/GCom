@@ -5,16 +5,15 @@ export default {
 		return this.config.component.styles.slice(1);
 	},
 	init(done) {
-		// const styles = (this.store.styles = {});
-		// const checkFiles = require(this.paths.core('checkFiles'));
-		// checkFiles('styles', this);
+		const styles = (this.store.styles = {});
+		const checkFiles = require(this.paths.core('checkFiles'));
+		checkFiles('styles', this);
+		// console.log('init -> styles', styles);
 		if (!this.config.build.bundles.includes('css')) {
-			const files =
-				this.paths.app(`${this.mainBundle}.${this.extname()}`) || [];
-			// let files = styles[this.mainBundle] || [];
+			const files = styles[this.mainBundle] || [];
 			return this.compileBundle(files, this.mainBundle, done);
 		} else {
-			return this.compileBundles(this.store.pages);
+			return this.compileBundles(styles);
 		}
 	},
 
@@ -56,19 +55,13 @@ export default {
 			.on('end', done);
 	},
 
-	compileBundles(pages) {
+	compileBundles(bundles) {
 		const promises = [];
-
-		Object.keys(pages).forEach((page) => {
-			if (page !== this.mainBundle) {
-				const files = pages[page].styles;
-
-				if (!files) {
-					return;
-				}
-
+		Object.keys(bundles).forEach((bundle) => {
+			if (bundle !== this.mainBundle) {
+				const files = bundles[bundle] || [];
 				const promise = new Promise((resolve, reject) => {
-					this.compileBundle(files, page, resolve);
+					this.compileBundle(files, bundle, resolve);
 				});
 
 				return promises.push(promise);

@@ -58,9 +58,9 @@ export default (task) => {
 	// Parse mix
 
 	const parse = (key, page) => {
-		if (pages[page].BEM_tree[key].already) {
-			return;
-		}
+		// if (pages[page].BEM_tree[key].already) {
+		// 	return;
+		// }
 
 		pages[page].BEM_tree[key].already = true;
 

@@ -11,8 +11,8 @@ import checkModules from './checkModules';
  */
 
 export default (type, task) => {
-	const { store, paths, config, isDev, mainBundle, fs, isDirectory } = task;
-	const { tree, deps, levels } = store;
+	const { store, paths, config, isDev, mainBundle, fs } = task;
+	const { tree, deps } = store;
 	const needBundles = config.build.bundles.includes(
 		type === 'scripts' ? 'js' : 'css'
 	);
@@ -21,8 +21,7 @@ export default (type, task) => {
 			? config.component[type].extension
 			: config.component[type];
 	const imports = store[type];
-	const pages = !isDev && needBundles ? Object.keys(tree) : [mainBundle];
-	const pagesStore = Object.keys(store.pages);
+	const pages = needBundles ? Object.keys(tree) : [mainBundle];
 	const importExtnames = {
 		styles: ['.css', config.component.styles],
 		scripts: ['.js', config.component.scripts.extension],
@@ -57,34 +56,30 @@ export default (type, task) => {
 					array
 				);
 			}
-
-			// levels.forEach((level) => {
-			// 	const files = [component].concat(components[component]);
-
-			// 	files.forEach((item) => {
-			// 		const file = paths.app(
-			// 			level,
-			// 			component,
-			// 			item + config.component.prefix + extname
-			// 		);
-
-			// 		if (fs.existsSync(file) && array.indexOf(file) === -1) {
-			// 			array.push(file);
-			// 		}
-			// 	});
-			// });
 		});
 
-		if (page === mainBundle) {
-			pagesStore.forEach((page) => {
-				const file = paths.pages(
-					page,
-					page + config.component.prefix + extname
-				);
-				if (fs.existsSync(file) && array.indexOf(file) === -1) {
-					array.push(file);
-				}
-			});
+		checkModules(
+			page,
+			'import',
+			store.pages && store.pages[page],
+			deps,
+			task,
+			importExtnames[type],
+			array
+		);
+	});
+
+	Object.keys(store.pages).forEach((page) => {
+		const file = paths.pages(
+			page,
+			page + config.component.prefix + extname
+		);
+		if (
+			fs.existsSync(file) &&
+			imports[page] &&
+			imports[page].indexOf(file) === -1
+		) {
+			imports[page].push(file);
 		}
 	});
 };

@@ -27,13 +27,15 @@ export default (component, type, page, deps, task, extnames, imports) => {
 		attrs: (node && node.attrs) || {},
 		tag: (node && node.tag) || '',
 	};
+	const isExternalFrom = (module) =>
+		module.external && typeof module.external === 'boolean';
 
 	modules.forEach((module) => {
 		if (!module || module.constructor !== Object) {
 			return console.log(`Dependency must be a object!`);
 		}
 
-		const from = module.from;
+		const from = !isExternalFrom(module) ? module.from : '';
 		const items = Array.isArray(module[type])
 			? module[type]
 			: [module[type]];
@@ -41,8 +43,6 @@ export default (component, type, page, deps, task, extnames, imports) => {
 			typeof module.filter === 'function' ? module.filter : false;
 
 		if (type === 'import') {
-			// console.log('checkModules -> is imports');
-			// console.log('checkModules -> items', items);
 			items.forEach((item) => {
 				if (typeof item !== 'string') {
 					return;

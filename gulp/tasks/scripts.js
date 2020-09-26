@@ -12,24 +12,16 @@ export default {
 	},
 
 	init(done) {
-		// const scripts = (this.store.scripts = {});
-		// const checkFiles = require(this.paths.core('checkFiles'));
-		// checkFiles('scripts', this);
-		let files;
+		const scripts = (this.store.scripts = {});
+		const checkFiles = require(this.paths.core('checkFiles'));
+		checkFiles('scripts', this);
+		// console.log('init -> scripts', scripts);
 		if (!this.config.build.bundles.includes('js')) {
-			const mainBundleScripts = require(this.paths.core(
-				'mainBundleScripts'
-			));
-			mainBundleScripts(this);
-			files = this.paths.app(
-				'**',
-				`${this.mainBundle}.${this.extname()}`
-			);
+			const files = scripts[this.mainBundle] || [];
+			return this.compileBundle(files, this.mainBundle, done);
 		} else {
-			files = this.paths.pages(`**/*.${this.extname()}`);
+			return this.compileBundles(scripts);
 		}
-
-		return this.compile(files, done);
 	},
 
 	watch() {
@@ -46,7 +38,11 @@ export default {
 		return this.gulp.dest(this.paths._scripts);
 	},
 
-	compile(files, done) {
+	compileBundle(files, bundle, done) {
+		if (files.length === 0) {
+			return done();
+		}
+
 		return this.gulp
 			.src(files)
 			.pipe(named())
@@ -57,9 +53,36 @@ export default {
 					}
 				})
 			)
+			.pipe(this.concat(bundle))
 			.pipe(this.rename())
 			.pipe(this.dest())
 			.on('end', done);
+	},
+
+	compileBundles(bundles) {
+		console.log('compileBundles -> bundles', bundles);
+		const promises = [];
+		Object.keys(bundles).forEach((bundle) => {
+			if (bundle !== this.mainBundle) {
+				const files = bundles[bundle] || [];
+				const promise = new Promise((resolve, reject) => {
+					this.compileBundle(files, bundle, resolve);
+				});
+
+				return promises.push(promise);
+			}
+		});
+
+		return Promise.all(promises);
+	},
+
+	concat(bundle) {
+		return require('gulp-concat')({
+			path: this.path.join(
+				this.paths._root,
+				`${bundle}.${this.extname()}`
+			),
+		});
 	},
 
 	rename() {

@@ -22,12 +22,16 @@ export default (task) => {
 	const root = paths._root;
 	const sortLevels = config.levels;
 
+	const isModule = (module) => module && module.constructor === Object;
+	const isArray = (module) => Array.isArray(module);
+	const isFrom = (module) => module.from && typeof module.from === 'string';
+	const isExternalFrom = (module) =>
+		module.external && typeof module.external === 'boolean';
+
 	glob.sync(`${paths._app}/**/deps.js`).forEach((file) => {
 		const component = path.basename(path.dirname(file));
-		if (
-			!isDirectory(paths.components(component)) ||
-			!isDirectory(path.dirname(file))
-		) {
+
+		if (!isDirectory(path.dirname(file))) {
 			return;
 		}
 
@@ -36,14 +40,16 @@ export default (task) => {
 
 			const data = require(file);
 
-			if (data && Array.isArray(data.modules)) {
+			if (data && isArray(data.modules)) {
 				data.modules.forEach((module) => {
-					if (!module || module.constructor !== Object) {
+					if (!isModule(module)) {
 						return;
 					}
 
-					if (!module.from || typeof module.from !== 'string') {
-						return (module.from = path.dirname(file) + '/assets');
+					if (!isFrom(module)) {
+						return (module.from = !isExternalFrom(module)
+							? path.dirname(file) + '/assets'
+							: path.dirname(file));
 					}
 
 					if (isExternal(module.from)) {
@@ -57,7 +63,9 @@ export default (task) => {
 			if (!deps[component]) {
 				if (data)
 					deps[component] = {
-						components: Array.isArray(data.nodes) ? data.nodes : [],
+						components: isArray(data.components)
+							? data.components
+							: [],
 						modules: Array.isArray(data.modules)
 							? data.modules
 							: [],
@@ -65,9 +73,9 @@ export default (task) => {
 			} else {
 				if (data)
 					deps[component] = {
-						components: Array.isArray(data.nodes)
-							? deps[component].nodes.concat(data.nodes)
-							: deps[component].nodes,
+						components: isArray(data.components)
+							? deps[component].components.concat(data.components)
+							: deps[component].components,
 						modules: Array.isArray(data.modules)
 							? deps[component].modules.concat(data.modules)
 							: deps[component].modules,

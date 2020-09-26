@@ -56,7 +56,7 @@ export default (file, task) => {
 					attrs.class.split(' ').forEach((cls) => {
 						cls = cls.trim();
 						parseClass(cls, page, mix, attrs, tag);
-						parseDeps(cls, page, store.deps, task);
+						// parseDeps(cls, page, store.deps, task);
 					});
 				}
 			},

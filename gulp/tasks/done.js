@@ -1,10 +1,8 @@
-const fs = require('fs');
 export default {
 	build: 6,
 	name: 'task:done',
 
 	init(done) {
-		fs.writeFileSync('./store.json', JSON.stringify(this.store));
 		if (this.isDev) {
 			return done();
 		}
