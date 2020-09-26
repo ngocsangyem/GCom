@@ -20,7 +20,7 @@ module.exports = {
 
 	build: {
 		addVersions: true,
-		bundles: ['js', 'css'],
+		bundles: [],
 		mainBundle: 'main',
 		globalStyles: 'app/styles/styles.scss',
 	},

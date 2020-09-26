@@ -10,19 +10,25 @@ export default {
 			since: this.since.bind(this),
 		};
 
-		if (this.isDev) {
-			const all = this.paths.app(...this.globs());
+		// if (this.isDev) {
+		// 	const all = this.paths.app(...this.globs());
 
-			if (!files.includes(all)) {
-				files.push(all);
-			}
-		} else {
-			const always = this.globs()
-				.join('::')
-				.replace('*.{', '*@always.{')
-				.split('::');
+		// 	if (!files.includes(all)) {
+		// 		files.push(all);
+		// 	}
+		// } else {
+		// 	const always = this.globs()
+		// 		.join('::')
+		// 		.replace('*.{', '*@always.{')
+		// 		.split('::');
 
-			files.push(this.paths.app(...always));
+		// 	files.push(this.paths.app(...always));
+		// }
+
+		const all = this.paths.app(...this.globs());
+
+		if (!files.includes(all)) {
+			files.push(all);
 		}
 
 		if (files.length === 0) {
@@ -72,8 +78,9 @@ export default {
 				return this.paths._styles;
 			} else {
 				let array = path
-					.relative(this.paths._components, file.path)
-					.split(path.sep);
+					.relative(this.paths._app, file.path)
+					.split(path.sep)
+					.slice(1);
 				let asset = [array[0]].concat(array.slice(2));
 
 				if (asset.includes('favicons')) {

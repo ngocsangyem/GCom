@@ -21,8 +21,8 @@ export default {
 				'mainBundleScripts'
 			));
 			mainBundleScripts(this);
-			files = this.paths.pages(
-				'**/*',
+			files = this.paths.app(
+				'**',
 				`${this.mainBundle}.${this.extname()}`
 			);
 		} else {
@@ -30,23 +30,6 @@ export default {
 		}
 
 		return this.compile(files, done);
-
-		// return new Promise((resolve, reject) => {
-		// 	webpack(WebpackConfig, (err, stats) => {
-		// 		if (err) {
-		// 			console.log('Webpack', err);
-		// 			reject(err);
-		// 		}
-		// 		console.log(
-		// 			stats.toString({
-		// 				colors: {
-		// 					green: '\u001b[32m',
-		// 				},
-		// 			})
-		// 		);
-		// 		resolve();
-		// 	});
-		// });
 	},
 
 	watch() {
@@ -64,22 +47,19 @@ export default {
 	},
 
 	compile(files, done) {
-		return (
-			this.gulp
-				.src(files)
-				.pipe(named())
-				.pipe(
-					webpack(WebpackConfig, compiler, function (err, stats) {
-						/* Use stats to do more things if needed */
-					})
-				)
-				.pipe(this.rename())
-				// .pipe(this.sourcemapInit())
-				// .pipe(this.through())
-				// .pipe(this.sourcemapWrite())
-				.pipe(this.dest())
-				.on('end', done)
-		);
+		return this.gulp
+			.src(files)
+			.pipe(named())
+			.pipe(
+				webpack(WebpackConfig, compiler, function (err, stats) {
+					if (err) {
+						throw err;
+					}
+				})
+			)
+			.pipe(this.rename())
+			.pipe(this.dest())
+			.on('end', done);
 	},
 
 	rename() {
@@ -89,30 +69,6 @@ export default {
 		return require('gulp-rename')(function (path) {
 			path.basename = path.basename.replace(/\.[^/.]+$/, '');
 			path.extname = ext;
-		});
-	},
-
-	sourcemapInit() {
-		return require('gulp-if')(
-			this.isDev,
-			require('gulp-sourcemaps').init({ loadMaps: true })
-		);
-	},
-
-	sourcemapWrite() {
-		return require('gulp-if')(
-			this.isDev,
-			require('gulp-sourcemaps').write()
-		);
-	},
-
-	through() {
-		return require('through2').obj(function (file, enc, cb) {
-			// Dont pipe through any source map files as it will be handled
-			// by gulp-sourcemaps
-			const isSourceMap = /\.map$/.test(file.path);
-			if (!isSourceMap) this.push(file);
-			cb();
 		});
 	},
 };

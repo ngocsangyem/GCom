@@ -17,19 +17,25 @@ export default {
 		};
 		// In dev all files
 
-		if (this.isDev) {
-			const all = this.paths.components(...this.globs());
+		// if (this.isDev) {
+		// 	const all = this.paths.components(...this.globs());
 
-			if (!files.includes(all)) {
-				files.push(all);
-			}
-		} else {
-			const always = this.globs()
-				.join('::')
-				.replace('*.{', '*@always.{')
-				.split('::');
+		// 	if (!files.includes(all)) {
+		// 		files.push(all);
+		// 	}
+		// } else {
+		// 	const always = this.globs()
+		// 		.join('::')
+		// 		.replace('*.{', '*@always.{')
+		// 		.split('::');
 
-			files.push(this.paths.components(...always));
+		// 	files.push(this.paths.components(...always));
+		// }
+
+		const all = this.paths.components(...this.globs());
+
+		if (!files.includes(all)) {
+			files.push(all);
 		}
 
 		if (files.length === 0) {

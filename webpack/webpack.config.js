@@ -69,7 +69,7 @@ if (!isDev) {
 		new TerserPlugin({
 			cache: true,
 			parallel: true,
-			extractComments: 'all',
+			extractComments: false,
 		})
 	);
 }

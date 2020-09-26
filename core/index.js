@@ -81,7 +81,7 @@ try {
 		globalStyles: false,
 		zip: true,
 		HTMLRoot: './',
-		mainFolders: ['helpers', 'main.js', 'main.scss', 'styles', 'views'],
+		components: ['components', 'shared'],
 	};
 
 	config.build = Object.assign(build, config.build);

@@ -8,22 +8,28 @@ export default {
 	init(done) {
 		const files = this.store.fonts || [];
 		const options = {
-			// since: this.since.bind(this),
+			since: this.since.bind(this),
 		};
 
-		if (this.isDev) {
-			const all = this.paths.app(...this.globs());
+		// if (this.isDev) {
+		// 	const all = this.paths.app(...this.globs());
 
-			if (!files.includes(all)) {
-				files.push(all);
-			}
-		} else {
-			const always = this.globs()
-				.join('::')
-				.replace('*.{', '*@always.{')
-				.split('::');
+		// 	if (!files.includes(all)) {
+		// 		files.push(all);
+		// 	}
+		// } else {
+		// 	const always = this.globs()
+		// 		.join('::')
+		// 		.replace('*.{', '*@always.{')
+		// 		.split('::');
 
-			files.push(this.paths.app(...always));
+		// 	files.push(this.paths.app(...always));
+		// }
+
+		const all = this.paths.app(...this.globs());
+
+		if (!files.includes(all)) {
+			files.push(all);
 		}
 
 		if (files.length === 0) {

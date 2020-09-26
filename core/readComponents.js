@@ -18,9 +18,7 @@ export default (task) => {
 	const deps = (store.deps = {});
 	const jsons = (store.jsons = {});
 	const levels = (store.levels = []);
-	const componentsFolder = fs
-		.readdirSync(paths._app)
-		.filter((folder) => !config.build.mainFolders.includes(folder));
+	const componentsFolder = config.build.components;
 	const root = paths._root;
 	const sortLevels = config.levels;
 
