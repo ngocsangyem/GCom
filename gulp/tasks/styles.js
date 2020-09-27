@@ -8,7 +8,6 @@ export default {
 		const styles = (this.store.styles = {});
 		const checkFiles = require(this.paths.core('checkFiles'));
 		checkFiles('styles', this);
-		// console.log('init -> styles', styles);
 		if (!this.config.build.bundles.includes('css')) {
 			const files = styles[this.mainBundle] || [];
 			return this.compileBundle(files, this.mainBundle, done);
@@ -37,6 +36,7 @@ export default {
 
 		const options = {
 			sourcemaps: this.config.build.sourcemaps.includes('css'),
+			// since: this.gulp.lastRun('task:styles'),
 		};
 
 		return this.gulp
@@ -44,6 +44,8 @@ export default {
 			.pipe(this.plumber())
 			.pipe(this.sourcemapInit())
 			.pipe(this.compile())
+			.pipe(this.cached())
+			.pipe(this.depend())
 			.pipe(this.parseURLs())
 			.pipe(this.concat(bundle))
 			.pipe(this.removeDuplicate())
@@ -87,6 +89,14 @@ export default {
 		);
 
 		return this.css();
+	},
+
+	cached() {
+		return this.cache('style_compile');
+	},
+
+	depend() {
+		return this.dependents();
 	},
 
 	css() {

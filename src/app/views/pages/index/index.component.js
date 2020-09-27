@@ -33,6 +33,8 @@ export class IndexComponent {
 		countInstance.render();
 		listInstance.render();
 		statusInstance.render();
+		const slider = new Swiper();
+		console.log('IndexComponent -> formHandle -> slider', slider);
 	}
 
 	static init() {

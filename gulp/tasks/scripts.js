@@ -43,24 +43,25 @@ export default {
 			return done();
 		}
 
-		return this.gulp
-			.src(files)
-			.pipe(named())
-			.pipe(
-				webpack(WebpackConfig, compiler, function (err, stats) {
-					if (err) {
-						throw err;
-					}
-				})
-			)
-			.pipe(this.concat(bundle))
-			.pipe(this.rename())
-			.pipe(this.dest())
-			.on('end', done);
+		return (
+			this.gulp
+				.src(files)
+				// .pipe(named())
+				.pipe(
+					webpack(WebpackConfig, compiler, function (err, stats) {
+						if (err) {
+							throw err;
+						}
+					})
+				)
+				.pipe(this.concat(bundle))
+				.pipe(this.rename())
+				.pipe(this.dest())
+				.on('end', done)
+		);
 	},
 
 	compileBundles(bundles) {
-		console.log('compileBundles -> bundles', bundles);
 		const promises = [];
 		Object.keys(bundles).forEach((bundle) => {
 			if (bundle !== this.mainBundle) {
@@ -74,6 +75,10 @@ export default {
 		});
 
 		return Promise.all(promises);
+	},
+
+	cached() {
+		return require('gulp-cached')('scripts_compile');
 	},
 
 	concat(bundle) {

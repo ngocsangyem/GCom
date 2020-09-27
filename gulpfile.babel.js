@@ -10,6 +10,8 @@ import c from 'ansi-colors';
 import foldero from 'foldero';
 import log from 'fancy-log';
 import plumber from 'gulp-plumber';
+import cache from 'gulp-cached';
+import dependents from 'gulp-dependents';
 
 import { isDev, args, plugins, reportError, browserSync } from './gulp/utils';
 import { config, paths, buildPath, notify } from './core/index';
@@ -61,7 +63,9 @@ const setTaskData = (task) => {
 		(task.upperFirstLetter = upperFirstLetter),
 		(task.buildPath = buildPath),
 		(task.notify = notify),
-		(task.parseXlink = parseXlink)
+		(task.parseXlink = parseXlink),
+		(task.cache = cache),
+		(task.dependents = dependents)
 	);
 };
 

@@ -79,7 +79,7 @@ export default (type, task) => {
 			imports[page] &&
 			imports[page].indexOf(file) === -1
 		) {
-			imports[page].push(file);
+			imports[page].unshift(file);
 		}
 	});
 };

@@ -1,8 +1,9 @@
 import path from 'path';
 import TerserPlugin from 'terser-webpack-plugin';
 import glob from 'glob';
+import webpack from 'webpack';
 
-import { args, isDev, taskTarget } from '../gulp/utils';
+import { args, isDev } from '../gulp/utils';
 import { paths, config } from '../core/index';
 
 const extname = config.component.scripts.extension;
@@ -27,14 +28,11 @@ const getEntry = () => {
 const WebpackConfig = {
 	devtool: isDev ? 'eval-source-map' : false,
 	mode: isDev ? 'development' : 'production',
-	// entry: getEntry(),
-	output: {
-		// filename: isDev ? '[name].js' : '[name].min.js',
-	},
-	optimization: {
-		minimize: !args.production ? false : true,
-	},
-	plugins: [],
+	plugins: [
+		new webpack.DefinePlugin({
+			PRODUCTION: JSON.stringify(true),
+		}),
+	],
 	module: {
 		rules: [],
 	},
