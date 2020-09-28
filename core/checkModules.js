@@ -35,7 +35,7 @@ export default (component, type, page, deps, task, extnames, imports) => {
 			return console.log(`Dependency must be a object!`);
 		}
 
-		const from = !isExternalFrom(module) ? module.from : '';
+		const from = module.from;
 		const items = Array.isArray(module[type])
 			? module[type]
 			: [module[type]];

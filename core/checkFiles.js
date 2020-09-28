@@ -11,7 +11,7 @@ import checkModules from './checkModules';
  */
 
 export default (type, task) => {
-	const { store, paths, config, isDev, mainBundle, fs } = task;
+	const { store, paths, config, mainBundle, fs } = task;
 	const { tree, deps } = store;
 	const needBundles = config.build.bundles.includes(
 		type === 'scripts' ? 'js' : 'css'
@@ -79,7 +79,7 @@ export default (type, task) => {
 			imports[page] &&
 			imports[page].indexOf(file) === -1
 		) {
-			imports[page].unshift(file);
+			imports[page].push(file);
 		}
 	});
 };

@@ -388,11 +388,11 @@ There are also special placeholders:
 ```pug
 html
 	head
-		<!-- BEMGO:styles -->
+		<!-- GULPC:styles -->
 		// CSS files will be here
 	body
 		...
-		<!-- BEMGO:scripts -->
+		<!-- GULPC:scripts -->
 		// and here JS files
 ```
 

@@ -2,8 +2,8 @@ export default {
 	components: [],
 	modules: [
 		{
-			import: 'src/assets/css/grid.css',
-			external: true,
+			from: 'src/assets/css',
+			import: 'grid.css',
 		},
 	],
 };

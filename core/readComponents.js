@@ -47,9 +47,7 @@ export default (task) => {
 					}
 
 					if (!isFrom(module)) {
-						return (module.from = !isExternalFrom(module)
-							? path.dirname(file) + '/assets'
-							: path.dirname(file));
+						return (module.from = path.dirname(file) + '/assets');
 					}
 
 					if (isExternal(module.from)) {
