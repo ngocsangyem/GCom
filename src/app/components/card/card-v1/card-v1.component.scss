@@ -17,7 +17,9 @@
 }
 
 .card__text {
-
+	--line-height-multiplier: 1;
+	--text-vspace-multiplier: 1;
+	
 	h1,
 	h2,
 	h3,

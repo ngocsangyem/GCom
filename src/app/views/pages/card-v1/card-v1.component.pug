@@ -6,6 +6,8 @@ block var
 
 block main
 	.container
-		.grid
-			div(class="col-4@md")
+		.grid.gap-xs
+			div(class="col-6@sm col-4@md")
 				include ../../../components/card/card-v1/card-v1.component.pug
+			div(class="col-6@sm col-4@md")
+				include ../../../components/card/card-v1/card-v1--link.component.pug

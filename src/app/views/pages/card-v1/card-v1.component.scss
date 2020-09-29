@@ -6,9 +6,8 @@
 
 .container {
 	padding-top: var(--space-lg);
-}
 
-.col-4\@md {
-	margin-right: auto;
-	margin-left: auto;
+	.grid {
+		justify-content: center;
+	}
 }

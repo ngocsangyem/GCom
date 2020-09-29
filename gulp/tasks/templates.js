@@ -200,7 +200,7 @@ export default {
 				return;
 			}
 
-			if (name === 'layout' || name in pages[page].components) {
+			if (name === 'layout' || name in pages[page].BEM_tree) {
 				return editTime(
 					this.paths.pages(
 						page,
