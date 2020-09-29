@@ -121,6 +121,7 @@ export const createComponent = {
 	addFile(file, content) {
 		const where = path.relative(paths._src, file);
 		const what = this.type === 'page' ? 'Page' : 'File';
+		const extname = path.extname(file).slice(1);
 
 		if (fs.existsSync(file)) {
 			return this.addMessage(
@@ -130,6 +131,8 @@ export const createComponent = {
 
 		if (this.ignoreTemplate(file).pageSass) {
 			fs.writeFileSync(file, '', 'utf8');
+		} else if (extname === 'json') {
+			fs.writeFileSync(file, content, 'utf8');
 		} else {
 			fs.writeFileSync(
 				file,

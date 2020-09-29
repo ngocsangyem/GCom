@@ -1,6 +1,6 @@
 const dependencyTemplate = `// Dependency of [capitalize-name]Component\n\nmodule.exports = {\n\n\tnodes: [],\n\n\tmodules: [],\n\n}\n`;
 
-const jsonTemplate = '{\n\t"data":{}\n}';
+const jsonTemplate = '{}';
 
 const sassTemplate = '\n.[name]';
 const scssTemplate = '\n.[name] {}';
