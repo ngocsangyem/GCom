@@ -69,7 +69,6 @@ export default {
 				return promises.push(promise);
 			}
 		});
-
 		return Promise.all(promises);
 	},
 

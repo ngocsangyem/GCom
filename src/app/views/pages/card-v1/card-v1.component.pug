@@ -1,0 +1,11 @@
+extends ../../layouts/layout.pug
+
+block var
+	- title = 'Card-v1'
+	- bodyClass = 'card-v1'
+
+block main
+	.container
+		.grid
+			div(class="col-4@md")
+				include ../../../components/card/card-v1/card-v1.component.pug

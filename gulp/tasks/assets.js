@@ -2,7 +2,7 @@ export default {
 	build: 3,
 	name: 'task:assets',
 	globs: function () {
-		return ['*', '*', this.buildPath.assets, '**', '*.*'];
+		return ['**', this.buildPath.assets, '**', '*.*'];
 	},
 	init(done) {
 		const files = this.store.assets || [];

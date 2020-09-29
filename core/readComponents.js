@@ -92,7 +92,6 @@ export default (task) => {
 		if (isFile(file)) {
 			try {
 				const data = JSON.parse(fs.readFileSync(file));
-
 				if (!jsons[filename]) {
 					jsons[filename] = data;
 				} else {

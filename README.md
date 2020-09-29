@@ -445,7 +445,7 @@ header/symbols/rating.svg → #header__rating
 There are several options for use SVG, you can embed directly into the HTML code, for this you need to specify a special comment:
 
 ```html
-<!-- BEMGO:symbol -->
+<!-- GULPC:symbol -->
 ```
 
 Then in the use tag you need only the ID:

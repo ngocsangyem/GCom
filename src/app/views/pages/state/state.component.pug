@@ -1,0 +1,13 @@
+extends ../../layouts/layout.pug
+
+block var
+	- title = 'State'
+	- bodyClass = 'state'
+
+block main
+	section#app.app
+		.container
+			include ../../../components/header/header.component.pug
+			section.app__inner
+				include ../../../components/todos/todos.component.pug
+				include ../../../components/status-todo/status-todo.component.pug
