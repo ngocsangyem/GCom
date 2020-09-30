@@ -1,4 +1,10 @@
 :root {
+	--bounce: cubic-bezier(.25, 1.43, .35, 1.69);
+	--ease-in-out: cubic-bezier(0.645, 0.045, 0.355, 1);
+	--ease-in: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+	--ease-out: cubic-bezier(0.215, 0.61, 0.355, 1);
+	--ease-out-back: cubic-bezier(0.34, 1.56, 0.64, 1);
+
 	--ease-in-quad: cubic-bezier(0.55, 0.085, 0.68, 0.53);
 	--ease-in-cubic: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 	--ease-in-quart: cubic-bezier(0.895, 0.03, 0.685, 0.22);
