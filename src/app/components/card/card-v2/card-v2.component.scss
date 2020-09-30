@@ -1,0 +1,66 @@
+.card {
+	position: relative;
+	overflow: hidden;
+
+	border-radius: var(--radius-md);
+
+	img {
+		display: block;
+		width: 100%;
+	}
+}
+
+.card__caption {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+
+	text-shadow: 0 1px 1px rgba(#000, 0.35);
+	text-align: center;
+
+	background: linear-gradient(alpha(var(--color-black), 0), alpha(var(--color-black), 1));
+	background-blend-mode: multiply;
+	color: var(--color-white);
+	@include fontSmooth;
+
+	padding: var(--space-md) var(--space-sm) var(--space-sm) var(--space-sm);
+
+	&-title {
+		font-size: var(--text-md, 1.2em);
+	}
+
+	&-description {
+		margin-top: var(--space-xxxs);
+
+		font-size: var(--text-sm, 0.833em);
+
+		opacity: 0.7;
+	}
+}
+
+// --blurred-img
+.card--blur-fx {
+	.card__caption {
+		background: alpha(var(--color-black), 0.8);
+		backdrop-filter: blur(10px);
+	}
+}
+
+// --link
+a.card {
+	display: block;
+	text-decoration: none;
+	transition: box-shadow .2s;
+
+	&:hover {
+		box-shadow: var(--shadow-md);
+	}
+}
+
+@include breakpoint(md) {
+	.card__caption {
+		&-title {
+			font-size: 1em;
+		}
+	}
+}
