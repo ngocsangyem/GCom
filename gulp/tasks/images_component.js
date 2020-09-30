@@ -9,6 +9,15 @@ export default {
 			'*.{webp,png,jpg,jpeg,svg,gif,ico}',
 		];
 	},
+	ignore: function () {
+		return [
+			'**',
+			`${this.buildPath.assets}`,
+			this.buildPath.images,
+			'**',
+			'*.{webp,png,jpg,jpeg,svg,gif,ico}',
+		];
+	},
 
 	init(done) {
 		const files = this.store.images || [];
@@ -32,15 +41,17 @@ export default {
 		// 	files.push(this.paths.components(...always));
 		// }
 
-		const all = this.paths.components(...this.globs());
+		const all = this.paths.app(...this.globs());
+		const ignore = `!${this.paths.app(...this.ignore())}`;
 
 		if (!files.includes(all)) {
-			files.push(all);
+			files.push.apply(files, [all, ignore]);
 		}
 
 		if (files.length === 0) {
 			return done();
 		}
+		console.log('init -> files', files);
 
 		return this.gulp
 			.src(files, options)
