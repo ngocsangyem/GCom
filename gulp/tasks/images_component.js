@@ -51,7 +51,6 @@ export default {
 		if (files.length === 0) {
 			return done();
 		}
-		console.log('init -> files', files);
 
 		return this.gulp
 			.src(files, options)

@@ -80,8 +80,9 @@ export default {
 				let array = path
 					.relative(this.paths._app, file.path)
 					.split(path.sep)
-					.slice(1);
-				let asset = [array[0]].concat(array.slice(2));
+					.slice(1)
+					.filter((f) => f !== this.buildPath.assets);
+				let asset = [array[0]].concat(array.slice(1));
 
 				if (asset.includes('favicons')) {
 					file.path = path.join(file.base, basename);
@@ -89,8 +90,10 @@ export default {
 					return this.paths._favicons;
 				} else {
 					asset = asset.join(path.sep).replace('@always', '');
+					// console.log('dest -> asset', asset);
 
 					file.path = path.join(file.base, asset);
+					// console.log('dest -> file.path', file.path);
 
 					return this.paths._static;
 				}
