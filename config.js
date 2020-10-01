@@ -12,7 +12,7 @@ module.exports = {
 			syntax: 'function',
 		},
 		styles: '.scss',
-		data: true,
+		data: false,
 		BEM: false,
 		test: false,
 		prefix: '.component',

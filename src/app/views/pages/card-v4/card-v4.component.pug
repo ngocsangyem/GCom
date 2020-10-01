@@ -1,0 +1,13 @@
+extends ../../layouts/layout.pug
+
+block var
+	- title = 'Card-v4'
+	- bodyClass = 'card-v4'
+
+block main
+	.container
+		.grid.gap-xs
+			div(class="col-6@sm col-4@md")
+				include ../../../components/card/card-v4/card-v4.component.pug
+			div(class="col-6@sm col-4@md")
+				include ../../../components/card/card-v4/card-v4.component--img-no-padding.pug
