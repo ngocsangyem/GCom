@@ -1,0 +1,13 @@
+@import '../../../styles/abstracts/mixins';
+@import '../../../styles/global';
+@import '../../../styles/custom';
+
+@import '../../../components/card/card-v5/card-v5.component';
+
+.container {
+	padding-top: var(--space-lg);
+
+	.grid {
+		justify-content: center;
+	}
+}
