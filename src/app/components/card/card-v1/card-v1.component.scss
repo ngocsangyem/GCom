@@ -1,4 +1,7 @@
 .card {
+	--line-height-multiplier: 1;
+	--text-vspace-multiplier: 1;
+
 	background-color: var(--color-bg);
 	box-shadow: var(--shadow-sm);
 	border-radius: var(--radius-md);
@@ -19,7 +22,7 @@
 .card__text {
 	--line-height-multiplier: 1;
 	--text-vspace-multiplier: 1;
-	
+
 	h1,
 	h2,
 	h3,

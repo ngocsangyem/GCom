@@ -1,4 +1,6 @@
 .card {
+	--line-height-multiplier: 1;
+	--text-vspace-multiplier: 1;
 	--padding: var(--space-md);
 
 	background-color: hsla(var(--color-contrast-lower-h), var(--color-contrast-lower-s), var(--color-contrast-lower-l), var(--bg-o, 1));

@@ -1,0 +1,66 @@
+.card {
+	--line-height-multiplier: 1;
+	--text-vspace-multiplier: 1;
+}
+
+.card__link {
+	--bg-o: 1;
+
+	display: block;
+
+	overflow: hidden;
+	text-decoration: none;
+
+	background-color: hsla(var(--color-bg-h), var(--color-bg-s), var(--color-bg-l), var(--bg-o));
+	border-radius: var(--radius-lg);
+	transition: .2s;
+}
+
+.card__img {
+	img {
+		display: block;
+		width: 100%;
+	}
+}
+
+.card__content {
+	padding: var(--space-sm);
+}
+
+.card__label {
+	--color-o: 1;
+
+	color: hsla(var(--color-contrast-medium-h), var(--color-contrast-medium-s), var(--color-contrast-medium-l), var(--color-o, 1));
+
+	margin-bottom: var(--space-sm);
+
+	font-size: var(--text-sm, 0.833em);
+}
+
+.card__title {
+	margin: 0;
+
+	line-height: calc(var(--heading-line-height) * var(--line-height-multiplier, 1));
+
+	span {
+		text-decoration: none;
+
+		background-repeat: no-repeat;
+		will-change: background-size;
+		transition: background-size .3s var(--ease-in-out);
+		background-image: linear-gradient(transparent 50%, hsla(var(--color-primary-h), var(--color-primary-s), var(--color-primary-l), 0.2) 50%);
+		background-size: 0% 100%;
+	}
+}
+
+@include breakpoint(md) {
+	.card__link {
+		&:hover {
+			box-shadow: var(--shadow-md);
+
+			.card__title span {
+				background-size: 100% 100%;
+			}
+		}
+	}
+}

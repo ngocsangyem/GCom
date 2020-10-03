@@ -1,4 +1,7 @@
 .card {
+	--line-height-multiplier: 1;
+	--text-vspace-multiplier: 1;
+
 	background-color: var(--color-contrast-lower);
 }
 
