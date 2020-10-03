@@ -1,0 +1,11 @@
+extends ../../layouts/layout.pug
+
+block var
+	- title = 'Card-v7'
+	- bodyClass = 'card-v7'
+
+block main
+	.container
+		.grid.gap-xs
+			div(class="col-6@sm col-4@md")
+				include ../../../components/card/card-v7/card-v7.component.pug
