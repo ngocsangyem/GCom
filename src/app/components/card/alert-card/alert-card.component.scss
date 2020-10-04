@@ -1,0 +1,126 @@
+.alert-card {
+	--bg-o: 1;
+
+	position: relative;
+	z-index: 1;
+
+	padding: var(--space-md);
+
+	background-color: hsla(var(--color-bg-h), var(--color-bg-s), var(--color-bg-l), var(--bg-o));
+	box-shadow: var(--shadow-xs);
+	border-radius: var(--radius-md);
+
+	.is-hidden {
+		display: none !important;
+	}
+}
+
+.alert-card__icon {
+	color: inherit;
+	fill: currentColor;
+	height: 1em;
+	width: 1em;
+	line-height: 1;
+	flex-shrink: 0;
+	max-width: initial;
+}
+
+.alert-card__content {
+	--heading-line-height: 1.22;
+	--body-line-height: 1.58;
+
+	font-size: var(--text-sm, 0.833em);
+}
+
+.alert-card__title {
+	--gap: var(--space-xxxs);
+	--offset: var(--gap);
+
+	margin-top: 0;
+	margin-bottom: calc(var(--space-unit) * 0.25 * var(--text-vspace-multiplier, 1));
+	margin-left: calc(-1 * var(--gap));
+	padding-right: var(--space-lg);
+
+	font-size: var(--text-lg, 1.44em);
+	line-height: calc(var(--heading-line-height) * var(--line-height-multiplier, 1));
+
+	display: flex;
+	flex-wrap: wrap;
+
+	svg {
+		font-size: var(--icon-md);
+	}
+
+	div,
+	span {
+		margin-bottom: var(--gap);
+		margin-left: var(--offset);
+	}
+}
+
+.alert-card__message {
+	--color-o: 1;
+
+	margin-bottom: calc(var(--space-unit) * 0.75 * var(--text-vspace-multiplier, 1));
+
+	line-height: calc(var(--body-line-height) * var(--line-height-multiplier, 1));
+
+	color: hsla(var(--color-contrast-medium-h), var(--color-contrast-medium-s), var(--color-contrast-medium-l), var(--color-o, 1));
+}
+
+.alert-card__buttons {
+	--gap: var(--space-xs);
+	--offset: var(--gap);
+
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+
+	margin-bottom: calc(-1 * var(--gap));
+	margin-left: calc(-1 * var(--gap));
+
+	a {
+		margin-bottom: var(--gap);
+		margin-left: var(--offset);
+	}
+}
+
+.alert-card__close-btn {
+	padding: 0;
+	border: 0;
+
+	position: absolute;
+	z-index: 1;
+	top: var(--space-sm);
+	right: var(--space-sm);
+
+	display: flex;
+
+	height: 36px;
+	width: 36px;
+
+	background-color: var(--color-bg);
+	border-radius: 50%;
+	transition: .3s;
+
+	.alert-card__icon {
+		margin: auto;
+		display: block;
+		font-size: var(--icon-xs);
+	}
+
+	&:hover {
+		box-shadow: var(--shadow-sm);
+		cursor: pointer;
+	}
+
+	&:focus {
+		outline: none;
+	}
+}
+
+@include breakpoint(md) {
+	.alert-card__buttons {
+		flex-direction: row;
+	}
+}

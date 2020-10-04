@@ -1,0 +1,20 @@
+.alert-card.js-alert-card
+	.alert-card__content
+		h3.alert-card__title
+			div
+				svg.alert-card__icon.alert-card__icon--warning(viewBox='0 0 48 48' aria-hidden='true')
+					path(d='M46.019,38.447,26.566,6.309a3,3,0,0,0-5.132,0L1.982,38.447A3,3,0,0,0,4.548,43h38.9a3,3,0,0,0,2.568-4.553Z' opacity='0.5' fill='var(--color-warning)')
+					g(fill='var(--color-contrast-higher)')
+						polygon(points='25.757 16.182 25.481 31.725 22.53 31.725 22.252 16.182 25.757 16.182')
+						circle(cx='24' cy='36' r='2')
+			span This is an important message
+		p.alert-card__message Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium accusantium maxime voluptatem praesentium neque consectetur delectus debitis quibusdam quisquam at?
+		.alert-card__buttons
+			a.btn.btn--subtle(href='#0') Learn more
+			a.btn.btn--primary(href='#0') Start free trial
+	button.alert-card__close-btn.js-alert-card__close-btn(type="button")
+		svg.alert-card__icon.alert-card__icon--close(viewBox='0 0 16 16')
+			title Hide alert
+			g(fill='none' stroke='currentColor' stroke-miterlimit='10' stroke-width='2')
+				line(x1='1' y1='1' x2='15' y2='15')
+				line(x1='15' y1='1' x2='1' y2='15')

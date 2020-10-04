@@ -1,0 +1,11 @@
+extends ../../layouts/layout.pug
+
+block var
+	- title = 'Alert-card'
+	- bodyClass = 'alert-card'
+
+block main
+	.container
+		.grid.gap-xs
+			div(class="col-8@sm")
+				include ../../../components/card/alert-card/alert-card.component.pug
