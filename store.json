@@ -1,1 +1,4245 @@
-{"pages":{"alert-card":{"name":"alert-card","styles":"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/alert-card/alert-card.component.scss","scripts":"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/alert-card/alert-card.component.js","components":{},"assets":["/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/*/gulp-simple/assets","/Users/sangnguyen/Documents/Tools/gulp-component/src/assets/css/grid.css"],"symbol":[],"BEM_tree":{"no-js":{"name":"no-js","mod":[],"mix":[],"attrs":{"class":"no-js","dir":"ltr","lang":"en","itemscope":"","itemtype":"http://schema.org/WebSite","prefix":"og: http://ogp.me/ns#"},"tag":"html","already":true},"yem-alert-card-page":{"name":"yem-alert-card-page","mod":[],"mix":[],"attrs":{"class":"yem-alert-card-page"},"tag":"body","already":true},"container":{"name":"container","mod":[],"mix":[],"attrs":{"class":"container"},"tag":"div","already":true},"grid":{"name":"grid","mod":[],"mix":[],"attrs":{"class":"grid gap-xs"},"tag":"div","already":true},"gap-xs":{"name":"gap-xs","mod":[],"mix":[],"attrs":{"class":"grid gap-xs"},"tag":"div","already":true},"col-8@sm":{"name":"col-8@sm","mod":[],"mix":[],"attrs":{"class":"col-8@sm"},"tag":"div","already":true},"alert-card":{"name":"alert-card","mod":[],"mix":[],"attrs":{"class":"alert-card js-alert-card"},"tag":"div","already":true},"js-alert-card":{"name":"js-alert-card","mod":[],"mix":[],"attrs":{"class":"alert-card js-alert-card"},"tag":"div","already":true},"alert-card__content":{"name":"alert-card__content","mod":[],"mix":[],"attrs":{"class":"alert-card__content"},"tag":"div","already":true},"alert-card__title":{"name":"alert-card__title","mod":[],"mix":[],"attrs":{"class":"alert-card__title"},"tag":"h3","already":true},"alert-card__icon":{"name":"alert-card__icon","mod":[],"mix":[],"attrs":{"class":"alert-card__icon alert-card__icon--warning","viewbox":"0 0 48 48","aria-hidden":"true"},"tag":"svg","already":true},"alert-card__message":{"name":"alert-card__message","mod":[],"mix":[],"attrs":{"class":"alert-card__message"},"tag":"p","already":true},"alert-card__buttons":{"name":"alert-card__buttons","mod":[],"mix":[],"attrs":{"class":"alert-card__buttons"},"tag":"div","already":true},"btn":{"name":"btn","mod":[],"mix":[],"attrs":{"class":"btn btn--subtle","href":"#0"},"tag":"a","already":true},"alert-card__close-btn":{"name":"alert-card__close-btn","mod":[],"mix":[],"attrs":{"class":"alert-card__close-btn js-alert-card__close-btn","type":"button"},"tag":"button","already":true},"js-alert-card__close-btn":{"name":"js-alert-card__close-btn","mod":[],"mix":[],"attrs":{"class":"alert-card__close-btn js-alert-card__close-btn","type":"button"},"tag":"button","already":true}},"temp":{"styles":["grid.css"],"scripts":[]}},"card-v1":{"name":"card-v1","styles":"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v1/card-v1.component.scss","scripts":"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v1/card-v1.component.js","components":{},"assets":["/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/*/gulp-simple/assets","/Users/sangnguyen/Documents/Tools/gulp-component/src/assets/css/grid.css","/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/*/card/assets/card-v1/images/card_1.jpeg","/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/*/card/assets/card-v1/images/card_2.jpeg"],"symbol":[],"BEM_tree":{"no-js":{"name":"no-js","mod":[],"mix":[],"attrs":{"class":"no-js","dir":"ltr","lang":"en","itemscope":"","itemtype":"http://schema.org/WebSite","prefix":"og: http://ogp.me/ns#"},"tag":"html","already":true},"yem-card-v1-page":{"name":"yem-card-v1-page","mod":[],"mix":[],"attrs":{"class":"yem-card-v1-page"},"tag":"body","already":true},"container":{"name":"container","mod":[],"mix":[],"attrs":{"class":"container"},"tag":"div","already":true},"grid":{"name":"grid","mod":[],"mix":[],"attrs":{"class":"grid gap-xs"},"tag":"div","already":true},"gap-xs":{"name":"gap-xs","mod":[],"mix":[],"attrs":{"class":"grid gap-xs"},"tag":"div","already":true},"col-6@sm":{"name":"col-6@sm","mod":[],"mix":[],"attrs":{"class":"col-6@sm col-4@md"},"tag":"div","already":true},"col-4@md":{"name":"col-4@md","mod":[],"mix":[],"attrs":{"class":"col-6@sm col-4@md"},"tag":"div","already":true},"card":{"name":"card","mod":[],"mix":[],"attrs":{"class":"card card-v1"},"tag":"div","already":true},"card-v1":{"name":"card-v1","mod":[],"mix":[],"attrs":{"class":"card card-v1"},"tag":"div","already":true},"card__img":{"name":"card__img","mod":[],"mix":[],"attrs":{"class":"card__img"},"tag":"figure","already":true},"card__content":{"name":"card__content","mod":[],"mix":[],"attrs":{"class":"card__content"},"tag":"div","already":true},"card__text":{"name":"card__text","mod":[],"mix":[],"attrs":{"class":"card__text"},"tag":"div","already":true},"card__title":{"name":"card__title","mod":[],"mix":[],"attrs":{"class":"card__title"},"tag":"h4","already":true},"card__description":{"name":"card__description","mod":[],"mix":[],"attrs":{"class":"card__description"},"tag":"p","already":true},"card__button":{"name":"card__button","mod":[],"mix":[],"attrs":{"class":"card__button"},"tag":"div","already":true},"btn":{"name":"btn","mod":[],"mix":[],"attrs":{"class":"btn btn--subtle btn--sm","href":"#0"},"tag":"a","already":true},"card__link":{"name":"card__link","mod":[],"mix":[],"attrs":{"class":"card__link","href":""},"tag":"a","already":true},"card__link-icon":{"name":"card__link-icon","mod":[],"mix":[],"attrs":{"class":"card__link-icon","aria-hidden":"true"},"tag":"figcaption","already":true},"icon":{"name":"icon","mod":[],"mix":[],"attrs":{"class":"icon","viewbox":"0 0 32 32"},"tag":"svg","already":true}},"temp":{"styles":["grid.css"],"scripts":[]}},"card-v10":{"name":"card-v10","styles":"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v10/card-v10.component.scss","scripts":"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v10/card-v10.component.js","components":{},"assets":["/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/*/gulp-simple/assets","/Users/sangnguyen/Documents/Tools/gulp-component/src/assets/css/grid.css","/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/*/card/assets/card-v10/images/card_1.jpeg"],"symbol":[],"BEM_tree":{"no-js":{"name":"no-js","mod":[],"mix":[],"attrs":{"class":"no-js","dir":"ltr","lang":"en","itemscope":"","itemtype":"http://schema.org/WebSite","prefix":"og: http://ogp.me/ns#"},"tag":"html","already":true},"yem-card-v10-page":{"name":"yem-card-v10-page","mod":[],"mix":[],"attrs":{"class":"yem-card-v10-page"},"tag":"body","already":true},"container":{"name":"container","mod":[],"mix":[],"attrs":{"class":"container"},"tag":"div","already":true},"grid":{"name":"grid","mod":[],"mix":[],"attrs":{"class":"grid gap-xs"},"tag":"div","already":true},"gap-xs":{"name":"gap-xs","mod":[],"mix":[],"attrs":{"class":"grid gap-xs"},"tag":"div","already":true},"col-6@sm":{"name":"col-6@sm","mod":[],"mix":[],"attrs":{"class":"col-6@sm col-4@md"},"tag":"div","already":true},"col-4@md":{"name":"col-4@md","mod":[],"mix":[],"attrs":{"class":"col-6@sm col-4@md"},"tag":"div","already":true},"card":{"name":"card","mod":[],"mix":[],"attrs":{"class":"card card-v10"},"tag":"div","already":true},"card-v10":{"name":"card-v10","mod":[],"mix":[],"attrs":{"class":"card card-v10"},"tag":"div","already":true},"card__link":{"name":"card__link","mod":[],"mix":[],"attrs":{"class":"card__link","href":"#","title":"Description of the link","aria-label":"Description of the link"},"tag":"a","already":true},"card__body":{"name":"card__body","mod":[],"mix":[],"attrs":{"class":"card__body"},"tag":"div","already":true},"card__body-container":{"name":"card__body-container","mod":[],"mix":[],"attrs":{"class":"card__body-container"},"tag":"div","already":true},"card__content":{"name":"card__content","mod":[],"mix":[],"attrs":{"class":"card__content"},"tag":"div","already":true},"card__label":{"name":"card__label","mod":[],"mix":[],"attrs":{"class":"card__label"},"tag":"p","already":true},"card__title":{"name":"card__title","mod":[],"mix":[],"attrs":{"class":"card__title"},"tag":"h2","already":true},"card__description":{"name":"card__description","mod":[],"mix":[],"attrs":{"class":"card__description"},"tag":"p","already":true},"card__footer":{"name":"card__footer","mod":[],"mix":[],"attrs":{"class":"card__footer"},"tag":"footer","already":true},"card__social-list":{"name":"card__social-list","mod":[],"mix":[],"attrs":{"class":"card__social-list"},"tag":"ul","already":true},"card__social-item":{"name":"card__social-item","mod":[],"mix":[],"attrs":{"class":"card__social-item card__social-item--like"},"tag":"li","already":true},"card__social-btn":{"name":"card__social-btn","mod":[],"mix":[],"attrs":{"class":"card__social-btn reset","aria-label":"Like this content along with 120 other people","type":"button"},"tag":"button","already":true},"reset":{"name":"reset","mod":[],"mix":[],"attrs":{"class":"card__social-btn reset","aria-label":"Like this content along with 120 other people","type":"button"},"tag":"button","already":true},"icon":{"name":"icon","mod":[],"mix":[],"attrs":{"class":"icon","viewbox":"0 0 12 12"},"tag":"svg","already":true},"col-12":{"name":"col-12","mod":[],"mix":[],"attrs":{"class":"col-12"},"tag":"div","already":true},"col-9":{"name":"col-9","mod":[],"mix":[],"attrs":{"class":"col-9"},"tag":"div","already":true}},"temp":{"styles":["grid.css"],"scripts":[]}},"card-v2":{"name":"card-v2","styles":"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v2/card-v2.component.scss","scripts":"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v2/card-v2.component.js","components":{},"assets":["/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/*/gulp-simple/assets","/Users/sangnguyen/Documents/Tools/gulp-component/src/assets/css/grid.css","/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/*/card/assets/card-v2/images/card_1.jpeg","/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/*/card/assets/card-v2/images/card_2.jpeg","/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/*/card/assets/card-v2/images/card_3.jpeg"],"symbol":[],"BEM_tree":{"no-js":{"name":"no-js","mod":[],"mix":[],"attrs":{"class":"no-js","dir":"ltr","lang":"en","itemscope":"","itemtype":"http://schema.org/WebSite","prefix":"og: http://ogp.me/ns#"},"tag":"html","already":true},"yem-card-v2-page":{"name":"yem-card-v2-page","mod":[],"mix":[],"attrs":{"class":"yem-card-v2-page"},"tag":"body","already":true},"container":{"name":"container","mod":[],"mix":[],"attrs":{"class":"container"},"tag":"div","already":true},"grid":{"name":"grid","mod":[],"mix":[],"attrs":{"class":"grid gap-xs"},"tag":"div","already":true},"gap-xs":{"name":"gap-xs","mod":[],"mix":[],"attrs":{"class":"grid gap-xs"},"tag":"div","already":true},"col-6@sm":{"name":"col-6@sm","mod":[],"mix":[],"attrs":{"class":"col-6@sm col-4@md"},"tag":"div","already":true},"col-4@md":{"name":"col-4@md","mod":[],"mix":[],"attrs":{"class":"col-6@sm col-4@md"},"tag":"div","already":true},"card":{"name":"card","mod":[],"mix":[],"attrs":{"class":"card card-v2"},"tag":"div","already":true},"card-v2":{"name":"card-v2","mod":[],"mix":[],"attrs":{"class":"card card-v2"},"tag":"div","already":true},"card__img":{"name":"card__img","mod":[],"mix":[],"attrs":{"class":"card__img"},"tag":"figure","already":true},"card__caption":{"name":"card__caption","mod":[],"mix":[],"attrs":{"class":"card__caption"},"tag":"figcaption","already":true},"card__caption-title":{"name":"card__caption-title","mod":[],"mix":[],"attrs":{"class":"card__caption-title"},"tag":"div","already":true},"card__caption-description":{"name":"card__caption-description","mod":[],"mix":[],"attrs":{"class":"card__caption-description"},"tag":"div","already":true}},"temp":{"styles":["grid.css"],"scripts":[]}},"card-v3":{"name":"card-v3","styles":"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v3/card-v3.component.scss","scripts":"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v3/card-v3.component.js","components":{},"assets":["/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/*/gulp-simple/assets","/Users/sangnguyen/Documents/Tools/gulp-component/src/assets/css/grid.css","/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/*/card/assets/card-v3/images/card_1.jpeg"],"symbol":[],"BEM_tree":{"no-js":{"name":"no-js","mod":[],"mix":[],"attrs":{"class":"no-js","dir":"ltr","lang":"en","itemscope":"","itemtype":"http://schema.org/WebSite","prefix":"og: http://ogp.me/ns#"},"tag":"html","already":true},"yem-card-v3-page":{"name":"yem-card-v3-page","mod":[],"mix":[],"attrs":{"class":"yem-card-v3-page"},"tag":"body","already":true},"container":{"name":"container","mod":[],"mix":[],"attrs":{"class":"container"},"tag":"div","already":true},"grid":{"name":"grid","mod":[],"mix":[],"attrs":{"class":"grid gap-xs"},"tag":"div","already":true},"gap-xs":{"name":"gap-xs","mod":[],"mix":[],"attrs":{"class":"grid gap-xs"},"tag":"div","already":true},"col-6@sm":{"name":"col-6@sm","mod":[],"mix":[],"attrs":{"class":"col-6@sm col-4@md"},"tag":"div","already":true},"col-4@md":{"name":"col-4@md","mod":[],"mix":[],"attrs":{"class":"col-6@sm col-4@md"},"tag":"div","already":true},"card":{"name":"card","mod":[],"mix":[],"attrs":{"class":"card card-v3"},"tag":"div","already":true},"card-v3":{"name":"card-v3","mod":[],"mix":[],"attrs":{"class":"card card-v3"},"tag":"div","already":true},"card__link":{"name":"card__link","mod":[],"mix":[],"attrs":{"class":"card__link","href":"#","title":"Description of the link","aria-label":"Description of the link"},"tag":"a","already":true},"card__img":{"name":"card__img","mod":[],"mix":[],"attrs":{"class":"card__img"},"tag":"figure","already":true},"card__content":{"name":"card__content","mod":[],"mix":[],"attrs":{"class":"card__content"},"tag":"div","already":true},"card__label":{"name":"card__label","mod":[],"mix":[],"attrs":{"class":"card__label"},"tag":"span","already":true},"card__title":{"name":"card__title","mod":[],"mix":[],"attrs":{"class":"card__title"},"tag":"h3","already":true},"card__footer":{"name":"card__footer","mod":[],"mix":[],"attrs":{"class":"card__footer"},"tag":"div","already":true},"icon":{"name":"icon","mod":[],"mix":[],"attrs":{"class":"icon","viewbox":"0 0 16 16"},"tag":"svg","already":true}},"temp":{"styles":["grid.css"],"scripts":[]}},"card-v4":{"name":"card-v4","styles":"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v4/card-v4.component.scss","scripts":"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v4/card-v4.component.js","components":{},"assets":["/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/*/gulp-simple/assets","/Users/sangnguyen/Documents/Tools/gulp-component/src/assets/css/grid.css","/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/*/card/assets/card-v4/images/card_1.jpeg"],"symbol":[],"BEM_tree":{"no-js":{"name":"no-js","mod":[],"mix":[],"attrs":{"class":"no-js","dir":"ltr","lang":"en","itemscope":"","itemtype":"http://schema.org/WebSite","prefix":"og: http://ogp.me/ns#"},"tag":"html","already":true},"yem-card-v4-page":{"name":"yem-card-v4-page","mod":[],"mix":[],"attrs":{"class":"yem-card-v4-page"},"tag":"body","already":true},"container":{"name":"container","mod":[],"mix":[],"attrs":{"class":"container"},"tag":"div","already":true},"grid":{"name":"grid","mod":[],"mix":[],"attrs":{"class":"grid gap-xs"},"tag":"div","already":true},"gap-xs":{"name":"gap-xs","mod":[],"mix":[],"attrs":{"class":"grid gap-xs"},"tag":"div","already":true},"col-6@sm":{"name":"col-6@sm","mod":[],"mix":[],"attrs":{"class":"col-6@sm col-4@md"},"tag":"div","already":true},"col-4@md":{"name":"col-4@md","mod":[],"mix":[],"attrs":{"class":"col-6@sm col-4@md"},"tag":"div","already":true},"card":{"name":"card","mod":[],"mix":[],"attrs":{"class":"card card-v4 card--img-padding"},"tag":"div","already":true},"card-v4":{"name":"card-v4","mod":[],"mix":[],"attrs":{"class":"card card-v4 card--img-padding"},"tag":"div","already":true},"card__content":{"name":"card__content","mod":[],"mix":[],"attrs":{"class":"card__content"},"tag":"div","already":true},"card__title":{"name":"card__title","mod":[],"mix":[],"attrs":{"class":"card__title"},"tag":"h3","already":true},"card__description":{"name":"card__description","mod":[],"mix":[],"attrs":{"class":"card__description"},"tag":"p","already":true},"card__buttons":{"name":"card__buttons","mod":[],"mix":[],"attrs":{"class":"card__buttons"},"tag":"div","already":true},"card__button":{"name":"card__button","mod":[],"mix":[],"attrs":{"class":"card__button btn btn--subtle","href":"#"},"tag":"a","already":true},"btn":{"name":"btn","mod":[],"mix":[],"attrs":{"class":"card__button btn btn--subtle","href":"#"},"tag":"a","already":true},"card__img":{"name":"card__img","mod":[],"mix":[],"attrs":{"class":"card__img"},"tag":"figure","already":true}},"temp":{"styles":["grid.css"],"scripts":[]}},"card-v6":{"name":"card-v6","styles":"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v6/card-v6.component.scss","scripts":"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v6/card-v6.component.js","components":{},"assets":["/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/*/gulp-simple/assets","/Users/sangnguyen/Documents/Tools/gulp-component/src/assets/css/grid.css","/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/*/card/assets/card-v6/images/card_1.jpeg"],"symbol":[],"BEM_tree":{"no-js":{"name":"no-js","mod":[],"mix":[],"attrs":{"class":"no-js","dir":"ltr","lang":"en","itemscope":"","itemtype":"http://schema.org/WebSite","prefix":"og: http://ogp.me/ns#"},"tag":"html","already":true},"yem-card-v6-page":{"name":"yem-card-v6-page","mod":[],"mix":[],"attrs":{"class":"yem-card-v6-page"},"tag":"body","already":true},"container":{"name":"container","mod":[],"mix":[],"attrs":{"class":"container"},"tag":"div","already":true},"grid":{"name":"grid","mod":[],"mix":[],"attrs":{"class":"grid gap-xs"},"tag":"div","already":true},"gap-xs":{"name":"gap-xs","mod":[],"mix":[],"attrs":{"class":"grid gap-xs"},"tag":"div","already":true},"col-6@sm":{"name":"col-6@sm","mod":[],"mix":[],"attrs":{"class":"col-6@sm col-4@md"},"tag":"div","already":true},"col-4@md":{"name":"col-4@md","mod":[],"mix":[],"attrs":{"class":"col-6@sm col-4@md"},"tag":"div","already":true},"card":{"name":"card","mod":[],"mix":[],"attrs":{"class":"card card-v6"},"tag":"div","already":true},"card-v6":{"name":"card-v6","mod":[],"mix":[],"attrs":{"class":"card card-v6"},"tag":"div","already":true},"card__link":{"name":"card__link","mod":[],"mix":[],"attrs":{"class":"card__link","href":"#","title":"Description of the link","aria-label":"Description of the link"},"tag":"a","already":true},"card__img":{"name":"card__img","mod":[],"mix":[],"attrs":{"class":"card__img"},"tag":"figure","already":true},"card__content":{"name":"card__content","mod":[],"mix":[],"attrs":{"class":"card__content"},"tag":"div","already":true},"card__label":{"name":"card__label","mod":[],"mix":[],"attrs":{"class":"card__label"},"tag":"span","already":true},"card__title":{"name":"card__title","mod":[],"mix":[],"attrs":{"class":"card__title"},"tag":"h3","already":true},"card__icon":{"name":"card__icon","mod":[],"mix":[],"attrs":{"class":"card__icon"},"tag":"div","already":true},"icon":{"name":"icon","mod":[],"mix":[],"attrs":{"class":"icon","viewbox":"0 0 12 12"},"tag":"svg","already":true}},"temp":{"styles":["grid.css"],"scripts":[]}},"card-v5":{"name":"card-v5","styles":"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v5/card-v5.component.scss","scripts":"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v5/card-v5.component.js","components":{},"assets":["/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/*/gulp-simple/assets","/Users/sangnguyen/Documents/Tools/gulp-component/src/assets/css/grid.css","/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/*/card/assets/card-v5/images/card_1.jpeg"],"symbol":[],"BEM_tree":{"no-js":{"name":"no-js","mod":[],"mix":[],"attrs":{"class":"no-js","dir":"ltr","lang":"en","itemscope":"","itemtype":"http://schema.org/WebSite","prefix":"og: http://ogp.me/ns#"},"tag":"html","already":true},"yem-card-v5-page":{"name":"yem-card-v5-page","mod":[],"mix":[],"attrs":{"class":"yem-card-v5-page"},"tag":"body","already":true},"container":{"name":"container","mod":[],"mix":[],"attrs":{"class":"container"},"tag":"div","already":true},"grid":{"name":"grid","mod":[],"mix":[],"attrs":{"class":"grid gap-xs"},"tag":"div","already":true},"gap-xs":{"name":"gap-xs","mod":[],"mix":[],"attrs":{"class":"grid gap-xs"},"tag":"div","already":true},"col-6@sm":{"name":"col-6@sm","mod":[],"mix":[],"attrs":{"class":"col-6@sm col-4@md"},"tag":"div","already":true},"col-4@md":{"name":"col-4@md","mod":[],"mix":[],"attrs":{"class":"col-6@sm col-4@md"},"tag":"div","already":true},"card":{"name":"card","mod":[],"mix":[],"attrs":{"class":"card card-v5"},"tag":"div","already":true},"card-v5":{"name":"card-v5","mod":[],"mix":[],"attrs":{"class":"card card-v5"},"tag":"div","already":true},"card__link":{"name":"card__link","mod":[],"mix":[],"attrs":{"class":"card__link","href":"","title":"Description of the link","aria-label":"Description of the link"},"tag":"a","already":true},"card__img":{"name":"card__img","mod":[],"mix":[],"attrs":{"class":"card__img"},"tag":"figure","already":true},"card__content":{"name":"card__content","mod":[],"mix":[],"attrs":{"class":"card__content"},"tag":"div","already":true},"card__title":{"name":"card__title","mod":[],"mix":[],"attrs":{"class":"card__title"},"tag":"h3","already":true},"btn":{"name":"btn","mod":[],"mix":[],"attrs":{"class":"btn btn--primary btn--sm","href":"#"},"tag":"a","already":true}},"temp":{"styles":["grid.css"],"scripts":[]}},"card-v7":{"name":"card-v7","styles":"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v7/card-v7.component.scss","scripts":"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v7/card-v7.component.js","components":{},"assets":["/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/*/gulp-simple/assets","/Users/sangnguyen/Documents/Tools/gulp-component/src/assets/css/grid.css","/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/*/card/assets/card-v7/images/card_1.jpeg"],"symbol":[],"BEM_tree":{"no-js":{"name":"no-js","mod":[],"mix":[],"attrs":{"class":"no-js","dir":"ltr","lang":"en","itemscope":"","itemtype":"http://schema.org/WebSite","prefix":"og: http://ogp.me/ns#"},"tag":"html","already":true},"yem-card-v7-page":{"name":"yem-card-v7-page","mod":[],"mix":[],"attrs":{"class":"yem-card-v7-page"},"tag":"body","already":true},"container":{"name":"container","mod":[],"mix":[],"attrs":{"class":"container"},"tag":"div","already":true},"grid":{"name":"grid","mod":[],"mix":[],"attrs":{"class":"grid gap-xs"},"tag":"div","already":true},"gap-xs":{"name":"gap-xs","mod":[],"mix":[],"attrs":{"class":"grid gap-xs"},"tag":"div","already":true},"col-6@sm":{"name":"col-6@sm","mod":[],"mix":[],"attrs":{"class":"col-6@sm col-4@md"},"tag":"div","already":true},"col-4@md":{"name":"col-4@md","mod":[],"mix":[],"attrs":{"class":"col-6@sm col-4@md"},"tag":"div","already":true},"card":{"name":"card","mod":[],"mix":[],"attrs":{"class":"card card-v7"},"tag":"div","already":true},"card-v7":{"name":"card-v7","mod":[],"mix":[],"attrs":{"class":"card card-v7"},"tag":"div","already":true},"card__link":{"name":"card__link","mod":[],"mix":[],"attrs":{"class":"card__link","href":"#","title":"Description of the link","aria-label":"Description of the link"},"tag":"a","already":true},"card__img":{"name":"card__img","mod":[],"mix":[],"attrs":{"class":"card__img"},"tag":"figure","already":true},"card__content":{"name":"card__content","mod":[],"mix":[],"attrs":{"class":"card__content"},"tag":"div","already":true},"card__label":{"name":"card__label","mod":[],"mix":[],"attrs":{"class":"card__label"},"tag":"span","already":true},"card__title":{"name":"card__title","mod":[],"mix":[],"attrs":{"class":"card__title"},"tag":"h3","already":true},"card__buttons":{"name":"card__buttons","mod":[],"mix":[],"attrs":{"class":"card__buttons"},"tag":"div","already":true},"card__button":{"name":"card__button","mod":[],"mix":[],"attrs":{"class":"card__button btn btn--subtle btn--sm"},"tag":"button","already":true},"btn":{"name":"btn","mod":[],"mix":[],"attrs":{"class":"card__button btn btn--subtle btn--sm"},"tag":"button","already":true},"icon":{"name":"icon","mod":[],"mix":[],"attrs":{"class":"icon","aria-hidden":"true","viewbox":"0 0 16 16"},"tag":"svg","already":true}},"temp":{"styles":["grid.css"],"scripts":[]}},"card-v8":{"name":"card-v8","styles":"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v8/card-v8.component.scss","scripts":"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v8/card-v8.component.js","components":{},"assets":["/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/*/gulp-simple/assets","/Users/sangnguyen/Documents/Tools/gulp-component/src/assets/css/grid.css","/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/*/card/assets/card-v8/images/card_2.jpg"],"symbol":[],"BEM_tree":{"no-js":{"name":"no-js","mod":[],"mix":[],"attrs":{"class":"no-js","dir":"ltr","lang":"en","itemscope":"","itemtype":"http://schema.org/WebSite","prefix":"og: http://ogp.me/ns#"},"tag":"html","already":true},"yem-card-v8-page":{"name":"yem-card-v8-page","mod":[],"mix":[],"attrs":{"class":"yem-card-v8-page"},"tag":"body","already":true},"container":{"name":"container","mod":[],"mix":[],"attrs":{"class":"container"},"tag":"div","already":true},"grid":{"name":"grid","mod":[],"mix":[],"attrs":{"class":"grid gap-xs"},"tag":"div","already":true},"gap-xs":{"name":"gap-xs","mod":[],"mix":[],"attrs":{"class":"grid gap-xs"},"tag":"div","already":true},"col-6@sm":{"name":"col-6@sm","mod":[],"mix":[],"attrs":{"class":"col-6@sm col-4@md"},"tag":"div","already":true},"col-4@md":{"name":"col-4@md","mod":[],"mix":[],"attrs":{"class":"col-6@sm col-4@md"},"tag":"div","already":true},"card":{"name":"card","mod":[],"mix":[],"attrs":{"class":"card card-v8"},"tag":"div","already":true},"card-v8":{"name":"card-v8","mod":[],"mix":[],"attrs":{"class":"card card-v8"},"tag":"div","already":true},"card__link":{"name":"card__link","mod":[],"mix":[],"attrs":{"class":"card__link","href":"#","title":"Description of the link","aria-label":"Description of the link"},"tag":"a","already":true},"card__img":{"name":"card__img","mod":[],"mix":[],"attrs":{"class":"card__img"},"tag":"figure","already":true},"card__content":{"name":"card__content","mod":[],"mix":[],"attrs":{"class":"card__content"},"tag":"div","already":true},"card__label":{"name":"card__label","mod":[],"mix":[],"attrs":{"class":"card__label"},"tag":"p","already":true},"card__title":{"name":"card__title","mod":[],"mix":[],"attrs":{"class":"card__title"},"tag":"h4","already":true}},"temp":{"styles":["grid.css"],"scripts":[]}},"card-v9":{"name":"card-v9","styles":"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v9/card-v9.component.scss","scripts":"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v9/card-v9.component.js","components":{},"assets":["/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/*/gulp-simple/assets","/Users/sangnguyen/Documents/Tools/gulp-component/src/assets/css/grid.css"],"symbol":[],"BEM_tree":{"no-js":{"name":"no-js","mod":[],"mix":[],"attrs":{"class":"no-js","dir":"ltr","lang":"en","itemscope":"","itemtype":"http://schema.org/WebSite","prefix":"og: http://ogp.me/ns#"},"tag":"html","already":true},"yem-card-v9-page":{"name":"yem-card-v9-page","mod":[],"mix":[],"attrs":{"class":"yem-card-v9-page"},"tag":"body","already":true},"container":{"name":"container","mod":[],"mix":[],"attrs":{"class":"container"},"tag":"div","already":true},"grid":{"name":"grid","mod":[],"mix":[],"attrs":{"class":"grid gap-xs"},"tag":"div","already":true},"gap-xs":{"name":"gap-xs","mod":[],"mix":[],"attrs":{"class":"grid gap-xs"},"tag":"div","already":true},"col-6@sm":{"name":"col-6@sm","mod":[],"mix":[],"attrs":{"class":"col-6@sm col-4@md"},"tag":"div","already":true},"col-4@md":{"name":"col-4@md","mod":[],"mix":[],"attrs":{"class":"col-6@sm col-4@md"},"tag":"div","already":true},"card":{"name":"card","mod":[],"mix":[],"attrs":{"class":"card card-v9"},"tag":"div","already":true},"card-v9":{"name":"card-v9","mod":[],"mix":[],"attrs":{"class":"card card-v9"},"tag":"div","already":true},"card__link":{"name":"card__link","mod":[],"mix":[],"attrs":{"class":"card__link","href":"#","title":"Description of the link","aria-label":"Description of the link","style":"background-image: url('@card/card-v9/images/card_1.jpeg')"},"tag":"a","already":true},"card__body":{"name":"card__body","mod":[],"mix":[],"attrs":{"class":"card__body"},"tag":"div","already":true},"card__content":{"name":"card__content","mod":[],"mix":[],"attrs":{"class":"card__content"},"tag":"div","already":true},"card__label":{"name":"card__label","mod":[],"mix":[],"attrs":{"class":"card__label"},"tag":"p","already":true},"card__title":{"name":"card__title","mod":[],"mix":[],"attrs":{"class":"card__title"},"tag":"h3","already":true},"card__button":{"name":"card__button","mod":[],"mix":[],"attrs":{"class":"card__button"},"tag":"div","already":true}},"temp":{"styles":["grid.css"],"scripts":[]}},"index":{"name":"index","styles":"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/index/index.component.scss","scripts":"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/index/index.component.js","components":{},"assets":["/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/*/gulp-simple/assets"],"symbol":[],"BEM_tree":{"no-js":{"name":"no-js","mod":[],"mix":[],"attrs":{"class":"no-js","dir":"ltr","lang":"en","itemscope":"","itemtype":"http://schema.org/WebSite","prefix":"og: http://ogp.me/ns#"},"tag":"html","already":true},"yem-index-page":{"name":"yem-index-page","mod":[],"mix":[],"attrs":{"class":"yem-index-page"},"tag":"body","already":true}},"temp":{"styles":[],"scripts":[]}},"state":{"name":"state","styles":"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/state/state.component.scss","scripts":"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/state/state.component.js","components":{},"assets":["/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/*/gulp-simple/assets","/Users/sangnguyen/Documents/Tools/gulp-component/node_modules/swiper/swiper-bundle.js","/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/*/header/assets/images/icon.png"],"symbol":[],"BEM_tree":{"no-js":{"name":"no-js","mod":[],"mix":[],"attrs":{"class":"no-js","dir":"ltr","lang":"en","itemscope":"","itemtype":"http://schema.org/WebSite","prefix":"og: http://ogp.me/ns#"},"tag":"html","already":true},"yem-state-page":{"name":"yem-state-page","mod":[],"mix":[],"attrs":{"class":"yem-state-page"},"tag":"body","already":true},"app":{"name":"app","mod":[],"mix":[],"attrs":{"class":"app","id":"app"},"tag":"section","already":true},"container":{"name":"container","mod":[],"mix":[],"attrs":{"class":"container"},"tag":"div","already":true},"header":{"name":"header","mod":[],"mix":[],"attrs":{"class":"header"},"tag":"header","already":true},"header__heading":{"name":"header__heading","mod":[],"mix":[],"attrs":{"class":"header__heading"},"tag":"h1","already":true},"header__description":{"name":"header__description","mod":[],"mix":[],"attrs":{"class":"header__description"},"tag":"p","already":true},"header__note":{"name":"header__note","mod":[],"mix":[],"attrs":{"class":"header__note"},"tag":"p","already":true},"app__inner":{"name":"app__inner","mod":[],"mix":[],"attrs":{"class":"app__inner"},"tag":"section","already":true},"todos":{"name":"todos","mod":[],"mix":[],"attrs":{"class":"todos"},"tag":"section","already":true},"todos__heading":{"name":"todos__heading","mod":[],"mix":[],"attrs":{"class":"todos__heading"},"tag":"h2","already":true},"todos__list":{"name":"todos__list","mod":[],"mix":[],"attrs":{"class":"todos__list js-todos","aria-live":"polite","aria-label":"A list of items you have done"},"tag":"div","already":true},"js-todos":{"name":"js-todos","mod":[],"mix":[],"attrs":{"class":"todos__list js-todos","aria-live":"polite","aria-label":"A list of items you have done"},"tag":"div","already":true},"todos__form":{"name":"todos__form","mod":[],"mix":[],"attrs":{"class":"todos__form js-form"},"tag":"form","already":true},"js-form":{"name":"js-form","mod":[],"mix":[],"attrs":{"class":"todos__form js-form"},"tag":"form","already":true},"todos__form-inner":{"name":"todos__form-inner","mod":[],"mix":[],"attrs":{"class":"todos__form-inner"},"tag":"div","already":true},"todos__form-label":{"name":"todos__form-label","mod":[],"mix":[],"attrs":{"class":"todos__form-label","for":"add-new"},"tag":"label","already":true},"todos__form-actions":{"name":"todos__form-actions","mod":[],"mix":[],"attrs":{"class":"todos__form-actions"},"tag":"div","already":true},"todos__form-input":{"name":"todos__form-input","mod":[],"mix":[],"attrs":{"class":"todos__form-input","id":"add-new","type":"text"},"tag":"input","already":true},"todos__form-button":{"name":"todos__form-button","mod":[],"mix":[],"attrs":{"class":"todos__form-button"},"tag":"button","already":true},"status-todo":{"name":"status-todo","mod":[],"mix":[],"attrs":{"class":"status-todo"},"tag":"section","already":true},"status-todo__description":{"name":"status-todo__description","mod":[],"mix":[],"attrs":{"class":"status-todo__description visually-hidden js-status","role":"status"},"tag":"p","already":true},"visually-hidden":{"name":"visually-hidden","mod":[],"mix":[],"attrs":{"class":"status-todo__description visually-hidden js-status","role":"status"},"tag":"p","already":true},"js-status":{"name":"js-status","mod":[],"mix":[],"attrs":{"class":"status-todo__description visually-hidden js-status","role":"status"},"tag":"p","already":true},"count-todo":{"name":"count-todo","mod":[],"mix":[],"attrs":{"class":"count-todo js-count","aria-hidden":"true"},"tag":"div","already":true},"js-count":{"name":"js-count","mod":[],"mix":[],"attrs":{"class":"count-todo js-count","aria-hidden":"true"},"tag":"div","already":true},"count-todo__title":{"name":"count-todo__title","mod":[],"mix":[],"attrs":{"class":"count-todo__title"},"tag":"div","already":true}},"temp":{"styles":[],"scripts":["https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js","swiper-bundle.js"]}},"main":{"BEM_tree":{"no-js":{"mod":[],"mix":[],"already":true},"yem-alert-card-page":{"mod":[],"mix":[],"already":true},"container":{"mod":[],"mix":[],"already":true},"grid":{"mod":[],"mix":[],"already":true},"gap-xs":{"mod":[],"mix":[],"already":true},"col-8@sm":{"mod":[],"mix":[],"already":true},"alert-card":{"mod":[],"mix":[],"already":true},"js-alert-card":{"mod":[],"mix":[],"already":true},"alert-card__content":{"mod":[],"mix":[],"already":true},"alert-card__title":{"mod":[],"mix":[],"already":true},"alert-card__icon":{"mod":[],"mix":[],"already":true},"alert-card__message":{"mod":[],"mix":[],"already":true},"alert-card__buttons":{"mod":[],"mix":[],"already":true},"btn":{"mod":[],"mix":[],"already":true},"alert-card__close-btn":{"mod":[],"mix":[],"already":true},"js-alert-card__close-btn":{"mod":[],"mix":[],"already":true},"yem-card-v1-page":{"mod":[],"mix":[],"already":true},"col-6@sm":{"mod":[],"mix":[],"already":true},"col-4@md":{"mod":[],"mix":[],"already":true},"card":{"mod":[],"mix":[],"already":true},"card-v1":{"mod":[],"mix":[],"already":true},"card__img":{"mod":[],"mix":[],"already":true},"card__content":{"mod":[],"mix":[],"already":true},"card__text":{"mod":[],"mix":[],"already":true},"card__title":{"mod":[],"mix":[],"already":true},"card__description":{"mod":[],"mix":[],"already":true},"card__button":{"mod":[],"mix":[],"already":true},"card__link":{"mod":[],"mix":[],"already":true},"card__link-icon":{"mod":[],"mix":[],"already":true},"icon":{"mod":[],"mix":[],"already":true},"yem-card-v10-page":{"mod":[],"mix":[],"already":true},"card-v10":{"mod":[],"mix":[],"already":true},"card__body":{"mod":[],"mix":[],"already":true},"card__body-container":{"mod":[],"mix":[],"already":true},"card__label":{"mod":[],"mix":[],"already":true},"card__footer":{"mod":[],"mix":[],"already":true},"card__social-list":{"mod":[],"mix":[],"already":true},"card__social-item":{"mod":[],"mix":[],"already":true},"card__social-btn":{"mod":[],"mix":[],"already":true},"reset":{"mod":[],"mix":[],"already":true},"col-12":{"mod":[],"mix":[],"already":true},"col-9":{"mod":[],"mix":[],"already":true},"yem-card-v2-page":{"mod":[],"mix":[],"already":true},"card-v2":{"mod":[],"mix":[],"already":true},"card__caption":{"mod":[],"mix":[],"already":true},"card__caption-title":{"mod":[],"mix":[],"already":true},"card__caption-description":{"mod":[],"mix":[],"already":true},"yem-card-v3-page":{"mod":[],"mix":[],"already":true},"card-v3":{"mod":[],"mix":[],"already":true},"yem-card-v4-page":{"mod":[],"mix":[],"already":true},"card-v4":{"mod":[],"mix":[],"already":true},"card__buttons":{"mod":[],"mix":[],"already":true},"yem-card-v6-page":{"mod":[],"mix":[],"already":true},"card-v6":{"mod":[],"mix":[],"already":true},"card__icon":{"mod":[],"mix":[],"already":true},"yem-card-v5-page":{"mod":[],"mix":[],"already":true},"card-v5":{"mod":[],"mix":[],"already":true},"yem-card-v7-page":{"mod":[],"mix":[],"already":true},"card-v7":{"mod":[],"mix":[],"already":true},"yem-card-v8-page":{"mod":[],"mix":[],"already":true},"card-v8":{"mod":[],"mix":[],"already":true},"yem-card-v9-page":{"mod":[],"mix":[],"already":true},"card-v9":{"mod":[],"mix":[],"already":true},"yem-index-page":{"mod":[],"mix":[],"already":true},"yem-state-page":{"mod":[],"mix":[],"already":true},"app":{"mod":[],"mix":[],"already":true},"header":{"mod":[],"mix":[],"already":true},"header__heading":{"mod":[],"mix":[],"already":true},"header__description":{"mod":[],"mix":[],"already":true},"header__note":{"mod":[],"mix":[],"already":true},"app__inner":{"mod":[],"mix":[],"already":true},"todos":{"mod":[],"mix":[],"already":true},"todos__heading":{"mod":[],"mix":[],"already":true},"todos__list":{"mod":[],"mix":[],"already":true},"js-todos":{"mod":[],"mix":[],"already":true},"todos__form":{"mod":[],"mix":[],"already":true},"js-form":{"mod":[],"mix":[],"already":true},"todos__form-inner":{"mod":[],"mix":[],"already":true},"todos__form-label":{"mod":[],"mix":[],"already":true},"todos__form-actions":{"mod":[],"mix":[],"already":true},"todos__form-input":{"mod":[],"mix":[],"already":true},"todos__form-button":{"mod":[],"mix":[],"already":true},"status-todo":{"mod":[],"mix":[],"already":true},"status-todo__description":{"mod":[],"mix":[],"already":true},"visually-hidden":{"mod":[],"mix":[],"already":true},"js-status":{"mod":[],"mix":[],"already":true},"count-todo":{"mod":[],"mix":[],"already":true},"js-count":{"mod":[],"mix":[],"already":true},"count-todo__title":{"mod":[],"mix":[],"already":true}},"styles":[],"scripts":[]}},"deps":{"header":{"components":[],"modules":[{"import":"normalize.css","from":"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/header/assets"},{"from":"https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/","inject":["jquery.min.js"]},{"from":"/Users/sangnguyen/Documents/Tools/gulp-component/node_modules/swiper","inject":["swiper-bundle.js"],"import":["swiper-bundle.css"]}]},"alert-card":{"components":[],"modules":[{"from":"/Users/sangnguyen/Documents/Tools/gulp-component/src/assets/css","inject":["grid.css"]}]},"card-v1":{"components":[],"modules":[{"from":"/Users/sangnguyen/Documents/Tools/gulp-component/src/assets/css","inject":["grid.css"]}]},"card-v10":{"components":[],"modules":[{"from":"/Users/sangnguyen/Documents/Tools/gulp-component/src/assets/css","inject":["grid.css"]}]},"card-v2":{"components":[],"modules":[{"from":"/Users/sangnguyen/Documents/Tools/gulp-component/src/assets/css","inject":["grid.css"]}]},"card-v3":{"components":[],"modules":[{"from":"/Users/sangnguyen/Documents/Tools/gulp-component/src/assets/css","inject":["grid.css"]}]},"card-v4":{"components":[],"modules":[{"from":"/Users/sangnguyen/Documents/Tools/gulp-component/src/assets/css","inject":["grid.css"]}]},"card-v5":{"components":[],"modules":[{"from":"/Users/sangnguyen/Documents/Tools/gulp-component/src/assets/css","inject":["grid.css"]}]},"card-v6":{"components":[],"modules":[{"from":"/Users/sangnguyen/Documents/Tools/gulp-component/src/assets/css","inject":["grid.css"]}]},"card-v7":{"components":[],"modules":[{"from":"/Users/sangnguyen/Documents/Tools/gulp-component/src/assets/css","inject":["grid.css"]}]},"card-v8":{"components":[],"modules":[{"from":"/Users/sangnguyen/Documents/Tools/gulp-component/src/assets/css","inject":["grid.css"]}]},"card-v9":{"components":[],"modules":[{"from":"/Users/sangnguyen/Documents/Tools/gulp-component/src/assets/css","inject":["grid.css"]}]},"index":{"components":[],"modules":[{"from":"/Users/sangnguyen/Documents/Tools/gulp-component/src/assets/css","import":"grid.css"}]}},"jsons":{"count_todo":{"description":"<small>You've done</small><span> 0 </span><small>things today 😢</small>"},"header":{"title":"Done list","description":"A list of things that you have achieved today.","note":"<b>Note:</b> The data isn't stored, so it will disappear if you reload!"},"status_todo":{"role":"status","description":"You have done <span class=\"js-status\">1 thing</span> today!"},"todos":{"title":"What you've done","aria_live":"polite","aria_label":"A list of items you have done","form_label":"Add a new item","button_label":"Save"},"button":{"data":{}},"seo":{"AppName":"Home","mobile_color":"#000000","cfg_name":"Yem","cfg_url":"","analytics":"UA-XXXXXXXXXXX-1","seo_lang":"en","seo_geo":"EN","seo_geo_latitude":"36.204824","seo_geo_longitude":"138.252924","app_facebook_ID":"688213608004081","cfg_description":"Hi ! I am Sang ","cfg_keywords":"Gulp-simple, gulp-simple, gulp, Front-End, Web Developer, Apps Developer, Front-End Developer , Fullstack , Fullstack developer , Vietnamese","cfg_author":"gulp-simple","cfg_sitenameurl":"yem","app_facebook_adminsID":"XXXXXXX,XXXXXXX","app_appleID":"XXX-XXX-XXX-XXXX","cfg_sitenameurlgoogle":"XXXXXXXXXXXXXX","verf_google":"","verf_bing":"","verf_yandex":""},"card_v2":{},"card_v3":{}},"levels":["components","shared"],"assets":["/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/*/gulp-simple/assets","/Users/sangnguyen/Documents/Tools/gulp-component/src/assets/css/grid.css","/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/*/card/assets/card-v1/images/card_1.jpeg","/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/*/card/assets/card-v1/images/card_2.jpeg","/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/*/card/assets/card-v10/images/card_1.jpeg","/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/*/card/assets/card-v2/images/card_1.jpeg","/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/*/card/assets/card-v2/images/card_2.jpeg","/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/*/card/assets/card-v2/images/card_3.jpeg","/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/*/card/assets/card-v3/images/card_1.jpeg","/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/*/card/assets/card-v4/images/card_1.jpeg","/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/*/card/assets/card-v6/images/card_1.jpeg","/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/*/card/assets/card-v5/images/card_1.jpeg","/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/*/card/assets/card-v7/images/card_1.jpeg","/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/*/card/assets/card-v8/images/card_2.jpg","/Users/sangnguyen/Documents/Tools/gulp-component/node_modules/swiper/swiper-bundle.js","/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/*/header/assets/images/icon.png","/Users/sangnguyen/Documents/Tools/gulp-component/src/app/**/assets/**/*.*"],"tree":{"alert-card":{"no-js":[],"yem-alert-card-page":[],"container":[],"grid":[],"gap-xs":[],"col-8@sm":[],"alert-card":[],"js-alert-card":[],"alert-card__content":[],"alert-card__title":[],"alert-card__icon":[],"alert-card__message":[],"alert-card__buttons":[],"btn":[],"alert-card__close-btn":[],"js-alert-card__close-btn":[]},"card-v1":{"no-js":[],"yem-card-v1-page":[],"container":[],"grid":[],"gap-xs":[],"col-6@sm":[],"col-4@md":[],"card":[],"card-v1":[],"card__img":[],"card__content":[],"card__text":[],"card__title":[],"card__description":[],"card__button":[],"btn":[],"card__link":[],"card__link-icon":[],"icon":[]},"card-v10":{"no-js":[],"yem-card-v10-page":[],"container":[],"grid":[],"gap-xs":[],"col-6@sm":[],"col-4@md":[],"card":[],"card-v10":[],"card__link":[],"card__body":[],"card__body-container":[],"card__content":[],"card__label":[],"card__title":[],"card__description":[],"card__footer":[],"card__social-list":[],"card__social-item":[],"card__social-btn":[],"reset":[],"icon":[],"col-12":[],"col-9":[]},"card-v2":{"no-js":[],"yem-card-v2-page":[],"container":[],"grid":[],"gap-xs":[],"col-6@sm":[],"col-4@md":[],"card":[],"card-v2":[],"card__img":[],"card__caption":[],"card__caption-title":[],"card__caption-description":[]},"card-v3":{"no-js":[],"yem-card-v3-page":[],"container":[],"grid":[],"gap-xs":[],"col-6@sm":[],"col-4@md":[],"card":[],"card-v3":[],"card__link":[],"card__img":[],"card__content":[],"card__label":[],"card__title":[],"card__footer":[],"icon":[]},"card-v4":{"no-js":[],"yem-card-v4-page":[],"container":[],"grid":[],"gap-xs":[],"col-6@sm":[],"col-4@md":[],"card":[],"card-v4":[],"card__content":[],"card__title":[],"card__description":[],"card__buttons":[],"card__button":[],"btn":[],"card__img":[]},"card-v6":{"no-js":[],"yem-card-v6-page":[],"container":[],"grid":[],"gap-xs":[],"col-6@sm":[],"col-4@md":[],"card":[],"card-v6":[],"card__link":[],"card__img":[],"card__content":[],"card__label":[],"card__title":[],"card__icon":[],"icon":[]},"card-v5":{"no-js":[],"yem-card-v5-page":[],"container":[],"grid":[],"gap-xs":[],"col-6@sm":[],"col-4@md":[],"card":[],"card-v5":[],"card__link":[],"card__img":[],"card__content":[],"card__title":[],"btn":[]},"card-v7":{"no-js":[],"yem-card-v7-page":[],"container":[],"grid":[],"gap-xs":[],"col-6@sm":[],"col-4@md":[],"card":[],"card-v7":[],"card__link":[],"card__img":[],"card__content":[],"card__label":[],"card__title":[],"card__buttons":[],"card__button":[],"btn":[],"icon":[]},"card-v8":{"no-js":[],"yem-card-v8-page":[],"container":[],"grid":[],"gap-xs":[],"col-6@sm":[],"col-4@md":[],"card":[],"card-v8":[],"card__link":[],"card__img":[],"card__content":[],"card__label":[],"card__title":[]},"card-v9":{"no-js":[],"yem-card-v9-page":[],"container":[],"grid":[],"gap-xs":[],"col-6@sm":[],"col-4@md":[],"card":[],"card-v9":[],"card__link":[],"card__body":[],"card__content":[],"card__label":[],"card__title":[],"card__button":[]},"index":{"no-js":[],"yem-index-page":[]},"state":{"no-js":[],"yem-state-page":[],"app":[],"container":[],"header":[],"header__heading":[],"header__description":[],"header__note":[],"app__inner":[],"todos":[],"todos__heading":[],"todos__list":[],"js-todos":[],"todos__form":[],"js-form":[],"todos__form-inner":[],"todos__form-label":[],"todos__form-actions":[],"todos__form-input":[],"todos__form-button":[],"status-todo":[],"status-todo__description":[],"visually-hidden":[],"js-status":[],"count-todo":[],"js-count":[],"count-todo__title":[]},"main":{"no-js":[],"yem-alert-card-page":[],"container":[],"grid":[],"gap-xs":[],"col-8@sm":[],"alert-card":[],"js-alert-card":[],"alert-card__content":[],"alert-card__title":[],"alert-card__icon":[],"alert-card__message":[],"alert-card__buttons":[],"btn":[],"alert-card__close-btn":[],"js-alert-card__close-btn":[],"yem-card-v1-page":[],"col-6@sm":[],"col-4@md":[],"card":[],"card-v1":[],"card__img":[],"card__content":[],"card__text":[],"card__title":[],"card__description":[],"card__button":[],"card__link":[],"card__link-icon":[],"icon":[],"yem-card-v10-page":[],"card-v10":[],"card__body":[],"card__body-container":[],"card__label":[],"card__footer":[],"card__social-list":[],"card__social-item":[],"card__social-btn":[],"reset":[],"col-12":[],"col-9":[],"yem-card-v2-page":[],"card-v2":[],"card__caption":[],"card__caption-title":[],"card__caption-description":[],"yem-card-v3-page":[],"card-v3":[],"yem-card-v4-page":[],"card-v4":[],"card__buttons":[],"yem-card-v6-page":[],"card-v6":[],"card__icon":[],"yem-card-v5-page":[],"card-v5":[],"yem-card-v7-page":[],"card-v7":[],"yem-card-v8-page":[],"card-v8":[],"yem-card-v9-page":[],"card-v9":[],"yem-index-page":[],"yem-state-page":[],"app":[],"header":[],"header__heading":[],"header__description":[],"header__note":[],"app__inner":[],"todos":[],"todos__heading":[],"todos__list":[],"js-todos":[],"todos__form":[],"js-form":[],"todos__form-inner":[],"todos__form-label":[],"todos__form-actions":[],"todos__form-input":[],"todos__form-button":[],"status-todo":[],"status-todo__description":[],"visually-hidden":[],"js-status":[],"count-todo":[],"js-count":[],"count-todo__title":[]}},"depsChanged":false,"scripts":{"alert-card":["/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/alert-card/alert-card.component.js"],"card-v1":["/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v1/card-v1.component.js"],"card-v10":["/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v10/card-v10.component.js"],"card-v2":["/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v2/card-v2.component.js"],"card-v3":["/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v3/card-v3.component.js"],"card-v4":["/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v4/card-v4.component.js"],"card-v6":["/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v6/card-v6.component.js"],"card-v5":["/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v5/card-v5.component.js"],"card-v7":["/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v7/card-v7.component.js"],"card-v8":["/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v8/card-v8.component.js"],"card-v9":["/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v9/card-v9.component.js"],"index":["/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/index/index.component.js"],"state":["/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/state/state.component.js"],"main":[]},"styles":{"alert-card":["/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/alert-card/alert-card.component.scss"],"card-v1":["/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v1/card-v1.component.scss"],"card-v10":["/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v10/card-v10.component.scss"],"card-v2":["/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v2/card-v2.component.scss"],"card-v3":["/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v3/card-v3.component.scss"],"card-v4":["/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v4/card-v4.component.scss"],"card-v6":["/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v6/card-v6.component.scss"],"card-v5":["/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v5/card-v5.component.scss"],"card-v7":["/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v7/card-v7.component.scss"],"card-v8":["/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v8/card-v8.component.scss"],"card-v9":["/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v9/card-v9.component.scss"],"index":["/Users/sangnguyen/Documents/Tools/gulp-component/src/assets/css/grid.css","/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/index/index.component.scss"],"state":["/Users/sangnguyen/Documents/Tools/gulp-component/node_modules/swiper/swiper-bundle.css","/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/header/assets/normalize.css","/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/state/state.component.scss"],"main":["/Users/sangnguyen/Documents/Tools/gulp-component/node_modules/swiper/swiper-bundle.css","/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/header/assets/normalize.css"]},"images":["/Users/sangnguyen/Documents/Tools/gulp-component/src/app/**/images/**/*.{webp,png,jpg,jpeg,svg,gif,ico}","!/Users/sangnguyen/Documents/Tools/gulp-component/src/app/**/assets/images/**/*.{webp,png,jpg,jpeg,svg,gif,ico}"],"fonts":["/Users/sangnguyen/Documents/Tools/gulp-component/src/app/**/fonts/*.{eot,svg,ttf,woff,woff2}"]}
+{
+	"pages": {
+		"card-v1": {
+			"name": "card-v1",
+			"styles": "/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v1/card-v1.component.scss",
+			"scripts": "/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v1/card-v1.component.js",
+			"components": {},
+			"assets": [
+				"/Users/sangnguyen/Documents/Tools/gulp-component/src/assets/css/grid.css"
+			],
+			"symbol": [],
+			"BEM_tree": {
+				"no-js": {
+					"name": "no-js",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "no-js",
+						"dir": "ltr",
+						"lang": "en",
+						"itemscope": "",
+						"itemtype": "http://schema.org/WebSite",
+						"prefix": "og: http://ogp.me/ns#"
+					},
+					"tag": "html",
+					"already": true
+				},
+				"yemdevelop": {
+					"name": "yemdevelop",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "yemdevelop yem-card-v1-page"
+					},
+					"tag": "body",
+					"already": true
+				},
+				"yem-card-v1-page": {
+					"name": "yem-card-v1-page",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "yemdevelop yem-card-v1-page"
+					},
+					"tag": "body",
+					"already": true
+				},
+				"container": {
+					"name": "container",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "container"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"grid": {
+					"name": "grid",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "grid gap-xs"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"gap-xs": {
+					"name": "gap-xs",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "grid gap-xs"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"col-6@sm": {
+					"name": "col-6@sm",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "col-6@sm col-4@md"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"col-4@md": {
+					"name": "col-4@md",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "col-6@sm col-4@md"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"card": {
+					"name": "card",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card card-v1"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"card-v1": {
+					"name": "card-v1",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card card-v1"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"card__img": {
+					"name": "card__img",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card__img"
+					},
+					"tag": "figure",
+					"already": true
+				},
+				"card__content": {
+					"name": "card__content",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card__content"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"card__text": {
+					"name": "card__text",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card__text"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"card__title": {
+					"name": "card__title",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card__title"
+					},
+					"tag": "h4",
+					"already": true
+				},
+				"card__description": {
+					"name": "card__description",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card__description"
+					},
+					"tag": "p",
+					"already": true
+				},
+				"card__button": {
+					"name": "card__button",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card__button"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"btn": {
+					"name": "btn",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "btn btn--subtle btn--sm",
+						"href": "#0"
+					},
+					"tag": "a",
+					"already": true
+				},
+				"card__link": {
+					"name": "card__link",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card__link",
+						"href": ""
+					},
+					"tag": "a",
+					"already": true
+				},
+				"card__link-icon": {
+					"name": "card__link-icon",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card__link-icon",
+						"aria-hidden": "true"
+					},
+					"tag": "figcaption",
+					"already": true
+				},
+				"icon": {
+					"name": "icon",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "icon",
+						"viewbox": "0 0 32 32"
+					},
+					"tag": "svg",
+					"already": true
+				}
+			},
+			"temp": {
+				"styles": [
+					"grid.css",
+					"card-v1.css"
+				],
+				"scripts": [
+					"card-v1.js"
+				]
+			}
+		},
+		"card-v10": {
+			"name": "card-v10",
+			"styles": "/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v10/card-v10.component.scss",
+			"scripts": "/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v10/card-v10.component.js",
+			"components": {},
+			"assets": [
+				"/Users/sangnguyen/Documents/Tools/gulp-component/src/assets/css/grid.css"
+			],
+			"symbol": [],
+			"BEM_tree": {
+				"no-js": {
+					"name": "no-js",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "no-js",
+						"dir": "ltr",
+						"lang": "en",
+						"itemscope": "",
+						"itemtype": "http://schema.org/WebSite",
+						"prefix": "og: http://ogp.me/ns#"
+					},
+					"tag": "html",
+					"already": true
+				},
+				"yemdevelop": {
+					"name": "yemdevelop",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "yemdevelop yem-card-v10-page"
+					},
+					"tag": "body",
+					"already": true
+				},
+				"yem-card-v10-page": {
+					"name": "yem-card-v10-page",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "yemdevelop yem-card-v10-page"
+					},
+					"tag": "body",
+					"already": true
+				},
+				"container": {
+					"name": "container",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "container"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"grid": {
+					"name": "grid",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "grid gap-xs"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"gap-xs": {
+					"name": "gap-xs",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "grid gap-xs"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"col-6@sm": {
+					"name": "col-6@sm",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "col-6@sm col-4@md"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"col-4@md": {
+					"name": "col-4@md",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "col-6@sm col-4@md"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"card": {
+					"name": "card",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card card-v10"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"card-v10": {
+					"name": "card-v10",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card card-v10"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"card__link": {
+					"name": "card__link",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card__link",
+						"href": "#",
+						"title": "Description of the link",
+						"aria-label": "Description of the link"
+					},
+					"tag": "a",
+					"already": true
+				},
+				"card__body": {
+					"name": "card__body",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card__body"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"card__body-container": {
+					"name": "card__body-container",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card__body-container"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"card__content": {
+					"name": "card__content",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card__content"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"card__label": {
+					"name": "card__label",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card__label"
+					},
+					"tag": "p",
+					"already": true
+				},
+				"card__title": {
+					"name": "card__title",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card__title"
+					},
+					"tag": "h2",
+					"already": true
+				},
+				"card__description": {
+					"name": "card__description",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card__description"
+					},
+					"tag": "p",
+					"already": true
+				},
+				"card__footer": {
+					"name": "card__footer",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card__footer"
+					},
+					"tag": "footer",
+					"already": true
+				},
+				"card__social-list": {
+					"name": "card__social-list",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card__social-list"
+					},
+					"tag": "ul",
+					"already": true
+				},
+				"card__social-item": {
+					"name": "card__social-item",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card__social-item card__social-item--like"
+					},
+					"tag": "li",
+					"already": true
+				},
+				"card__social-btn": {
+					"name": "card__social-btn",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card__social-btn reset",
+						"aria-label": "Like this content along with 120 other people",
+						"type": "button"
+					},
+					"tag": "button",
+					"already": true
+				},
+				"reset": {
+					"name": "reset",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card__social-btn reset",
+						"aria-label": "Like this content along with 120 other people",
+						"type": "button"
+					},
+					"tag": "button",
+					"already": true
+				},
+				"icon": {
+					"name": "icon",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "icon",
+						"viewbox": "0 0 12 12"
+					},
+					"tag": "svg",
+					"already": true
+				},
+				"col-12": {
+					"name": "col-12",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "col-12"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"col-9": {
+					"name": "col-9",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "col-9"
+					},
+					"tag": "div",
+					"already": true
+				}
+			},
+			"temp": {
+				"styles": [
+					"grid.css",
+					"card-v10.css"
+				],
+				"scripts": [
+					"card-v10.js"
+				]
+			}
+		},
+		"card-v3": {
+			"name": "card-v3",
+			"styles": "/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v3/card-v3.component.scss",
+			"scripts": "/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v3/card-v3.component.js",
+			"components": {},
+			"assets": [
+				"/Users/sangnguyen/Documents/Tools/gulp-component/src/assets/css/grid.css"
+			],
+			"symbol": [],
+			"BEM_tree": {
+				"no-js": {
+					"name": "no-js",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "no-js",
+						"dir": "ltr",
+						"lang": "en",
+						"itemscope": "",
+						"itemtype": "http://schema.org/WebSite",
+						"prefix": "og: http://ogp.me/ns#"
+					},
+					"tag": "html",
+					"already": true
+				},
+				"yemdevelop": {
+					"name": "yemdevelop",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "yemdevelop yem-card-v3-page"
+					},
+					"tag": "body",
+					"already": true
+				},
+				"yem-card-v3-page": {
+					"name": "yem-card-v3-page",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "yemdevelop yem-card-v3-page"
+					},
+					"tag": "body",
+					"already": true
+				},
+				"container": {
+					"name": "container",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "container"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"grid": {
+					"name": "grid",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "grid gap-xs"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"gap-xs": {
+					"name": "gap-xs",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "grid gap-xs"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"col-6@sm": {
+					"name": "col-6@sm",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "col-6@sm col-4@md"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"col-4@md": {
+					"name": "col-4@md",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "col-6@sm col-4@md"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"card": {
+					"name": "card",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card card-v3"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"card-v3": {
+					"name": "card-v3",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card card-v3"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"card__link": {
+					"name": "card__link",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card__link",
+						"href": "#",
+						"title": "Description of the link",
+						"aria-label": "Description of the link"
+					},
+					"tag": "a",
+					"already": true
+				},
+				"card__img": {
+					"name": "card__img",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card__img"
+					},
+					"tag": "figure",
+					"already": true
+				},
+				"card__content": {
+					"name": "card__content",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card__content"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"card__label": {
+					"name": "card__label",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card__label"
+					},
+					"tag": "span",
+					"already": true
+				},
+				"card__title": {
+					"name": "card__title",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card__title"
+					},
+					"tag": "h3",
+					"already": true
+				},
+				"card__footer": {
+					"name": "card__footer",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card__footer"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"icon": {
+					"name": "icon",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "icon",
+						"viewbox": "0 0 16 16"
+					},
+					"tag": "svg",
+					"already": true
+				}
+			},
+			"temp": {
+				"styles": [
+					"grid.css",
+					"card-v3.css"
+				],
+				"scripts": [
+					"card-v3.js"
+				]
+			}
+		},
+		"card-v2": {
+			"name": "card-v2",
+			"styles": "/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v2/card-v2.component.scss",
+			"scripts": "/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v2/card-v2.component.js",
+			"components": {},
+			"assets": [
+				"/Users/sangnguyen/Documents/Tools/gulp-component/src/assets/css/grid.css"
+			],
+			"symbol": [],
+			"BEM_tree": {
+				"no-js": {
+					"name": "no-js",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "no-js",
+						"dir": "ltr",
+						"lang": "en",
+						"itemscope": "",
+						"itemtype": "http://schema.org/WebSite",
+						"prefix": "og: http://ogp.me/ns#"
+					},
+					"tag": "html",
+					"already": true
+				},
+				"yemdevelop": {
+					"name": "yemdevelop",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "yemdevelop yem-card-v2-page"
+					},
+					"tag": "body",
+					"already": true
+				},
+				"yem-card-v2-page": {
+					"name": "yem-card-v2-page",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "yemdevelop yem-card-v2-page"
+					},
+					"tag": "body",
+					"already": true
+				},
+				"container": {
+					"name": "container",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "container"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"grid": {
+					"name": "grid",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "grid gap-xs"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"gap-xs": {
+					"name": "gap-xs",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "grid gap-xs"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"col-6@sm": {
+					"name": "col-6@sm",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "col-6@sm col-4@md"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"col-4@md": {
+					"name": "col-4@md",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "col-6@sm col-4@md"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"card": {
+					"name": "card",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card card-v2"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"card-v2": {
+					"name": "card-v2",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card card-v2"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"card__img": {
+					"name": "card__img",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card__img"
+					},
+					"tag": "figure",
+					"already": true
+				},
+				"card__caption": {
+					"name": "card__caption",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card__caption"
+					},
+					"tag": "figcaption",
+					"already": true
+				},
+				"card__caption-title": {
+					"name": "card__caption-title",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card__caption-title"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"card__caption-description": {
+					"name": "card__caption-description",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card__caption-description"
+					},
+					"tag": "div",
+					"already": true
+				}
+			},
+			"temp": {
+				"styles": [
+					"grid.css",
+					"card-v2.css"
+				],
+				"scripts": [
+					"card-v2.js"
+				]
+			}
+		},
+		"card-v4": {
+			"name": "card-v4",
+			"styles": "/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v4/card-v4.component.scss",
+			"scripts": "/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v4/card-v4.component.js",
+			"components": {},
+			"assets": [
+				"/Users/sangnguyen/Documents/Tools/gulp-component/src/assets/css/grid.css"
+			],
+			"symbol": [],
+			"BEM_tree": {
+				"no-js": {
+					"name": "no-js",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "no-js",
+						"dir": "ltr",
+						"lang": "en",
+						"itemscope": "",
+						"itemtype": "http://schema.org/WebSite",
+						"prefix": "og: http://ogp.me/ns#"
+					},
+					"tag": "html",
+					"already": true
+				},
+				"yemdevelop": {
+					"name": "yemdevelop",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "yemdevelop yem-card-v4-page"
+					},
+					"tag": "body",
+					"already": true
+				},
+				"yem-card-v4-page": {
+					"name": "yem-card-v4-page",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "yemdevelop yem-card-v4-page"
+					},
+					"tag": "body",
+					"already": true
+				},
+				"container": {
+					"name": "container",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "container"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"grid": {
+					"name": "grid",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "grid gap-xs"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"gap-xs": {
+					"name": "gap-xs",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "grid gap-xs"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"col-6@sm": {
+					"name": "col-6@sm",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "col-6@sm col-4@md"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"col-4@md": {
+					"name": "col-4@md",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "col-6@sm col-4@md"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"card": {
+					"name": "card",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card card-v4 card--img-padding"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"card-v4": {
+					"name": "card-v4",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card card-v4 card--img-padding"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"card__content": {
+					"name": "card__content",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card__content"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"card__title": {
+					"name": "card__title",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card__title"
+					},
+					"tag": "h3",
+					"already": true
+				},
+				"card__description": {
+					"name": "card__description",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card__description"
+					},
+					"tag": "p",
+					"already": true
+				},
+				"card__buttons": {
+					"name": "card__buttons",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card__buttons"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"card__button": {
+					"name": "card__button",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card__button btn btn--subtle",
+						"href": "#"
+					},
+					"tag": "a",
+					"already": true
+				},
+				"btn": {
+					"name": "btn",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card__button btn btn--subtle",
+						"href": "#"
+					},
+					"tag": "a",
+					"already": true
+				},
+				"card__img": {
+					"name": "card__img",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card__img"
+					},
+					"tag": "figure",
+					"already": true
+				}
+			},
+			"temp": {
+				"styles": [
+					"grid.css",
+					"card-v4.css"
+				],
+				"scripts": [
+					"card-v4.js"
+				]
+			}
+		},
+		"card-v6": {
+			"name": "card-v6",
+			"styles": "/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v6/card-v6.component.scss",
+			"scripts": "/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v6/card-v6.component.js",
+			"components": {},
+			"assets": [
+				"/Users/sangnguyen/Documents/Tools/gulp-component/src/assets/css/grid.css"
+			],
+			"symbol": [],
+			"BEM_tree": {
+				"no-js": {
+					"name": "no-js",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "no-js",
+						"dir": "ltr",
+						"lang": "en",
+						"itemscope": "",
+						"itemtype": "http://schema.org/WebSite",
+						"prefix": "og: http://ogp.me/ns#"
+					},
+					"tag": "html",
+					"already": true
+				},
+				"yemdevelop": {
+					"name": "yemdevelop",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "yemdevelop yem-card-v6-page"
+					},
+					"tag": "body",
+					"already": true
+				},
+				"yem-card-v6-page": {
+					"name": "yem-card-v6-page",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "yemdevelop yem-card-v6-page"
+					},
+					"tag": "body",
+					"already": true
+				},
+				"container": {
+					"name": "container",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "container"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"grid": {
+					"name": "grid",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "grid gap-xs"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"gap-xs": {
+					"name": "gap-xs",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "grid gap-xs"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"col-6@sm": {
+					"name": "col-6@sm",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "col-6@sm col-4@md"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"col-4@md": {
+					"name": "col-4@md",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "col-6@sm col-4@md"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"card": {
+					"name": "card",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card card-v6"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"card-v6": {
+					"name": "card-v6",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card card-v6"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"card__link": {
+					"name": "card__link",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card__link",
+						"href": "#",
+						"title": "Description of the link",
+						"aria-label": "Description of the link"
+					},
+					"tag": "a",
+					"already": true
+				},
+				"card__img": {
+					"name": "card__img",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card__img"
+					},
+					"tag": "figure",
+					"already": true
+				},
+				"card__content": {
+					"name": "card__content",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card__content"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"card__label": {
+					"name": "card__label",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card__label"
+					},
+					"tag": "span",
+					"already": true
+				},
+				"card__title": {
+					"name": "card__title",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card__title"
+					},
+					"tag": "h3",
+					"already": true
+				},
+				"card__icon": {
+					"name": "card__icon",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card__icon"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"icon": {
+					"name": "icon",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "icon",
+						"viewbox": "0 0 12 12"
+					},
+					"tag": "svg",
+					"already": true
+				}
+			},
+			"temp": {
+				"styles": [
+					"grid.css",
+					"card-v6.css"
+				],
+				"scripts": [
+					"card-v6.js"
+				]
+			}
+		},
+		"card-v5": {
+			"name": "card-v5",
+			"styles": "/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v5/card-v5.component.scss",
+			"scripts": "/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v5/card-v5.component.js",
+			"components": {},
+			"assets": [
+				"/Users/sangnguyen/Documents/Tools/gulp-component/src/assets/css/grid.css"
+			],
+			"symbol": [],
+			"BEM_tree": {
+				"no-js": {
+					"name": "no-js",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "no-js",
+						"dir": "ltr",
+						"lang": "en",
+						"itemscope": "",
+						"itemtype": "http://schema.org/WebSite",
+						"prefix": "og: http://ogp.me/ns#"
+					},
+					"tag": "html",
+					"already": true
+				},
+				"yemdevelop": {
+					"name": "yemdevelop",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "yemdevelop yem-card-v5-page"
+					},
+					"tag": "body",
+					"already": true
+				},
+				"yem-card-v5-page": {
+					"name": "yem-card-v5-page",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "yemdevelop yem-card-v5-page"
+					},
+					"tag": "body",
+					"already": true
+				},
+				"container": {
+					"name": "container",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "container"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"grid": {
+					"name": "grid",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "grid gap-xs"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"gap-xs": {
+					"name": "gap-xs",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "grid gap-xs"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"col-6@sm": {
+					"name": "col-6@sm",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "col-6@sm col-4@md"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"col-4@md": {
+					"name": "col-4@md",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "col-6@sm col-4@md"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"card": {
+					"name": "card",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card card-v5"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"card-v5": {
+					"name": "card-v5",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card card-v5"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"card__link": {
+					"name": "card__link",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card__link",
+						"href": "",
+						"title": "Description of the link",
+						"aria-label": "Description of the link"
+					},
+					"tag": "a",
+					"already": true
+				},
+				"card__img": {
+					"name": "card__img",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card__img"
+					},
+					"tag": "figure",
+					"already": true
+				},
+				"card__content": {
+					"name": "card__content",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card__content"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"card__title": {
+					"name": "card__title",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card__title"
+					},
+					"tag": "h3",
+					"already": true
+				},
+				"btn": {
+					"name": "btn",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "btn btn--primary btn--sm",
+						"href": "#"
+					},
+					"tag": "a",
+					"already": true
+				}
+			},
+			"temp": {
+				"styles": [
+					"grid.css",
+					"card-v5.css"
+				],
+				"scripts": [
+					"card-v5.js"
+				]
+			}
+		},
+		"card-v7": {
+			"name": "card-v7",
+			"styles": "/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v7/card-v7.component.scss",
+			"scripts": "/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v7/card-v7.component.js",
+			"components": {},
+			"assets": [
+				"/Users/sangnguyen/Documents/Tools/gulp-component/src/assets/css/grid.css"
+			],
+			"symbol": [],
+			"BEM_tree": {
+				"no-js": {
+					"name": "no-js",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "no-js",
+						"dir": "ltr",
+						"lang": "en",
+						"itemscope": "",
+						"itemtype": "http://schema.org/WebSite",
+						"prefix": "og: http://ogp.me/ns#"
+					},
+					"tag": "html",
+					"already": true
+				},
+				"yemdevelop": {
+					"name": "yemdevelop",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "yemdevelop yem-card-v7-page"
+					},
+					"tag": "body",
+					"already": true
+				},
+				"yem-card-v7-page": {
+					"name": "yem-card-v7-page",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "yemdevelop yem-card-v7-page"
+					},
+					"tag": "body",
+					"already": true
+				},
+				"container": {
+					"name": "container",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "container"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"grid": {
+					"name": "grid",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "grid gap-xs"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"gap-xs": {
+					"name": "gap-xs",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "grid gap-xs"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"col-6@sm": {
+					"name": "col-6@sm",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "col-6@sm col-4@md"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"col-4@md": {
+					"name": "col-4@md",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "col-6@sm col-4@md"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"card": {
+					"name": "card",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card card-v7"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"card-v7": {
+					"name": "card-v7",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card card-v7"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"card__link": {
+					"name": "card__link",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card__link",
+						"href": "#",
+						"title": "Description of the link",
+						"aria-label": "Description of the link"
+					},
+					"tag": "a",
+					"already": true
+				},
+				"card__img": {
+					"name": "card__img",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card__img"
+					},
+					"tag": "figure",
+					"already": true
+				},
+				"card__content": {
+					"name": "card__content",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card__content"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"card__label": {
+					"name": "card__label",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card__label"
+					},
+					"tag": "span",
+					"already": true
+				},
+				"card__title": {
+					"name": "card__title",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card__title"
+					},
+					"tag": "h3",
+					"already": true
+				},
+				"card__buttons": {
+					"name": "card__buttons",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card__buttons"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"card__button": {
+					"name": "card__button",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card__button btn btn--subtle btn--sm"
+					},
+					"tag": "button",
+					"already": true
+				},
+				"btn": {
+					"name": "btn",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card__button btn btn--subtle btn--sm"
+					},
+					"tag": "button",
+					"already": true
+				},
+				"icon": {
+					"name": "icon",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "icon",
+						"aria-hidden": "true",
+						"viewbox": "0 0 16 16"
+					},
+					"tag": "svg",
+					"already": true
+				}
+			},
+			"temp": {
+				"styles": [
+					"grid.css",
+					"card-v7.css"
+				],
+				"scripts": [
+					"card-v7.js"
+				]
+			}
+		},
+		"alert-card": {
+			"name": "alert-card",
+			"styles": "/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/alert-card/alert-card.component.scss",
+			"scripts": "/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/alert-card/alert-card.component.js",
+			"components": {},
+			"assets": [
+				"/Users/sangnguyen/Documents/Tools/gulp-component/src/assets/css/grid.css"
+			],
+			"symbol": [],
+			"BEM_tree": {
+				"no-js": {
+					"name": "no-js",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "no-js",
+						"dir": "ltr",
+						"lang": "en",
+						"itemscope": "",
+						"itemtype": "http://schema.org/WebSite",
+						"prefix": "og: http://ogp.me/ns#"
+					},
+					"tag": "html",
+					"already": true
+				},
+				"yemdevelop": {
+					"name": "yemdevelop",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "yemdevelop yem-alert-card-page"
+					},
+					"tag": "body",
+					"already": true
+				},
+				"yem-alert-card-page": {
+					"name": "yem-alert-card-page",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "yemdevelop yem-alert-card-page"
+					},
+					"tag": "body",
+					"already": true
+				},
+				"container": {
+					"name": "container",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "container"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"grid": {
+					"name": "grid",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "grid gap-xs"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"gap-xs": {
+					"name": "gap-xs",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "grid gap-xs"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"col-8@sm": {
+					"name": "col-8@sm",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "col-8@sm"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"alert-card": {
+					"name": "alert-card",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "alert-card js-alert-card"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"js-alert-card": {
+					"name": "js-alert-card",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "alert-card js-alert-card"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"alert-card__content": {
+					"name": "alert-card__content",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "alert-card__content"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"alert-card__title": {
+					"name": "alert-card__title",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "alert-card__title"
+					},
+					"tag": "h3",
+					"already": true
+				},
+				"alert-card__icon": {
+					"name": "alert-card__icon",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "alert-card__icon alert-card__icon--warning",
+						"viewbox": "0 0 48 48",
+						"aria-hidden": "true"
+					},
+					"tag": "svg",
+					"already": true
+				},
+				"alert-card__message": {
+					"name": "alert-card__message",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "alert-card__message"
+					},
+					"tag": "p",
+					"already": true
+				},
+				"alert-card__buttons": {
+					"name": "alert-card__buttons",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "alert-card__buttons"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"btn": {
+					"name": "btn",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "btn btn--subtle",
+						"href": "#0"
+					},
+					"tag": "a",
+					"already": true
+				},
+				"alert-card__close-btn": {
+					"name": "alert-card__close-btn",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "alert-card__close-btn js-alert-card__close-btn",
+						"type": "button"
+					},
+					"tag": "button",
+					"already": true
+				},
+				"js-alert-card__close-btn": {
+					"name": "js-alert-card__close-btn",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "alert-card__close-btn js-alert-card__close-btn",
+						"type": "button"
+					},
+					"tag": "button",
+					"already": true
+				}
+			},
+			"temp": {
+				"styles": [
+					"grid.css",
+					"alert-card.css"
+				],
+				"scripts": [
+					"alert-card.js"
+				]
+			}
+		},
+		"card-v9": {
+			"name": "card-v9",
+			"styles": "/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v9/card-v9.component.scss",
+			"scripts": "/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v9/card-v9.component.js",
+			"components": {},
+			"assets": [
+				"/Users/sangnguyen/Documents/Tools/gulp-component/src/assets/css/grid.css"
+			],
+			"symbol": [],
+			"BEM_tree": {
+				"no-js": {
+					"name": "no-js",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "no-js",
+						"dir": "ltr",
+						"lang": "en",
+						"itemscope": "",
+						"itemtype": "http://schema.org/WebSite",
+						"prefix": "og: http://ogp.me/ns#"
+					},
+					"tag": "html",
+					"already": true
+				},
+				"yemdevelop": {
+					"name": "yemdevelop",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "yemdevelop yem-card-v9-page"
+					},
+					"tag": "body",
+					"already": true
+				},
+				"yem-card-v9-page": {
+					"name": "yem-card-v9-page",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "yemdevelop yem-card-v9-page"
+					},
+					"tag": "body",
+					"already": true
+				},
+				"container": {
+					"name": "container",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "container"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"grid": {
+					"name": "grid",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "grid gap-xs"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"gap-xs": {
+					"name": "gap-xs",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "grid gap-xs"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"col-6@sm": {
+					"name": "col-6@sm",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "col-6@sm col-4@md"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"col-4@md": {
+					"name": "col-4@md",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "col-6@sm col-4@md"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"card": {
+					"name": "card",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card card-v9"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"card-v9": {
+					"name": "card-v9",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card card-v9"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"card__link": {
+					"name": "card__link",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card__link",
+						"href": "#",
+						"title": "Description of the link",
+						"aria-label": "Description of the link",
+						"style": "background-image: url('@card/card-v9/images/card_1.jpeg')"
+					},
+					"tag": "a",
+					"already": true
+				},
+				"card__body": {
+					"name": "card__body",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card__body"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"card__content": {
+					"name": "card__content",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card__content"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"card__label": {
+					"name": "card__label",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card__label"
+					},
+					"tag": "p",
+					"already": true
+				},
+				"card__title": {
+					"name": "card__title",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card__title"
+					},
+					"tag": "h3",
+					"already": true
+				},
+				"card__button": {
+					"name": "card__button",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card__button"
+					},
+					"tag": "div",
+					"already": true
+				}
+			},
+			"temp": {
+				"styles": [
+					"grid.css",
+					"card-v9.css"
+				],
+				"scripts": [
+					"card-v9.js"
+				]
+			}
+		},
+		"contact-v1": {
+			"name": "contact-v1",
+			"styles": "/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/contact-v1/contact-v1.component.scss",
+			"scripts": "/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/contact-v1/contact-v1.component.js",
+			"components": {},
+			"assets": [
+				"/Users/sangnguyen/Documents/Tools/gulp-component/src/assets/css/grid.css"
+			],
+			"symbol": [],
+			"BEM_tree": {
+				"no-js": {
+					"name": "no-js",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "no-js",
+						"dir": "ltr",
+						"lang": "en",
+						"itemscope": "",
+						"itemtype": "http://schema.org/WebSite",
+						"prefix": "og: http://ogp.me/ns#"
+					},
+					"tag": "html",
+					"already": true
+				},
+				"yemdevelop": {
+					"name": "yemdevelop",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "yemdevelop yem-contact-v1-page"
+					},
+					"tag": "body",
+					"already": true
+				},
+				"yem-contact-v1-page": {
+					"name": "yem-contact-v1-page",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "yemdevelop yem-contact-v1-page"
+					},
+					"tag": "body",
+					"already": true
+				},
+				"container": {
+					"name": "container",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "container"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"grid": {
+					"name": "grid",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "grid gap-xs"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"gap-xs": {
+					"name": "gap-xs",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "grid gap-xs"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"col-6@sm": {
+					"name": "col-6@sm",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "col-6@sm col-4@md"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"col-4@md": {
+					"name": "col-4@md",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "col-6@sm col-4@md"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"contact": {
+					"name": "contact",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "contact contact-v1"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"contact-v1": {
+					"name": "contact-v1",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "contact contact-v1"
+					},
+					"tag": "div",
+					"already": true
+				}
+			},
+			"temp": {
+				"styles": [
+					"grid.css",
+					"contact-v1.css"
+				],
+				"scripts": [
+					"contact-v1.js"
+				]
+			}
+		},
+		"contact-v3": {
+			"name": "contact-v3",
+			"styles": "/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/contact-v3/contact-v3.component.scss",
+			"scripts": "/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/contact-v3/contact-v3.component.js",
+			"components": {},
+			"assets": [
+				"/Users/sangnguyen/Documents/Tools/gulp-component/src/assets/css/grid.css"
+			],
+			"symbol": [],
+			"BEM_tree": {
+				"no-js": {
+					"name": "no-js",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "no-js",
+						"dir": "ltr",
+						"lang": "en",
+						"itemscope": "",
+						"itemtype": "http://schema.org/WebSite",
+						"prefix": "og: http://ogp.me/ns#"
+					},
+					"tag": "html",
+					"already": true
+				},
+				"yemdevelop": {
+					"name": "yemdevelop",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "yemdevelop yem-contact-v3-page"
+					},
+					"tag": "body",
+					"already": true
+				},
+				"yem-contact-v3-page": {
+					"name": "yem-contact-v3-page",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "yemdevelop yem-contact-v3-page"
+					},
+					"tag": "body",
+					"already": true
+				},
+				"container": {
+					"name": "container",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "container"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"grid": {
+					"name": "grid",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "grid gap-xs"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"gap-xs": {
+					"name": "gap-xs",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "grid gap-xs"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"col-6@sm": {
+					"name": "col-6@sm",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "col-6@sm col-4@md"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"col-4@md": {
+					"name": "col-4@md",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "col-6@sm col-4@md"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"contact": {
+					"name": "contact",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "contact contact-v3"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"contact-v3": {
+					"name": "contact-v3",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "contact contact-v3"
+					},
+					"tag": "div",
+					"already": true
+				}
+			},
+			"temp": {
+				"styles": [
+					"grid.css",
+					"contact-v3.css"
+				],
+				"scripts": [
+					"contact-v3.js"
+				]
+			}
+		},
+		"contact-v2": {
+			"name": "contact-v2",
+			"styles": "/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/contact-v2/contact-v2.component.scss",
+			"scripts": "/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/contact-v2/contact-v2.component.js",
+			"components": {},
+			"assets": [
+				"/Users/sangnguyen/Documents/Tools/gulp-component/src/assets/css/grid.css"
+			],
+			"symbol": [],
+			"BEM_tree": {
+				"no-js": {
+					"name": "no-js",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "no-js",
+						"dir": "ltr",
+						"lang": "en",
+						"itemscope": "",
+						"itemtype": "http://schema.org/WebSite",
+						"prefix": "og: http://ogp.me/ns#"
+					},
+					"tag": "html",
+					"already": true
+				},
+				"yemdevelop": {
+					"name": "yemdevelop",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "yemdevelop yem-contact-v2-page"
+					},
+					"tag": "body",
+					"already": true
+				},
+				"yem-contact-v2-page": {
+					"name": "yem-contact-v2-page",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "yemdevelop yem-contact-v2-page"
+					},
+					"tag": "body",
+					"already": true
+				},
+				"container": {
+					"name": "container",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "container"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"grid": {
+					"name": "grid",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "grid gap-xs"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"gap-xs": {
+					"name": "gap-xs",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "grid gap-xs"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"col-6@sm": {
+					"name": "col-6@sm",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "col-6@sm col-4@md"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"col-4@md": {
+					"name": "col-4@md",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "col-6@sm col-4@md"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"contact": {
+					"name": "contact",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "contact contact-v2"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"contact-v2": {
+					"name": "contact-v2",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "contact contact-v2"
+					},
+					"tag": "div",
+					"already": true
+				}
+			},
+			"temp": {
+				"styles": [
+					"grid.css",
+					"contact-v2.css"
+				],
+				"scripts": [
+					"contact-v2.js"
+				]
+			}
+		},
+		"index": {
+			"name": "index",
+			"styles": "/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/index/index.component.scss",
+			"scripts": "/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/index/index.component.js",
+			"components": {},
+			"assets": [],
+			"symbol": [],
+			"BEM_tree": {
+				"no-js": {
+					"name": "no-js",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "no-js",
+						"dir": "ltr",
+						"lang": "en",
+						"itemscope": "",
+						"itemtype": "http://schema.org/WebSite",
+						"prefix": "og: http://ogp.me/ns#"
+					},
+					"tag": "html",
+					"already": true
+				},
+				"yemdevelop": {
+					"name": "yemdevelop",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "yemdevelop yem-index-page"
+					},
+					"tag": "body",
+					"already": true
+				},
+				"yem-index-page": {
+					"name": "yem-index-page",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "yemdevelop yem-index-page"
+					},
+					"tag": "body",
+					"already": true
+				}
+			},
+			"temp": {
+				"styles": [
+					"index.css"
+				],
+				"scripts": [
+					"index.js"
+				]
+			}
+		},
+		"state": {
+			"name": "state",
+			"styles": "/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/state/state.component.scss",
+			"scripts": "/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/state/state.component.js",
+			"components": {},
+			"assets": [
+				"/Users/sangnguyen/Documents/Tools/gulp-component/node_modules/swiper/swiper-bundle.js"
+			],
+			"symbol": [],
+			"BEM_tree": {
+				"no-js": {
+					"name": "no-js",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "no-js",
+						"dir": "ltr",
+						"lang": "en",
+						"itemscope": "",
+						"itemtype": "http://schema.org/WebSite",
+						"prefix": "og: http://ogp.me/ns#"
+					},
+					"tag": "html",
+					"already": true
+				},
+				"yemdevelop": {
+					"name": "yemdevelop",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "yemdevelop yem-state-page"
+					},
+					"tag": "body",
+					"already": true
+				},
+				"yem-state-page": {
+					"name": "yem-state-page",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "yemdevelop yem-state-page"
+					},
+					"tag": "body",
+					"already": true
+				},
+				"app": {
+					"name": "app",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "app",
+						"id": "app"
+					},
+					"tag": "section",
+					"already": true
+				},
+				"container": {
+					"name": "container",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "container"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"header": {
+					"name": "header",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "header"
+					},
+					"tag": "header",
+					"already": true
+				},
+				"header__heading": {
+					"name": "header__heading",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "header__heading"
+					},
+					"tag": "h1",
+					"already": true
+				},
+				"header__description": {
+					"name": "header__description",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "header__description"
+					},
+					"tag": "p",
+					"already": true
+				},
+				"header__note": {
+					"name": "header__note",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "header__note"
+					},
+					"tag": "p",
+					"already": true
+				},
+				"app__inner": {
+					"name": "app__inner",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "app__inner"
+					},
+					"tag": "section",
+					"already": true
+				},
+				"todos": {
+					"name": "todos",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "todos"
+					},
+					"tag": "section",
+					"already": true
+				},
+				"todos__heading": {
+					"name": "todos__heading",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "todos__heading"
+					},
+					"tag": "h2",
+					"already": true
+				},
+				"todos__list": {
+					"name": "todos__list",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "todos__list js-todos",
+						"aria-live": "polite",
+						"aria-label": "A list of items you have done"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"js-todos": {
+					"name": "js-todos",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "todos__list js-todos",
+						"aria-live": "polite",
+						"aria-label": "A list of items you have done"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"todos__form": {
+					"name": "todos__form",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "todos__form js-form"
+					},
+					"tag": "form",
+					"already": true
+				},
+				"js-form": {
+					"name": "js-form",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "todos__form js-form"
+					},
+					"tag": "form",
+					"already": true
+				},
+				"todos__form-inner": {
+					"name": "todos__form-inner",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "todos__form-inner"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"todos__form-label": {
+					"name": "todos__form-label",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "todos__form-label",
+						"for": "add-new"
+					},
+					"tag": "label",
+					"already": true
+				},
+				"todos__form-actions": {
+					"name": "todos__form-actions",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "todos__form-actions"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"todos__form-input": {
+					"name": "todos__form-input",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "todos__form-input",
+						"id": "add-new",
+						"type": "text"
+					},
+					"tag": "input",
+					"already": true
+				},
+				"todos__form-button": {
+					"name": "todos__form-button",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "todos__form-button"
+					},
+					"tag": "button",
+					"already": true
+				},
+				"status-todo": {
+					"name": "status-todo",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "status-todo"
+					},
+					"tag": "section",
+					"already": true
+				},
+				"status-todo__description": {
+					"name": "status-todo__description",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "status-todo__description visually-hidden js-status",
+						"role": "status"
+					},
+					"tag": "p",
+					"already": true
+				},
+				"visually-hidden": {
+					"name": "visually-hidden",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "status-todo__description visually-hidden js-status",
+						"role": "status"
+					},
+					"tag": "p",
+					"already": true
+				},
+				"js-status": {
+					"name": "js-status",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "status-todo__description visually-hidden js-status",
+						"role": "status"
+					},
+					"tag": "p",
+					"already": true
+				},
+				"count-todo": {
+					"name": "count-todo",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "count-todo js-count",
+						"aria-hidden": "true"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"js-count": {
+					"name": "js-count",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "count-todo js-count",
+						"aria-hidden": "true"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"count-todo__title": {
+					"name": "count-todo__title",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "count-todo__title"
+					},
+					"tag": "div",
+					"already": true
+				}
+			},
+			"temp": {
+				"styles": [
+					"state.css"
+				],
+				"scripts": [
+					"https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js",
+					"swiper-bundle.js",
+					"state.js"
+				]
+			}
+		},
+		"card-v8": {
+			"name": "card-v8",
+			"styles": "/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v8/card-v8.component.scss",
+			"scripts": "/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v8/card-v8.component.js",
+			"components": {},
+			"assets": [
+				"/Users/sangnguyen/Documents/Tools/gulp-component/src/assets/css/grid.css"
+			],
+			"symbol": [],
+			"BEM_tree": {
+				"no-js": {
+					"name": "no-js",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "no-js",
+						"dir": "ltr",
+						"lang": "en",
+						"itemscope": "",
+						"itemtype": "http://schema.org/WebSite",
+						"prefix": "og: http://ogp.me/ns#"
+					},
+					"tag": "html",
+					"already": true
+				},
+				"yemdevelop": {
+					"name": "yemdevelop",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "yemdevelop yem-card-v8-page"
+					},
+					"tag": "body",
+					"already": true
+				},
+				"yem-card-v8-page": {
+					"name": "yem-card-v8-page",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "yemdevelop yem-card-v8-page"
+					},
+					"tag": "body",
+					"already": true
+				},
+				"container": {
+					"name": "container",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "container"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"grid": {
+					"name": "grid",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "grid gap-xs"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"gap-xs": {
+					"name": "gap-xs",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "grid gap-xs"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"col-6@sm": {
+					"name": "col-6@sm",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "col-6@sm col-4@md"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"col-4@md": {
+					"name": "col-4@md",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "col-6@sm col-4@md"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"card": {
+					"name": "card",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card card-v8"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"card-v8": {
+					"name": "card-v8",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card card-v8"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"card__link": {
+					"name": "card__link",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card__link",
+						"href": "#",
+						"title": "Description of the link",
+						"aria-label": "Description of the link"
+					},
+					"tag": "a",
+					"already": true
+				},
+				"card__img": {
+					"name": "card__img",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card__img"
+					},
+					"tag": "figure",
+					"already": true
+				},
+				"card__content": {
+					"name": "card__content",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card__content"
+					},
+					"tag": "div",
+					"already": true
+				},
+				"card__label": {
+					"name": "card__label",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card__label"
+					},
+					"tag": "p",
+					"already": true
+				},
+				"card__title": {
+					"name": "card__title",
+					"mod": [],
+					"mix": [],
+					"attrs": {
+						"class": "card__title"
+					},
+					"tag": "h4",
+					"already": true
+				}
+			},
+			"temp": {
+				"styles": [
+					"grid.css",
+					"card-v8.css"
+				],
+				"scripts": [
+					"card-v8.js"
+				]
+			}
+		},
+		"main": {
+			"BEM_tree": {
+				"no-js": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"yemdevelop": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"yem-card-v1-page": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"container": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"grid": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"gap-xs": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"col-6@sm": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"col-4@md": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"card": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"card-v1": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"card__img": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"card__content": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"card__text": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"card__title": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"card__description": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"card__button": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"btn": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"card__link": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"card__link-icon": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"icon": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"yem-card-v10-page": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"card-v10": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"card__body": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"card__body-container": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"card__label": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"card__footer": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"card__social-list": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"card__social-item": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"card__social-btn": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"reset": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"col-12": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"col-9": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"yem-card-v3-page": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"card-v3": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"yem-card-v2-page": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"card-v2": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"card__caption": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"card__caption-title": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"card__caption-description": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"yem-card-v4-page": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"card-v4": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"card__buttons": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"yem-card-v6-page": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"card-v6": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"card__icon": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"yem-card-v5-page": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"card-v5": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"yem-card-v7-page": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"card-v7": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"yem-alert-card-page": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"col-8@sm": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"alert-card": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"js-alert-card": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"alert-card__content": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"alert-card__title": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"alert-card__icon": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"alert-card__message": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"alert-card__buttons": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"alert-card__close-btn": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"js-alert-card__close-btn": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"yem-card-v9-page": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"card-v9": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"yem-contact-v1-page": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"contact": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"contact-v1": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"yem-contact-v3-page": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"contact-v3": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"yem-contact-v2-page": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"contact-v2": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"yem-index-page": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"yem-state-page": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"app": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"header": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"header__heading": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"header__description": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"header__note": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"app__inner": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"todos": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"todos__heading": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"todos__list": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"js-todos": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"todos__form": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"js-form": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"todos__form-inner": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"todos__form-label": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"todos__form-actions": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"todos__form-input": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"todos__form-button": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"status-todo": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"status-todo__description": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"visually-hidden": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"js-status": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"count-todo": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"js-count": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"count-todo__title": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"yem-card-v8-page": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				},
+				"card-v8": {
+					"mod": [],
+					"mix": [],
+					"already": true
+				}
+			},
+			"styles": [],
+			"scripts": []
+		}
+	},
+	"deps": {
+		"header": {
+			"components": [],
+			"modules": [
+				{
+					"import": "normalize.css",
+					"from": "/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/header/assets"
+				},
+				{
+					"from": "https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/",
+					"inject": [
+						"jquery.min.js"
+					]
+				},
+				{
+					"from": "/Users/sangnguyen/Documents/Tools/gulp-component/node_modules/swiper",
+					"inject": [
+						"swiper-bundle.js"
+					],
+					"import": [
+						"swiper-bundle.css"
+					]
+				}
+			]
+		},
+		"alert-card": {
+			"components": [],
+			"modules": [
+				{
+					"from": "/Users/sangnguyen/Documents/Tools/gulp-component/src/assets/css",
+					"inject": [
+						"grid.css"
+					]
+				}
+			]
+		},
+		"card-v1": {
+			"components": [],
+			"modules": [
+				{
+					"from": "/Users/sangnguyen/Documents/Tools/gulp-component/src/assets/css",
+					"inject": [
+						"grid.css"
+					]
+				}
+			]
+		},
+		"card-v10": {
+			"components": [],
+			"modules": [
+				{
+					"from": "/Users/sangnguyen/Documents/Tools/gulp-component/src/assets/css",
+					"inject": [
+						"grid.css"
+					]
+				}
+			]
+		},
+		"card-v2": {
+			"components": [],
+			"modules": [
+				{
+					"from": "/Users/sangnguyen/Documents/Tools/gulp-component/src/assets/css",
+					"inject": [
+						"grid.css"
+					]
+				}
+			]
+		},
+		"card-v3": {
+			"components": [],
+			"modules": [
+				{
+					"from": "/Users/sangnguyen/Documents/Tools/gulp-component/src/assets/css",
+					"inject": [
+						"grid.css"
+					]
+				}
+			]
+		},
+		"card-v4": {
+			"components": [],
+			"modules": [
+				{
+					"from": "/Users/sangnguyen/Documents/Tools/gulp-component/src/assets/css",
+					"inject": [
+						"grid.css"
+					]
+				}
+			]
+		},
+		"card-v5": {
+			"components": [],
+			"modules": [
+				{
+					"from": "/Users/sangnguyen/Documents/Tools/gulp-component/src/assets/css",
+					"inject": [
+						"grid.css"
+					]
+				}
+			]
+		},
+		"card-v6": {
+			"components": [],
+			"modules": [
+				{
+					"from": "/Users/sangnguyen/Documents/Tools/gulp-component/src/assets/css",
+					"inject": [
+						"grid.css"
+					]
+				}
+			]
+		},
+		"card-v7": {
+			"components": [],
+			"modules": [
+				{
+					"from": "/Users/sangnguyen/Documents/Tools/gulp-component/src/assets/css",
+					"inject": [
+						"grid.css"
+					]
+				}
+			]
+		},
+		"card-v8": {
+			"components": [],
+			"modules": [
+				{
+					"from": "/Users/sangnguyen/Documents/Tools/gulp-component/src/assets/css",
+					"inject": [
+						"grid.css"
+					]
+				}
+			]
+		},
+		"card-v9": {
+			"components": [],
+			"modules": [
+				{
+					"from": "/Users/sangnguyen/Documents/Tools/gulp-component/src/assets/css",
+					"inject": [
+						"grid.css"
+					]
+				}
+			]
+		},
+		"contact-v1": {
+			"components": [],
+			"modules": [
+				{
+					"from": "/Users/sangnguyen/Documents/Tools/gulp-component/src/assets/css",
+					"inject": [
+						"grid.css"
+					]
+				}
+			]
+		},
+		"contact-v2": {
+			"components": [],
+			"modules": [
+				{
+					"from": "/Users/sangnguyen/Documents/Tools/gulp-component/src/assets/css",
+					"inject": [
+						"grid.css"
+					]
+				}
+			]
+		},
+		"contact-v3": {
+			"components": [],
+			"modules": [
+				{
+					"from": "/Users/sangnguyen/Documents/Tools/gulp-component/src/assets/css",
+					"inject": [
+						"grid.css"
+					]
+				}
+			]
+		},
+		"index": {
+			"components": [],
+			"modules": [
+				{
+					"from": "/Users/sangnguyen/Documents/Tools/gulp-component/src/assets/css",
+					"import": "grid.css"
+				}
+			]
+		}
+	},
+	"jsons": {
+		"count_todo": {
+			"description": "<small>You've done</small><span> 0 </span><small>things today 😢</small>"
+		},
+		"header": {
+			"title": "Done list",
+			"description": "A list of things that you have achieved today.",
+			"note": "<b>Note:</b> The data isn't stored, so it will disappear if you reload!"
+		},
+		"status_todo": {
+			"role": "status",
+			"description": "You have done <span class=\"js-status\">1 thing</span> today!"
+		},
+		"todos": {
+			"title": "What you've done",
+			"aria_live": "polite",
+			"aria_label": "A list of items you have done",
+			"form_label": "Add a new item",
+			"button_label": "Save"
+		},
+		"button": {
+			"data": {}
+		},
+		"seo": {
+			"AppName": "Home",
+			"mobile_color": "#000000",
+			"cfg_name": "Yem",
+			"cfg_url": "",
+			"analytics": "UA-XXXXXXXXXXX-1",
+			"seo_lang": "en",
+			"seo_geo": "EN",
+			"seo_geo_latitude": "36.204824",
+			"seo_geo_longitude": "138.252924",
+			"app_facebook_ID": "688213608004081",
+			"cfg_description": "Hi ! I am Sang ",
+			"cfg_keywords": "Gulp-simple, gulp-simple, gulp, Front-End, Web Developer, Apps Developer, Front-End Developer , Fullstack , Fullstack developer , Vietnamese",
+			"cfg_author": "gulp-simple",
+			"cfg_sitenameurl": "yem",
+			"app_facebook_adminsID": "XXXXXXX,XXXXXXX",
+			"app_appleID": "XXX-XXX-XXX-XXXX",
+			"cfg_sitenameurlgoogle": "XXXXXXXXXXXXXX",
+			"verf_google": "",
+			"verf_bing": "",
+			"verf_yandex": ""
+		},
+		"card_v2": {},
+		"card_v3": {}
+	},
+	"levels": [
+		"components",
+		"shared"
+	],
+	"assets": [
+		"/Users/sangnguyen/Documents/Tools/gulp-component/src/assets/css/grid.css",
+		"/Users/sangnguyen/Documents/Tools/gulp-component/node_modules/swiper/swiper-bundle.js",
+		"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/**/assets/**/*.*"
+	],
+	"tree": {
+		"card-v1": {
+			"no-js": [],
+			"yemdevelop": [],
+			"yem-card-v1-page": [],
+			"container": [],
+			"grid": [],
+			"gap-xs": [],
+			"col-6@sm": [],
+			"col-4@md": [],
+			"card": [],
+			"card-v1": [],
+			"card__img": [],
+			"card__content": [],
+			"card__text": [],
+			"card__title": [],
+			"card__description": [],
+			"card__button": [],
+			"btn": [],
+			"card__link": [],
+			"card__link-icon": [],
+			"icon": []
+		},
+		"card-v10": {
+			"no-js": [],
+			"yemdevelop": [],
+			"yem-card-v10-page": [],
+			"container": [],
+			"grid": [],
+			"gap-xs": [],
+			"col-6@sm": [],
+			"col-4@md": [],
+			"card": [],
+			"card-v10": [],
+			"card__link": [],
+			"card__body": [],
+			"card__body-container": [],
+			"card__content": [],
+			"card__label": [],
+			"card__title": [],
+			"card__description": [],
+			"card__footer": [],
+			"card__social-list": [],
+			"card__social-item": [],
+			"card__social-btn": [],
+			"reset": [],
+			"icon": [],
+			"col-12": [],
+			"col-9": []
+		},
+		"card-v3": {
+			"no-js": [],
+			"yemdevelop": [],
+			"yem-card-v3-page": [],
+			"container": [],
+			"grid": [],
+			"gap-xs": [],
+			"col-6@sm": [],
+			"col-4@md": [],
+			"card": [],
+			"card-v3": [],
+			"card__link": [],
+			"card__img": [],
+			"card__content": [],
+			"card__label": [],
+			"card__title": [],
+			"card__footer": [],
+			"icon": []
+		},
+		"card-v2": {
+			"no-js": [],
+			"yemdevelop": [],
+			"yem-card-v2-page": [],
+			"container": [],
+			"grid": [],
+			"gap-xs": [],
+			"col-6@sm": [],
+			"col-4@md": [],
+			"card": [],
+			"card-v2": [],
+			"card__img": [],
+			"card__caption": [],
+			"card__caption-title": [],
+			"card__caption-description": []
+		},
+		"card-v4": {
+			"no-js": [],
+			"yemdevelop": [],
+			"yem-card-v4-page": [],
+			"container": [],
+			"grid": [],
+			"gap-xs": [],
+			"col-6@sm": [],
+			"col-4@md": [],
+			"card": [],
+			"card-v4": [],
+			"card__content": [],
+			"card__title": [],
+			"card__description": [],
+			"card__buttons": [],
+			"card__button": [],
+			"btn": [],
+			"card__img": []
+		},
+		"card-v6": {
+			"no-js": [],
+			"yemdevelop": [],
+			"yem-card-v6-page": [],
+			"container": [],
+			"grid": [],
+			"gap-xs": [],
+			"col-6@sm": [],
+			"col-4@md": [],
+			"card": [],
+			"card-v6": [],
+			"card__link": [],
+			"card__img": [],
+			"card__content": [],
+			"card__label": [],
+			"card__title": [],
+			"card__icon": [],
+			"icon": []
+		},
+		"card-v5": {
+			"no-js": [],
+			"yemdevelop": [],
+			"yem-card-v5-page": [],
+			"container": [],
+			"grid": [],
+			"gap-xs": [],
+			"col-6@sm": [],
+			"col-4@md": [],
+			"card": [],
+			"card-v5": [],
+			"card__link": [],
+			"card__img": [],
+			"card__content": [],
+			"card__title": [],
+			"btn": []
+		},
+		"card-v7": {
+			"no-js": [],
+			"yemdevelop": [],
+			"yem-card-v7-page": [],
+			"container": [],
+			"grid": [],
+			"gap-xs": [],
+			"col-6@sm": [],
+			"col-4@md": [],
+			"card": [],
+			"card-v7": [],
+			"card__link": [],
+			"card__img": [],
+			"card__content": [],
+			"card__label": [],
+			"card__title": [],
+			"card__buttons": [],
+			"card__button": [],
+			"btn": [],
+			"icon": []
+		},
+		"alert-card": {
+			"no-js": [],
+			"yemdevelop": [],
+			"yem-alert-card-page": [],
+			"container": [],
+			"grid": [],
+			"gap-xs": [],
+			"col-8@sm": [],
+			"alert-card": [],
+			"js-alert-card": [],
+			"alert-card__content": [],
+			"alert-card__title": [],
+			"alert-card__icon": [],
+			"alert-card__message": [],
+			"alert-card__buttons": [],
+			"btn": [],
+			"alert-card__close-btn": [],
+			"js-alert-card__close-btn": []
+		},
+		"card-v9": {
+			"no-js": [],
+			"yemdevelop": [],
+			"yem-card-v9-page": [],
+			"container": [],
+			"grid": [],
+			"gap-xs": [],
+			"col-6@sm": [],
+			"col-4@md": [],
+			"card": [],
+			"card-v9": [],
+			"card__link": [],
+			"card__body": [],
+			"card__content": [],
+			"card__label": [],
+			"card__title": [],
+			"card__button": []
+		},
+		"contact-v1": {
+			"no-js": [],
+			"yemdevelop": [],
+			"yem-contact-v1-page": [],
+			"container": [],
+			"grid": [],
+			"gap-xs": [],
+			"col-6@sm": [],
+			"col-4@md": [],
+			"contact": [],
+			"contact-v1": []
+		},
+		"contact-v3": {
+			"no-js": [],
+			"yemdevelop": [],
+			"yem-contact-v3-page": [],
+			"container": [],
+			"grid": [],
+			"gap-xs": [],
+			"col-6@sm": [],
+			"col-4@md": [],
+			"contact": [],
+			"contact-v3": []
+		},
+		"contact-v2": {
+			"no-js": [],
+			"yemdevelop": [],
+			"yem-contact-v2-page": [],
+			"container": [],
+			"grid": [],
+			"gap-xs": [],
+			"col-6@sm": [],
+			"col-4@md": [],
+			"contact": [],
+			"contact-v2": []
+		},
+		"index": {
+			"no-js": [],
+			"yemdevelop": [],
+			"yem-index-page": []
+		},
+		"state": {
+			"no-js": [],
+			"yemdevelop": [],
+			"yem-state-page": [],
+			"app": [],
+			"container": [],
+			"header": [],
+			"header__heading": [],
+			"header__description": [],
+			"header__note": [],
+			"app__inner": [],
+			"todos": [],
+			"todos__heading": [],
+			"todos__list": [],
+			"js-todos": [],
+			"todos__form": [],
+			"js-form": [],
+			"todos__form-inner": [],
+			"todos__form-label": [],
+			"todos__form-actions": [],
+			"todos__form-input": [],
+			"todos__form-button": [],
+			"status-todo": [],
+			"status-todo__description": [],
+			"visually-hidden": [],
+			"js-status": [],
+			"count-todo": [],
+			"js-count": [],
+			"count-todo__title": []
+		},
+		"card-v8": {
+			"no-js": [],
+			"yemdevelop": [],
+			"yem-card-v8-page": [],
+			"container": [],
+			"grid": [],
+			"gap-xs": [],
+			"col-6@sm": [],
+			"col-4@md": [],
+			"card": [],
+			"card-v8": [],
+			"card__link": [],
+			"card__img": [],
+			"card__content": [],
+			"card__label": [],
+			"card__title": []
+		},
+		"main": {
+			"no-js": [],
+			"yemdevelop": [],
+			"yem-card-v1-page": [],
+			"container": [],
+			"grid": [],
+			"gap-xs": [],
+			"col-6@sm": [],
+			"col-4@md": [],
+			"card": [],
+			"card-v1": [],
+			"card__img": [],
+			"card__content": [],
+			"card__text": [],
+			"card__title": [],
+			"card__description": [],
+			"card__button": [],
+			"btn": [],
+			"card__link": [],
+			"card__link-icon": [],
+			"icon": [],
+			"yem-card-v10-page": [],
+			"card-v10": [],
+			"card__body": [],
+			"card__body-container": [],
+			"card__label": [],
+			"card__footer": [],
+			"card__social-list": [],
+			"card__social-item": [],
+			"card__social-btn": [],
+			"reset": [],
+			"col-12": [],
+			"col-9": [],
+			"yem-card-v3-page": [],
+			"card-v3": [],
+			"yem-card-v2-page": [],
+			"card-v2": [],
+			"card__caption": [],
+			"card__caption-title": [],
+			"card__caption-description": [],
+			"yem-card-v4-page": [],
+			"card-v4": [],
+			"card__buttons": [],
+			"yem-card-v6-page": [],
+			"card-v6": [],
+			"card__icon": [],
+			"yem-card-v5-page": [],
+			"card-v5": [],
+			"yem-card-v7-page": [],
+			"card-v7": [],
+			"yem-alert-card-page": [],
+			"col-8@sm": [],
+			"alert-card": [],
+			"js-alert-card": [],
+			"alert-card__content": [],
+			"alert-card__title": [],
+			"alert-card__icon": [],
+			"alert-card__message": [],
+			"alert-card__buttons": [],
+			"alert-card__close-btn": [],
+			"js-alert-card__close-btn": [],
+			"yem-card-v9-page": [],
+			"card-v9": [],
+			"yem-contact-v1-page": [],
+			"contact": [],
+			"contact-v1": [],
+			"yem-contact-v3-page": [],
+			"contact-v3": [],
+			"yem-contact-v2-page": [],
+			"contact-v2": [],
+			"yem-index-page": [],
+			"yem-state-page": [],
+			"app": [],
+			"header": [],
+			"header__heading": [],
+			"header__description": [],
+			"header__note": [],
+			"app__inner": [],
+			"todos": [],
+			"todos__heading": [],
+			"todos__list": [],
+			"js-todos": [],
+			"todos__form": [],
+			"js-form": [],
+			"todos__form-inner": [],
+			"todos__form-label": [],
+			"todos__form-actions": [],
+			"todos__form-input": [],
+			"todos__form-button": [],
+			"status-todo": [],
+			"status-todo__description": [],
+			"visually-hidden": [],
+			"js-status": [],
+			"count-todo": [],
+			"js-count": [],
+			"count-todo__title": [],
+			"yem-card-v8-page": [],
+			"card-v8": []
+		}
+	},
+	"depsChanged": false,
+	"svg": "<svg style=\"position:absolute;top:0;left:0;width:1px;height:1px;visibility:hidden;opacity:0;\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><symbol viewBox=\"0 0 16 16\" id=\"header__rating\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M1 0h2v13H1V0zm4 5h2v8H5V5zM0 15h16v1H0v-1zm9-6h2v4H9V9zm4-2h2v6h-2V7z\"/></symbol></svg>",
+	"scripts": {
+		"card-v1": [
+			"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v1/card-v1.component.js"
+		],
+		"card-v10": [
+			"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v10/card-v10.component.js"
+		],
+		"card-v3": [
+			"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v3/card-v3.component.js"
+		],
+		"card-v2": [
+			"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v2/card-v2.component.js"
+		],
+		"card-v4": [
+			"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v4/card-v4.component.js"
+		],
+		"card-v6": [
+			"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v6/card-v6.component.js"
+		],
+		"card-v5": [
+			"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v5/card-v5.component.js"
+		],
+		"card-v7": [
+			"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v7/card-v7.component.js"
+		],
+		"alert-card": [
+			"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/alert-card/alert-card.component.js"
+		],
+		"card-v9": [
+			"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v9/card-v9.component.js"
+		],
+		"contact-v1": [
+			"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/contact-v1/contact-v1.component.js"
+		],
+		"contact-v3": [
+			"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/contact-v3/contact-v3.component.js"
+		],
+		"contact-v2": [
+			"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/contact-v2/contact-v2.component.js"
+		],
+		"index": [
+			"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/index/index.component.js"
+		],
+		"state": [
+			"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/state/state.component.js"
+		],
+		"card-v8": [
+			"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v8/card-v8.component.js"
+		],
+		"main": []
+	},
+	"styles": {
+		"card-v1": [
+			"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v1/card-v1.component.scss"
+		],
+		"card-v10": [
+			"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v10/card-v10.component.scss"
+		],
+		"card-v3": [
+			"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v3/card-v3.component.scss"
+		],
+		"card-v2": [
+			"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v2/card-v2.component.scss"
+		],
+		"card-v4": [
+			"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v4/card-v4.component.scss"
+		],
+		"card-v6": [
+			"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v6/card-v6.component.scss"
+		],
+		"card-v5": [
+			"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v5/card-v5.component.scss"
+		],
+		"card-v7": [
+			"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v7/card-v7.component.scss"
+		],
+		"alert-card": [
+			"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/alert-card/alert-card.component.scss"
+		],
+		"card-v9": [
+			"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v9/card-v9.component.scss"
+		],
+		"contact-v1": [
+			"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/contact-v1/contact-v1.component.scss"
+		],
+		"contact-v3": [
+			"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/contact-v3/contact-v3.component.scss"
+		],
+		"contact-v2": [
+			"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/contact-v2/contact-v2.component.scss"
+		],
+		"index": [
+			"/Users/sangnguyen/Documents/Tools/gulp-component/src/assets/css/grid.css",
+			"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/index/index.component.scss"
+		],
+		"state": [
+			"/Users/sangnguyen/Documents/Tools/gulp-component/node_modules/swiper/swiper-bundle.css",
+			"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/header/assets/normalize.css",
+			"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/state/state.component.scss"
+		],
+		"card-v8": [
+			"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/views/pages/card-v8/card-v8.component.scss"
+		],
+		"main": [
+			"/Users/sangnguyen/Documents/Tools/gulp-component/node_modules/swiper/swiper-bundle.css",
+			"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/components/header/assets/normalize.css"
+		]
+	},
+	"images": [
+		"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/**/images/**/*.{webp,png,jpg,jpeg,svg,gif,ico}",
+		"!/Users/sangnguyen/Documents/Tools/gulp-component/src/app/**/assets/images/**/*.{webp,png,jpg,jpeg,svg,gif,ico}"
+	],
+	"fonts": [
+		"/Users/sangnguyen/Documents/Tools/gulp-component/src/app/**/fonts/*.{eot,svg,ttf,woff,woff2}"
+	],
+	"watch": true
+}

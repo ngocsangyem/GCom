@@ -1,0 +1,31 @@
+
+
+
+section.contact.contact-v1
+	.container
+		.contact__title
+			h1 Contact Us
+		.contact__grid
+			dl.details-list
+				.details-list__item
+					dt.details-list__dt Address
+					dd.details-list__dd
+						| 86 Whitby Road 
+						br
+						| IP20 6JA 
+						br
+						| London, UK
+				.details-list__item
+					dt.details-list__dt Email
+					dd.details-list__dd
+						a(href='mailto:webmaster@example.com') hello@myemail.com
+				.details-list__item
+					dt.details-list__dt Phone
+					dd.details-list__dd
+						a(href='tel:+44 7656 6455') +44 7656 6455
+						br
+						small.color-contrast-medium Mon - Fri, 9AM - 5PM
+			.google-maps.js-google-maps(role='application' data-coordinates='51.5658015,-0.40339')
+				// Google Map
+
+script(async defer src="https://maps.googleapis.com/maps/api/js?callback=initGoogleMap")

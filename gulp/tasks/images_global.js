@@ -1,4 +1,3 @@
-const fs = require('fs');
 export default {
 	build: 4,
 	name: 'task:copy:images:global',
@@ -11,7 +10,6 @@ export default {
 	},
 
 	init(done) {
-		fs.writeFileSync('./store.json', JSON.stringify(this.store));
 		const files = this.paths.assets(...this.globs());
 		const options = {
 			since: this.since.bind(this),
