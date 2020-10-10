@@ -1,0 +1,14 @@
+@import '../../../styles/abstracts/mixins';
+@import '../../../styles/global';
+@import '../../../styles/custom';
+@import '../../../styles/review';
+
+@import '../../../components/card/link-card/link-card.component';
+
+.container {
+	padding-top: var(--space-lg);
+
+	.grid {
+		justify-content: center;
+	}
+}

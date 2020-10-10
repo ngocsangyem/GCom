@@ -89,6 +89,7 @@
 		"postcss-combine-duplicated-selectors": "^9.1.0",
 		"postcss-sort-media-queries": "^1.7.26",
 		"postcss-sprites": "^4.2.1",
+		"postcss-discard-duplicates": "^4.0.2",
 		"postcss-url": "^8.0.0",
 		"pug-lexer": "^5.0.0",
 		"pug-parser": "^6.0.0",
@@ -101,7 +102,6 @@
 	},
 	"dependencies": {
 		"axios": "^0.20.0",
-		"postcss-discard-duplicates": "^4.0.2",
 		"swiper": "^6.2.0"
 	}
 }
