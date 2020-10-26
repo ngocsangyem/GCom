@@ -3,10 +3,10 @@ export class linkCardComponent {
 		console.log('link-card component');
 	}
 	static init() {
-		const link-card = new linkCardComponent();
-		return link-card;
+		const link_card = new linkCardComponent();
+		return link_card;
 	}
 }
-(function() {
-	linkCardComponent.init()
+(function () {
+	linkCardComponent.init();
 })();
