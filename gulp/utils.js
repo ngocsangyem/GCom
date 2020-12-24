@@ -1,10 +1,10 @@
-import browserSyncLib from 'browser-sync';
-import minimist from 'minimist';
-import gulpLoadPlugins from 'gulp-load-plugins';
-import notify from 'gulp-notify';
-import c from 'ansi-colors';
-import beeper from 'beeper';
-import { config } from '../core/index';
+const browserSyncLib = require('browser-sync');
+const minimist = require('minimist');
+const gulpLoadPlugins = require('gulp-load-plugins');
+const notify = require('gulp-notify');
+const c = require('ansi-colors');
+const beeper = require('beeper');
+const { config } = require('../core/index');
 
 // Load all gulp plugins based on their names
 // EX: gulp-copy -> copy
@@ -73,4 +73,4 @@ const reportError = function (error) {
 	this.emit('end');
 };
 
-export { args, taskTarget, plugins, browserSync, reportError, isDev };
+module.exports = { args, taskTarget, plugins, browserSync, reportError, isDev };

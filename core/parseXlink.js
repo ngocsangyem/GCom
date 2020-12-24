@@ -1,4 +1,4 @@
-import parseClass from './parseClass';
+const parseClass = require('./parseClass');
 
 /**
  * Parse xlink attribute from use tag.
@@ -10,7 +10,7 @@ import parseClass from './parseClass';
  * @return {undefined}
  */
 
-export default (attr, page, paths) => {
+module.exports = function (attr, page, paths) {
 	if (typeof attr !== 'string') {
 		return;
 	}

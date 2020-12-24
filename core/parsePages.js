@@ -7,7 +7,7 @@
  * @return {undefined}
  */
 
-export default (file, task) => {
+module.exports = function (file, task) {
 	const { config, path, store, removeExtension } = task;
 	const name = removeExtension(
 		path.basename(file.path, path.extname(file.path))

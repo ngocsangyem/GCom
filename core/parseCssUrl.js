@@ -1,5 +1,5 @@
-import path from 'path';
-import { isExternal } from './is';
+const path = require('path');
+const { isExternal } = require('./is');
 
 /**
  * Parse CSS url and try to find assets.
@@ -14,7 +14,7 @@ import { isExternal } from './is';
  * @return {String}
  */
 
-export default (asset, dir, options, decl) => {
+module.exports = function (asset, dir, options, decl) {
 	if (!asset.url || isExternal(asset.url)) {
 		return;
 	}

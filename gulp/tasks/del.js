@@ -1,4 +1,4 @@
-export default {
+module.exports = {
 	build: 0,
 	name: 'task:clean',
 	init() {

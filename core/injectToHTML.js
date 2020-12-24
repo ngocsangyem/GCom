@@ -1,6 +1,4 @@
-import fs from 'fs';
-import path from 'path';
-import { isExternal, isFile } from './is';
+const { isExternal } = require('./is');
 
 /**
  * Append styles and scripts to HTML code.
@@ -12,17 +10,8 @@ import { isExternal, isFile } from './is';
  * @return {String}
  */
 
-export default (code, page, task) => {
-	const {
-		paths,
-		config,
-		store,
-		isDev,
-		mainBundle,
-		isFile,
-		buildPath,
-		path,
-	} = task;
+module.exports = function (code, page, task) {
+	const { config, store, isDev, mainBundle, buildPath, path } = task;
 
 	const symbolsFile = path.join(
 		buildPath.styles,

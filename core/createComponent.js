@@ -1,15 +1,15 @@
-import fs from 'fs';
-import path from 'path';
-import c from 'ansi-colors';
-import * as BEM from './bem';
-import { replaceName } from './helpers/replace-name';
-import { paths, config } from './index';
+const fs = require('fs');
+const path = require('path');
+const c = require('ansi-colors');
+const BEM = require('./bem');
+const { replaceName } = require('./helpers/replace-name');
+const { paths, config } = require('./index');
 
 /**
  * Fast generate component with files and folders
  */
 
-export const createComponent = {
+const createComponent = {
 	sep: Array(16).join('-'),
 	message: '',
 	componentPrefix: config.component.prefix || '',
@@ -387,3 +387,5 @@ export const createComponent = {
 		}
 	},
 };
+
+module.exports = { createComponent };

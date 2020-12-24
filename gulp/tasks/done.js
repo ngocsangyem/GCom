@@ -1,4 +1,4 @@
-export default {
+module.exports = {
 	build: 6,
 	name: 'task:done',
 

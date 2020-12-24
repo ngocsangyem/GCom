@@ -1,4 +1,4 @@
-import * as BEM from './bem';
+const BEM = require('./bem');
 
 /**
  * Parse class from HTML component and add to BEM tree.
@@ -10,7 +10,7 @@ import * as BEM from './bem';
  * @return {undefined}
  */
 
-export default (cls, page, mix, attrs, tag) => {
+module.exports = function (cls, page, mix, attrs, tag) {
 	if (!cls) {
 		return;
 	}

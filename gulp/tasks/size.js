@@ -1,4 +1,4 @@
-export default {
+module.exports = {
 	build: 5,
 	name: 'task:size',
 

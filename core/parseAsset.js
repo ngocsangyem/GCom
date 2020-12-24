@@ -1,4 +1,4 @@
-import { isExternal } from './is';
+const { isExternal } = require('./is');
 
 /**
  * Parse attr value and try to find assets.
@@ -10,7 +10,7 @@ import { isExternal } from './is';
  * @return {undefined}
  */
 
-export default (value, page, paths) => {
+module.exports = function (value, page, paths) {
 	const assets = value.split(',');
 
 	assets.forEach((asset) => {

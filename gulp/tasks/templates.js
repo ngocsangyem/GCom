@@ -1,4 +1,4 @@
-export default {
+module.exports = {
 	build: 1,
 	name: 'task:templates',
 	globs: '!(_*)',

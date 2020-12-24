@@ -1,5 +1,5 @@
-import * as BEM from './bem';
-import { createComponent } from './createComponent';
+const BEM = require('./bem');
+const { createComponent } = require('./createComponent');
 
 /**
  * Creating files and components automatically.
@@ -9,7 +9,7 @@ import { createComponent } from './createComponent';
  * @return {undefined}
  */
 
-export default (task) => {
+module.exports = function (task) {
 	const { path, store, config, mainBundle } = task;
 	const tree = store.tree[mainBundle];
 	const levels = config.autoCreate.levels;

@@ -1,8 +1,8 @@
-import fs from 'fs';
-import path from 'path';
-import glob from 'glob';
-import * as BEM from './bem';
-import { isDirectory } from './is';
+const fs = require('fs');
+const path = require('path');
+const glob = require('glob');
+const BEM = require('./bem');
+const { isDirectory } = require('./is');
 
 /**
  * Check all components and del unnecessary files.
@@ -12,7 +12,7 @@ import { isDirectory } from './is';
  * @return {undefined}
  */
 
-export default (task) => {
+module.exports = function (task) {
 	const { paths, store, config, mainBundle } = task;
 
 	const components = paths._components;

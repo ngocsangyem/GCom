@@ -1,4 +1,4 @@
-export default (task) => {
+module.exports = function (task) {
 	const { config, mainBundle, paths, fs, log, c } = task;
 	// const noBundleScripts = !config.build.bundles.includes('js');
 

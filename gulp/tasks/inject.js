@@ -1,4 +1,4 @@
-export default {
+module.exports = {
 	build: 4,
 	name: 'task:inject',
 

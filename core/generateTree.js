@@ -6,7 +6,7 @@
  * @return {undefined}
  */
 
-export default (task) => {
+module.exports = function (task) {
 	const { store, isDev, config, mainBundle } = task;
 	const assets = (store.assets = []);
 	const pages = store.pages;

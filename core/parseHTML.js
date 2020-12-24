@@ -7,7 +7,7 @@
  * @return {undefined}
  */
 
-export default (file, task) => {
+module.exports = function (file, task) {
 	const {
 		path,
 		paths,

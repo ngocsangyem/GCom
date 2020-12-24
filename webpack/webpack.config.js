@@ -1,10 +1,10 @@
-import path from 'path';
-import TerserPlugin from 'terser-webpack-plugin';
-import glob from 'glob';
-import webpack from 'webpack';
+const path = require('path');
+const TerserPlugin = require('terser-webpack-plugin');
+const glob = require('glob');
+const webpack = require('webpack');
 
-import { args, isDev } from '../gulp/utils';
-import { paths, config } from '../core/index';
+const { isDev } = require('../gulp/utils');
+const { paths, config } = require('../core/index');
 
 const extname = config.component.scripts.extension;
 
@@ -72,4 +72,4 @@ if (!isDev) {
 	);
 }
 
-export { WebpackConfig };
+module.exports = { WebpackConfig };

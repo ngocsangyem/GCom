@@ -14,4 +14,4 @@ const walkSync = function (dir, filelist) {
 	return filelist;
 };
 
-export { walkSync };
+module.exports = { walkSync };

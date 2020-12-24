@@ -7,7 +7,7 @@
  * @return {undefined}
  */
 
-export default (file, task) => {
+module.exports = function (file, task) {
 	const { store, paths, config, path, isFile, mainBundle, fs } = task;
 
 	const extname = path.extname(file.path);

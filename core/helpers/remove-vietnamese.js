@@ -25,4 +25,4 @@ const removeVietnamese = (word) => {
 	return wordTranform;
 };
 
-export { removeVietnamese };
+module.exports = { removeVietnamese };

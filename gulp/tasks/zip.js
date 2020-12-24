@@ -1,4 +1,4 @@
-export default {
+module.exports = {
 	name: 'zip',
 
 	init(done) {

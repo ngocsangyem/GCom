@@ -1,5 +1,5 @@
-import { capitalizeWord } from './capitalize.js';
-import { upperFirstLetter } from './upper-first-letter';
+const { capitalizeWord } = require('./capitalize.js');
+const { upperFirstLetter } = require('./upper-first-letter');
 
 const replaceName = (string, name) => {
 	return string
@@ -8,4 +8,4 @@ const replaceName = (string, name) => {
 		.replace(/\[upper-first-name\]/g, upperFirstLetter(name));
 };
 
-export { replaceName };
+module.exports = { replaceName };

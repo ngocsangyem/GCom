@@ -1,5 +1,5 @@
-import through from 'through2';
-import PluginError from 'plugin-error';
+const through = require('through2');
+const PluginError = require('plugin-error');
 
 /**
  * Run `handler` for every file in pipe.
@@ -11,7 +11,7 @@ import PluginError from 'plugin-error';
  * @return {Object}
  */
 
-export const pipe = (handler, options, handlerName) => {
+module.exports = function (handler, options, handlerName) {
 	const name = handlerName || (handler && handler.displayName) || 'core:pipe';
 
 	if (typeof handler !== 'function') {

@@ -1,5 +1,5 @@
-import path from 'path';
-import injectToHTML from './injectToHTML';
+const path = require('path');
+const injectToHTML = require('./injectToHTML');
 
 /**
  * Inject assets to HTML.
@@ -10,7 +10,7 @@ import injectToHTML from './injectToHTML';
  * @return {undefined}
  */
 
-export default (file, task) => {
+module.exports = function (file, task) {
 	const code = String(file.contents);
 	const name = path.basename(file.path, path.extname(file.path));
 	const page = task.store.pages[name];

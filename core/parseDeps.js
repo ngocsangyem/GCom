@@ -1,5 +1,5 @@
-import parseClass from './parseClass';
-import checkModules from './checkModules';
+const parseClass = require('./parseClass');
+const checkModules = require('./checkModules');
 
 /**
  * Parse block dependencies.
@@ -12,7 +12,7 @@ import checkModules from './checkModules';
  * @return {undefined}
  */
 
-export const parseDeps = (block, page, deps, task) => {
+module.exports = function (block, page, deps, task) {
 	if (!deps[block]) {
 		return;
 	}

@@ -1,5 +1,5 @@
-import * as BEM from './bem';
-import checkModules from './checkModules';
+const BEM = require('./bem');
+const checkModules = require('./checkModules');
 
 /**
  * Check a files from bem tree.
@@ -10,7 +10,7 @@ import checkModules from './checkModules';
  * @return {undefined}
  */
 
-export default (type, task) => {
+module.exports = function (type, task) {
 	const { store, paths, config, mainBundle, fs } = task;
 	const { tree, deps } = store;
 	const needBundles = config.build.bundles.includes(

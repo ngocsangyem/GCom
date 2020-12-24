@@ -1,5 +1,5 @@
-import fs from 'fs';
-import c from 'ansi-colors';
+const fs = require('fs');
+const c = require('ansi-colors');
 
 /**
  * Check file and directory.
@@ -9,39 +9,39 @@ import c from 'ansi-colors';
  * @return {Boolean}
  */
 
-const isFile = (filePath) => {
-	let file = false;
-	try {
-		file = fs.statSync(filePath);
-	} catch (error) {
-		console.log(c.red(error));
-	}
+module.exports = {
+	isFile(filePath) {
+		let file = false;
+		try {
+			file = fs.statSync(filePath);
+		} catch (error) {
+			console.log(c.red(error));
+		}
 
-	return file && !file.isDirectory();
+		return file && !file.isDirectory();
+	},
+
+	isDirectory(directoryPath) {
+		let stats = false;
+
+		try {
+			stats = fs.lstatSync(directoryPath);
+		} catch (error) {
+			// console.log(c.red(error));
+		}
+
+		return stats && stats.isDirectory();
+	},
+
+	isExternal(url) {
+		if (typeof url !== 'string') {
+			console.log(c.red(`${url} must be string`));
+			return false;
+		}
+		return (
+			/^(?:https?\:)?\/\//i.test(url) ||
+			url.indexOf('data:') === 0 ||
+			url.charAt(0) === '#'
+		);
+	},
 };
-
-const isDirectory = (directoryPath) => {
-	let stats = false;
-
-	try {
-		stats = fs.lstatSync(directoryPath);
-	} catch (error) {
-		// console.log(c.red(error));
-	}
-
-	return stats && stats.isDirectory();
-};
-
-const isExternal = (url) => {
-	if (typeof url !== 'string') {
-		console.log(c.red(`${url} must be string`));
-		return false;
-	}
-	return (
-		/^(?:https?\:)?\/\//i.test(url) ||
-		url.indexOf('data:') === 0 ||
-		url.charAt(0) === '#'
-	);
-};
-
-export { isFile, isDirectory, isExternal };

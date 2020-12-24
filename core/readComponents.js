@@ -1,9 +1,9 @@
-import fs from 'fs';
-import path from 'path';
-import glob from 'glob';
-import { isDirectory, isFile, isExternal } from './is';
-import { removeExtension } from './helpers/remove-extension';
-import { toSnakeCase } from './helpers/toSnakeCase';
+const fs = require('fs');
+const path = require('path');
+const glob = require('glob');
+const { isDirectory, isFile, isExternal } = require('./is');
+const { removeExtension } = require('./helpers/remove-extension');
+const { toSnakeCase } = require('./helpers/toSnakeCase');
 
 /**
  * Check all components and read deps then  write map.
@@ -13,7 +13,7 @@ import { toSnakeCase } from './helpers/toSnakeCase';
  * @return {undefined}
  */
 
-export default (task) => {
+module.exports = function (task) {
 	const { paths, store, config } = task;
 	const deps = (store.deps = {});
 	const jsons = (store.jsons = {});

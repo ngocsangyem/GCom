@@ -1,6 +1,6 @@
-import { removeVietnamese } from './remove-vietnamese';
-import { delModifier } from '../bem';
-import { config } from '../index';
+const { removeVietnamese } = require('./remove-vietnamese');
+const { delModifier } = require('../bem');
+const { config } = require('../index');
 
 const camelize = (str) => {
 	return str.replace(/(?:^\w|[A-Z]|\b\w|\s+)/g, function (match, index) {
@@ -47,4 +47,4 @@ const capitalizeWord = (word) => {
 	}
 };
 
-export { capitalizeWord };
+module.exports = { capitalizeWord };

@@ -1,4 +1,4 @@
-export default function (file, task) {
+module.exports = function (file, task) {
 	const {
 		store,
 		config,
@@ -95,4 +95,4 @@ export default function (file, task) {
 			});
 		}
 	});
-}
+};

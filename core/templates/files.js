@@ -44,7 +44,7 @@ class ${nameUpper} {
 })();`;
 };
 
-export {
+module.exports = {
 	dependencyTemplate,
 	jsonTemplate,
 	sassTemplate,

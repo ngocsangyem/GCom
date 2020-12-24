@@ -3,4 +3,4 @@ const removeExtension = (word) => {
 	return word.replace(/(\.[^/.]+)+$/, '');
 };
 
-export { removeExtension };
+module.exports = { removeExtension };

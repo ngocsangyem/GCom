@@ -1,10 +1,10 @@
-import webpack from 'webpack-stream';
-import named from 'vinyl-named';
-import compiler from 'webpack';
+const webpack = require('webpack-stream');
+const named = require('vinyl-named');
+const compiler = require('webpack');
 
-import { WebpackConfig } from '../../webpack/webpack.config';
+const { WebpackConfig } = require('../../webpack/webpack.config');
 
-export default {
+module.exports = {
 	name: 'task:scripts',
 	build: 3,
 	extname: function () {

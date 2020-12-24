@@ -1,4 +1,4 @@
-export default {
+module.exports = {
 	build: 3,
 	name: 'task:assets',
 	globs: function () {

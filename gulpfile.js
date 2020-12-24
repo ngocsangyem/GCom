@@ -1,29 +1,35 @@
-import fs from 'fs';
-import path from 'path';
+const fs = require('fs');
+const path = require('path');
 
-import { series, parallel, watch, src, dest, lastRun, task } from 'gulp';
-import glob from 'glob';
-import globby from 'globby';
-import parsePug from 'pug-parser';
-import lexer from 'pug-lexer';
-import c from 'ansi-colors';
-import foldero from 'foldero';
-import log from 'fancy-log';
-import plumber from 'gulp-plumber';
-import cache from 'gulp-cached';
-import dependents from 'gulp-dependents';
+const { series, parallel, watch, src, dest, lastRun, task } = require('gulp');
+const glob = require('glob');
+const globby = require('globby');
+const parsePug = require('pug-parser');
+const lexer = require('pug-lexer');
+const c = require('ansi-colors');
+const foldero = require('foldero');
+const log = require('fancy-log');
+const plumber = require('gulp-plumber');
+const cache = require('gulp-cached');
+const dependents = require('gulp-dependents');
 
-import { isDev, args, plugins, reportError, browserSync } from './gulp/utils';
-import { config, paths, buildPath, notify } from './core/index';
-import { isDirectory, isFile } from './core/is';
-import { pipe } from './core/pipe';
-import { removeExtension } from './core/helpers/remove-extension';
-import injectToHTML from './core/injectToHTML';
-import { parseDeps } from './core/parseDeps';
-import parseAsset from './core/parseAsset';
-import parseClass from './core/parseClass';
-import parseXlink from './core/parseXlink';
-import { upperFirstLetter } from './core/helpers/upper-first-letter';
+const {
+	isDev,
+	args,
+	plugins,
+	reportError,
+	browserSync,
+} = require('./gulp/utils');
+const { config, paths, buildPath, notify } = require('./core/index');
+const { isDirectory, isFile } = require('./core/is');
+const pipe = require('./core/pipe');
+const { removeExtension } = require('./core/helpers/remove-extension');
+const injectToHTML = require('./core/injectToHTML');
+const parseDeps = require('./core/parseDeps');
+const parseAsset = require('./core/parseAsset');
+const parseClass = require('./core/parseClass');
+const parseXlink = require('./core/parseXlink');
+const { upperFirstLetter } = require('./core/helpers/upper-first-letter');
 
 const htmlparser2 = require('htmlparser2');
 const gulp = {};

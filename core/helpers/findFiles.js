@@ -1,5 +1,5 @@
-import { join } from 'path';
-import { readdirSync, statSync } from 'fs';
+const { join } = require('path');
+const { readdirSync, statSync } = require('fs');
 
 const findFiles = (base, ext, files, result) => {
 	files = files || readdirSync(base);
@@ -16,4 +16,4 @@ const findFiles = (base, ext, files, result) => {
 	return result;
 };
 
-export { findFiles };
+module.exports = { findFiles };

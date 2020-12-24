@@ -1,4 +1,4 @@
-export default {
+module.exports = {
 	name: 'task:styles',
 	build: 3,
 	extname: function () {

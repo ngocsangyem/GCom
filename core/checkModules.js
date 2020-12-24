@@ -1,7 +1,6 @@
-import fs from 'fs';
-import path from 'path';
-import checkFile from './checkFile';
-import { isExternal } from './is';
+const path = require('path');
+const checkFile = require('./checkFile');
+const { isExternal } = require('./is');
 
 /**
  * Check a modules from component dependency.
@@ -17,7 +16,15 @@ import { isExternal } from './is';
  * @return {undefined}
  */
 
-export default (component, type, page, deps, task, extnames, imports) => {
+module.exports = function (
+	component,
+	type,
+	page,
+	deps,
+	task,
+	extnames,
+	imports
+) {
 	const { isDev } = task;
 	const modules = (deps[component] && deps[component].modules) || [];
 	const async = /@(async|defer)/gi;

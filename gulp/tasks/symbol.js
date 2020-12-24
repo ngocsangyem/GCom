@@ -1,4 +1,4 @@
-export default {
+module.exports = {
 	build: 2,
 	name: 'task:symbol',
 	globs: function () {

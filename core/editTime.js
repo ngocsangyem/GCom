@@ -2,7 +2,7 @@
 
 // Require
 
-import { utimesSync } from 'fs';
+const { utimesSync } = require('fs');
 
 /**
  * Change the file system timestamps at the given `path`.
@@ -12,7 +12,7 @@ import { utimesSync } from 'fs';
  * @return {undefined}
  */
 
-export default function (path) {
+module.exports = function (path) {
 	try {
 		const time = Date.now() / 1000;
 
@@ -20,4 +20,4 @@ export default function (path) {
 	} catch (e) {
 		console.log(e);
 	}
-}
+};

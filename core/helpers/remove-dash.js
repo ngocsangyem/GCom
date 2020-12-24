@@ -3,4 +3,4 @@ const removeDash = (word) => {
 	return word.replace(/-/g, '');
 };
 
-export { removeDash };
+module.exports = { removeDash };

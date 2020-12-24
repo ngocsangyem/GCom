@@ -1,12 +1,11 @@
-import fs from 'fs';
-import path from 'path';
-import notify from 'gulp-notify';
-import { isFile, isDirectory } from './is';
-import c from 'ansi-colors';
-import minimist from 'minimist';
-import {
+const fs = require('fs');
+const path = require('path');
+const notify = require('gulp-notify');
+const { isFile, isDirectory } = require('./is');
+const c = require('ansi-colors');
+const minimist = require('minimist');
+const {
 	jsonTemplate,
-	jsTemplateFunction,
 	jsTemplateClass,
 	sassTemplate,
 	scssTemplate,
@@ -16,8 +15,8 @@ import {
 	pageSassTemplate,
 	pageScssTemplate,
 	jsPageTemplateClass,
-} from './templates/files';
-import pjson from '../package.json';
+} = require('./templates/files');
+const pjson = require('../package.json');
 
 const root = path.resolve(__dirname, '..');
 const args = minimist(process.argv.slice(2));
@@ -332,4 +331,4 @@ try {
 	console.log(c.red(error));
 }
 
-export { paths, config, notify, buildPath };
+module.exports = { paths, config, notify, buildPath };
