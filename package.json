@@ -101,7 +101,7 @@
 		"webpack-stream": "^6.1.0"
 	},
 	"dependencies": {
-		"axios": "^0.20.0",
+		"axios": "^0.21.1",
 		"swiper": "^6.2.0"
 	}
 }
